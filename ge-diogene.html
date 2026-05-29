@@ -577,6 +577,94 @@ body{font-size:16px;line-height:1.7;}
   body{padding-bottom:80px;}
 }
 
+
+/* ══════════════════════════════════════════════════
+   TESTIMONIOS
+   ══════════════════════════════════════════════════ */
+.testimonials{background:#f8fafc;padding:80px 0;border-top:1px solid #eff0f2;}
+.testimonials-inner{max-width:1200px;margin:0 auto;padding:0 24px;}
+.testi-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;margin-top:48px;
+}
+.testi-card{
+  background:white;border-radius:16px;padding:28px;
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+  border:1px solid #f0f0f0;
+  display:flex;flex-direction:column;gap:16px;
+  transition:box-shadow .2s;
+}
+.testi-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.10);}
+.testi-stars{color:#f59e0b;font-size:18px;letter-spacing:2px;}
+.testi-quote{
+  font-size:16px;color:#374151;line-height:1.7;
+  font-style:italic;flex:1;
+}
+.testi-quote::before{content:'"';font-size:40px;color:var(--vert);line-height:0;vertical-align:-.4em;margin-right:4px;}
+.testi-author{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid #f3f4f6;}
+.testi-avatar{
+  width:48px;height:48px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:16px;color:white;flex-shrink:0;
+}
+.testi-info{display:flex;flex-direction:column;gap:2px;}
+.testi-name{font-size:15px;font-weight:700;color:#1f2937;}
+.testi-location{font-size:13px;color:#6b7280;}
+.testi-service{
+  display:inline-block;font-size:11px;font-weight:700;
+  color:var(--vert);background:var(--vert-clair);
+  padding:2px 8px;border-radius:20px;margin-top:2px;
+}
+/* Mobile: scroll horizontal */
+@media(max-width:768px){
+  .testi-grid{
+    grid-template-columns:repeat(3,85vw);
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    padding-bottom:12px;gap:16px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .testi-card{scroll-snap-align:center;}
+}
+
+/* ══════════════════════════════════════════════════
+   A+ / A- — Contrôle taille texte
+   ══════════════════════════════════════════════════ */
+.a11y-size{
+  display:flex;align-items:center;gap:4px;
+  flex-shrink:0;margin-left:8px;
+}
+.a-btn{
+  background:#f3f4f6;border:1px solid #e5e7eb;
+  border-radius:6px;cursor:pointer;
+  font-family:var(--font);font-weight:800;color:#374151;
+  padding:5px 9px;font-size:13px;
+  transition:all .15s;line-height:1;
+}
+.a-btn:hover{background:var(--vert-clair);border-color:var(--vert);color:var(--vert-fonce);}
+.a-btn:active{transform:scale(.95);}
+@media(max-width:768px){.a11y-size{display:none;}}
+
+/* Modo lectura */
+body.mode-lecture{
+  background:#faf8f4 !important;
+  font-size:20px !important;
+  line-height:1.8 !important;
+}
+body.mode-lecture .hero::after,
+body.mode-lecture .services,
+body.mode-lecture .video-dark{opacity:.92;}
+.mode-btn{
+  display:flex;align-items:center;gap:5px;
+  background:#f3f4f6;border:1px solid #e5e7eb;
+  border-radius:6px;cursor:pointer;
+  font-family:var(--font);font-weight:700;color:#374151;
+  padding:5px 10px;font-size:12px;white-space:nowrap;
+  transition:all .15s;
+}
+.mode-btn:hover{background:var(--vert-clair);border-color:var(--vert);color:var(--vert-fonce);}
+.mode-btn.active{background:var(--vert);color:white;border-color:var(--vert-fonce);}
+@media(max-width:1024px){.mode-btn{display:none;}}
+
 </style>
 </head>
 <body>
@@ -659,6 +747,11 @@ body{font-size:16px;line-height:1.7;}
     </div>
     <a href="/blog/" class="nav-btn" style="font-weight:700;color:var(--vert-fonce);">Blog</a>
   </nav>
+    <div class="a11y-size">
+      <button class="a-btn" id="aMinus" aria-label="Réduire le texte" title="Texte plus petit">A−</button>
+      <button class="a-btn" id="aPlus" aria-label="Agrandir le texte" title="Texte plus grand">A+</button>
+      <button class="mode-btn" id="modeLecture" aria-label="Mode lecture simplifiée">📖 Lecture</button>
+    </div>
     <a href="tel:0795805857" class="header-cta">📞 079 580 58 57</a>
     <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
