@@ -502,6 +502,81 @@ body{font-size:16px;line-height:1.7;}
 .logo-name{font-size:20px !important;font-weight:800 !important;color:var(--gris-fonce) !important;}
 .logo-sub{font-size:11.5px !important;color:var(--gris) !important;font-weight:500 !important;}
 
+
+/* ══════════════════════════════════════════════════
+   HERO CTAs v2 — téléphone primaire + devis + services
+   ══════════════════════════════════════════════════ */
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+
+.btn-phone{
+  display:inline-flex;align-items:center;gap:14px;
+  background:white;color:var(--vert-fonce);
+  padding:14px 24px;border-radius:14px;
+  text-decoration:none;transition:all .22s;
+  box-shadow:0 4px 16px rgba(0,0,0,.18);
+  border:2px solid transparent;
+}
+.btn-phone:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.22);}
+.btn-phone__icon{font-size:22px;flex-shrink:0;}
+.btn-phone__text{display:flex;flex-direction:column;line-height:1.2;}
+.btn-phone__num{font-size:18px;font-weight:900;letter-spacing:-.3px;}
+.btn-phone__sub{font-size:11px;color:var(--vert);font-weight:600;opacity:.9;}
+
+.btn-devis{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--vert);color:white;
+  padding:14px 22px;border-radius:14px;
+  font-weight:800;font-size:15px;
+  text-decoration:none;transition:all .22s;
+  border:2px solid transparent;
+}
+.btn-devis:hover{background:var(--vert-fonce);transform:translateY(-2px);}
+
+.btn-services{
+  display:inline-flex;align-items:center;gap:6px;
+  background:transparent;color:rgba(255,255,255,.85);
+  padding:14px 18px;border-radius:14px;
+  font-weight:700;font-size:14px;
+  text-decoration:none;transition:all .22s;
+  border:2px solid rgba(255,255,255,.25);
+}
+.btn-services:hover{background:rgba(255,255,255,.1);color:white;border-color:rgba(255,255,255,.5);}
+
+/* ══════════════════════════════════════════════════
+   STICKY BAR MOBILE
+   ══════════════════════════════════════════════════ */
+.sticky-mobile{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;
+  background:white;
+  padding:12px 16px 16px;
+  gap:10px;
+  box-shadow:0 -4px 24px rgba(0,0,0,.15);
+  z-index:800;
+  transform:translateY(100%);
+  transition:transform .35s cubic-bezier(.16,1,.3,1);
+}
+.sticky-mobile.visible{transform:translateY(0);}
+.sticky-mobile__call{
+  flex:1;background:var(--vert);color:white;
+  padding:15px 12px;border-radius:10px;
+  text-align:center;text-decoration:none;
+  font-weight:800;font-size:16px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.sticky-mobile__devis{
+  flex:1;background:var(--gris-fonce);color:white;
+  padding:15px 12px;border-radius:10px;
+  text-align:center;text-decoration:none;
+  font-weight:700;font-size:15px;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+@media(max-width:768px){
+  .sticky-mobile{display:flex;}
+  /* Dar espacio al footer para que no tape contenido */
+  body{padding-bottom:80px;}
+}
+
 </style>
 </head>
 <body>
@@ -957,6 +1032,34 @@ body{font-size:16px;line-height:1.7;}
 const ham=document.getElementById('ham'),drawer=document.getElementById('drawer'),dc=document.getElementById('drawerClose');
 if(ham){ham.addEventListener('click',()=>{ham.classList.toggle('open');drawer.classList.toggle('open');document.body.style.overflow=drawer.classList.contains('open')?'hidden':'';}); dc.addEventListener('click',()=>{ham.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow='';}); }
 function toggleFaq(btn){const a=btn.nextElementSibling;const arr=btn.querySelector('.faq-arr');const isOpen=a.classList.contains('open');document.querySelectorAll('.faq-a.open').forEach(el=>{el.classList.remove('open');el.previousElementSibling.querySelector('.faq-arr').style.transform='';} );if(!isOpen){a.classList.add('open');arr.style.transform='rotate(180deg)';}}
+</script>
+
+<!-- ============================================================ -->
+<!-- STICKY BAR MOBILE                                            -->
+<!-- ============================================================ -->
+<div class="sticky-mobile" id="stickyBar">
+  <a href="tel:+41795805857" class="sticky-mobile__call">📞 Appeler</a>
+  <a href="#devis" class="sticky-mobile__devis">📋 Devis gratuit</a>
+</div>
+
+<script>
+// Sticky bar mobile — scroll-aware
+(function(){
+  var bar = document.getElementById('stickyBar');
+  if(!bar) return;
+  var lastScroll = 0;
+  // Aparece después de 3 segundos
+  setTimeout(function(){ bar.classList.add('visible'); }, 3000);
+  window.addEventListener('scroll', function(){
+    var cur = window.pageYOffset;
+    if(cur > lastScroll && cur > 200){
+      bar.classList.remove('visible'); // bajando → ocultar
+    } else {
+      bar.classList.add('visible');    // subiendo → mostrar
+    }
+    lastScroll = cur;
+  }, {passive:true});
+})();
 </script>
 </body>
 </html>
