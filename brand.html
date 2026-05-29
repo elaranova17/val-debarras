@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charte Graphique — Val-Débarras Sàrl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --vert:#16a34a;
+  --vert-fonce:#15803d;
+  --vert-nuit:#134e2a;
+  --vert-pale:#dcfce7;
+  --charbon:#1f2937;
+  --gris:#6b7280;
+  --gris-clair:#e5e7eb;
+  --creme:#f9fafb;
+  --blanc:#ffffff;
+  --noir:#000000;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--creme);color:var(--charbon);line-height:1.6}
+
+/* NAV */
+.bnav{position:sticky;top:0;background:var(--charbon);z-index:100;padding:0 2rem;display:flex;align-items:center;gap:1.75rem;height:50px;overflow-x:auto;border-bottom:2px solid var(--vert)}
+.bnav::-webkit-scrollbar{height:3px}.bnav::-webkit-scrollbar-thumb{background:var(--vert)}
+.bnav-logo{display:flex;align-items:center;gap:.6rem;flex-shrink:0;text-decoration:none}
+.bnav-mark{width:26px;height:26px;background:var(--vert);border-radius:5px;display:grid;place-items:center;font-weight:800;font-size:.75rem;color:#fff;letter-spacing:-.02em}
+.bnav-brand{color:#fff;font-weight:700;font-size:.85rem;white-space:nowrap}
+.bnav a:not(.bnav-logo){color:rgba(255,255,255,.55);text-decoration:none;font-size:.72rem;font-weight:500;white-space:nowrap;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;flex-shrink:0}
+.bnav a:not(.bnav-logo):hover{color:var(--vert)}
+.bnav-sep{width:1px;height:20px;background:rgba(255,255,255,.12);flex-shrink:0}
+
+/* HERO */
+.bhero{background:linear-gradient(140deg,var(--vert-nuit) 0%,#0f2d1a 50%,var(--charbon) 100%);color:#fff;padding:5rem 2rem 4.5rem;text-align:center;position:relative;overflow:hidden}
+.bhero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2316a34a' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.bhero-eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--vert);font-weight:600;margin-bottom:1rem}
+.bhero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:700;line-height:1.1;margin-bottom:1.25rem}
+.bhero h1 em{color:var(--vert);font-style:normal}
+.bhero-sub{font-size:1rem;color:rgba(255,255,255,.55);max-width:520px;margin:0 auto 2rem}
+.bhero-meta{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
+.bhero-pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:.35rem 1rem;font-size:.75rem;color:rgba(255,255,255,.65)}
+.bhero-pill strong{color:var(--vert);font-weight:600}
+
+/* SECTIONS */
+.bsec{padding:4.5rem 2rem;max-width:1200px;margin:0 auto}
+.bsec-full{padding:4.5rem 2rem;background:var(--blanc)}
+.bsec-full .bsec-inner{max-width:1200px;margin:0 auto}
+.bsec-dark{padding:4.5rem 2rem;background:var(--charbon);color:#fff}
+.bsec-dark .bsec-inner{max-width:1200px;margin:0 auto}
+.eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--vert);font-weight:600;margin-bottom:.6rem}
+.bsec-dark .eyebrow{color:var(--vert)}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;margin-bottom:.65rem;line-height:1.2}
+.bsec-dark .sec-title{color:#fff}
+.sec-sub{font-size:.95rem;color:var(--gris);max-width:600px;margin-bottom:3rem}
+.bsec-dark .sec-sub{color:rgba(255,255,255,.5)}
+.divider{border:none;border-top:1px solid var(--gris-clair);margin:0}
+
+/* ===== 1. COULEURS ===== */
+.palette-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:1.25rem}
+.swatch{border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.07);border:1px solid var(--gris-clair)}
+.swatch-color{height:90px;position:relative}
+.swatch-hex-tag{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);color:#fff;font-family:'Courier New',monospace;font-size:.65rem;padding:.2rem .5rem;border-radius:4px;letter-spacing:.05em}
+.swatch-info{padding:.9rem 1rem}
+.swatch-name{font-weight:700;font-size:.85rem;margin-bottom:.2rem}
+.swatch-rgb{font-family:'Courier New',monospace;font-size:.68rem;color:var(--gris);margin-bottom:.2rem}
+.swatch-use{font-size:.72rem;color:var(--gris)}
+
+/* ===== 2. TYPO ===== */
+.typo-grid{display:grid;gap:2.5rem}
+.typo-card{background:#fff;border-radius:12px;padding:2rem;border:1px solid var(--gris-clair)}
+.font-tag{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gris);margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem}
+.font-tag::after{content:'';flex:1;height:1px;background:var(--gris-clair)}
+.typo-display{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;line-height:1.05;color:var(--charbon)}
+.typo-display-it{font-family:'Playfair Display',serif;font-size:clamp(1.75rem,4vw,3rem);font-style:italic;color:var(--vert-fonce);line-height:1.15}
+.scale-table{width:100%;border-collapse:collapse;margin-top:1.5rem}
+.scale-table tr{border-bottom:1px solid var(--gris-clair)}
+.scale-table tr:last-child{border-bottom:none}
+.scale-table td{padding:.75rem .5rem;vertical-align:middle}
+.scale-table td:first-child{font-family:'Courier New',monospace;font-size:.7rem;color:var(--gris);width:90px}
+.scale-table td:nth-child(2){font-family:'Courier New',monospace;font-size:.7rem;color:var(--vert-fonce);width:80px}
+
+/* ===== 3. ÉCUSSONS ===== */
+.shields-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:2rem}
+.shield-card{text-align:center;padding:1.5rem 1rem;background:#fff;border-radius:12px;border:1px solid var(--gris-clair);transition:box-shadow .2s,transform .2s}
+.shield-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1);transform:translateY(-3px)}
+.shield-wrap{width:90px;height:108px;margin:0 auto 1.25rem;filter:drop-shadow(0 4px 10px rgba(0,0,0,.18))}
+.shield-name{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;margin-bottom:.25rem;color:var(--charbon)}
+.shield-code{display:inline-block;background:var(--vert);color:#fff;border-radius:3px;font-size:.65rem;font-weight:700;letter-spacing:.1em;padding:.1rem .45rem;margin-bottom:.25rem}
+.shield-prep{font-size:.78rem;color:var(--gris);font-style:italic}
+.shield-colors{display:flex;gap:.35rem;justify-content:center;margin-top:.75rem}
+.sc-dot{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--gris-clair)}
+
+/* ===== 4. VOIX ===== */
+.voice-cols{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:640px){.voice-cols{grid-template-columns:1fr}}
+.voice-card{background:#fff;border-radius:12px;padding:1.75rem;border:1px solid var(--gris-clair)}
+.voice-card.do{border-left:4px solid var(--vert)}
+.voice-card.dont{border-left:4px solid #ef4444}
+.voice-h{font-weight:700;font-size:.95rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.voice-h.do{color:var(--vert-fonce)}
+.voice-h.dont{color:#dc2626}
+.voice-item{display:flex;gap:.75rem;font-size:.88rem;line-height:1.55;margin-bottom:.75rem;color:var(--charbon)}
+.voice-item:last-child{margin-bottom:0}
+.vi-icon{flex-shrink:0;font-weight:700;margin-top:.05rem}
+.voice-card.do .vi-icon{color:var(--vert)}
+.voice-card.dont .vi-icon{color:#dc2626}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2rem 0}
+@media(max-width:640px){.pillars{grid-template-columns:1fr}}
+.pillar{background:var(--vert-nuit);color:#fff;border-radius:12px;padding:1.75rem;text-align:center}
+.pillar-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--vert);line-height:1;margin-bottom:.5rem}
+.pillar-word{font-weight:700;font-size:1rem;margin-bottom:.4rem}
+.pillar-def{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.55}
+
+.phrases{display:grid;gap:1rem;margin:2rem 0}
+.phrase{background:var(--vert-nuit);color:#fff;border-radius:10px;padding:1.5rem 1.75rem;position:relative;overflow:hidden}
+.phrase::before{content:'\201C';position:absolute;top:-1.5rem;left:.75rem;font-size:7rem;font-family:'Playfair Display',serif;opacity:.06;line-height:1}
+.phrase-text{font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;line-height:1.5;margin-bottom:.5rem;position:relative}
+.phrase-ctx{font-size:.7rem;color:var(--vert);letter-spacing:.1em;text-transform:uppercase;font-weight:600;position:relative}
+
+/* ===== 5. CATALOGUE ===== */
+.canton-block{margin-bottom:3.5rem}
+.canton-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:2px solid var(--vert)}
+.canton-header .shield-mini{width:36px;height:43px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
+.canton-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700}
+.canton-abbr{background:var(--vert);color:#fff;border-radius:4px;font-size:.7rem;font-weight:700;letter-spacing:.1em;padding:.2rem .5rem}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+.cat-item{background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--gris-clair);box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.cat-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--gris-clair)}
+.cat-img-ph{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--vert-nuit),var(--charbon));font-size:1.5rem}
+.cat-info{padding:.875rem}
+.cat-veh{font-size:.67rem;font-weight:700;color:var(--vert-fonce);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.2rem}
+.cat-desc{font-size:.82rem;font-weight:600;color:var(--charbon);margin-bottom:.2rem}
+.cat-use{font-size:.73rem;color:var(--gris)}
+
+/* ===== 6. COMPOSANTS ===== */
+.comp-section{margin-bottom:3rem}
+.comp-label{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gris);margin-bottom:1rem}
+.comp-row{display:flex;flex-wrap:wrap;gap:.75rem;align-items:flex-start;margin-bottom:1.5rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.4rem;border-radius:6px;font-weight:600;font-size:.88rem;cursor:default;text-decoration:none;border:2px solid transparent;font-family:inherit}
+.btn-p{background:var(--vert);color:#fff}
+.btn-s{background:transparent;color:var(--vert);border-color:var(--vert)}
+.btn-d{background:var(--charbon);color:#fff}
+.btn-g{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-lg{padding:.875rem 1.75rem;font-size:.95rem}
+.btn-sm{padding:.45rem 1rem;font-size:.78rem}
+.badge{display:inline-flex;align-items:center;gap:.3rem;border-radius:4px;padding:.2rem .6rem;font-size:.7rem;font-weight:600;letter-spacing:.04em}
+.badge-green{background:var(--vert-pale);color:var(--vert-fonce)}
+.badge-new{background:#fef9c3;color:#854d0e}
+.badge-fix{background:#fee2e2;color:#991b1b}
+.badge-dark{background:var(--charbon);color:#fff}
+.service-card-demo{background:var(--vert-nuit);color:#fff;border-radius:12px;padding:1.5rem;width:220px}
+.scd-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:rgba(255,255,255,.12);line-height:1;margin-bottom:.75rem}
+.scd-icon{font-size:1.5rem;margin-bottom:.75rem}
+.scd-title{font-weight:700;font-size:.95rem;margin-bottom:.5rem}
+.scd-text{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.5}
+
+/* FLEET */
+.fleet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.fleet-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--gris-clair)}
+.fleet-color-band{height:6px}
+.fleet-body{padding:1.5rem}
+.fleet-id{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);margin-bottom:.5rem}
+.fleet-model{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:.25rem}
+.fleet-desc{font-size:.85rem;color:var(--gris);line-height:1.55;margin-bottom:1rem}
+.fleet-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.fleet-tag{background:var(--creme);border:1px solid var(--gris-clair);border-radius:4px;font-size:.7rem;padding:.15rem .5rem;color:var(--charbon)}
+
+/* FOOTER */
+.bfooter{background:var(--charbon);color:rgba(255,255,255,.45);padding:2.5rem 2rem;text-align:center}
+.bfooter strong{color:#fff}
+.bfooter a{color:var(--vert);text-decoration:none}
+
+/* UTIL */
+@media(max-width:768px){
+  .shields-grid{grid-template-columns:repeat(3,1fr);gap:1.25rem}
+  .pillars{grid-template-columns:1fr}
+  .palette-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ============================================================ */
+/* HEADER v3 — logo only + hamburger always visible            */
+/* ============================================================ */
+.hamburger{display:flex !important;}
+.nav{display:none !important;}
+.mobile-drawer{
+  display:block;position:fixed;top:0;right:0;bottom:0;left:0;
+  background:var(--blanc);z-index:500;overflow-y:auto;
+  transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);
+  visibility:hidden;
+}
+.mobile-drawer.open{transform:translateX(0);visibility:visible;}
+@media(min-width:1025px){
+  .mobile-drawer.open{
+    left:auto;width:400px;
+    box-shadow:-8px 0 32px rgba(0,0,0,.18);
+  }
+}
+/* Drawer shield icons */
+.drawer-cantons a{display:flex;align-items:center;gap:10px;padding:9px 8px;font-size:14px;border-radius:8px;}
+.drawer-cantons a svg{flex-shrink:0;}
+/* Footer v2 */
+.footer-grid-v2{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;margin-bottom:48px;}
+@media(max-width:640px){.footer-grid-v2{grid-template-columns:1fr;gap:28px;}}
+/* Logo — cube only, no text */
+.logo-text-hidden{display:none;}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="bnav">
+  <a href="#" class="bnav-logo">
+    <div class="bnav-mark">VD</div>
+    <span class="bnav-brand">Val-Débarras</span>
+  </a>
+  <div class="bnav-sep"></div>
+  <a href="#couleurs">Couleurs</a>
+  <a href="#typo">Typographie</a>
+  <a href="#ecussons">Écussons</a>
+  <a href="#flotte">Flotte</a>
+  <a href="#voix">Voix de marque</a>
+  <a href="#catalogue">Catalogue images</a>
+  <a href="#composants">Composants</a>
+</nav>
+
+<!-- HERO -->
+<header class="bhero">
+  <div class="bhero-eyebrow">Document interne — version 1.0 — Mai 2026</div>
+  <h1>Charte <em>Graphique</em><br>Val-Débarras Sàrl</h1>
+  <p class="bhero-sub">Identité visuelle, palette officielle, typographie, écussons cantonaux et voix de marque.</p>
+  <div class="bhero-meta">
+    <div class="bhero-pill"><strong>6</strong> cantons couverts</div>
+    <div class="bhero-pill"><strong>3</strong> véhicules de flotte</div>
+    <div class="bhero-pill"><strong>31</strong> visuels disponibles</div>
+    <div class="bhero-pill">079 580 58 57</div>
+  </div>
+</header>
+
+<!-- ===== COULEURS ===== -->
+<hr class="divider">
+<section class="bsec" id="couleurs">
+  <div class="eyebrow">01 — Identité chromatique</div>
+  <h2 class="sec-title">Palette officielle</h2>
+  <p class="sec-sub">Toutes les couleurs sont extraites du covering véhicules, du logo et des maquettes approuvées. Ne pas s'en écarter.</p>
+
+  <div class="palette-grid">
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#16a34a">
+        <span class="swatch-hex-tag">#16a34a</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Vert Signature</div>
+        <div class="swatch-rgb">rgb(22, 163, 74)</div>
+        <div class="swatch-use">CTA, bannières, liens actifs</div>
+      </div>
+    </div>
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#15803d">
+        <span class="swatch-hex-tag">#15803d</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Vert Profond</div>
+        <div class="swatch-rgb">rgb(21, 128, 61)</div>
+        <div class="swatch-use">Hover, boutons actifs, bordures</div>
+      </div>
+    </div>
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#134e2a">
+        <span class="swatch-hex-tag">#134e2a</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Vert Nuit</div>
+        <div class="swatch-rgb">rgb(19, 78, 42)</div>
+        <div class="swatch-use">Heroes, sections dark, formulaires</div>
+      </div>
+    </div>
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#dcfce7;border-bottom:1px solid #e5e7eb">
+        <span class="swatch-hex-tag" style="background:rgba(0,0,0,.12)">#dcfce7</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Vert Pâle</div>
+        <div class="swatch-rgb">rgb(220, 252, 231)</div>
+        <div class="swatch-use">Badges, arrière-plans légers</div>
+      </div>
+    </div>
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1f2937">
+        <span class="swatch-hex-tag">#1f2937</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Gris Charbon</div>
+        <div class="swatch-rgb">rgb(31, 41, 55)</div>
+        <div class="swatch-use">Titres, texte corps, footer</div>
+      </div>
+    </div>
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#6b7280">
+        <span class="swatch-hex-tag">#6b7280</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Gris Moyen</div>
+        <div class="swatch-rgb">rgb(107, 114, 128)</div>
+        <div class="swatch-use">Texte secondaire, légendes</div>
+      </div>
+    </div>
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#f9fafb;border-bottom:1px solid #e5e7eb">
+        <span class="swatch-hex-tag" style="background:rgba(0,0,0,.12)">#f9fafb</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Crème</div>
+        <div class="swatch-rgb">rgb(249, 250, 251)</div>
+        <div class="swatch-use">Fond de page, alternance sections</div>
+      </div>
+    </div>
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#ffffff;border-bottom:1px solid #e5e7eb">
+        <span class="swatch-hex-tag" style="background:rgba(0,0,0,.12)">#ffffff</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Blanc Pur</div>
+        <div class="swatch-rgb">rgb(255, 255, 255)</div>
+        <div class="swatch-use">Cards, sections alternées, texte sur vert</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== TYPOGRAPHIE ===== -->
+<hr class="divider">
+<section class="bsec-full" id="typo">
+<div class="bsec-inner">
+  <div class="eyebrow">02 — Typographie</div>
+  <h2 class="sec-title">Système de fontes</h2>
+  <p class="sec-sub">Deux familles complémentaires: une serif élégante pour les titres, une sans-serif lisible pour le corps de texte.</p>
+
+  <div class="typo-grid">
+
+    <div class="typo-card">
+      <div class="font-tag">Titres &amp; accents — Playfair Display</div>
+      <div class="typo-display">Débarras<br>propre.</div>
+      <div style="margin-top:1.25rem">
+        <div class="typo-display-it">"On s'occupe de tout."</div>
+      </div>
+      <div style="margin-top:1.5rem;font-size:.82rem;color:var(--gris);line-height:1.7">
+        Utiliser pour: H1, H2, citations, chiffres-clés, accroche hero, noms de services<br>
+        <span style="font-family:'Courier New',monospace;font-size:.75rem">font-family: 'Playfair Display', Georgia, serif</span>
+      </div>
+    </div>
+
+    <div class="typo-card">
+      <div class="font-tag">Corps &amp; interface — Inter</div>
+      <table class="scale-table">
+        <tr>
+          <td>Display</td><td>48px/700</td>
+          <td style="font-size:2.5rem;font-weight:700;line-height:1.1">Titre</td>
+        </tr>
+        <tr>
+          <td>H1</td><td>36px/700</td>
+          <td style="font-size:2rem;font-weight:700">Titre H1</td>
+        </tr>
+        <tr>
+          <td>H2</td><td>28px/600</td>
+          <td style="font-size:1.6rem;font-weight:600">Titre H2</td>
+        </tr>
+        <tr>
+          <td>H3</td><td>22px/600</td>
+          <td style="font-size:1.25rem;font-weight:600">Titre H3</td>
+        </tr>
+        <tr>
+          <td>Body</td><td>16px/400</td>
+          <td style="font-size:1rem">Texte courant lisible</td>
+        </tr>
+        <tr>
+          <td>Small</td><td>14px/400</td>
+          <td style="font-size:.875rem">Texte secondaire, labels</td>
+        </tr>
+        <tr>
+          <td>Caption</td><td>12px/500</td>
+          <td style="font-size:.75rem;font-weight:500;letter-spacing:.04em">TAGS, ÉTIQUETTES, BADGES</td>
+        </tr>
+      </table>
+      <div style="margin-top:1.25rem;font-size:.82rem;color:var(--gris)">
+        <span style="font-family:'Courier New',monospace;font-size:.75rem">font-family: 'Inter', system-ui, sans-serif</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ===== ÉCUSSONS ===== -->
+<hr class="divider">
+<section class="bsec" id="ecussons">
+  <div class="eyebrow">03 — Héraldique cantonale</div>
+  <h2 class="sec-title">Écussons officiels</h2>
+  <p class="sec-sub">Armoiries héraldiques des 6 cantons de couverture, représentées selon les couleurs officielles. À utiliser tel quel sur toutes les pages landing.</p>
+
+  <div class="shields-grid">
+
+    <!-- GENÈVE -->
+    <div class="shield-card">
+      <div class="shield-wrap">
+        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" width="90" height="108">
+          <defs>
+            <clipPath id="sg">
+              <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#sg)">
+            <!-- Left: black -->
+            <rect x="0" y="0" width="50" height="120" fill="#1a1a1a"/>
+            <!-- Right: red -->
+            <rect x="50" y="0" width="50" height="120" fill="#C8102E"/>
+            <!-- Center divider gold -->
+            <rect x="48.5" y="0" width="3" height="120" fill="#C9A84C"/>
+            <!-- Left: stylized half-eagle wings in gold -->
+            <path d="M 48,22 L 20,10 L 28,24 L 8,18 L 22,30 L 8,38 L 26,34 L 18,48 L 35,36 L 48,50 L 48,22 Z" fill="#C9A84C" opacity=".9"/>
+            <!-- Right: key in gold -->
+            <!-- Bow (circle) -->
+            <circle cx="73" cy="26" r="13" fill="none" stroke="#C9A84C" stroke-width="5"/>
+            <circle cx="73" cy="26" r="5" fill="#C9A84C"/>
+            <!-- Shaft -->
+            <rect x="70.5" y="39" width="5" height="52" rx="2" fill="#C9A84C"/>
+            <!-- Bits -->
+            <rect x="70.5" y="74" width="14" height="5" rx="1.5" fill="#C9A84C"/>
+            <rect x="70.5" y="85" width="10" height="5" rx="1.5" fill="#C9A84C"/>
+          </g>
+          <!-- Border -->
+          <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z" fill="none" stroke="#8B7011" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="shield-name">Genève</div>
+      <div class="shield-code">GE</div>
+      <div class="shield-prep">à Genève</div>
+      <div class="shield-colors">
+        <div class="sc-dot" style="background:#1a1a1a"></div>
+        <div class="sc-dot" style="background:#C8102E"></div>
+        <div class="sc-dot" style="background:#C9A84C"></div>
+      </div>
+    </div>
+
+    <!-- VAUD -->
+    <div class="shield-card">
+      <div class="shield-wrap">
+        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" width="90" height="108">
+          <defs>
+            <clipPath id="sv">
+              <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#sv)">
+            <!-- White base -->
+            <rect x="0" y="0" width="100" height="120" fill="#f0f0f0"/>
+            <!-- Green upper-left triangle (per bend sinister vert) -->
+            <polygon points="0,0 100,0 0,120" fill="#009B4D"/>
+            <!-- Subtle texture line -->
+          </g>
+          <!-- Border -->
+          <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z" fill="none" stroke="#8B7011" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="shield-name">Vaud</div>
+      <div class="shield-code">VD</div>
+      <div class="shield-prep">dans le Vaud</div>
+      <div class="shield-colors">
+        <div class="sc-dot" style="background:#009B4D"></div>
+        <div class="sc-dot" style="background:#f0f0f0;border:1.5px solid #ddd"></div>
+      </div>
+    </div>
+
+    <!-- VALAIS -->
+    <div class="shield-card">
+      <div class="shield-wrap">
+        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" width="90" height="108">
+          <defs>
+            <clipPath id="svs">
+              <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z"/>
+            </clipPath>
+            <!-- Star shape -->
+            <polygon id="star" points="0,-5.5 1.4,-1.9 5.2,-1.7 2.2,0.7 3.2,4.5 0,2.3 -3.2,4.5 -2.2,0.7 -5.2,-1.7 -1.4,-1.9"/>
+          </defs>
+          <g clip-path="url(#svs)">
+            <!-- Left: argent (white), Right: gules (red) -->
+            <rect x="0" y="0" width="50" height="120" fill="#f0f0f0"/>
+            <rect x="50" y="0" width="50" height="120" fill="#C8102E"/>
+            <!-- Center line -->
+            <rect x="48.5" y="0" width="3" height="120" fill="rgba(0,0,0,.08)"/>
+            <!-- 6 RED stars on white side -->
+            <use href="#star" transform="translate(25,14)" fill="#C8102E"/>
+            <use href="#star" transform="translate(15,30)" fill="#C8102E"/>
+            <use href="#star" transform="translate(35,30)" fill="#C8102E"/>
+            <use href="#star" transform="translate(25,46)" fill="#C8102E"/>
+            <use href="#star" transform="translate(15,62)" fill="#C8102E"/>
+            <use href="#star" transform="translate(35,62)" fill="#C8102E"/>
+            <!-- 7 WHITE stars on red side -->
+            <use href="#star" transform="translate(65,8)" fill="#f0f0f0"/>
+            <use href="#star" transform="translate(83,8)" fill="#f0f0f0"/>
+            <use href="#star" transform="translate(74,24)" fill="#f0f0f0"/>
+            <use href="#star" transform="translate(65,40)" fill="#f0f0f0"/>
+            <use href="#star" transform="translate(83,40)" fill="#f0f0f0"/>
+            <use href="#star" transform="translate(74,56)" fill="#f0f0f0"/>
+            <use href="#star" transform="translate(74,72)" fill="#f0f0f0"/>
+          </g>
+          <!-- Border -->
+          <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z" fill="none" stroke="#8B7011" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="shield-name">Valais</div>
+      <div class="shield-code">VS</div>
+      <div class="shield-prep">en Valais</div>
+      <div class="shield-colors">
+        <div class="sc-dot" style="background:#f0f0f0;border:1.5px solid #ddd"></div>
+        <div class="sc-dot" style="background:#C8102E"></div>
+      </div>
+    </div>
+
+    <!-- FRIBOURG -->
+    <div class="shield-card">
+      <div class="shield-wrap">
+        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" width="90" height="108">
+          <defs>
+            <clipPath id="sfr">
+              <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#sfr)">
+            <!-- Left: sable (black), Right: argent (white) -->
+            <rect x="0" y="0" width="50" height="120" fill="#111111"/>
+            <rect x="50" y="0" width="50" height="120" fill="#f0f0f0"/>
+          </g>
+          <!-- Border -->
+          <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z" fill="none" stroke="#8B7011" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="shield-name">Fribourg</div>
+      <div class="shield-code">FR</div>
+      <div class="shield-prep">à Fribourg</div>
+      <div class="shield-colors">
+        <div class="sc-dot" style="background:#111111"></div>
+        <div class="sc-dot" style="background:#f0f0f0;border:1.5px solid #ddd"></div>
+      </div>
+    </div>
+
+    <!-- NEUCHÂTEL -->
+    <div class="shield-card">
+      <div class="shield-wrap">
+        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" width="90" height="108">
+          <defs>
+            <clipPath id="sne">
+              <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#sne)">
+            <!-- Or (gold) base -->
+            <rect x="0" y="0" width="100" height="120" fill="#E8C84A"/>
+            <!-- Three gules (red) diagonal bends (bars per bend) -->
+            <!-- Each band: 18px wide, angled ~45° -->
+            <g transform="rotate(-38 50 60)">
+              <rect x="-20" y="8" width="140" height="18" fill="#C8102E"/>
+              <rect x="-20" y="42" width="140" height="18" fill="#C8102E"/>
+              <rect x="-20" y="76" width="140" height="18" fill="#C8102E"/>
+            </g>
+          </g>
+          <!-- Border -->
+          <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z" fill="none" stroke="#8B7011" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="shield-name">Neuchâtel</div>
+      <div class="shield-code">NE</div>
+      <div class="shield-prep">à Neuchâtel</div>
+      <div class="shield-colors">
+        <div class="sc-dot" style="background:#E8C84A"></div>
+        <div class="sc-dot" style="background:#C8102E"></div>
+      </div>
+    </div>
+
+    <!-- JURA -->
+    <div class="shield-card">
+      <div class="shield-wrap">
+        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" width="90" height="108">
+          <defs>
+            <clipPath id="sju">
+              <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#sju)">
+            <!-- Gules (red) base -->
+            <rect x="0" y="0" width="100" height="120" fill="#C8102E"/>
+            <!-- Fess argent (white horizontal band) in middle third -->
+            <rect x="0" y="44" width="100" height="32" fill="#f0f0f0"/>
+            <!-- Stylized stag in upper red area -->
+            <!-- Body -->
+            <ellipse cx="50" cy="25" rx="10" ry="7" fill="#f0f0f0"/>
+            <!-- Head -->
+            <ellipse cx="62" cy="19" rx="6" ry="5" fill="#f0f0f0"/>
+            <!-- Legs -->
+            <rect x="42" y="30" width="3" height="10" rx="1.5" fill="#f0f0f0"/>
+            <rect x="48" y="30" width="3" height="12" rx="1.5" fill="#f0f0f0"/>
+            <rect x="54" y="30" width="3" height="10" rx="1.5" fill="#f0f0f0"/>
+            <rect x="60" y="30" width="3" height="12" rx="1.5" fill="#f0f0f0"/>
+            <!-- Antlers -->
+            <line x1="60" y1="14" x2="56" y2="6" stroke="#f0f0f0" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="60" y1="14" x2="64" y2="7" stroke="#f0f0f0" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="56" y1="6" x2="52" y2="3" stroke="#f0f0f0" stroke-width="2" stroke-linecap="round"/>
+            <line x1="64" y1="7" x2="68" y2="4" stroke="#f0f0f0" stroke-width="2" stroke-linecap="round"/>
+            <line x1="66" y1="14" x2="64" y2="7" stroke="#f0f0f0" stroke-width="2" stroke-linecap="round"/>
+            <line x1="66" y1="14" x2="70" y2="11" stroke="#f0f0f0" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <!-- Border -->
+          <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z" fill="none" stroke="#8B7011" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="shield-name">Jura</div>
+      <div class="shield-code">JU</div>
+      <div class="shield-prep">au Jura</div>
+      <div class="shield-colors">
+        <div class="sc-dot" style="background:#C8102E"></div>
+        <div class="sc-dot" style="background:#f0f0f0;border:1.5px solid #ddd"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Usage note -->
+  <div style="margin-top:2.5rem;background:#fff;border-radius:12px;padding:1.5rem 2rem;border:1px solid var(--gris-clair);display:flex;gap:1rem;align-items:flex-start">
+    <div style="font-size:1.25rem;flex-shrink:0;margin-top:.1rem">📐</div>
+    <div>
+      <div style="font-weight:700;font-size:.9rem;margin-bottom:.4rem">Règles d'utilisation des écussons</div>
+      <div style="font-size:.82rem;color:var(--gris);line-height:1.7">
+        Toujours utiliser les proportions 1:1.2 (largeur:hauteur). Ne jamais déformer, recolorer ou appliquer d'effets (ombre, glow, flou). Sur fond sombre, maintenir la bordure dorée. Sur fond clair, la bordure reste. Taille minimale : 40px de largeur.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOTTE ===== -->
+<hr class="divider">
+<section class="bsec-full" id="flotte">
+<div class="bsec-inner">
+  <div class="eyebrow">04 — Flotte véhicules</div>
+  <h2 class="sec-title">3 véhicules, une identité</h2>
+  <p class="sec-sub">Chaque véhicule a sa personnalité visuelle. À utiliser en cohérence avec le canton et le type de service illustré.</p>
+
+  <div class="fleet-grid">
+
+    <div class="fleet-card">
+      <div class="fleet-color-band" style="background:#16a34a"></div>
+      <div class="fleet-body">
+        <div class="fleet-id">V1 — Véhicule principal</div>
+        <div class="fleet-model">Renault Master<br><span style="font-size:.85rem;font-weight:400;color:var(--gris)">Caisse sèche · Blanc</span></div>
+        <p class="fleet-desc">Le véhicule le plus reconnaissable de la flotte. Bannière verte très visible. Idéal pour les scènes urbaines, EMS, et photos de service en action. Large paroi latérale = vitrine de marque parfaite.</p>
+        <div class="fleet-tags">
+          <span class="fleet-tag">Débarras appartement</span>
+          <span class="fleet-tag">Succession</span>
+          <span class="fleet-tag">EMS</span>
+          <span class="fleet-tag">Genève</span>
+          <span class="fleet-tag">Vaud</span>
+          <span class="fleet-tag">Neuchâtel</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="fleet-card">
+      <div class="fleet-color-band" style="background:#15803d"></div>
+      <div class="fleet-body">
+        <div class="fleet-id">V2 — Grand volume</div>
+        <div class="fleet-model">Iveco Daily<br><span style="font-size:.85rem;font-weight:400;color:var(--gris)">High-roof · Blanc</span></div>
+        <p class="fleet-desc">Volume maximal pour les grands débarras. Carrosserie blanche avec lettrages verts. Look professionnel et rassurant. Idéal pour les scènes devant EMS, vieilles villes, lacs.</p>
+        <div class="fleet-tags">
+          <span class="fleet-tag">Débarras maison</span>
+          <span class="fleet-tag">EMS haute capacité</span>
+          <span class="fleet-tag">Fribourg</span>
+          <span class="fleet-tag">Valais</span>
+          <span class="fleet-tag">Jura</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="fleet-card">
+      <div class="fleet-color-band" style="background:#1f2937"></div>
+      <div class="fleet-body">
+        <div class="fleet-id">V3 — Les negritos</div>
+        <div class="fleet-model">Iveco Daily<br><span style="font-size:.85rem;font-weight:400;color:var(--gris)">High-roof · Noir</span></div>
+        <p class="fleet-desc">Le véhicule le plus distinctif. Carrosserie noire avec texte vert électrique. Photographié dans des scènes dramatiques (forêt, orage, coucher de soleil). Évoque force, discrétion et haut de gamme.</p>
+        <div class="fleet-tags">
+          <span class="fleet-tag">Diogène / insalubre</span>
+          <span class="fleet-tag">Nettoyage extrême</span>
+          <span class="fleet-tag">Visuels d'ambiance</span>
+          <span class="fleet-tag">Pages dark</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ===== VOIX DE MARQUE ===== -->
+<hr class="divider">
+<section class="bsec" id="voix">
+  <div class="eyebrow">05 — Identité verbale</div>
+  <h2 class="sec-title">Voix de marque</h2>
+  <p class="sec-sub">Val-Débarras parle avec autorité et bienveillance. Direct sans être froid, professionnel sans être distant.</p>
+
+  <!-- Trois piliers -->
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-word">Rassurant</div>
+      <div class="pillar-def">Le client traverse souvent une situation difficile. Notre ton apporte de la sérénité, pas du stress. On prend en charge, on rassure, on accompagne.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-word">Efficace</div>
+      <div class="pillar-def">Pas de promesses vagues. Des phrases courtes, des verbes d'action, des délais concrets. "Nous intervenons dans 48h" plutôt que "nous pouvons peut-être…"</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-word">Local</div>
+      <div class="pillar-def">Nous connaissons Genève, Sion, Fribourg. Nous nommons les villes, les quartiers. Suisse romand de cœur — jamais générique, toujours ancré dans le territoire.</div>
+    </div>
+  </div>
+
+  <!-- Phrases clés -->
+  <div class="phrases">
+    <div class="phrase">
+      <div class="phrase-text">Vous ne faites rien. Nous faisons tout.</div>
+      <div class="phrase-ctx">Accroche principale — hero / ads</div>
+    </div>
+    <div class="phrase">
+      <div class="phrase-text">Discret, rapide, professionnel — dans toute la Suisse romande.</div>
+      <div class="phrase-ctx">Tagline secondaire — footer / bannières</div>
+    </div>
+    <div class="phrase">
+      <div class="phrase-text">Un débarras difficile ? On s'en charge avec respect et efficacité.</div>
+      <div class="phrase-ctx">Services sensibles (succession, EMS, Diogène)</div>
+    </div>
+    <div class="phrase">
+      <div class="phrase-text">Votre logement libéré en 24–48h. Devis gratuit, sans engagement.</div>
+      <div class="phrase-ctx">CTA principal — formulaires / landing pages</div>
+    </div>
+    <div class="phrase">
+      <div class="phrase-text">Ça débarrasse !</div>
+      <div class="phrase-ctx">Signature publicitaire — ton léger pour les campagnes awareness</div>
+    </div>
+  </div>
+
+  <!-- Do / Don't -->
+  <div class="voice-cols">
+    <div class="voice-card do">
+      <div class="voice-h do">✓ &nbsp;On dit</div>
+      <div class="voice-item"><span class="vi-icon">✓</span> "Intervention sous 48h dans votre canton"</div>
+      <div class="voice-item"><span class="vi-icon">✓</span> "Nous traitons chaque débarras avec discrétion"</div>
+      <div class="voice-item"><span class="vi-icon">✓</span> "Débarras après décès — on s'occupe de tout"</div>
+      <div class="voice-item"><span class="vi-icon">✓</span> "Devis gratuit, sans engagement"</div>
+      <div class="voice-item"><span class="vi-icon">✓</span> "Plus de 500 interventions réalisées"</div>
+      <div class="voice-item"><span class="vi-icon">✓</span> "Présents à Genève, Fribourg, Sion…"</div>
+      <div class="voice-item"><span class="vi-icon">✓</span> "Équipe discrète et respectueuse"</div>
+    </div>
+    <div class="voice-card dont">
+      <div class="voice-h dont">✗ &nbsp;On évite</div>
+      <div class="voice-item"><span class="vi-icon">✗</span> "Pas cher" (connotation qualité bas de gamme)</div>
+      <div class="voice-item"><span class="vi-icon">✗</span> "Vider la maison de votre défunt" (manque de tact)</div>
+      <div class="voice-item"><span class="vi-icon">✗</span> "Déchets, ordures, bazar" (termes dévalorisants)</div>
+      <div class="voice-item"><span class="vi-icon">✗</span> "On peut essayer de…" (conditionnel hésitant)</div>
+      <div class="voice-item"><span class="vi-icon">✗</span> "Normalement…" (incertitude)</div>
+      <div class="voice-item"><span class="vi-icon">✗</span> "Super, génial, top" (familier excessif)</div>
+      <div class="voice-item"><span class="vi-icon">✗</span> Paragraphes de plus de 4 lignes (trop dense)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATALOGUE IMAGES ===== -->
+<hr class="divider">
+<section class="bsec-full" id="catalogue">
+<div class="bsec-inner">
+  <div class="eyebrow">06 — Banque d'images</div>
+  <h2 class="sec-title">Catalogue visuels par canton</h2>
+  <p class="sec-sub">31 visuels générés, répartis sur les 6 cantons. Chaque image est nommée par UUID — références ci-dessous pour l'intégration WordPress.</p>
+
+  <!-- GENÈVE -->
+  <div class="canton-block">
+    <div class="canton-header">
+      <svg class="shield-mini" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <defs><clipPath id="sgm"><path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z"/></clipPath></defs>
+        <g clip-path="url(#sgm)"><rect x="0" y="0" width="50" height="120" fill="#1a1a1a"/><rect x="50" y="0" width="50" height="120" fill="#C8102E"/><rect x="48.5" y="0" width="3" height="120" fill="#C9A84C"/></g>
+        <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z" fill="none" stroke="#8B7011" stroke-width="3"/>
+      </svg>
+      <div>
+        <div class="canton-title">Genève</div>
+        <span class="canton-abbr">GE</span>
+      </div>
+      <span style="font-size:.8rem;color:var(--gris);margin-left:.5rem">· à Genève · 4 visuels disponibles</span>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-item">
+        <img class="cat-img" src="/images/ge-hero.jpg" alt="Genève hero — Jet d'Eau" loading="lazy">
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Rive du lac, Jet d'Eau — ciel clair ⭐ BEST</div>
+          <div class="cat-use">→ Hero Genève (toutes pages)</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🚚</div>
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Quai Haussmann, Jet d'Eau — coucher de soleil</div>
+          <div class="cat-use">→ Version sunset / ads display</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">📦</div>
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Déchargement devant immeuble haussmannien</div>
+          <div class="cat-use">→ Page débarras appartement GE</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🌅</div>
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Rue haussmannienne, lac en fond, sunset</div>
+          <div class="cat-use">→ Bannière Google Ads GE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VAUD -->
+  <div class="canton-block">
+    <div class="canton-header">
+      <svg class="shield-mini" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <defs><clipPath id="svm"><path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z"/></clipPath></defs>
+        <g clip-path="url(#svm)"><rect x="0" y="0" width="100" height="120" fill="#f0f0f0"/><polygon points="0,0 100,0 0,120" fill="#009B4D"/></g>
+        <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z" fill="none" stroke="#8B7011" stroke-width="3"/>
+      </svg>
+      <div>
+        <div class="canton-title">Vaud</div>
+        <span class="canton-abbr">VD</span>
+      </div>
+      <span style="font-size:.8rem;color:var(--gris);margin-left:.5rem">· dans le Vaud · 7 visuels disponibles</span>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-item">
+        <img class="cat-img" src="/images/vd-hero.jpg" alt="Vaud hero — Lavaux vineyards" loading="lazy">
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Vignoble Lavaux, lac Léman — journée ⭐ BEST</div>
+          <div class="cat-use">→ Hero Vaud (toutes pages)</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🏥</div>
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">EMS Les Jardins du Léman, lac en fond</div>
+          <div class="cat-use">→ Pages EMS Vaud + succession</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🏥</div>
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">EMS Les Terrasses du Lac — moderne</div>
+          <div class="cat-use">→ Pages EMS Vaud (variante)</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">⛈️</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Noir</div>
+          <div class="cat-desc">Bord du lac VD, nuages dramatiques</div>
+          <div class="cat-use">→ Pages Diogène / nettoyage extrême VD</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🍂</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Noir</div>
+          <div class="cat-desc">Lavaux automne, vignes dorées + lac</div>
+          <div class="cat-use">→ Bannière Google Ads Vaud automne</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🏘️</div>
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Immeuble moderne résidentiel</div>
+          <div class="cat-use">→ Débarras appartement VD</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🏙️</div>
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Vue aérienne vieille ville + lac</div>
+          <div class="cat-use">→ Header général Suisse romande</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALAIS -->
+  <div class="canton-block">
+    <div class="canton-header">
+      <svg class="shield-mini" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="svsm"><path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z"/></clipPath>
+          <polygon id="starm" points="0,-5.5 1.4,-1.9 5.2,-1.7 2.2,0.7 3.2,4.5 0,2.3 -3.2,4.5 -2.2,0.7 -5.2,-1.7 -1.4,-1.9"/>
+        </defs>
+        <g clip-path="url(#svsm)">
+          <rect x="0" y="0" width="50" height="120" fill="#f0f0f0"/>
+          <rect x="50" y="0" width="50" height="120" fill="#C8102E"/>
+          <use href="#starm" transform="translate(25,30)" fill="#C8102E"/>
+          <use href="#starm" transform="translate(75,30)" fill="#f0f0f0"/>
+        </g>
+        <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z" fill="none" stroke="#8B7011" stroke-width="3"/>
+      </svg>
+      <div>
+        <div class="canton-title">Valais</div>
+        <span class="canton-abbr">VS</span>
+      </div>
+      <span style="font-size:.8rem;color:var(--gris);margin-left:.5rem">· en Valais · 3 visuels + 1 photo réelle</span>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-item">
+        <img class="cat-img" src="/images/vs-hero.jpg" alt="Valais hero — Sion et les Alpes" loading="lazy">
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Au-dessus de Sion — châteaux + Alpes ⭐ PHOTO RÉELLE</div>
+          <div class="cat-use">→ Hero Valais (siège social)</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🏥</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Blanc</div>
+          <div class="cat-desc">EMS résidence, montagnes Valais</div>
+          <div class="cat-use">→ Pages EMS en Valais</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🏴</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Noir</div>
+          <div class="cat-desc">Village Valais, drapeau suisse, montagnes</div>
+          <div class="cat-use">→ Nettoyage extrême / Diogène VS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRIBOURG -->
+  <div class="canton-block">
+    <div class="canton-header">
+      <svg class="shield-mini" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <defs><clipPath id="sfrm"><path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z"/></clipPath></defs>
+        <g clip-path="url(#sfrm)"><rect x="0" y="0" width="50" height="120" fill="#111"/><rect x="50" y="0" width="50" height="120" fill="#f0f0f0"/></g>
+        <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z" fill="none" stroke="#8B7011" stroke-width="3"/>
+      </svg>
+      <div>
+        <div class="canton-title">Fribourg</div>
+        <span class="canton-abbr">FR</span>
+      </div>
+      <span style="font-size:.8rem;color:var(--gris);margin-left:.5rem">· à Fribourg · 9 visuels (le plus couvert !)</span>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-item">
+        <div class="cat-img-ph">⛪</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Blanc</div>
+          <div class="cat-desc">Cathédrale + pont de pierre cobblestone</div>
+          <div class="cat-use">→ Hero Fribourg ⭐ BEST blanc</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <img class="cat-img" src="/images/fr-hero.jpg" alt="Fribourg hero — Place principale, orage" loading="lazy">
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Blanc</div>
+          <div class="cat-desc">Place Hôtel-de-Ville, ciel d'orage ⭐ BEST</div>
+          <div class="cat-use">→ Hero Fribourg dramatique</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🌙</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Noir</div>
+          <div class="cat-desc">Pont de pierre, cathédrale, nuit tombante</div>
+          <div class="cat-use">→ Diogène / nettoyage FR ⭐ BEST noir</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🏘️</div>
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Vieille ville, volets colorés, cathédrale</div>
+          <div class="cat-use">→ Débarras appartement FR</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🏥</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Blanc</div>
+          <div class="cat-desc">EMS Saint-Joseph, cathédrale visible</div>
+          <div class="cat-use">→ Pages EMS à Fribourg</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">⛪</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Blanc</div>
+          <div class="cat-desc">Ruelle cobblestone, cathédrale fond</div>
+          <div class="cat-use">→ EMS Saint-Joseph variante</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🌲</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Noir</div>
+          <div class="cat-desc">Chalet alpin, volets verts, forêt</div>
+          <div class="cat-use">→ Débarras maison FR rural</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🌧️</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Noir</div>
+          <div class="cat-desc">Chalet montagne, temps sombre, forêt</div>
+          <div class="cat-use">→ Variante dramatique FR/JU</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🌉</div>
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Pont médiéval, tours, vieille ville</div>
+          <div class="cat-use">→ Débarras maison FR classique</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEUCHÂTEL -->
+  <div class="canton-block">
+    <div class="canton-header">
+      <svg class="shield-mini" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <defs><clipPath id="snem"><path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z"/></clipPath></defs>
+        <g clip-path="url(#snem)">
+          <rect x="0" y="0" width="100" height="120" fill="#E8C84A"/>
+          <g transform="rotate(-38 50 60)"><rect x="-20" y="8" width="140" height="18" fill="#C8102E"/><rect x="-20" y="42" width="140" height="18" fill="#C8102E"/><rect x="-20" y="76" width="140" height="18" fill="#C8102E"/></g>
+        </g>
+        <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z" fill="none" stroke="#8B7011" stroke-width="3"/>
+      </svg>
+      <div>
+        <div class="canton-title">Neuchâtel</div>
+        <span class="canton-abbr">NE</span>
+      </div>
+      <span style="font-size:.8rem;color:var(--gris);margin-left:.5rem">· à Neuchâtel · 5 visuels disponibles</span>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-item">
+        <img class="cat-img" src="/images/ne-hero.jpg" alt="Neuchâtel hero — lac au coucher de soleil" loading="lazy">
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Lac Neuchâtel, coucher de soleil ⭐ BEST</div>
+          <div class="cat-use">→ Hero Neuchâtel (toutes pages)</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">⛪</div>
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Bord du lac, collégiale en fond</div>
+          <div class="cat-use">→ Pages générales NE</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🏘️</div>
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Carte postale classique, lac + ville</div>
+          <div class="cat-use">→ Bannières Google Ads NE</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🚌</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Blanc</div>
+          <div class="cat-desc">Rue résidentielle, lac visible fond</div>
+          <div class="cat-use">→ Débarras appartement NE</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🏘️</div>
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Bâtiment style Neuchâtelois, ville</div>
+          <div class="cat-use">→ Succession / EMS NE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JURA -->
+  <div class="canton-block">
+    <div class="canton-header">
+      <svg class="shield-mini" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <defs><clipPath id="sjum"><path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z"/></clipPath></defs>
+        <g clip-path="url(#sjum)"><rect x="0" y="0" width="100" height="120" fill="#C8102E"/><rect x="0" y="44" width="100" height="32" fill="#f0f0f0"/></g>
+        <path d="M 3,0 L 97,0 Q 100,0 100,8 L 100,80 Q 100,108 50,120 Q 0,108 0,80 L 0,8 Q 0,0 3,0 Z" fill="none" stroke="#8B7011" stroke-width="3"/>
+      </svg>
+      <div>
+        <div class="canton-title">Jura</div>
+        <span class="canton-abbr">JU</span>
+      </div>
+      <span style="font-size:.8rem;color:var(--gris);margin-left:.5rem">· au Jura · 3 visuels disponibles</span>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-item">
+        <img class="cat-img" src="/images/ju-hero.jpg" alt="Jura hero — prés alpins, ferme jurassienne" loading="lazy">
+        <div class="cat-info">
+          <div class="cat-veh">Renault Master · Blanc</div>
+          <div class="cat-desc">Route rurale, prés alpins jurassiens ⭐ BEST</div>
+          <div class="cat-use">→ Hero Jura (toutes pages)</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🏥</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Blanc</div>
+          <div class="cat-desc">EMS La Résidence du Noirmont</div>
+          <div class="cat-use">→ Pages EMS au Jura</div>
+        </div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-img-ph">🌲</div>
+        <div class="cat-info">
+          <div class="cat-veh">Iveco Daily · Noir</div>
+          <div class="cat-desc">Route forêt sombre, rayons de lumière dramatiques</div>
+          <div class="cat-use">→ Diogène / nettoyage extrême JU ⭐ wow</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ===== COMPOSANTS ===== -->
+<hr class="divider">
+<section class="bsec" id="composants">
+  <div class="eyebrow">07 — Librairie UI</div>
+  <h2 class="sec-title">Composants réutilisables</h2>
+  <p class="sec-sub">Éléments d'interface standards pour les pages WordPress.</p>
+
+  <div class="comp-section">
+    <div class="comp-label">Boutons</div>
+    <div class="comp-row">
+      <span class="btn btn-p btn-lg">Demander un devis gratuit</span>
+      <span class="btn btn-p">Demander un devis</span>
+      <span class="btn btn-p btn-sm">Devis</span>
+    </div>
+    <div class="comp-row">
+      <span class="btn btn-s">Voir nos services</span>
+      <span class="btn btn-d">Appelez le 079 580 58 57</span>
+    </div>
+    <div style="background:var(--vert-nuit);padding:1.5rem;border-radius:10px;margin-bottom:1.5rem">
+      <div class="comp-row">
+        <span class="btn btn-p">Demander un devis</span>
+        <span class="btn btn-g">En savoir plus</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="comp-section">
+    <div class="comp-label">Badges &amp; étiquettes</div>
+    <div class="comp-row">
+      <span class="badge badge-green">✓ Disponible en Valais</span>
+      <span class="badge badge-green">+10 ans d'expérience</span>
+      <span class="badge badge-new">NOUVEAU</span>
+      <span class="badge badge-fix">CORRIGÉ</span>
+      <span class="badge badge-dark">Suisse romande</span>
+    </div>
+  </div>
+
+  <div class="comp-section">
+    <div class="comp-label">Carte service (dark)</div>
+    <div class="comp-row">
+      <div class="service-card-demo">
+        <div class="scd-num">01</div>
+        <div class="scd-icon">🏠</div>
+        <div class="scd-title">Débarras appartement</div>
+        <div class="scd-text">Vidage complet, nettoyage, évacuation des encombrants. On s'occupe de tout.</div>
+      </div>
+      <div class="service-card-demo">
+        <div class="scd-num">04</div>
+        <div class="scd-icon">🏥</div>
+        <div class="scd-title">Débarras EMS</div>
+        <div class="scd-text">Accompagnement discret lors de l'entrée en établissement médico-social.</div>
+      </div>
+      <div class="service-card-demo">
+        <div class="scd-num">05</div>
+        <div class="scd-icon">🧹</div>
+        <div class="scd-title">Débarras Diogène</div>
+        <div class="scd-text">Logements insalubres, syndrome de Diogène. Intervention discrète et professionnelle.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer class="bfooter">
+  <p><strong>Val-Débarras Sàrl</strong> — Charte graphique interne v1.0 — Mai 2026</p>
+  <p style="margin-top:.4rem">Rue de Mazerette 9, 1950 Sion · <a href="tel:0795805857">079 580 58 57</a> · info@val-debarras.ch</p>
+  <p style="margin-top:.4rem">Prototype: <a href="/index.html">← Retour au prototype</a></p>
+</footer>
+
+</body>
+</html>

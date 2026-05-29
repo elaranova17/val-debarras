@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Débarras EMS Genève | Appartement protégé | Val-Débarras</title>
+<meta name="description" content="Débarras EMS et appartement protégé dans le canton de Genève. Intervention discrète et rapide à Genève, Carouge, Lancy. Devis gratuit.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vert:        #2e7d5c;
+  --vert-fonce:  #1c5440;
+  --vert-dark:   #0e2e1e;
+  --vert-card:   #163d28;
+  --vert-clair:  #e4f2ea;
+  --gris-fonce:  #1f2937;
+  --gris:        #6b7280;
+  --gris-bg:     #f3f4f6;
+  --blanc:       #ffffff;
+  --font:        'Inter', -apple-system, 'Helvetica Neue', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font);color:var(--gris-fonce);background:var(--blanc);line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+img{max-width:100%;display:block;}
+/* ── PROTO BAR ── */
+.proto{background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:center;gap:16px;padding:10px 20px;font-size:12px;position:sticky;top:0;z-index:1000;flex-wrap:wrap;text-align:center;}
+.proto-tag{background:#22c55e;color:#000;padding:2px 10px;border-radius:20px;font-weight:900;font-size:11px;}
+/* ── HEADER ── */
+.header{background:var(--blanc);border-bottom:1px solid #e5e7eb;position:sticky;top:41px;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.07);}
+.header-inner{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px;height:72px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;margin-right:8px;}
+.logo-img{width:44px;height:44px;object-fit:contain;border-radius:6px;background:white;}
+.logo-text{line-height:1.2;}
+.logo-name{font-size:20px;font-weight:800;color:var(--gris-fonce);}
+.logo-sub{font-size:11.5px;color:var(--gris);font-weight:500;}
+.nav{display:flex;align-items:center;gap:2px;flex:1;flex-wrap:wrap;}
+.nav-item{position:relative;}
+.nav-btn{background:none;border:none;font-family:var(--font);font-size:13px;font-weight:600;color:var(--gris-fonce);cursor:pointer;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:4px;transition:all .2s;white-space:nowrap;}
+.nav-btn:hover,.nav-btn.active{background:var(--gris-bg);color:var(--vert-fonce);}
+.nav-btn.active{color:var(--vert);}
+.chev{font-size:9px;color:var(--gris);transition:transform .2s;}
+.nav-item:hover .chev{transform:rotate(180deg);}
+.dd{position:absolute;top:calc(100% + 6px);left:0;background:var(--blanc);border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,.13);padding:8px;min-width:210px;opacity:0;visibility:hidden;transition:all .2s;z-index:300;transform:translateY(6px);}
+.nav-item:hover .dd{opacity:1;visibility:visible;transform:translateY(0);}
+.dd-head{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gris);padding:5px 10px 8px;}
+.dd a{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;font-size:13.5px;font-weight:500;transition:all .15s;}
+.dd a:hover{background:var(--gris-bg);color:var(--vert-fonce);padding-left:14px;}
+.ec{width:16px;height:20px;border-radius:2px 2px 5px 5px;display:inline-block;flex-shrink:0;}
+.ec-ge{background:linear-gradient(to bottom,#FFD700 50%,#111 50%);}
+.ec-vd{background:linear-gradient(135deg,#009F4D 50%,#fff 50%);}
+.ec-vs{background:linear-gradient(to right,#C8102E 50%,#fff 50%);}
+.ec-fr{background:linear-gradient(to bottom,#000 50%,#fff 50%);}
+.ec-ne{background:repeating-linear-gradient(to bottom,#009F4D 0,#009F4D 33%,#fff 33%,#fff 66%,#009F4D 66%);}
+.ec-ju{background:linear-gradient(to right,#D52B1E 50%,#fff 50%);}
+.header-cta{flex-shrink:0;margin-left:auto;background:var(--vert);color:white;padding:10px 20px;border-radius:24px;font-weight:800;font-size:14px;display:flex;align-items:center;gap:7px;transition:all .2s;box-shadow:0 4px 12px rgba(22,163,74,.3);}
+.header-cta:hover{background:var(--vert-fonce);transform:translateY(-1px);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--gris-fonce);border-radius:2px;transition:all .3s;}
+/* ── BREADCRUMB ── */
+.breadcrumb{background:var(--gris-bg);padding:12px 0;border-bottom:1px solid #e5e7eb;}
+.breadcrumb-inner{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gris);flex-wrap:wrap;}
+.breadcrumb-inner a{color:var(--vert);font-weight:600;}
+.breadcrumb-inner a:hover{text-decoration:underline;}
+.canton-shield{width:18px;height:22px;flex-shrink:0;}
+.canton-shield-img{width:22px;height:28px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 5px rgba(0,0,0,.20));border-radius:2px;}
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--vert) 0%,var(--vert-fonce) 55%,var(--vert-dark) 100%);min-height:480px;display:flex;align-items:center;position:relative;overflow:hidden;color:white;}
+.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.hero-inner{max-width:1400px;margin:0 auto;padding:72px 24px;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.hero-canton{display:flex;align-items:center;gap:10px;margin-bottom:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:6px 14px;width:fit-content;}
+.hero-canton .canton-shield-lp{width:22px;height:27px;}
+.hero-canton span{font-size:13px;font-weight:700;color:rgba(255,255,255,.9);}
+.hero h1{font-size:44px;font-weight:900;line-height:1.12;margin-bottom:10px;letter-spacing:-1px;}
+.hero-sub-title{font-size:16px;color:rgba(255,255,255,.65);margin-bottom:14px;font-weight:500;}
+.hero-text{font-size:18px;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:28px;}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;}
+.hbadge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:6px 12px;font-size:13px;font-weight:600;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:24px;font-weight:800;font-size:15px;cursor:pointer;border:2px solid transparent;transition:all .22s;font-family:var(--font);}
+.btn-white{background:white;color:var(--vert-fonce);}
+.btn-white:hover{background:var(--vert-clair);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.15);}
+.btn-outline{background:transparent;color:white;border-color:rgba(255,255,255,.5);}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:white;}
+.hero-img{border-radius:16px;height:320px;overflow:hidden;box-shadow:0 24px 48px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08);position:relative;}
+.hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-img-caption{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);font-size:11px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:6px;}
+/* ── TRUST BAR ── */
+.trust{background:var(--vert-dark);}
+.trust-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
+.tstat{padding:24px;text-align:center;border-right:1px solid rgba(255,255,255,.08);}
+.tstat:last-child{border-right:none;}
+.tstat-n{font-size:34px;font-weight:900;color:var(--vert-clair);line-height:1;}
+.tstat-l{font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;}
+/* ── CONTENT ── */
+.lp-content{max-width:1400px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:start;}
+.section-kicker{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--vert);margin-bottom:10px;}
+.section-h2{font-size:32px;font-weight:900;color:var(--gris-fonce);margin-bottom:16px;letter-spacing:-.5px;}
+.section-text{font-size:16.5px;color:#374151;line-height:1.75;margin-bottom:36px;}
+/* Advantages */
+.av-list{margin-bottom:40px;}
+.av-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;font-weight:500;margin-bottom:12px;}
+.av-check{color:var(--vert);font-weight:900;font-size:16px;flex-shrink:0;margin-top:1px;}
+/* Steps */
+.steps-section{margin-bottom:48px;}
+.steps-title{font-size:18px;font-weight:800;color:var(--gris-fonce);margin-bottom:24px;}
+.step{display:flex;gap:20px;margin-bottom:24px;align-items:flex-start;}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--vert);color:white;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-body strong{font-size:15px;display:block;margin-bottom:4px;color:var(--gris-fonce);}
+.step-body p{font-size:14px;color:var(--gris);}
+/* Encadrés */
+.encadres-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px;}
+.enc-card{background:var(--gris-bg);border-radius:12px;padding:20px;border-left:3px solid var(--vert);}
+.enc-title{font-size:14px;font-weight:800;color:var(--gris-fonce);margin-bottom:6px;}
+.enc-card p{font-size:13px;color:var(--gris);line-height:1.5;}
+/* Sidebar */
+.lp-sidebar{}
+.sidebar-card{background:var(--gris-bg);border-radius:16px;padding:28px;margin-bottom:24px;}
+.sidebar-card h3{font-size:16px;font-weight:800;color:var(--gris-fonce);margin-bottom:16px;}
+.sidebar-phone{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;background:var(--vert);border-radius:12px;padding:24px;color:white;}
+.sidebar-phone .phone-num{font-size:22px;font-weight:900;}
+.sidebar-phone .phone-sub{font-size:12px;opacity:.8;}
+.sidebar-btn{display:block;text-align:center;background:white;border:2px solid var(--vert);color:var(--vert);padding:12px;border-radius:10px;font-weight:800;font-size:14px;margin-top:12px;transition:all .2s;}
+.sidebar-btn:hover{background:var(--vert-clair);}
+/* Villes */
+.villes-section{background:#f8fafc;padding:48px 0;border-top:1px solid #eff0f2;}
+.villes-inner{max-width:1400px;margin:0 auto;padding:0 24px;}
+.villes-inner h3{font-size:20px;font-weight:800;color:var(--gris-fonce);margin-bottom:8px;}
+.villes-list{font-size:14px;color:var(--gris);margin-top:12px;line-height:2;}
+/* Media */
+.medias{background:white;padding:36px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;}
+.medias-inner{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:40px;flex-wrap:wrap;}
+.medias-text{font-size:15px;color:var(--gris);font-weight:500;}
+.ml{padding:8px 18px;border-radius:8px;font-size:13px;font-weight:800;display:flex;align-items:center;gap:6px;}
+.ml-rts{background:#e53e3e;color:white;}
+.ml-20{background:#1a56db;color:white;}
+/* FAQ */
+.faq-section{padding:64px 0;background:var(--gris-bg);}
+.faq-inner{max-width:860px;margin:0 auto;padding:0 24px;}
+.faq-section h2{font-size:28px;font-weight:900;color:var(--gris-fonce);margin-bottom:32px;text-align:center;}
+.faq-item{background:white;border-radius:12px;margin-bottom:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 22px;font-family:var(--font);font-size:15px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--gris-fonce);}
+.faq-arr{font-size:12px;color:var(--vert);transition:transform .2s;flex-shrink:0;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;padding:0 22px;font-size:14.5px;color:#374151;line-height:1.7;}
+.faq-a.open{max-height:300px;padding:0 22px 18px;}
+/* Professionals */
+.pro-section{max-width:860px;margin:0 auto 64px;padding:0 24px;}
+.pro-section>div{background:var(--vert-dark);color:white;border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:12px;}
+.pro-section h3{font-size:20px;font-weight:800;}
+.pro-section p{font-size:15px;color:rgba(255,255,255,.8);line-height:1.65;}
+.btn-pro{display:inline-block;background:white;color:var(--vert-dark);padding:11px 24px;border-radius:24px;font-weight:800;font-size:14px;margin-top:4px;width:fit-content;transition:all .2s;}
+.btn-pro:hover{background:var(--vert-clair);}
+/* Other services */
+.other-section{background:white;padding:64px 0;}
+.other-inner{max-width:1400px;margin:0 auto;padding:0 24px;}
+.other-inner h2{font-size:24px;font-weight:800;color:var(--gris-fonce);margin-bottom:24px;}
+.other-grid{display:flex;gap:14px;flex-wrap:wrap;}
+.other-card{display:flex;align-items:center;gap:10px;padding:14px 22px;border:2px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:700;color:var(--gris-fonce);transition:all .2s;background:white;}
+.other-card:hover{border-color:var(--vert);color:var(--vert-fonce);background:var(--vert-clair);transform:translateY(-2px);}
+/* Form */
+.form-section{background:var(--vert-dark);padding:72px 0;}
+.form-inner{max-width:1400px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start;}
+.form-info-label{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;display:block;}
+.form-info h2{font-size:34px;font-weight:900;color:white;line-height:1.15;margin-bottom:18px;letter-spacing:-.5px;}
+.form-info p{font-size:16px;color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:36px;}
+.form-contacts{display:flex;flex-direction:column;gap:14px;}
+.fc-row{display:flex;align-items:flex-start;gap:12px;}
+.fc-icon{width:40px;height:40px;border-radius:10px;flex-shrink:0;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:18px;}
+.fc-text{color:rgba(255,255,255,.8);font-size:14.5px;line-height:1.5;}
+.fc-text strong{color:white;display:block;font-size:15.5px;}
+.form-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:40px 36px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.form-full{grid-template-columns:1fr;}
+.fl label{display:block;font-size:12px;font-weight:700;color:rgba(255,255,255,.55);margin-bottom:6px;letter-spacing:.3px;}
+.fl input,.fl select,.fl textarea{width:100%;padding:13px 15px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);border-radius:10px;font-size:14.5px;color:white;font-family:var(--font);transition:border-color .2s;}
+.fl input::placeholder,.fl textarea::placeholder{color:rgba(255,255,255,.3);}
+.fl select{color:rgba(255,255,255,.75);}
+.fl select option{background:var(--vert-dark);color:white;}
+.fl input:focus,.fl select:focus,.fl textarea:focus{outline:none;border-color:rgba(255,255,255,.45);}
+.fl textarea{resize:vertical;min-height:100px;}
+.form-btn{width:100%;background:white;color:var(--vert-dark);border:none;padding:16px;border-radius:12px;font-size:16px;font-weight:900;cursor:pointer;transition:all .22s;margin-top:6px;font-family:var(--font);}
+.form-btn:hover{background:var(--vert-clair);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2);}
+.form-note{text-align:center;font-size:11.5px;color:rgba(255,255,255,.35);margin-top:10px;}
+/* Footer */
+
+/* whatsapp removed */
+/* Mobile */
+.mobile-drawer{display:none;position:fixed;inset:0;background:var(--blanc);z-index:500;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);}
+.mobile-drawer.open{transform:translateX(0);}
+.drawer-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #f3f4f6;}
+.drawer-close{background:none;border:none;font-size:22px;cursor:pointer;}
+.drawer-body{padding:16px 20px;}
+.drawer-phone{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--vert);color:white;padding:15px;border-radius:12px;font-weight:800;font-size:16px;margin-top:20px;}
+@media(max-width:1024px){
+  .nav{display:none;} .hamburger{display:flex;}
+  .form-inner{grid-template-columns:1fr;gap:40px;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-img{display:none;}
+  .lp-content{grid-template-columns:1fr;}
+  .trust-inner{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:640px){
+  .hero h1{font-size:30px;}
+  .encadres-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+}
+
+/* ============================================================ */
+/* HEADER v3 — logo only + hamburger always visible            */
+/* ============================================================ */
+
+/* === NAV DESKTOP v4 — visible sur desktop, caché sur mobile === */
+.hamburger{display:flex !important;}
+.nav{display:none !important;}
+@media(min-width:1025px){
+  .hamburger{display:none !important;}
+  .nav{display:flex !important;flex-wrap:wrap;gap:2px;flex:1;}
+  .nav-btn{font-size:12px;padding:7px 10px;white-space:nowrap;}
+  .mobile-drawer.open{left:auto;width:420px;box-shadow:-8px 0 32px rgba(0,0,0,.18);}
+}
+/* Services grid — cartes séparées */
+.services-grid{gap:16px !important;border-radius:0 !important;overflow:visible !important;box-shadow:none !important;}
+.sc{border-radius:12px !important;}
+/* Drawer toujours fonctionnel */
+.mobile-drawer{
+  display:block;position:fixed;top:0;right:0;bottom:0;left:0;
+  background:var(--blanc);z-index:500;overflow-y:auto;
+  transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);
+  visibility:hidden;
+}
+.mobile-drawer.open{transform:translateX(0);visibility:visible;}
+/* Footer v2 */
+
+/* Shields drawer */
+.drawer-cantons a{display:flex;align-items:center;gap:10px;padding:9px 8px;font-size:14px;border-radius:8px;}
+.drawer-cantons a svg{flex-shrink:0;}
+/* Logo — pas de texte sous l'image */
+.logo-text-hidden{display:none;}
+/* Body readability 50+ */
+body{font-size:16px;line-height:1.7;}
+/* Media logos larger */
+.ml{font-size:15px;font-weight:900;padding:10px 22px;letter-spacing:.5px;}
+/* Secteur services sombres — lisibilité accrue */
+.sc-desc{font-size:14px !important;color:rgba(255,255,255,.8) !important;}
+.sc-title{font-size:20px !important;}
+
+
+/* ── PATCH v3 — correctifs réunion client ── */
+
+/* 1. Logo: afficher uniquement le cube, masquer le texte du bas */
+.logo-img{width:58px !important;height:58px !important;object-fit:contain !important;border-radius:8px !important;background:white !important;}
+
+/* 2. Nav desktop: noms complets des services */
+/* (géré via HTML — voir ci-dessous) */
+
+/* 3. Blasons: bordure dorée plus épaisse et visible */
+/* Handled via SVG stroke-width in HTML */
+
+/* 4. Nav dropdown: un peu plus large pour les vrais blasons */
+.dd{min-width:200px;}
+.dd a{font-size:14px;gap:10px;}
+
+/* 5. Canton pills: fond blanc épuré, blason bien visible */
+.cpill{gap:12px;padding:12px 20px;}
+
+/* 6. Drawer shield size */
+.drawer-cantons a svg, .sidebar-card svg{flex-shrink:0;}
+
+/* 7. Lisibilité 50+: labels de formulaire plus grands */
+.fl label{font-size:15px !important;font-weight:700 !important;margin-bottom:6px !important;}
+.fl input,.fl select,.fl textarea{font-size:16px !important;min-height:48px !important;line-height:1.5 !important;}
+
+/* 8. Form section: info gauche mieux structurée */
+.form-info h2{font-size:30px;line-height:1.2;}
+.fc-row{margin-bottom:14px;}
+.fc-text strong{display:block;font-size:16px;}
+.fc-text{font-size:14px;line-height:1.4;}
+
+/* 9. Services cards: titres officiels bien lisibles */
+.sc-title{font-size:19px !important;font-weight:800 !important;}
+.sc-desc{font-size:14px !important;line-height:1.6 !important;}
+
+/* 10. Footer logo: même crop cube */
+.footer-logo-mark img{
+  width:40px !important;
+  height:23px !important;
+  object-fit:cover !important;
+  object-position:left top !important;
+}
+
+
+/* ── PATCH form — formulaire gauche, charcoal, 3e âge ── */
+.form-section{background:#1a1a1a !important;}
+.form-card{order:-1 !important;}
+.form-inner{grid-template-columns:1.1fr 1fr !important;}
+.fl label{font-size:15px !important;font-weight:700 !important;color:rgba(255,255,255,.88) !important;margin-bottom:10px !important;letter-spacing:0 !important;}
+.fl input,.fl select,.fl textarea{font-size:17px !important;min-height:54px !important;padding:15px 18px !important;line-height:1.5 !important;color:white !important;background:rgba(255,255,255,.10) !important;border:1.5px solid rgba(255,255,255,.22) !important;}
+.fl textarea{min-height:110px !important;}
+.form-card{background:rgba(255,255,255,.07) !important;border:1.5px solid rgba(255,255,255,.18) !important;}
+.form-btn{font-size:18px !important;padding:18px 32px !important;letter-spacing:.3px;}
+.form-info h2{font-size:34px !important;line-height:1.2 !important;}
+.form-info-label{font-size:11px !important;color:rgba(255,255,255,.5) !important;}
+.form-note{font-size:14px !important;color:rgba(255,255,255,.55) !important;margin-top:14px !important;}
+
+.fc-text{font-size:15.5px !important;}
+.fc-text strong{font-size:16.5px !important;}
+.fc-icon{width:44px !important;height:44px !important;font-size:20px !important;}
+
+
+/* ── PATCH shields SVG — official Wikipedia vectors ── */
+.canton-icon{object-fit:contain;flex-shrink:0;display:inline-block;filter:drop-shadow(0 1px 3px rgba(0,0,0,.18));}
+.cpill .canton-icon{width:32px;height:40px;}
+.dd a .canton-icon{width:22px;height:28px;}
+.sidebar-card a .canton-icon{width:26px;height:32px;}
+.canton-icon-breadcrumb{width:18px;height:22px;object-fit:contain;vertical-align:middle;margin-right:4px;}
+
+
+/* ── Back to top button ── */
+.back-to-top{
+  position:fixed;bottom:24px;right:24px;z-index:200;
+  width:48px;height:48px;border-radius:50%;
+  background:var(--vert);color:white;border:none;cursor:pointer;
+  font-size:20px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.22);
+  transition:all .3s;opacity:0;visibility:hidden;transform:translateY(8px);
+}
+.back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0);}
+.back-to-top:hover{background:var(--vert-fonce);transform:translateY(-2px);}
+
+
+/* ============================================================ */
+/* FOOTER v2 — mapa + contacto + badges                         */
+/* ============================================================ */
+.footer{background:#0f172a;color:#94a3b8;font-family:var(--font);padding:0;}
+.footer__map{position:relative;padding:48px 24px 32px;overflow:hidden;border-bottom:1px solid #1e293b;}
+.footer__map-svg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;opacity:0.07;pointer-events:none;z-index:0;}
+.footer__locations{position:relative;z-index:1;display:flex;justify-content:center;gap:36px;flex-wrap:wrap;max-width:700px;margin:0 auto;}
+.location-dot{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;transition:all .3s ease;}
+.location-dot:hover{transform:translateY(-4px);}
+.location-dot__point{width:12px;height:12px;background:var(--vert);border-radius:50%;position:relative;transition:all .3s ease;}
+.location-dot__point::before{content:'';position:absolute;inset:-6px;border:2px solid var(--vert);border-radius:50%;opacity:0;transition:all .3s ease;}
+.location-dot:hover .location-dot__point::before{opacity:.4;inset:-10px;}
+.location-dot--hq .location-dot__point{width:16px;height:16px;background:#22c55e;box-shadow:0 0 20px rgba(34,197,94,.4);}
+.location-dot__label{font-size:12px;font-weight:500;color:#64748b;transition:color .3s ease;}
+.location-dot:hover .location-dot__label{color:#dcfce7;}
+.footer__content{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;max-width:1200px;margin:0 auto;padding:48px 24px;position:relative;z-index:1;}
+.footer__brand{display:flex;flex-direction:column;gap:16px;}
+.footer__logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.footer__logo-img{width:40px;height:24px;object-fit:cover;object-position:left top;border-radius:4px;background:transparent;}
+.footer__logo-text{display:flex;flex-direction:column;}
+.footer__logo-brand{font-size:17px;font-weight:800;color:#fff;line-height:1.2;}
+.footer__logo-suffix{font-size:12px;color:#64748b;}
+.footer__desc{font-size:14px;line-height:1.75;color:#64748b;max-width:280px;}
+.footer__contact{display:flex;flex-direction:column;gap:18px;}
+.footer__title{font-size:11px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px;}
+.footer__phone{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;background:var(--vert);color:#fff;font-size:16px;font-weight:800;border-radius:8px;text-decoration:none;transition:all .25s ease;width:fit-content;}
+.footer__phone:hover{background:var(--vert-fonce);transform:translateY(-2px);box-shadow:0 8px 24px rgba(46,125,92,.35);}
+.footer__email{display:flex;align-items:center;gap:8px;color:#94a3b8;font-size:14px;text-decoration:none;transition:color .2s;}
+.footer__email:hover{color:#22c55e;}
+.footer__address{display:flex;flex-direction:column;gap:4px;font-size:14px;color:#64748b;line-height:1.6;}
+.footer__hours{display:flex;align-items:center;gap:8px;font-size:13px;color:#475569;}
+.footer__badges{display:flex;flex-direction:column;gap:14px;}
+.footer__badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(46,125,92,.1);border:1px solid rgba(46,125,92,.2);border-radius:100px;font-size:13px;font-weight:600;color:#4ade80;width:fit-content;text-decoration:none;transition:all .25s ease;}
+.footer__badge:hover{background:rgba(46,125,92,.2);transform:translateX(4px);}
+.footer__links{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
+.footer__link{font-size:13px;color:#64748b;text-decoration:none;transition:color .2s;}
+.footer__link:hover{color:#94a3b8;}
+.footer__bottom{border-top:1px solid #1e293b;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;font-size:12px;color:#475569;}
+.footer__bottom-links{display:flex;gap:20px;}
+.footer__bottom-link{color:#475569;text-decoration:none;transition:color .2s;}
+.footer__bottom-link:hover{color:#94a3b8;}
+@media(max-width:768px){
+  .footer__content{grid-template-columns:1fr;gap:36px;text-align:center;}
+  .footer__brand,.footer__contact,.footer__badges{align-items:center;}
+  .footer__desc{max-width:100%;}
+  .footer__locations{gap:20px;}
+  .footer__bottom{flex-direction:column;gap:12px;text-align:center;}
+}
+
+
+/* ══════════════════════════════════════════════════
+   ACCESSIBILITÉ 3E ÂGE — tailles, contrastes, espaces
+   ══════════════════════════════════════════════════ */
+
+/* Inputs & selects — 56px, 18px */
+.fl input,.fl select,.fl textarea{
+  font-size:18px !important;min-height:56px !important;
+  padding:16px 18px !important;border-radius:12px !important;
+}
+.fl textarea{min-height:120px !important;}
+.fl label{font-size:16px !important;font-weight:700 !important;margin-bottom:10px !important;}
+.form-btn{font-size:20px !important;padding:20px 40px !important;min-height:60px !important;letter-spacing:.5px !important;width:100% !important;}
+
+/* Nav dropdown — 64px par row, icône 32px, texte 16px */
+.dd{min-width:260px !important;padding:10px !important;}
+.dd a{
+  min-height:64px !important;padding:12px 14px !important;
+  gap:14px !important;align-items:center !important;border-radius:10px !important;
+}
+.dd a:hover{padding-left:18px !important;}
+.dd .canton-icon{width:32px !important;height:40px !important;flex-shrink:0;}
+.menu-text{display:flex;flex-direction:column;gap:2px;}
+.menu-label{font-size:16px !important;font-weight:700;color:var(--gris-fonce);line-height:1.2;}
+.menu-desc{font-size:12px;color:var(--gris);font-weight:400;line-height:1.3;}
+
+/* Canton buttons — 80×60px minimum */
+.canton-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;padding:8px 0;}
+.canton-btn{
+  display:flex;align-items:center;gap:16px;
+  padding:16px 24px 16px 18px;
+  min-height:72px;min-width:180px;
+  background:white;border-radius:16px;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+  border:1.5px solid #e5e7eb;
+  transition:all .22s;
+  text-decoration:none;
+}
+.canton-btn:hover{
+  border-color:var(--vert);
+  background:var(--vert-clair);
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(46,125,92,.16);
+}
+.canton-btn__shield{width:40px;height:50px;object-fit:contain;flex-shrink:0;}
+.canton-btn__info{display:flex;flex-direction:column;gap:2px;flex:1;}
+.canton-btn__name{font-size:20px;font-weight:800;color:var(--gris-fonce);line-height:1.2;}
+.canton-btn__sub{font-size:12px;color:var(--gris);font-weight:500;}
+.canton-btn__arrow{font-size:20px;color:var(--vert);font-weight:700;margin-left:4px;transition:transform .2s;}
+.canton-btn:hover .canton-btn__arrow{transform:translateX(4px);}
+
+/* Général — espacement + lisibilité */
+.sc-title{font-size:20px !important;}
+.sc p,.bcard-excerpt{font-size:16px !important;line-height:1.7 !important;}
+.section-h2{font-size:32px !important;}
+.header-cta{font-size:16px !important;padding:12px 24px !important;min-height:52px !important;}
+
+
+.breadcrumb-inner .canton-icon{width:18px !important;height:22px !important;object-fit:contain !important;vertical-align:middle !important;}
+
+/* ══════════════════════════════════════════════════
+   PHOTO MASONRY — 3 images formulaire
+   ══════════════════════════════════════════════════ */
+.photo-masonry{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap:10px;
+  margin-top:28px;
+  height:280px;
+  border-radius:14px;
+  overflow:hidden;
+}
+.pm-cell{
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  border-radius:10px;
+}
+.pm-cell img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .5s cubic-bezier(.4,0,.2,1);
+  display:block;
+}
+.pm-cell:hover img{transform:scale(1.08);}
+.pm-overlay{
+  position:absolute;inset:0;
+  background:rgba(46,125,92,.85);
+  opacity:0;
+  transition:opacity .3s;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;color:#fff;gap:6px;
+}
+.pm-cell:hover .pm-overlay{opacity:1;}
+.pm-icon{font-size:22px;}
+.pm-label{font-weight:700;font-size:13px;letter-spacing:.3px;}
+.pm-cell--tall{grid-row:span 2;}
+
+
+/* ══════════════════════════════════════════════════
+   NAV FIX — centrar + logo + sin desc cantons
+   ══════════════════════════════════════════════════ */
+
+/* Centro el nav entre logo y CTA */
+.nav{justify-content:center !important;}
+
+/* Ocultar desc cantons (seguridad por si queda alguno) */
+.menu-desc{display:none !important;}
+
+/* Simplificar altura dd ahora sin subtítulos */
+.dd a{min-height:52px !important;padding:10px 14px !important;}
+
+/* Logo: mostrar texto */
+.logo-text{display:flex !important;flex-direction:column;}
+.logo-name{font-size:20px !important;font-weight:800 !important;color:var(--gris-fonce) !important;}
+.logo-sub{font-size:11.5px !important;color:var(--gris) !important;font-weight:500 !important;}
+
+</style>
+</head>
+<body>
+
+<div class="proto">
+  <span class="proto-tag">PROTOTYPE v2</span>
+  <span>Val-Débarras — Maquette de validation pour approbation avant intégration WordPress</span>
+  <span>· 🟡 <strong style="color:#fbbf24">NOUVEAU</strong> = changement vs site actuel ·</span>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo"><img src="/images/logo.jpg" alt="Val-Débarras" class="logo-img"></a>
+    <nav class="nav" id="desktopNav">
+    <div class="nav-item">
+      <button class="nav-btn">Débarras appartement <span class="chev">▾</span></button>
+      <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
+        <a href="/debarras-appartement/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/debarras-appartement/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/debarras-appartement/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/debarras-appartement/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/debarras-appartement/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/debarras-appartement/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-btn">Débarras maison <span class="chev">▾</span></button>
+      <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
+        <a href="/debarras-maison/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/debarras-maison/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/debarras-maison/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/debarras-maison/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/debarras-maison/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/debarras-maison/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-btn">Après décès/succession <span class="chev">▾</span></button>
+      <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
+        <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/debarras-apres-deces/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/debarras-apres-deces/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/debarras-apres-deces/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/debarras-apres-deces/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-btn">Suite entrée EMS <span class="chev">▾</span></button>
+      <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
+        <a href="/debarras-ems/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/debarras-ems/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/debarras-ems/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/debarras-ems/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/debarras-ems/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/debarras-ems/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-btn">Insalubre/Diogène <span class="chev">▾</span></button>
+      <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
+        <a href="/debarras-insalubre-diogene/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/debarras-insalubre-diogene/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/debarras-insalubre-diogene/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/debarras-insalubre-diogene/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/debarras-insalubre-diogene/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/debarras-insalubre-diogene/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-btn">Nettoyages extrême <span class="chev">▾</span></button>
+      <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
+        <a href="/nettoyage-extreme/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/nettoyage-extreme/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/nettoyage-extreme/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/nettoyage-extreme/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/nettoyage-extreme/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/nettoyage-extreme/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
+      </div>
+    </div>
+    <a href="/blog/" class="nav-btn" style="font-weight:700;color:var(--vert-fonce);">Blog</a>
+  </nav>
+    <a href="tel:0795805857" class="header-cta">📞 079 580 58 57</a>
+    <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-drawer" id="drawer">
+  <div class="drawer-header">
+    <a href="/" class="logo" style="gap:10px;"><img src="/images/logo.jpg" alt="Val-Débarras" class="logo-img" style="width:40px;height:40px;"></a>
+    <button class="drawer-close" id="drawerClose">✕</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-group">
+      <div class="drawer-title" onclick="toggleDrawer(this)">Débarras appartement <span class="arr">▾</span></div>
+      <div class="drawer-cantons">
+        <a href="/debarras-appartement/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">&nbsp;à Genève</span></a>
+        <a href="/debarras-appartement/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">&nbsp;en Vaud</span></a>
+        <a href="/debarras-appartement/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">&nbsp;en Valais</span></a>
+        <a href="/debarras-appartement/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">&nbsp;à Fribourg</span></a>
+        <a href="/debarras-appartement/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">&nbsp;à Neuchâtel</span></a>
+        <a href="/debarras-appartement/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">&nbsp;au Jura</span></a>
+      </div>
+    </div>
+    <div class="drawer-group">
+      <div class="drawer-title" onclick="toggleDrawer(this)">Débarras maison <span class="arr">▾</span></div>
+      <div class="drawer-cantons">
+        <a href="/debarras-maison/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">&nbsp;à Genève</span></a>
+        <a href="/debarras-maison/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">&nbsp;en Vaud</span></a>
+        <a href="/debarras-maison/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">&nbsp;en Valais</span></a>
+        <a href="/debarras-maison/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">&nbsp;à Fribourg</span></a>
+        <a href="/debarras-maison/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">&nbsp;à Neuchâtel</span></a>
+        <a href="/debarras-maison/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">&nbsp;au Jura</span></a>
+      </div>
+    </div>
+    <div class="drawer-group">
+      <div class="drawer-title" onclick="toggleDrawer(this)">Après décès &amp; succession <span class="arr">▾</span></div>
+      <div class="drawer-cantons">
+        <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">&nbsp;à Genève</span></a>
+        <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">&nbsp;en Vaud</span></a>
+        <a href="/debarras-apres-deces/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">&nbsp;en Valais</span></a>
+        <a href="/debarras-apres-deces/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">&nbsp;à Fribourg</span></a>
+        <a href="/debarras-apres-deces/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">&nbsp;à Neuchâtel</span></a>
+        <a href="/debarras-apres-deces/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">&nbsp;au Jura</span></a>
+      </div>
+    </div>
+    <div class="drawer-group">
+      <div class="drawer-title" onclick="toggleDrawer(this)">Entrée en EMS <span class="arr">▾</span></div>
+      <div class="drawer-cantons">
+        <a href="/debarras-ems/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">&nbsp;à Genève</span></a>
+        <a href="/debarras-ems/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">&nbsp;en Vaud</span></a>
+        <a href="/debarras-ems/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">&nbsp;en Valais</span></a>
+        <a href="/debarras-ems/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">&nbsp;à Fribourg</span></a>
+        <a href="/debarras-ems/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">&nbsp;à Neuchâtel</span></a>
+        <a href="/debarras-ems/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">&nbsp;au Jura</span></a>
+      </div>
+    </div>
+    <div class="drawer-group">
+      <div class="drawer-title" onclick="toggleDrawer(this)">Diogène &amp; insalubre <span class="arr">▾</span></div>
+      <div class="drawer-cantons">
+        <a href="/debarras-insalubre-diogene/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">&nbsp;à Genève</span></a>
+        <a href="/debarras-insalubre-diogene/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">&nbsp;en Vaud</span></a>
+        <a href="/debarras-insalubre-diogene/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">&nbsp;en Valais</span></a>
+        <a href="/debarras-insalubre-diogene/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">&nbsp;à Fribourg</span></a>
+        <a href="/debarras-insalubre-diogene/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">&nbsp;à Neuchâtel</span></a>
+        <a href="/debarras-insalubre-diogene/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">&nbsp;au Jura</span></a>
+      </div>
+    </div>
+    <div class="drawer-group">
+      <div class="drawer-title" onclick="toggleDrawer(this)">Nettoyage extrême <span class="arr">▾</span></div>
+      <div class="drawer-cantons">
+        <a href="/nettoyage-extreme/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">&nbsp;à Genève</span></a>
+        <a href="/nettoyage-extreme/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">&nbsp;en Vaud</span></a>
+        <a href="/nettoyage-extreme/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">&nbsp;en Valais</span></a>
+        <a href="/nettoyage-extreme/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">&nbsp;à Fribourg</span></a>
+        <a href="/nettoyage-extreme/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">&nbsp;à Neuchâtel</span></a>
+        <a href="/nettoyage-extreme/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">&nbsp;au Jura</span></a>
+      </div>
+    </div>
+    <div class="drawer-group"><a href="/blog/" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:15px;font-weight:700;color:var(--vert);">Blog &amp; Conseils <span class="badge-new">NEW</span></a></div>
+    <a href="tel:0795805857" class="drawer-phone">📞 079 580 58 57</a>
+  </div>
+</div>
+
+<nav class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="/">Accueil</a> ›
+    <a href="/debarras-ems/">Entrée en EMS</a> ›
+    <img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy">
+    <strong>Genève</strong>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Débarras EMS à Genève</h1>
+      <div class="hero-sub-title">Entrée en EMS ou appartement protégé · Intervention rapide</div>
+      <p class="hero-text">Un parent entre en EMS ou en appartement protégé à Genève et il faut libérer le logement rapidement. Val-Débarras accompagne les familles avec discrétion dans tout le canton.</p>
+      <div class="hero-badges">
+        <span class="hbadge">✓ Devis gratuit sous 2h</span>
+        <span class="hbadge">✓ Intervention rapide</span>
+        <span class="hbadge">✓ Sans déplacement payant</span>
+      </div>
+      <div class="hero-btns">
+        <a href="tel:0795805857" class="btn btn-white">📞 079 580 58 57</a>
+        <a href="#devis" class="btn btn-outline">Devis gratuit et sans engagement →</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="/images/ge-hero.jpg" alt="Val-Débarras — Débarras EMS à Genève" loading="eager">
+      <div class="hero-img-caption"><span>📍</span> Suisse romande</div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="trust-inner">
+    <div class="tstat"><div class="tstat-n">+10</div><div class="tstat-l">ans d'expérience</div></div>
+    <div class="tstat"><div class="tstat-n">500+</div><div class="tstat-l">logements vidés / an</div></div>
+    <div class="tstat"><div class="tstat-n">24h</div><div class="tstat-l">Délai de réponse</div></div>
+    <div class="tstat"><div class="tstat-n">100%</div><div class="tstat-l">Devis gratuit</div></div>
+  </div>
+</div>
+
+<div class="lp-content">
+  <div class="lp-main">
+    <span class="section-kicker">Notre service à Genève</span>
+    <h2 class="section-h2">Vider un logement lors d'une entrée en EMS à Genève</h2>
+    <p class="section-text">Lorsqu'un proche entre en EMS ou en appartement protégé dans le canton de Genève, il faut souvent vider rapidement le logement. Val-Débarras s'occupe des appartements, maisons, caves, greniers et annexes avec discrétion et efficacité. Nous adaptons l'intervention aux délais imposés par l'EMS ou la famille.</p>
+
+    <ul class="av-list">
+      <li><span class="av-check">✓</span>Intervention rapide parfois sous 48h</li>
+<li><span class="av-check">✓</span>Appartement ou maison vidé entièrement</li>
+<li><span class="av-check">✓</span>Adapté aux familles, mandataires et curateurs</li>
+<li><span class="av-check">✓</span>Discrétion totale</li>
+<li><span class="av-check">✓</span>Devis gratuit sans engagement</li>
+    </ul>
+
+    <div class="steps-section">
+      <div class="steps-title">Comment ça se passe ?</div>
+      <div class="step"><div class="step-num">01</div><div class="step-body"><strong>Vous nous appelez dès la date connue</strong><p>Dès que la date d'entrée en EMS est fixée, contactez-nous.</p></div></div>
+<div class="step"><div class="step-num">02</div><div class="step-body"><strong>Évaluation gratuite et planification</strong><p>Nous évaluons le volume et organisons l'intervention dans vos délais.</p></div></div>
+<div class="step"><div class="step-num">03</div><div class="step-body"><strong>Logement vide et propre</strong><p>Nous intervenons rapidement et laissons le logement vide et propre.</p></div></div>
+
+    </div>
+
+    <div class="encadres-grid">
+      <div class="enc-card"><div class="enc-title">🏥 Entrée en EMS classique</div><p>Vider l'appartement dans les délais imposés par l'établissement.</p></div>
+<div class="enc-card"><div class="enc-title">🏠 Appartement protégé</div><p>Libérer rapidement le logement avec respect pour les souvenirs.</p></div>
+<div class="enc-card"><div class="enc-title">👴 Maison de retraite</div><p>Intervention adaptée aux familles et aux délais spécifiques.</p></div>
+<div class="enc-card"><div class="enc-title">📋 Mandataires et curateurs</div><p>Coordination avec les professionnels en charge du dossier.</p></div>
+
+    </div>
+  </div>
+
+  <aside class="lp-sidebar">
+    <a href="tel:0795805857" class="sidebar-phone">
+      <div>📞 Appeler maintenant</div>
+      <div class="phone-num">079 580 58 57</div>
+      <div class="phone-sub">Lun–Sam · 08h–18h · Devis sous 24h</div>
+    </a>
+    <a href="#devis" class="sidebar-btn">✉️ Demander un devis gratuit</a>
+
+    <div class="sidebar-card" style="margin-top:24px;">
+      <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gris);margin-bottom:8px;">Mauvais canton ?</div>
+      <h3 style="font-size:15px;font-weight:700;color:var(--gris-fonce);margin-bottom:12px;">Sélectionnez votre canton :</h3>
+      <ul style="list-style:none;">
+
+        <li><a href="/debarras-ems/vaud/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span>en Vaud</span></a></li>
+        <li><a href="/debarras-ems/valais/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span>en Valais</span></a></li>
+        <li><a href="/debarras-ems/fribourg/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span>à Fribourg</span></a></li>
+        <li><a href="/debarras-ems/neuchatel/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span>à Neuchâtel</span></a></li>
+        <li><a href="/debarras-ems/jura/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span>au Jura</span></a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<div class="villes-section">
+  <div class="villes-inner">
+    <span class="section-kicker">Zone d'intervention</span>
+    <h3>Communes couvertes à Genève</h3>
+    <div class="villes-list">Genève · Carouge · Lancy · Meyrin · Vernier · Thônex · Onex · Bernex · Grand-Saconnex</div>
+  </div>
+</div>
+
+<div class="medias">
+  <div class="medias-inner">
+    <p class="medias-text">Plus de 10 ans d'expérience en Suisse romande. Passés dans les médias :</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <span class="ml ml-rts">▶ RTS — Temps présent</span>
+      <span class="ml ml-20">📰 20 MINUTES</span>
+    </div>
+  </div>
+</div>
+
+<section class="faq-section">
+  <div class="faq-inner">
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Peut-on intervenir en urgence ? <span class="faq-arr">▾</span></button><div class="faq-a">Oui, selon le planning nous pouvons intervenir très rapidement, parfois sous 48h.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Que faire si la famille n'est pas d'accord ? <span class="faq-arr">▾</span></button><div class="faq-a">Nous attendons que les décisions soient prises avant d'intervenir.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Peut-on vider un appartement protégé ? <span class="faq-arr">▾</span></button><div class="faq-a">Oui, exactement comme un appartement classique, avec le même soin.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Qui peut nous appeler ? <span class="faq-arr">▾</span></button><div class="faq-a">La famille, les mandataires, curateurs ou les services sociaux du canton de Genève.</div></div>
+
+  </div>
+</section>
+
+<section class='pro-section'><div><div class="pro-section"><h3>🏥 Vous travaillez dans un EMS ou avec des familles ?</h3><p>Nous travaillons régulièrement avec les EMS genevois, services sociaux, curateurs et mandataires. Intervention rapide, discrète et organisée selon vos contraintes.</p><a href="#devis" class="btn-pro">Nous contacter →</a></div></section>
+
+<section class="other-section">
+  <div class="other-inner">
+    <h2>Autres services disponibles à Genève</h2>
+    <div class="other-grid">
+      <a href="/debarras-appartement/geneve/" class="other-card">🏢 Débarras appartement</a>
+<a href="/debarras-maison/geneve/" class="other-card">🏡 Débarras maison</a>
+<a href="/debarras-apres-deces/geneve/" class="other-card">🕊️ Après décès & succession</a>
+<a href="/debarras-insalubre-diogene/geneve/" class="other-card">⚠️ Diogène & insalubre</a>
+<a href="/nettoyage-extreme/geneve/" class="other-card">🧹 Nettoyage extrême</a>
+
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="devis">
+  <div class="form-inner">
+    <div class="form-info">
+      <span class="form-info-label">Contact</span>
+      <h2>Demander un devis gratuit</h2>
+      <div class="form-contacts">
+        <div class="fc-row"><div class="fc-icon">📞</div><div class="fc-text"><strong>079 580 58 57</strong>Lun–Sam · 08h00–18h00</div></div>
+        <div class="fc-row"><div class="fc-icon">✉️</div><div class="fc-text"><strong>info@val-debarras.ch</strong>Réponse sous 2h</div></div>
+        <div class="fc-row"><div class="fc-icon">⚡</div><div class="fc-text"><strong>Devis sous 24h</strong>Réponse garantie</div></div>
+        <div class="fc-row"><div class="fc-icon">📍</div><div class="fc-text"><strong>Rue de Mazerette 9, 1950 Sion</strong>Val-Débarras Sàrl</div></div>
+      </div>
+            <div class="photo-masonry">
+        <!-- img1: gauche — tall, spans 2 rows -->
+        <div class="pm-cell pm-cell--tall">
+          <img src="/images/vd-fleet-dark.jpg" alt="Flotte Val-Débarras" loading="lazy">
+          <div class="pm-overlay"><span class="pm-icon">🚛</span><span class="pm-label">Notre flotte</span></div>
+        </div>
+        <!-- img2: droite haut -->
+        <div class="pm-cell">
+          <img src="/images/ge-action.jpg" alt="Intervention Genève" loading="lazy">
+          <div class="pm-overlay"><span class="pm-icon">🏢</span><span class="pm-label">Débarras urbain</span></div>
+        </div>
+        <!-- img3: droite bas -->
+        <div class="pm-cell">
+          <img src="/images/vd-hero.jpg" alt="Débarras Vaud" loading="lazy">
+          <div class="pm-overlay"><span class="pm-icon">🏔️</span><span class="pm-label">Suisse romande</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="form-card">
+      <form>
+        <div class="form-row form-full" style="margin-bottom:16px">
+          <div class="fl"><label>Nom complet *</label><input type="text" placeholder="Prénom et nom" style="font-size:17px;min-height:54px;"></div>
+        </div>
+        <div class="form-row form-full" style="margin-bottom:16px">
+          <div class="fl"><label>Localité du logement *</label><input type="text" placeholder="Ex: Genève, Carouge, Meyrin..."></div>
+        </div>
+        <div class="form-row" style="margin-bottom:16px">
+          <div class="fl"><label>Email *</label><input type="email" placeholder="votre@email.ch"></div>
+          <div class="fl"><label>Téléphone *</label><input type="tel" placeholder="07X XXX XX XX"></div>
+        </div>
+        <div class="form-row" style="margin-bottom:16px">
+          <div class="fl">
+            <label>Type de service</label>
+            <select>
+              <option value="" disabled>Choisir un service</option>
+              <option>Débarras appartement</option>
+              <option>Débarras maison</option>
+              <option>Débarras après décès & succession</option>
+              <option  selected>Débarras suite entrée en EMS</option>
+              <option>Débarras insalubre / Diogène</option>
+              <option>Nettoyage extrême</option>
+            </select>
+          </div>
+          <div class="fl">
+            <label>Canton *</label>
+            <select>
+              <option value="" disabled>Choisir un canton</option>
+              <option selected>Genève</option>
+              <option>Vaud</option><option>Valais</option><option>Fribourg</option>
+              <option>Neuchâtel</option><option>Jura</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row form-full" style="margin-bottom:16px">
+          <div class="fl"><label>Description (facultatif)</label>
+            <textarea placeholder="Décrivez brièvement la situation..."></textarea></div>
+        </div>
+        <button type="submit" class="form-btn">Envoyer ma demande</button>
+        <p class="form-note">Réponse sous 24h · Devis gratuit et sans engagement</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer style="background-color:#1a1f2e;color:#fff;padding:60px 0;font-family:var(--font,system-ui,sans-serif);">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+
+    <!-- Contact -->
+    <div>
+      <h3 style="color:#4ade80;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:24px;">Contact</h3>
+
+      <a href="tel:+41795805857" style="display:inline-flex;align-items:center;gap:12px;background:#2e7d5c;color:#fff;text-decoration:none;padding:14px 24px;border-radius:10px;font-size:18px;font-weight:700;margin-bottom:24px;transition:background .2s;" onmouseover="this.style.background='#1c5440'" onmouseout="this.style.background='#2e7d5c'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        079 580 58 57
+      </a>
+
+      <div style="display:flex;flex-direction:column;gap:14px;color:#94a3b8;font-size:15px;line-height:1.6;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@val-debarras.ch" style="color:#94a3b8;text-decoration:none;">info@val-debarras.ch</a>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>Rue de Mazerette 9<br>1950 Sion · Valais</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          Lun–Sam · 08h00–18h00
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Devis gratuit · Réponse sous 24h
+        </div>
+      </div>
+    </div>
+
+    <!-- Mapa -->
+    <div style="width:100%;height:300px;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4);">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2759.2!2d7.3524!3d46.2282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ec04c47de8e2b%3A0x7c01a5b4b4a8b4e0!2sRue%20de%20Mazerette%209%2C%201950%20Sion!5e0!3m2!1sfr!2sch!4v1716900000000!5m2!1sfr!2sch"
+        width="100%" height="100%"
+        style="border:0;filter:grayscale(25%) contrast(1.1);"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+
+  <!-- Barre inférieure -->
+  <div style="max-width:1200px;margin:40px auto 0;padding:24px 24px 0;border-top:1px solid #2d3748;display:flex;justify-content:space-between;align-items:center;color:#64748b;font-size:13px;flex-wrap:wrap;gap:12px;">
+    <div>© 2026 Val-Débarras Sàrl — Tous droits réservés</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+      <a href="#" style="color:#64748b;text-decoration:none;">Protection des données</a>
+      <a href="#" style="color:#64748b;text-decoration:none;">Conditions générales</a>
+      <a href="/brand" style="color:#2e7d5c;text-decoration:none;font-weight:600;">🎨 Charte</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Retour en haut de page" title="Retour en haut">↑</button>
+<script>
+(function(){
+  var btn = document.getElementById('backToTop');
+  if(!btn) return;
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 400) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  }, {passive:true});
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+<script>
+const ham=document.getElementById('ham'),drawer=document.getElementById('drawer'),dc=document.getElementById('drawerClose');
+if(ham){ham.addEventListener('click',()=>{ham.classList.toggle('open');drawer.classList.toggle('open');document.body.style.overflow=drawer.classList.contains('open')?'hidden':'';}); dc.addEventListener('click',()=>{ham.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow='';}); }
+function toggleFaq(btn){const a=btn.nextElementSibling;const arr=btn.querySelector('.faq-arr');const isOpen=a.classList.contains('open');document.querySelectorAll('.faq-a.open').forEach(el=>{el.classList.remove('open');el.previousElementSibling.querySelector('.faq-arr').style.transform='';} );if(!isOpen){a.classList.add('open');arr.style.transform='rotate(180deg)';}}
+</script>
+</body>
+</html>

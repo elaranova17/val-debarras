@@ -1,0 +1,22 @@
+{
+  "rewrites": [
+    { "source": "/brand", "destination": "/brand.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/blog/", "destination": "/blog.html" },
+    { "source": "/blog/comment-debarrasser-appartement-suisse-romande", "destination": "/blog-article-1.html" },
+    { "source": "/blog/comment-debarrasser-appartement-suisse-romande/", "destination": "/blog-article-1.html" },
+    { "source": "/debarras-appartement/geneve", "destination": "/ge-appartement.html" },
+    { "source": "/debarras-appartement/geneve/", "destination": "/ge-appartement.html" },
+    { "source": "/debarras-maison/geneve", "destination": "/ge-maison.html" },
+    { "source": "/debarras-maison/geneve/", "destination": "/ge-maison.html" },
+    { "source": "/debarras-apres-deces/geneve", "destination": "/ge-succession.html" },
+    { "source": "/debarras-apres-deces/geneve/", "destination": "/ge-succession.html" },
+    { "source": "/debarras-ems/geneve", "destination": "/ge-ems.html" },
+    { "source": "/debarras-ems/geneve/", "destination": "/ge-ems.html" },
+    { "source": "/debarras-insalubre-diogene/geneve", "destination": "/ge-diogene.html" },
+    { "source": "/debarras-insalubre-diogene/geneve/", "destination": "/ge-diogene.html" },
+    { "source": "/nettoyage-extreme/geneve", "destination": "/ge-nettoyage.html" },
+    { "source": "/nettoyage-extreme/geneve/", "destination": "/ge-nettoyage.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
