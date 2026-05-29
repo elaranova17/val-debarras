@@ -230,12 +230,17 @@ img{max-width:100%;display:block;}
 .stat:last-child{border-right:none;}
 .stat-n{font-size:40px;font-weight:900;color:var(--vert-clair);line-height:1;}
 .stat-l{font-size:13px;color:rgba(255,255,255,.65);margin-top:5px;}
-.stat-media{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
-.media-badge{
-  padding:4px 12px;border-radius:6px;font-size:12px;font-weight:800;
+.stat-media{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;}
+.media-logos-row{display:flex;align-items:center;gap:14px;}
+.logo-media{
+  filter:brightness(0) invert(1);
+  opacity:.85;
+  transition:opacity .2s;
+  display:block;
 }
-.mb-rts{background:#e53e3e;color:white;}
-.mb-20{background:#1a56db;color:white;}
+.stat:hover .logo-media{opacity:1;}
+.logo-rts{height:28px;width:auto;}
+.logo-20min{height:20px;width:auto;}
 
 /* Shields row — stat cantons */
 .stat-shields{
@@ -1073,9 +1078,9 @@ body{font-size:16px;line-height:1.7;}
       </div>
     </div>
     <div class="stat">
-      <div class="stat-n stat-media">
-        <span class="media-badge mb-rts">RTS</span>
-        <span class="media-badge mb-20">20min</span>
+      <div class="stat-n stat-media media-logos-row">
+        <img src="/images/logo-rts.svg" alt="RTS" class="logo-media logo-rts">
+        <img src="/images/logo-20min.svg" alt="20 minutes" class="logo-media logo-20min">
       </div>
       <div class="stat-l">dans les médias</div>
     </div>
