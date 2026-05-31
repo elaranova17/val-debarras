@@ -1119,32 +1119,6 @@ body{font-size:16px;line-height:1.7;}
 @media(max-width:768px){.media-section{padding:64px 20px;}.media-grid{grid-template-columns:1fr;gap:22px;}.media-header{margin-bottom:38px;}.media-section .section-title{font-size:1.55rem;}.media-section .section-desc{font-size:.95rem;}.media-info{padding:22px 22px 24px;}}
 
 /* === SISTEMA DE ICONOS VD === */.icon{width:24px;height:24px;flex-shrink:0;color:#009b74;display:inline-block;vertical-align:middle;transition:transform .2s ease,color .2s ease;}.icon-sm{width:16px;height:16px;}.icon-md{width:24px;height:24px;}.icon-lg{width:32px;height:32px;}.icon-xl{width:48px;height:48px;}.icon-green{color:#009b74;}.icon-orange{color:#f59e0b;}.icon-red{color:#ef4444;}.icon-white{color:#fff;}.sc-icon .icon{width:48px;height:48px;color:#6ee7a0;}.sc-icon .icon-orange,.other-card-icon .icon-orange{color:#f59e0b;}.other-card-icon{color:#009b74;}.other-card:hover .other-card-icon .icon{transform:scale(1.08);}.icon-btn{width:1.05em;height:1.05em;color:inherit;flex-shrink:0;vertical-align:-0.16em;margin-right:.45em;display:inline-block;}/* fc-icon en sprite */.fc-icon{background:#fff !important;}.fc-icon .icon{width:22px;height:22px;color:#009b74;}.icon-ft{width:16px;height:16px;color:#22c55e;}
-/* === SERVICE CARD ICONS — visibilité accrue (home) === */
-.sc-icon{
-  position:absolute;top:22px;right:22px;
-  opacity:1 !important;
-  width:56px;height:56px;
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(255,255,255,.12);
-  border:1.5px solid rgba(255,255,255,.22);
-  border-radius:14px;
-  padding:8px;
-  box-shadow:0 4px 14px rgba(0,0,0,.15);
-}
-.sc-icon .icon{
-  width:48px !important;height:48px !important;
-  color:#6ee7a0 !important;
-  stroke-width:2;
-  filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));
-}
-.sc-icon .icon-orange{color:#fbbf24 !important;}
-.sc:hover .sc-icon{
-  background:rgba(255,255,255,.18);
-  border-color:rgba(255,255,255,.35);
-  transform:scale(1.06);
-}
-
-
 /* === ICONOGRAPHIE GUIDE VD (Lucide 1.5) === */
 .enc-icon,.pm-icon .icon,.hero-loc-icon .icon,.hbadge .icon,.trust-icon .icon{
   width:18px;height:18px;vertical-align:-3px;margin-right:4px;
@@ -1295,6 +1269,115 @@ body{font-size:16px;line-height:1.7;}
   .header-phone-pulse::after{display:none!important;}
 }
 
+
+/* === SERVICE CARD ZONES + centered icons (home) === */
+.sc-num{
+  position:absolute;top:22px;left:22px;
+  margin-bottom:0;
+}
+.sc-head{
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;margin-bottom:6px;
+}
+.sc-icon{
+  position:relative !important;top:auto !important;right:auto !important;
+  margin:0 auto 14px;
+  opacity:1 !important;
+  width:56px;height:56px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.12);
+  border:1.5px solid rgba(255,255,255,.22);
+  border-radius:14px;
+  padding:8px;
+  box-shadow:0 4px 14px rgba(0,0,0,.15);
+}
+.sc-icon .icon{
+  width:48px !important;height:48px !important;
+  color:#6ee7a0 !important;
+  stroke-width:2;
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));
+}
+.sc-icon .icon-orange{color:#fbbf24 !important;}
+.sc:hover .sc-icon{
+  background:rgba(255,255,255,.18);
+  border-color:rgba(255,255,255,.35);
+}
+.sc-head .sc-title{margin-bottom:0;text-align:center;}
+
+.sc-zones{
+  margin-top:14px;padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.sc-zones-label{
+  display:block;font-size:10px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.6px;
+  color:rgba(255,255,255,.45);margin-bottom:8px;
+}
+.sc-zones-links{
+  display:flex;flex-wrap:wrap;gap:6px 8px;
+}
+.sc-zones-links a{
+  font-size:11.5px;font-weight:600;
+  color:rgba(255,255,255,.72);
+  padding:4px 10px;border-radius:20px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  transition:color .2s,background .2s,border-color .2s,transform .2s;
+  text-decoration:none;
+}
+.sc-zones-links a:hover{
+  color:white;
+  background:rgba(255,255,255,.18);
+  border-color:rgba(255,255,255,.32);
+  transform:translateY(-1px);
+}
+@media(max-width:768px){
+  .sc-zones-links{gap:5px 6px;}
+  .sc-zones-links a{font-size:11px;padding:3px 8px;}
+}
+
+
+/* === PHONE ANIMATE VD === */
+@keyframes phone-ring{
+  0%,100%{transform:rotate(0);}
+  10%{transform:rotate(-12deg);}
+  20%{transform:rotate(12deg);}
+  30%{transform:rotate(-8deg);}
+  40%{transform:rotate(8deg);}
+  50%,100%{transform:rotate(0);}
+}
+.phone-animate > .icon-btn,
+.phone-animate > .icon,
+.phone-animate .icon-btn:first-child,
+.phone-animate .icon:first-child{
+  animation:phone-ring 2.5s ease-in-out infinite;
+  transform-origin:center bottom;
+}
+.header-cta.phone-animate{
+  background:linear-gradient(135deg,var(--vert) 0%,#1f9a6a 100%) !important;
+  box-shadow:0 4px 18px rgba(0,155,116,.5),inset 0 1px 0 rgba(255,255,255,.18) !important;
+  border:1px solid rgba(255,255,255,.22);
+}
+.header-cta.phone-animate .icon-btn{width:22px !important;height:22px !important;}
+.btn-phone.phone-animate{
+  box-shadow:0 4px 20px rgba(0,155,116,.35);
+}
+.btn-phone.phone-animate .icon-btn{width:24px !important;height:24px !important;}
+.sticky-mobile__call.phone-animate,
+.drawer-phone.phone-animate{
+  box-shadow:0 4px 20px rgba(0,155,116,.45);
+}
+.sticky-mobile__call.phone-animate .icon-btn,
+.drawer-phone.phone-animate .icon-btn{
+  width:22px !important;height:22px !important;
+}
+@media (prefers-reduced-motion:reduce){
+  .phone-animate > .icon-btn,
+  .phone-animate > .icon,
+  .phone-animate .icon-btn:first-child,
+  .phone-animate .icon:first-child{animation:none !important;}
+}
+
 </style>
 </head>
 <body>
@@ -1383,7 +1466,7 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
     </nav>
-    <a href="tel:+41795805857" class="header-cta"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a>
+    <a href="tel:+41795805857" class="header-cta phone-animate"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a>
     <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -1461,7 +1544,7 @@ body{font-size:16px;line-height:1.7;}
         <a href="/nettoyage-extreme/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">&nbsp;au Jura</span></a>
       </div>
     </div>
-    <a href="tel:+41795805857" class="drawer-phone"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a>
+    <a href="tel:+41795805857" class="drawer-phone phone-animate"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a>
   </div>
 </div>
 
@@ -1475,7 +1558,7 @@ body{font-size:16px;line-height:1.7;}
       <p class="hero-sub">Appartement, maison, succession, entrée en EMS, logement insalubre ou nettoyage extrême : <strong>Val-Débarras intervient rapidement dans toute la Suisse romande.</strong></p>
       <p class="hero-sub" style="margin-top:-12px;">Nous nous occupons de tout : tri, débarras, évacuation, nettoyage et remise en état.</p>
       <div class="hero-btns">
-        <a href="tel:+41795805857" class="btn-phone"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a>
+        <a href="tel:+41795805857" class="btn-phone phone-animate"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a>
         <a href="#devis" class="btn-devis"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit</a>
         <a href="#services" class="btn-services">Nos services →</a>
       </div>
@@ -1595,17 +1678,27 @@ body{font-size:16px;line-height:1.7;}
     </div>
         <div class="services-grid animate-on-scroll">
       <div class="sc" data-service="Débarras appartement">
-        <span class="sc-icon"><svg class="icon"><use href="#icon-building"/></svg></span>
         <span class="sc-num">01</span>
-        <div>
+        <div class="sc-head">
+          <span class="sc-icon"><svg class="icon"><use href="#icon-building"/></svg></span>
           <div class="sc-title">Débarras appartement</div>
-          <p class="sc-desc">Votre appartement est trop encombré pour rendre les clés ? Nous vidons tout en 1 jour. Aucun tri demandé.</p>
         </div>
+        <p class="sc-desc">Votre appartement est trop encombré pour rendre les clés ? Nous vidons tout en 1 jour. Aucun tri demandé.</p>
         <button class="sc-toggle" aria-expanded="false">
           Voir le service <i class="sc-arrow">→</i>
         </button>
         <a href="#devis" class="btn-primary sc-card-primary" data-select="Débarras appartement"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit — 24h<svg class="icon icon-btn arrow-icon"><use href="#icon-arrow-right"/></svg></a>
-        <a href="/debarras-appartement/geneve/" class="link-secondary sc-link">Voir les zones d'intervention →</a>
+                <div class="sc-zones">
+          <span class="sc-zones-label">Zones d'intervention :</span>
+          <div class="sc-zones-links">
+          <a href="/debarras-appartement/geneve/">à Genève</a>
+          <a href="/debarras-appartement/vaud/">sur Vaud</a>
+          <a href="/debarras-appartement/valais/">en Valais</a>
+          <a href="/debarras-appartement/fribourg/">à Fribourg</a>
+          <a href="/debarras-appartement/neuchatel/">à Neuchâtel</a>
+          <a href="/debarras-appartement/jura/">au Jura</a>
+          </div>
+        </div>
         
         <div class="sc-expanded">
           <ul class="sc-features">
@@ -1619,17 +1712,27 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
       <div class="sc" data-service="Débarras maison">
-        <span class="sc-icon"><svg class="icon"><use href="#icon-house"/></svg></span>
         <span class="sc-num">02</span>
-        <div>
+        <div class="sc-head">
+          <span class="sc-icon"><svg class="icon"><use href="#icon-house"/></svg></span>
           <div class="sc-title">Débarras maison</div>
-          <p class="sc-desc">Garage, grenier, jardin, cave — on s'occupe de tout. Même les gros volumes. En 1 jour.</p>
         </div>
+        <p class="sc-desc">Garage, grenier, jardin, cave — on s'occupe de tout. Même les gros volumes. En 1 jour.</p>
         <button class="sc-toggle" aria-expanded="false">
           Voir le service <i class="sc-arrow">→</i>
         </button>
         <a href="#devis" class="btn-primary sc-card-primary" data-select="Débarras maison"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit — 24h<svg class="icon icon-btn arrow-icon"><use href="#icon-arrow-right"/></svg></a>
-        <a href="/debarras-maison/geneve/" class="link-secondary sc-link">Voir les zones d'intervention →</a>
+                <div class="sc-zones">
+          <span class="sc-zones-label">Zones d'intervention :</span>
+          <div class="sc-zones-links">
+          <a href="/debarras-maison/geneve/">à Genève</a>
+          <a href="/debarras-maison/vaud/">sur Vaud</a>
+          <a href="/debarras-maison/valais/">en Valais</a>
+          <a href="/debarras-maison/fribourg/">à Fribourg</a>
+          <a href="/debarras-maison/neuchatel/">à Neuchâtel</a>
+          <a href="/debarras-maison/jura/">au Jura</a>
+          </div>
+        </div>
         
         <div class="sc-expanded">
           <ul class="sc-features">
@@ -1643,17 +1746,27 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
       <div class="sc" data-service="Débarras après décès & succession">
-        <span class="sc-icon"><svg class="icon"><use href="#icon-dove"/></svg></span>
         <span class="sc-num">03</span>
-        <div>
+        <div class="sc-head">
+          <span class="sc-icon"><svg class="icon"><use href="#icon-dove"/></svg></span>
           <div class="sc-title">Débarras après décès/succession</div>
-          <p class="sc-desc">Un proche est décédé et vous devez vider son logement. Vous n'avez pas à le faire seul.</p>
         </div>
+        <p class="sc-desc">Un proche est décédé et vous devez vider son logement. Vous n'avez pas à le faire seul.</p>
         <button class="sc-toggle" aria-expanded="false">
           Voir le service <i class="sc-arrow">→</i>
         </button>
         <a href="#devis" class="btn-primary sc-card-primary" data-select="Débarras après décès & succession"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit — 24h<svg class="icon icon-btn arrow-icon"><use href="#icon-arrow-right"/></svg></a>
-        <a href="/debarras-apres-deces/geneve/" class="link-secondary sc-link">Voir les zones d'intervention →</a>
+                <div class="sc-zones">
+          <span class="sc-zones-label">Zones d'intervention :</span>
+          <div class="sc-zones-links">
+          <a href="/debarras-apres-deces/geneve/">à Genève</a>
+          <a href="/debarras-apres-deces/vaud/">sur Vaud</a>
+          <a href="/debarras-apres-deces/valais/">en Valais</a>
+          <a href="/debarras-apres-deces/fribourg/">à Fribourg</a>
+          <a href="/debarras-apres-deces/neuchatel/">à Neuchâtel</a>
+          <a href="/debarras-apres-deces/jura/">au Jura</a>
+          </div>
+        </div>
         
         <div class="sc-expanded">
           <ul class="sc-features">
@@ -1667,17 +1780,27 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
       <div class="sc" data-service="Débarras suite entrée en EMS">
-        <span class="sc-icon"><svg class="icon"><use href="#icon-hospital"/></svg></span>
         <span class="sc-num">04</span>
-        <div>
+        <div class="sc-head">
+          <span class="sc-icon"><svg class="icon"><use href="#icon-hospital"/></svg></span>
           <div class="sc-title">Débarras suite entrée EMS</div>
-          <p class="sc-desc">Votre parent entre en EMS ou en appartement protégé et il faut libérer le logement rapidement.</p>
         </div>
+        <p class="sc-desc">Votre parent entre en EMS ou en appartement protégé et il faut libérer le logement rapidement.</p>
         <button class="sc-toggle" aria-expanded="false">
           Voir le service <i class="sc-arrow">→</i>
         </button>
         <a href="#devis" class="btn-primary sc-card-primary" data-select="Débarras suite entrée en EMS"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit — 24h<svg class="icon icon-btn arrow-icon"><use href="#icon-arrow-right"/></svg></a>
-        <a href="/debarras-ems/geneve/" class="link-secondary sc-link">Voir les zones d'intervention →</a>
+                <div class="sc-zones">
+          <span class="sc-zones-label">Zones d'intervention :</span>
+          <div class="sc-zones-links">
+          <a href="/debarras-ems/geneve/">à Genève</a>
+          <a href="/debarras-ems/vaud/">sur Vaud</a>
+          <a href="/debarras-ems/valais/">en Valais</a>
+          <a href="/debarras-ems/fribourg/">à Fribourg</a>
+          <a href="/debarras-ems/neuchatel/">à Neuchâtel</a>
+          <a href="/debarras-ems/jura/">au Jura</a>
+          </div>
+        </div>
         
         <div class="sc-expanded">
           <ul class="sc-features">
@@ -1691,17 +1814,27 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
       <div class="sc" data-service="Débarras insalubre / Diogène">
-        <span class="sc-icon"><svg class="icon icon-orange"><use href="#icon-warning"/></svg></span>
         <span class="sc-num">05</span>
-        <div>
+        <div class="sc-head">
+          <span class="sc-icon"><svg class="icon icon-orange"><use href="#icon-warning"/></svg></span>
           <div class="sc-title">Débarras Insalubre/Diogène</div>
-          <p class="sc-desc">Logement encombré, accumulation extrême, insalubrité. Nous intervenons sans jugement.</p>
         </div>
+        <p class="sc-desc">Logement encombré, accumulation extrême, insalubrité. Nous intervenons sans jugement.</p>
         <button class="sc-toggle" aria-expanded="false">
           Voir le service <i class="sc-arrow">→</i>
         </button>
         <a href="#devis" class="btn-primary sc-card-primary" data-select="Débarras insalubre / Diogène"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit — 24h<svg class="icon icon-btn arrow-icon"><use href="#icon-arrow-right"/></svg></a>
-        <a href="/debarras-insalubre-diogene/geneve/" class="link-secondary sc-link">Voir les zones d'intervention →</a>
+                <div class="sc-zones">
+          <span class="sc-zones-label">Zones d'intervention :</span>
+          <div class="sc-zones-links">
+          <a href="/debarras-insalubre-diogene/geneve/">à Genève</a>
+          <a href="/debarras-insalubre-diogene/vaud/">sur Vaud</a>
+          <a href="/debarras-insalubre-diogene/valais/">en Valais</a>
+          <a href="/debarras-insalubre-diogene/fribourg/">à Fribourg</a>
+          <a href="/debarras-insalubre-diogene/neuchatel/">à Neuchâtel</a>
+          <a href="/debarras-insalubre-diogene/jura/">au Jura</a>
+          </div>
+        </div>
         
         <div class="sc-expanded">
           <ul class="sc-features">
@@ -1715,17 +1848,27 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
       <div class="sc" data-service="Nettoyages extrême">
-        <span class="sc-icon"><svg class="icon"><use href="#icon-broom"/></svg></span>
         <span class="sc-num">06</span>
-        <div>
+        <div class="sc-head">
+          <span class="sc-icon"><svg class="icon"><use href="#icon-broom"/></svg></span>
           <div class="sc-title">Nettoyages extrême</div>
-          <p class="sc-desc">Décès non découvert, contamination biologique, scène de crime. Protocole spécialisé. Discrétion absolue.</p>
         </div>
+        <p class="sc-desc">Décès non découvert, contamination biologique, scène de crime. Protocole spécialisé. Discrétion absolue.</p>
         <button class="sc-toggle" aria-expanded="false">
           Voir le service <i class="sc-arrow">→</i>
         </button>
         <a href="#devis" class="btn-primary sc-card-primary" data-select="Nettoyages extrême"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit — 24h<svg class="icon icon-btn arrow-icon"><use href="#icon-arrow-right"/></svg></a>
-        <a href="/nettoyage-extreme/geneve/" class="link-secondary sc-link">Voir les zones d'intervention →</a>
+                <div class="sc-zones">
+          <span class="sc-zones-label">Zones d'intervention :</span>
+          <div class="sc-zones-links">
+          <a href="/nettoyage-extreme/geneve/">à Genève</a>
+          <a href="/nettoyage-extreme/vaud/">sur Vaud</a>
+          <a href="/nettoyage-extreme/valais/">en Valais</a>
+          <a href="/nettoyage-extreme/fribourg/">à Fribourg</a>
+          <a href="/nettoyage-extreme/neuchatel/">à Neuchâtel</a>
+          <a href="/nettoyage-extreme/jura/">au Jura</a>
+          </div>
+        </div>
         
         <div class="sc-expanded">
           <ul class="sc-features">
@@ -2114,7 +2257,7 @@ function toggleDrawer(el) {
 <!-- STICKY BAR MOBILE                                            -->
 <!-- ============================================================ -->
 <div class="sticky-mobile" id="stickyBar">
-  <a href="tel:+41795805857" class="sticky-mobile__call"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>Appeler</a>
+  <a href="tel:+41795805857" class="sticky-mobile__call phone-animate"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>Appeler</a>
   <a href="#devis" class="sticky-mobile__devis"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit — 24h</a>
 </div>
 

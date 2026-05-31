@@ -760,6 +760,48 @@ body{font-size:16px;line-height:1.7;}
   .header-phone-pulse::after{display:none!important;}
 }
 
+
+/* === PHONE ANIMATE VD === */
+@keyframes phone-ring{
+  0%,100%{transform:rotate(0);}
+  10%{transform:rotate(-12deg);}
+  20%{transform:rotate(12deg);}
+  30%{transform:rotate(-8deg);}
+  40%{transform:rotate(8deg);}
+  50%,100%{transform:rotate(0);}
+}
+.phone-animate > .icon-btn,
+.phone-animate > .icon,
+.phone-animate .icon-btn:first-child,
+.phone-animate .icon:first-child{
+  animation:phone-ring 2.5s ease-in-out infinite;
+  transform-origin:center bottom;
+}
+.header-cta.phone-animate{
+  background:linear-gradient(135deg,var(--vert) 0%,#1f9a6a 100%) !important;
+  box-shadow:0 4px 18px rgba(0,155,116,.5),inset 0 1px 0 rgba(255,255,255,.18) !important;
+  border:1px solid rgba(255,255,255,.22);
+}
+.header-cta.phone-animate .icon-btn{width:22px !important;height:22px !important;}
+.btn-phone.phone-animate{
+  box-shadow:0 4px 20px rgba(0,155,116,.35);
+}
+.btn-phone.phone-animate .icon-btn{width:24px !important;height:24px !important;}
+.sticky-mobile__call.phone-animate,
+.drawer-phone.phone-animate{
+  box-shadow:0 4px 20px rgba(0,155,116,.45);
+}
+.sticky-mobile__call.phone-animate .icon-btn,
+.drawer-phone.phone-animate .icon-btn{
+  width:22px !important;height:22px !important;
+}
+@media (prefers-reduced-motion:reduce){
+  .phone-animate > .icon-btn,
+  .phone-animate > .icon,
+  .phone-animate .icon-btn:first-child,
+  .phone-animate .icon:first-child{animation:none !important;}
+}
+
 </style>
 </head>
 <body>
@@ -842,7 +884,7 @@ body{font-size:16px;line-height:1.7;}
       </div>
     </div>
   </nav>
-    <a href="tel:+41795805857" class="header-cta"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a>
+    <a href="tel:+41795805857" class="header-cta phone-animate"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a>
     <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -919,7 +961,7 @@ body{font-size:16px;line-height:1.7;}
         <a href="/nettoyage-extreme/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">&nbsp;au Jura</span></a>
       </div>
     </div>
-    <a href="tel:+41795805857" class="drawer-phone"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a>
+    <a href="tel:+41795805857" class="drawer-phone phone-animate"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a>
   </div>
 </div>
 
@@ -944,7 +986,7 @@ body{font-size:16px;line-height:1.7;}
         <span class="hbadge"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> Sans déplacement payant</span>
       </div>
       <div class="hero-btns">
-        <a href="tel:+41795805857" class="btn-phone"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>Appeler maintenant</a>
+        <a href="tel:+41795805857" class="btn-phone phone-animate"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>Appeler maintenant</a>
         <a href="#devis" class="btn-devis"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Demander un devis gratuit</a>
       </div>
       <p class="hero-micro">Réponse sous 2h — Intervention dès demain</p>
@@ -998,7 +1040,7 @@ body{font-size:16px;line-height:1.7;}
 
   <aside class="lp-sidebar">
     <div class="hero-btns sidebar-cta">
-      <a href="tel:+41795805857" class="btn-phone"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a>
+      <a href="tel:+41795805857" class="btn-phone phone-animate"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a>
       <a href="#devis" class="btn-devis"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit</a>
     </div>
 
@@ -1059,7 +1101,7 @@ body{font-size:16px;line-height:1.7;}
   </div>
 </section>
 
-<section class="pro-section"><div class="pro-card"><h3 class="pro-title"><svg class="icon" aria-hidden="true"><use href="#icon-building"/></svg><span>Vous êtes régie, service social ou curateur ?</span></h3><p>Nous collaborons régulièrement avec les régies vaudoises, services sociaux et curateurs pour des interventions rapides et discrètes dans des logements insalubres.</p><div class="hero-btns pro-cta"><a href="tel:+41795805857" class="btn-phone"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a> <a href="#devis" class="btn-devis"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit</a></div></div></section>
+<section class="pro-section"><div class="pro-card"><h3 class="pro-title"><svg class="icon" aria-hidden="true"><use href="#icon-building"/></svg><span>Vous êtes régie, service social ou curateur ?</span></h3><p>Nous collaborons régulièrement avec les régies vaudoises, services sociaux et curateurs pour des interventions rapides et discrètes dans des logements insalubres.</p><div class="hero-btns pro-cta"><a href="tel:+41795805857" class="btn-phone phone-animate"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>079 580 58 57</a> <a href="#devis" class="btn-devis"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit</a></div></div></section>
 
 <section class="other-section" id="autres-services">
   <div class="other-inner">
@@ -1261,7 +1303,7 @@ function toggleFaq(btn){const a=btn.nextElementSibling;const arr=btn.querySelect
 <!-- STICKY BAR MOBILE                                            -->
 <!-- ============================================================ -->
 <div class="sticky-mobile" id="stickyBar">
-  <a href="tel:+41795805857" class="sticky-mobile__call"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>Appeler</a>
+  <a href="tel:+41795805857" class="sticky-mobile__call phone-animate"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>Appeler</a>
   <a href="#devis" class="sticky-mobile__devis"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit — 24h</a>
 </div>
 
