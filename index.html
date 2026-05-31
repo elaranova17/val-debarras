@@ -694,52 +694,51 @@ body{font-size:16px;line-height:1.7;}
 
 
 /* ============================================================ */
-/* FOOTER v2 — mapa + contacto + badges                         */
+/* FOOTER — concis 2 colonnes                                   */
 /* ============================================================ */
-.footer{background:#0f172a;color:#94a3b8;font-family:var(--font);padding:0;}
-.footer__map{position:relative;padding:48px 24px 32px;overflow:hidden;border-bottom:1px solid #1e293b;}
-.footer__map-svg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;opacity:0.07;pointer-events:none;z-index:0;}
-.footer__locations{position:relative;z-index:1;display:flex;justify-content:center;gap:36px;flex-wrap:wrap;max-width:700px;margin:0 auto;}
-.location-dot{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;transition:all .3s ease;}
-.location-dot:hover{transform:translateY(-4px);}
-.location-dot__point{width:12px;height:12px;background:var(--vert);border-radius:50%;position:relative;transition:all .3s ease;}
-.location-dot__point::before{content:'';position:absolute;inset:-6px;border:2px solid var(--vert);border-radius:50%;opacity:0;transition:all .3s ease;}
-.location-dot:hover .location-dot__point::before{opacity:.4;inset:-10px;}
-.location-dot--hq .location-dot__point{width:16px;height:16px;background:#22c55e;box-shadow:0 0 20px rgba(34,197,94,.4);}
-.location-dot__label{font-size:12px;font-weight:500;color:#64748b;transition:color .3s ease;}
-.location-dot:hover .location-dot__label{color:#dcfce7;}
-.footer__content{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;max-width:1200px;margin:0 auto;padding:48px 24px;position:relative;z-index:1;}
-.footer__brand{display:flex;flex-direction:column;gap:16px;}
-.footer__logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.footer__logo-img{width:40px;height:24px;object-fit:cover;object-position:left top;border-radius:4px;background:transparent;}
-.footer__logo-text{display:flex;flex-direction:column;}
-.footer__logo-brand{font-size:17px;font-weight:800;color:#fff;line-height:1.2;}
-.footer__logo-suffix{font-size:12px;color:#64748b;}
-.footer__desc{font-size:14px;line-height:1.75;color:#64748b;max-width:280px;}
-.footer__contact{display:flex;flex-direction:column;gap:18px;}
-.footer__title{font-size:11px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px;}
-.footer__phone{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;background:var(--vert);color:#fff;font-size:16px;font-weight:800;border-radius:8px;text-decoration:none;transition:all .25s ease;width:fit-content;}
-.footer__phone:hover{background:var(--vert-fonce);transform:translateY(-2px);box-shadow:0 8px 24px rgba(46,125,92,.35);}
-.footer__email{display:flex;align-items:center;gap:8px;color:#94a3b8;font-size:14px;text-decoration:none;transition:color .2s;}
-.footer__email:hover{color:#22c55e;}
-.footer__address{display:flex;flex-direction:column;gap:4px;font-size:14px;color:#64748b;line-height:1.6;}
-.footer__hours{display:flex;align-items:center;gap:8px;font-size:13px;color:#475569;}
-.footer__badges{display:flex;flex-direction:column;gap:14px;}
-.footer__badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(46,125,92,.1);border:1px solid rgba(46,125,92,.2);border-radius:100px;font-size:13px;font-weight:600;color:#4ade80;width:fit-content;text-decoration:none;transition:all .25s ease;}
-.footer__badge:hover{background:rgba(46,125,92,.2);transform:translateX(4px);}
-.footer__links{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
-.footer__link{font-size:13px;color:#64748b;text-decoration:none;transition:color .2s;}
-.footer__link:hover{color:#94a3b8;}
-.footer__bottom{border-top:1px solid #1e293b;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;font-size:12px;color:#475569;}
-.footer__bottom-links{display:flex;gap:20px;}
-.footer__bottom-link{color:#475569;text-decoration:none;transition:color .2s;}
-.footer__bottom-link:hover{color:#94a3b8;}
+.ft{background:#0f172a;color:#94a3b8;font-family:var(--font);padding:52px 24px 0;}
+.ft-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
+/* Colonne brand */
+.ft-brand{display:flex;flex-direction:column;gap:20px;}
+.ft-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.ft-logo-img{width:48px;height:48px;border-radius:8px;}
+.ft-logo-name{font-size:22px;font-weight:800;color:#fff;line-height:1;}
+.ft-tagline{font-size:14px;line-height:1.65;color:#64748b;margin:0;}
+.ft-phone-btn{
+  display:inline-flex;flex-direction:column;align-items:center;gap:3px;
+  padding:14px 28px;background:var(--vert);color:white;border-radius:12px;
+  text-decoration:none;font-weight:700;transition:all .22s;width:fit-content;
+}
+.ft-phone-btn:hover{background:var(--vert-fonce);transform:translateY(-2px);box-shadow:0 6px 18px rgba(46,125,92,.35);}
+.ft-phone-number{font-size:20px;font-weight:900;}
+.ft-phone-label{font-size:11px;font-weight:500;opacity:.8;letter-spacing:.3px;}
+/* Colonne contact */
+.ft-contact{display:flex;flex-direction:column;gap:20px;}
+.ft-title{font-size:11px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 4px;}
+.ft-addr-label{font-size:12px;font-weight:600;color:var(--vert);text-transform:uppercase;letter-spacing:.6px;display:block;margin-bottom:6px;}
+.ft-addr-text{font-size:14px;line-height:1.65;color:#64748b;margin:0;}
+.ft-links{display:flex;flex-direction:column;gap:11px;}
+.ft-link{display:flex;align-items:center;gap:9px;color:#94a3b8;text-decoration:none;font-size:14px;transition:color .2s;}
+.ft-link:hover{color:#22c55e;}
+.ft-link svg,.ft-hours svg{flex-shrink:0;}
+.ft-hours{display:flex;align-items:center;gap:9px;font-size:14px;color:#64748b;}
+/* Bottom bar */
+.ft-bottom{
+  max-width:900px;margin:40px auto 0;
+  padding:20px 0;border-top:1px solid #1e293b;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+  font-size:12px;color:#475569;
+}
+.ft-bottom-links{display:flex;gap:18px;}
+.ft-bottom-link{color:#475569;text-decoration:none;transition:color .2s;}
+.ft-bottom-link:hover{color:#94a3b8;}
 @media(max-width:768px){
-  .footer__content{grid-template-columns:1fr;gap:36px;text-align:center;}
-  .footer__brand,.footer__contact,.footer__badges{align-items:center;}
-  .footer__desc{max-width:100%;}
-  .footer__locations{gap:20px;}
-  .footer__bottom{flex-direction:column;gap:12px;text-align:center;}
+  .ft-inner{grid-template-columns:1fr;gap:36px;text-align:center;}
+  .ft-brand{align-items:center;}
+  .ft-contact{align-items:center;}
+  .ft-links,.ft-hours{justify-content:center;}
+  .ft-phone-btn{width:100%;max-width:280px;}
+  .ft-bottom{flex-direction:column;text-align:center;}
 }
 
 
@@ -1794,37 +1793,57 @@ body{font-size:16px;line-height:1.7;}
 </section>
 
 <!-- ============================================================ -->
-<!-- FOOTER 4 COLONNES — NOUVEAU                                 -->
 <!-- ============================================================ -->
-<footer style="background-color:#1a1f2e;color:#fff;padding:28px 0;font-family:var(--font,system-ui,sans-serif);">
-  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+<!-- FOOTER — 2 colonnes concis                                  -->
+<!-- ============================================================ -->
+<footer class="ft">
+  <div class="ft-inner">
 
-    <!-- Contact info inline -->
-    <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;color:#94a3b8;font-size:14px;">
-      <a href="tel:+41795805857" style="display:inline-flex;align-items:center;gap:8px;background:#2e7d5c;color:#fff;text-decoration:none;padding:10px 18px;border-radius:8px;font-size:15px;font-weight:700;transition:background .2s;" onmouseover="this.style.background='#1c5440'" onmouseout="this.style.background='#2e7d5c'">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        079 580 58 57
+    <!-- Colonne 1 : Brand + CTA appel -->
+    <div class="ft-brand">
+      <a href="/" class="ft-logo">
+        <img src="/images/logo-cube.svg" alt="" class="ft-logo-img" aria-hidden="true">
+        <span class="ft-logo-name">Val-Débarras</span>
       </a>
-      <a href="mailto:info@val-debarras.ch" style="display:flex;align-items:center;gap:6px;color:#94a3b8;text-decoration:none;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        info@val-debarras.ch
+      <p class="ft-tagline">Débarras &amp; nettoyage professionnel.<br>Suisse romande · Depuis 2015</p>
+      <a href="tel:+41795805857" class="ft-phone-btn">
+        <span class="ft-phone-number">079 580 58 57</span>
+        <span class="ft-phone-label">Appel direct</span>
       </a>
-      <span style="display:flex;align-items:center;gap:6px;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Rue de Mazerette 9, 1950 Sion
-      </span>
-      <span style="display:flex;align-items:center;gap:6px;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-        Lun–Sam · 08h–18h
-      </span>
     </div>
 
-    <!-- Copyright + links -->
-    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;color:#64748b;font-size:12px;">
-      <span>© 2026 Val-Débarras Sàrl</span>
-      <a href="#" style="color:#64748b;text-decoration:none;">Données</a>
-      <a href="#" style="color:#64748b;text-decoration:none;">CGV</a>
-      <a href="/brand" style="color:#2e7d5c;text-decoration:none;font-weight:600;">🎨 Charte</a>
+    <!-- Colonne 2 : Contact -->
+    <div class="ft-contact">
+      <p class="ft-title">Contact</p>
+      <div>
+        <span class="ft-addr-label">Siège social</span>
+        <p class="ft-addr-text">Val-Débarras Sàrl<br>Rue de Mazerette 9, 1950 Sion</p>
+      </div>
+      <div class="ft-links">
+        <a href="mailto:info@val-debarras.ch" class="ft-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@val-debarras.ch
+        </a>
+        <a href="tel:+41795805857" class="ft-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          079 580 58 57
+        </a>
+        <span class="ft-hours">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          Lun–Sam · 08h–18h
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Barre copyright -->
+  <div class="ft-bottom">
+    <span>© 2026 Val-Débarras Sàrl — Tous droits réservés</span>
+    <div class="ft-bottom-links">
+      <a href="#" class="ft-bottom-link">Données</a>
+      <a href="#" class="ft-bottom-link">CGV</a>
+      <a href="/brand" class="ft-bottom-link" style="color:var(--vert);">🎨 Charte</a>
     </div>
   </div>
 </footer>
