@@ -1090,33 +1090,33 @@ body{font-size:16px;line-height:1.7;}
 
 
 /* ========== SECCIÓN MEDIOS (rediseñada) ========== */
-.media-section{background:#0f172a;padding:80px 24px;}
+.media-section{background:#0f172a;padding:88px 24px;}
 .media-container{max-width:1000px;margin:0 auto;}
-.media-header{margin-bottom:48px;text-align:center;}
-.media-section .section-label{display:block;font-size:.9rem;font-weight:600;color:#009b74;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;}
-.media-section .section-title{font-size:2rem;font-weight:700;color:#fff;margin-bottom:12px;}
-.media-section .section-desc{font-size:1rem;color:#94a3b8;}
-.media-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
-.media-card{background:#1e293b;border-radius:16px;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);border:2px solid transparent;text-decoration:none;display:block;color:inherit;}
-.media-card-video:hover{border-color:#e30613;transform:translateY(-6px);box-shadow:0 20px 40px rgba(227,6,19,.15);}
-.media-card-article:hover{border-color:#0055ff;transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,85,255,.15);}
+.media-header{margin-bottom:52px;text-align:center;}
+.media-section .section-label{display:block;font-size:.82rem;font-weight:700;color:#009b74;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.media-section .section-title{font-size:2.05rem;font-weight:700;letter-spacing:-.01em;color:#fff;margin-bottom:14px;}
+.media-section .section-desc{font-size:1.02rem;color:#94a3b8;max-width:540px;margin:0 auto;line-height:1.55;}
+.media-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+.media-card{background:#1e293b;border-radius:18px;overflow:hidden;cursor:pointer;transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s cubic-bezier(.4,0,.2,1),border-color .35s ease;border:1px solid rgba(255,255,255,.06);box-shadow:0 4px 18px rgba(0,0,0,.28);text-decoration:none;display:block;color:inherit;}
+.media-card-video:hover{border-color:rgba(227,6,19,.55);transform:translateY(-6px);box-shadow:0 24px 48px rgba(227,6,19,.18);}
+.media-card-article:hover{border-color:rgba(0,85,255,.55);transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,85,255,.18);}
 .media-preview{position:relative;aspect-ratio:16/9;overflow:hidden;}
-.media-preview-img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
-.media-card:hover .media-preview-img{transform:scale(1.05);}
-.media-badge{position:absolute;top:16px;left:16px;padding:6px 14px;border-radius:6px;font-size:.8rem;font-weight:700;color:#fff;z-index:2;}
+.media-preview-img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.media-card:hover .media-preview-img{transform:scale(1.045);}
+.media-preview::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,23,42,.55) 0%,rgba(15,23,42,.12) 32%,rgba(15,23,42,0) 55%);z-index:1;pointer-events:none;}
+.media-badge{position:absolute;top:14px;left:14px;padding:6px 13px;border-radius:7px;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:#fff;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.3);}
 .media-badge-rts{background:#e30613;}
 .media-badge-20min{background:#0055ff;}
-.media-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(0,155,116,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:2;}
-.media-card:hover .media-play-btn{transform:translate(-50%,-50%) scale(1.1);background:#009b74;}
-.media-duration{position:absolute;bottom:16px;right:16px;background:rgba(0,0,0,.8);color:#fff;padding:6px 10px;border-radius:4px;font-size:.8rem;font-weight:600;z-index:2;}
-.media-article-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(0,85,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:2;opacity:0;}
-.media-card-article:hover .media-article-icon{opacity:1;transform:translate(-50%,-50%) scale(1.1);}
-.media-info{padding:24px;}
-.media-title{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:6px;}
-.media-subtitle{font-size:.95rem;color:#94a3b8;margin-bottom:12px;line-height:1.4;}
-.media-blurb{font-size:.85rem;color:#94a3b8;line-height:1.55;margin:0 0 12px;}
-.media-type{font-size:.8rem;color:#64748b;font-style:italic;}
-@media(max-width:768px){.media-grid{grid-template-columns:1fr;}.media-section .section-title{font-size:1.5rem;}}
+.media-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;background:rgba(255,255,255,.92);backdrop-filter:blur(2px);border-radius:50%;display:flex;align-items:center;justify-content:center;padding-left:3px;transition:transform .3s ease,background .3s ease,box-shadow .3s ease;z-index:2;box-shadow:0 6px 20px rgba(0,0,0,.35);}
+.media-card-video:hover .media-play-btn{transform:translate(-50%,-50%) scale(1.08);background:#fff;box-shadow:0 8px 26px rgba(0,0,0,.4);}
+.media-article-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;background:rgba(0,85,255,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:2;opacity:0;box-shadow:0 6px 20px rgba(0,0,0,.35);}
+.media-card-article:hover .media-article-icon{opacity:1;transform:translate(-50%,-50%) scale(1.08);}
+.media-info{padding:26px 26px 28px;}
+.media-title{font-size:1.12rem;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.01em;}
+.media-subtitle{font-size:.95rem;font-weight:600;color:#cbd5e1;margin-bottom:14px;line-height:1.4;}
+.media-blurb{font-size:.875rem;color:#94a3b8;line-height:1.65;margin:0 0 16px;}
+.media-type{display:inline-flex;align-items:center;font-size:.76rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:#64748b;font-style:normal;}
+@media(max-width:768px){.media-section{padding:64px 20px;}.media-grid{grid-template-columns:1fr;gap:22px;}.media-header{margin-bottom:38px;}.media-section .section-title{font-size:1.55rem;}.media-section .section-desc{font-size:.95rem;}.media-info{padding:22px 22px 24px;}}
 
 /* === SISTEMA DE ICONOS VD === */.icon{width:24px;height:24px;flex-shrink:0;color:#009b74;display:inline-block;vertical-align:middle;transition:transform .2s ease,color .2s ease;}.icon-sm{width:16px;height:16px;}.icon-md{width:24px;height:24px;}.icon-lg{width:32px;height:32px;}.icon-xl{width:48px;height:48px;}.icon-green{color:#009b74;}.icon-orange{color:#f59e0b;}.icon-red{color:#ef4444;}.icon-white{color:#fff;}.sc-icon .icon{width:40px;height:40px;color:#009b74;}.sc-icon .icon-orange,.other-card-icon .icon-orange{color:#f59e0b;}.other-card-icon{color:#009b74;}.other-card:hover .other-card-icon .icon{transform:scale(1.08);}.icon-btn{width:1.05em;height:1.05em;color:inherit;flex-shrink:0;vertical-align:-0.16em;margin-right:.45em;display:inline-block;}/* fc-icon en sprite */.fc-icon{background:#fff !important;}.fc-icon .icon{width:22px;height:22px;color:#009b74;}.icon-ft{width:16px;height:16px;color:#22c55e;}</style>
 </head>
@@ -1571,14 +1571,13 @@ body{font-size:16px;line-height:1.7;}
          role="button" tabindex="0"
          aria-label="Voir le reportage RTS - Temps Présent: Diogène, une montagne de souffrance.">
         <div class="media-preview">
-          <img src="/images/rts-video-2948.jpg" onerror="this.src='/images/rts-preview.jpg'"
-               alt="Reportage RTS Temps Présent — Diogènes, une montagne de souffrance. Logement encombré par accumulation extrême."
+          <img src="/images/rts-preview-gilberto.jpg?v=2" onerror="this.src='/images/rts-preview.jpg?v=2'"
+               alt="Reportage RTS Temps Présent — Gilberto Rodrigues, employé de Val-Débarras, interviewé sur une intervention de débarras."
                class="media-preview-img" loading="lazy">
           <span class="media-badge media-badge-rts">RTS</span>
           <div class="media-play-btn" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="12" fill="#009b74"/>
-              <path d="M10 8L16 12L10 16V8Z" fill="white"/>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M9 7.5L17 12L9 16.5V7.5Z" fill="#0f172a"/>
             </svg>
           </div>
         </div>
