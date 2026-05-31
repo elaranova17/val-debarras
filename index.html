@@ -696,48 +696,45 @@ body{font-size:16px;line-height:1.7;}
 /* ============================================================ */
 /* FOOTER — concis 2 colonnes                                   */
 /* ============================================================ */
-.ft{background:#0f172a;color:#94a3b8;font-family:var(--font);padding:52px 24px 0;}
-.ft-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
+.ft{background:#0f172a;color:#94a3b8;font-family:var(--font);padding:40px 24px 0;}
+.ft-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
 /* Colonne brand */
-.ft-brand{display:flex;flex-direction:column;gap:20px;}
+.ft-brand{display:flex;flex-direction:column;gap:14px;}
 .ft-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.ft-logo-img{width:48px;height:48px;border-radius:8px;}
-.ft-logo-name{font-size:22px;font-weight:800;color:#fff;line-height:1;}
-.ft-tagline{font-size:14px;line-height:1.65;color:#64748b;margin:0;}
+.ft-logo-img{width:44px;height:44px;border-radius:8px;}
+.ft-logo-name{font-size:20px;font-weight:800;color:#fff;line-height:1;}
+.ft-tagline{font-size:13px;line-height:1.6;color:#64748b;margin:0;}
 .ft-phone-btn{
-  display:inline-flex;flex-direction:column;align-items:center;gap:3px;
-  padding:14px 28px;background:var(--vert);color:white;border-radius:12px;
-  text-decoration:none;font-weight:700;transition:all .22s;width:fit-content;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:12px 22px;background:var(--vert);color:white;border-radius:10px;
+  text-decoration:none;font-weight:800;font-size:16px;transition:all .22s;width:fit-content;
 }
 .ft-phone-btn:hover{background:var(--vert-fonce);transform:translateY(-2px);box-shadow:0 6px 18px rgba(46,125,92,.35);}
-.ft-phone-number{font-size:20px;font-weight:900;}
-.ft-phone-label{font-size:11px;font-weight:500;opacity:.8;letter-spacing:.3px;}
 /* Colonne contact */
-.ft-contact{display:flex;flex-direction:column;gap:20px;}
-.ft-title{font-size:11px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 4px;}
-.ft-addr-label{font-size:12px;font-weight:600;color:var(--vert);text-transform:uppercase;letter-spacing:.6px;display:block;margin-bottom:6px;}
-.ft-addr-text{font-size:14px;line-height:1.65;color:#64748b;margin:0;}
-.ft-links{display:flex;flex-direction:column;gap:11px;}
-.ft-link{display:flex;align-items:center;gap:9px;color:#94a3b8;text-decoration:none;font-size:14px;transition:color .2s;}
+.ft-contact{display:flex;flex-direction:column;gap:14px;}
+.ft-title{font-size:11px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:1.5px;margin:0;}
+.ft-addr-text{font-size:13px;line-height:1.6;color:#64748b;margin:0;}
+.ft-links{display:flex;flex-direction:column;gap:9px;}
+.ft-link{display:flex;align-items:center;gap:9px;color:#94a3b8;text-decoration:none;font-size:13px;transition:color .2s;}
 .ft-link:hover{color:#22c55e;}
 .ft-link svg,.ft-hours svg{flex-shrink:0;}
-.ft-hours{display:flex;align-items:center;gap:9px;font-size:14px;color:#64748b;}
+.ft-hours{display:flex;align-items:center;gap:9px;font-size:13px;color:#64748b;}
 /* Bottom bar */
 .ft-bottom{
-  max-width:900px;margin:40px auto 0;
-  padding:20px 0;border-top:1px solid #1e293b;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+  max-width:900px;margin:28px auto 0;
+  padding:16px 0;border-top:1px solid #1e293b;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
   font-size:12px;color:#475569;
 }
 .ft-bottom-links{display:flex;gap:18px;}
 .ft-bottom-link{color:#475569;text-decoration:none;transition:color .2s;}
 .ft-bottom-link:hover{color:#94a3b8;}
 @media(max-width:768px){
-  .ft-inner{grid-template-columns:1fr;gap:36px;text-align:center;}
+  .ft-inner{grid-template-columns:1fr;gap:28px;text-align:center;}
   .ft-brand{align-items:center;}
   .ft-contact{align-items:center;}
   .ft-links,.ft-hours{justify-content:center;}
-  .ft-phone-btn{width:100%;max-width:280px;}
+  .ft-phone-btn{width:100%;max-width:260px;justify-content:center;}
   .ft-bottom{flex-direction:column;text-align:center;}
 }
 
@@ -864,38 +861,35 @@ body{font-size:16px;line-height:1.7;}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
 
 .btn-phone{
-  display:inline-flex;align-items:center;gap:14px;
+  display:inline-flex;align-items:center;gap:8px;
   background:white;color:var(--vert-fonce);
-  padding:14px 24px;border-radius:14px;
+  padding:14px 22px;border-radius:12px;
+  font-weight:800;font-size:15px;
   text-decoration:none;transition:all .22s;
   box-shadow:0 4px 16px rgba(0,0,0,.18);
-  border:2px solid transparent;
+  border:2px solid transparent;white-space:nowrap;
 }
 .btn-phone:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.22);}
-.btn-phone__icon{font-size:22px;flex-shrink:0;}
-.btn-phone__text{display:flex;flex-direction:column;line-height:1.2;}
-.btn-phone__num{font-size:18px;font-weight:900;letter-spacing:-.3px;}
-.btn-phone__sub{font-size:11px;color:var(--vert);font-weight:600;opacity:.9;}
 
 .btn-devis{
   display:inline-flex;align-items:center;gap:8px;
   background:var(--vert);color:white;
-  padding:14px 22px;border-radius:14px;
+  padding:14px 22px;border-radius:12px;
   font-weight:800;font-size:15px;
   text-decoration:none;transition:all .22s;
-  border:2px solid transparent;
+  border:2px solid transparent;white-space:nowrap;
 }
 .btn-devis:hover{background:var(--vert-fonce);transform:translateY(-2px);}
 
 .btn-services{
   display:inline-flex;align-items:center;gap:6px;
   background:transparent;color:rgba(255,255,255,.85);
-  padding:14px 18px;border-radius:14px;
-  font-weight:700;font-size:14px;
+  padding:14px 18px;border-radius:12px;
+  font-weight:700;font-size:15px;
   text-decoration:none;transition:all .22s;
-  border:2px solid rgba(255,255,255,.25);
+  border:2px solid rgba(255,255,255,.3);white-space:nowrap;
 }
-.btn-services:hover{background:rgba(255,255,255,.1);color:white;border-color:rgba(255,255,255,.5);}
+.btn-services:hover{background:rgba(255,255,255,.1);color:white;border-color:rgba(255,255,255,.6);}
 
 /* ══════════════════════════════════════════════════
    STICKY BAR MOBILE
@@ -1279,13 +1273,7 @@ body{font-size:16px;line-height:1.7;}
       </div>
       <div class="hero-btns">
         <!-- CTA 1: Téléphone — primaire -->
-        <a href="tel:+41795805857" class="btn-phone">
-          <span class="btn-phone__icon">📞</span>
-          <span class="btn-phone__text">
-            <span class="btn-phone__num">079 580 58 57</span>
-            <span class="btn-phone__sub">Appel gratuit · Lun–Sam 8h–18h</span>
-          </span>
-        </a>
+        <a href="tel:+41795805857" class="btn-phone">📞 079 580 58 57</a>
         <!-- CTA 2: Devis -->
         <a href="#devis" class="btn-devis">📋 Devis gratuit</a>
         <!-- CTA 3: Services -->
@@ -1807,29 +1795,26 @@ body{font-size:16px;line-height:1.7;}
       </a>
       <p class="ft-tagline">Débarras &amp; nettoyage professionnel.<br>Suisse romande · Depuis 2015</p>
       <a href="tel:+41795805857" class="ft-phone-btn">
-        <span class="ft-phone-number">079 580 58 57</span>
-        <span class="ft-phone-label">Appel direct</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        079 580 58 57
       </a>
     </div>
 
     <!-- Colonne 2 : Contact -->
     <div class="ft-contact">
       <p class="ft-title">Contact</p>
-      <div>
-        <span class="ft-addr-label">Siège social</span>
-        <p class="ft-addr-text">Val-Débarras Sàrl<br>Rue de Mazerette 9, 1950 Sion</p>
-      </div>
+      <p class="ft-addr-text">Val-Débarras Sàrl · Rue de Mazerette 9, 1950 Sion</p>
       <div class="ft-links">
         <a href="mailto:info@val-debarras.ch" class="ft-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           info@val-debarras.ch
         </a>
         <a href="tel:+41795805857" class="ft-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           079 580 58 57
         </a>
         <span class="ft-hours">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
           Lun–Sam · 08h–18h
         </span>
       </div>
