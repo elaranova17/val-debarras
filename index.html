@@ -1355,12 +1355,16 @@ body{font-size:16px;line-height:1.7;}
     <div class="stat">
       <div class="stat-n stat-media">
         <div class="media-logos-vertical">
-          <a href="https://www.rts.ch/info/suisse/diogene-reportage" target="_blank" rel="noopener noreferrer" class="media-logo-link media-rts" aria-label="Reportage RTS - Temps Présent">
+          <button type="button" class="media-logo-link media-rts" data-modal="video"
+                  data-src="https://www.rts.ch/play/embed?urn=urn:rts:video:8430900a-7072-3ba2-aacb-9a1268ffceef"
+                  aria-label="Voir le reportage RTS - Temps Présent">
             <span class="media-logo-text">RTS</span>
-          </a>
-          <a href="https://www.20min.ch/story/val-debarras" target="_blank" rel="noopener noreferrer" class="media-logo-link media-20min" aria-label="Article 20 Minutes">
+          </button>
+          <button type="button" class="media-logo-link media-20min" data-modal="article"
+                  data-src="https://www.20min.ch/fr/story/valais-locataire-expulsee-elle-conservait-35-tonnes-de-dechets-103216100"
+                  aria-label="Lire l'article 20 Minutes">
             <span class="media-logo-text">20 minutes</span>
-          </a>
+          </button>
         </div>
       </div>
       <div class="stat-l">dans les médias</div>
@@ -1577,9 +1581,10 @@ body{font-size:16px;line-height:1.7;}
     <div class="media-grid">
 
       <!-- TARJETA 1: RTS (VIDEO) -->
-      <a class="media-card media-card-video"
-         href="https://www.rts.ch/play/tv/temps-present/video/diogenes-une-montagne-de-souffrance?urn=urn:rts:video:8430900a-7072-3ba2-aacb-9a1268ffceef"
-         target="_blank" rel="noopener noreferrer"
+      <article class="media-card media-card-video"
+         data-modal="video"
+         data-src="https://www.rts.ch/play/embed?urn=urn:rts:video:8430900a-7072-3ba2-aacb-9a1268ffceef"
+         role="button" tabindex="0"
          aria-label="Voir le reportage RTS - Temps Présent: Diogène, une montagne de souffrance. Durée 29 minutes 48.">
         <div class="media-preview">
           <img src="/images/rts-video-2948.jpg" onerror="this.src='/images/rts-preview.jpg'"
@@ -1599,12 +1604,13 @@ body{font-size:16px;line-height:1.7;}
           <p class="media-subtitle">Diogène : une montagne de souffrance</p>
           <span class="media-type">Reportage vidéo · 29:48</span>
         </div>
-      </a>
+      </article>
 
       <!-- TARJETA 2: 20 MINUTES (ARTICLE) -->
-      <a class="media-card media-card-article"
-         href="https://www.20min.ch/fr/story/valais-locataire-expulsee-elle-conservait-35-tonnes-de-dechets-103216100"
-         target="_blank" rel="noopener noreferrer"
+      <article class="media-card media-card-article"
+         data-modal="article"
+         data-src="https://www.20min.ch/fr/story/valais-locataire-expulsee-elle-conservait-35-tonnes-de-dechets-103216100"
+         role="button" tabindex="0"
          aria-label="Lire l'article 20 Minutes: Locataire expulsée à Sion, elle conservait 3,5 tonnes de déchets.">
         <div class="media-preview">
           <img src="/images/20min-preview.jpg" onerror="this.src='/images/ge-action.jpg'"
@@ -1623,7 +1629,7 @@ body{font-size:16px;line-height:1.7;}
           <p class="media-subtitle">Valais : locataire expulsée, 35 tonnes de déchets</p>
           <span class="media-type">Article · 20 Minutes</span>
         </div>
-      </a>
+      </article>
 
     </div>
   </div>
@@ -1825,13 +1831,62 @@ body{font-size:16px;line-height:1.7;}
 </footer>
 
 <!-- MODAL MÉDIAS -->
-<div class="media-modal" id="mediaModal" role="dialog" aria-modal="true" aria-label="Contenu média">
-  <div class="media-modal-backdrop" onclick="closeMediaModal()"></div>
+<style>
+button.media-logo-link{border:none;cursor:pointer;font-family:inherit;}
+.media-card{cursor:pointer;}
+.media-card:focus-visible{outline:3px solid #009b74;outline-offset:3px;}
+.media-modal-article{max-width:560px;background:#0a0f1a;}
+.media-modal-article .media-modal-img{width:100%;height:210px;object-fit:cover;display:block;}
+</style>
+
+<!-- Modal VIDEO (RTS) -->
+<div class="media-modal" id="modal-video" role="dialog" aria-modal="true" aria-label="Reportage vidéo RTS — Temps Présent">
+  <div class="media-modal-backdrop"></div>
   <div class="media-modal-box">
-    <button class="media-modal-close" onclick="closeMediaModal()" aria-label="Fermer">✕</button>
-    <div id="modalMediaContent"></div>
+    <button class="media-modal-close" type="button" aria-label="Fermer">✕</button>
+    <iframe title="Reportage RTS Temps Présent — Diogènes, une montagne de souffrance" src="" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
+
+<!-- Modal ARTICLE (20 Minutes) -->
+<div class="media-modal" id="modal-article" role="dialog" aria-modal="true" aria-label="Article 20 Minutes">
+  <div class="media-modal-backdrop"></div>
+  <div class="media-modal-box media-modal-article">
+    <button class="media-modal-close" type="button" aria-label="Fermer">✕</button>
+    <img class="media-modal-img" src="/images/20min-preview.jpg" onerror="this.src='/images/ge-action.jpg'" alt="Appartement encombré — article 20 Minutes">
+    <div class="modal-article">
+      <span class="modal-article-badge">20 minutes</span>
+      <h3 class="modal-article-title">Valais : locataire expulsée, elle conservait 3,5 tonnes de déchets</h3>
+      <p class="modal-article-desc">Val-Débarras est intervenu dans ce cas extrême à Sion. L'article revient sur le syndrome de Diogène en Suisse romande et l'importance d'une intervention humaine et professionnelle.</p>
+      <a class="modal-article-link modal-link-primary" href="https://www.20min.ch/fr/story/valais-locataire-expulsee-elle-conservait-35-tonnes-de-dechets-103216100" target="_blank" rel="noopener noreferrer">Lire l'article complet →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── MODALES MÉDIAS (vidéo RTS + article 20min) ── */
+(function(){
+  var videoModal = document.getElementById('modal-video');
+  var articleModal = document.getElementById('modal-article');
+  function open(m){ if(!m) return; m.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(m){ if(!m) return; m.classList.remove('open'); document.body.style.overflow=''; var f=m.querySelector('iframe'); if(f) f.src=''; }
+  function fire(t){
+    var type=t.dataset.modal, src=t.dataset.src;
+    if(type==='video' && videoModal){ var f=videoModal.querySelector('iframe'); if(f && src) f.src=src; open(videoModal); }
+    else if(type==='article' && articleModal){ var l=articleModal.querySelector('.modal-link-primary'); if(l && src) l.href=src; open(articleModal); }
+  }
+  document.querySelectorAll('[data-modal]').forEach(function(t){
+    t.addEventListener('click', function(){ fire(t); });
+    t.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); fire(t); } });
+  });
+  [videoModal, articleModal].forEach(function(m){
+    if(!m) return;
+    var bd=m.querySelector('.media-modal-backdrop'); if(bd) bd.addEventListener('click', function(){ close(m); });
+    var cl=m.querySelector('.media-modal-close'); if(cl) cl.addEventListener('click', function(){ close(m); });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ close(videoModal); close(articleModal); } });
+})();
+</script>
 
 <button class="back-to-top" id="backToTop" aria-label="Retour en haut de page" title="Retour en haut">↑</button>
 <script>

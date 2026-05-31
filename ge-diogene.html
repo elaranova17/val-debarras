@@ -614,6 +614,11 @@ body{font-size:16px;line-height:1.7;}
 .sidebar-cta{margin-top:14px;flex-direction:column;align-items:stretch;}
 .sidebar-cta .btn-phone,.sidebar-cta .btn-devis{justify-content:center;}
 .pro-cta{margin-top:6px;}
+
+/* ===== Communes en pills ===== */
+.communes-cloud{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:10px;}
+.commune-pill{display:inline-block;padding:10px 20px;background:#f0fdf4;border:1.5px solid #009b74;border-radius:50px;font-size:.95rem;font-weight:500;color:#1a3d2e;transition:all .2s ease;}
+.commune-pill:hover{background:#009b74;color:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,155,116,.2);}
 </style>
 </head>
 <body>
@@ -874,7 +879,16 @@ body{font-size:16px;line-height:1.7;}
   <div class="villes-inner">
     <span class="section-kicker">Zone d'intervention</span>
     <h3>Communes couvertes à Genève</h3>
-    <div class="villes-list">Genève · Carouge · Lancy · Meyrin · Vernier · Thônex · Onex · Bernex</div>
+    <div class="communes-cloud">
+      <span class="commune-pill">Genève</span>
+      <span class="commune-pill">Carouge</span>
+      <span class="commune-pill">Lancy</span>
+      <span class="commune-pill">Meyrin</span>
+      <span class="commune-pill">Vernier</span>
+      <span class="commune-pill">Thônex</span>
+      <span class="commune-pill">Onex</span>
+      <span class="commune-pill">Bernex</span>
+    </div>
   </div>
 </div>
 
