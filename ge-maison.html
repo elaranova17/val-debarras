@@ -159,8 +159,8 @@ img{max-width:100%;display:block;}
 .other-inner{max-width:960px;margin:0 auto;padding:0 24px;}
 .other-inner h2{font-size:22px;font-weight:800;color:var(--gris-fonce);margin:0 0 6px;}
 .other-subtitle{font-size:13px;color:#6b7280;margin:0 0 28px;}
-.other-grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;}
-.other-card{background:white;border:1.5px solid #e5e7eb;border-radius:12px;padding:20px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;transition:all .25s;flex:0 0 calc(33.333% - 12px);max-width:260px;min-width:200px;}
+.other-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.other-card{background:white;border:1.5px solid #e5e7eb;border-radius:12px;padding:20px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;transition:all .25s;}
 .other-card:hover{border-color:var(--vert);box-shadow:0 4px 16px rgba(46,125,92,.12);transform:translateY(-3px);}
 .other-card-icon{width:40px;height:40px;}
 .other-card-icon svg{width:100%;height:100%;}
@@ -168,7 +168,7 @@ img{max-width:100%;display:block;}
 .other-card-desc{font-size:12px;color:#6b7280;margin:0;}
 .other-card-cta{display:block;width:100%;background:var(--vert);color:white;padding:9px;border-radius:6px;font-weight:600;font-size:13px;margin-top:4px;text-align:center;transition:background .2s;}
 .other-card:hover .other-card-cta{background:var(--vert-fonce);}
-@media(max-width:640px){.other-grid{flex-direction:column;}.other-card{flex:unset;max-width:100%;flex-direction:row;text-align:left;gap:12px;}.other-card-icon{flex-shrink:0;}.other-card-cta{width:auto;margin-left:auto;padding:8px 14px;}}
+@media(max-width:768px){.other-grid{grid-template-columns:repeat(2,1fr);}.other-card{flex-direction:row;text-align:left;gap:12px;}.other-card-icon{flex-shrink:0;}.other-card-cta{width:auto;margin-left:auto;padding:8px 12px;}}@media(max-width:480px){.other-grid{grid-template-columns:1fr;}}
 /* Form */
 .form-section{background:var(--vert-dark);padding:72px 0;}
 .form-inner{max-width:1400px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start;}
