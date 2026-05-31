@@ -46,15 +46,18 @@ SC_ZONES_CSS = """
   margin:0 auto 14px;
   opacity:1 !important;
   width:56px;height:56px;
+  box-sizing:border-box;
   display:flex;align-items:center;justify-content:center;
   background:rgba(255,255,255,.12);
   border:1.5px solid rgba(255,255,255,.22);
   border-radius:14px;
-  padding:8px;
+  padding:4px;
   box-shadow:0 4px 14px rgba(0,0,0,.15);
 }
 .sc-icon .icon{
-  width:48px !important;height:48px !important;
+  display:block;
+  margin:0;
+  width:40px !important;height:40px !important;
   color:#6ee7a0 !important;
   stroke-width:2;
   filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));
@@ -69,6 +72,7 @@ SC_ZONES_CSS = """
 .sc-zones{
   margin-top:14px;padding-top:12px;
   border-top:1px solid rgba(255,255,255,.1);
+  text-align:center;
 }
 .sc-zones-label{
   display:block;font-size:10px;font-weight:700;
@@ -76,12 +80,20 @@ SC_ZONES_CSS = """
   color:rgba(255,255,255,.45);margin-bottom:8px;
 }
 .sc-zones-links{
-  display:flex;flex-wrap:wrap;gap:6px 8px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  width:100%;
 }
 .sc-zones-links a{
-  font-size:11.5px;font-weight:600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-height:32px;
+  font-size:11px;font-weight:600;
   color:rgba(255,255,255,.72);
-  padding:4px 10px;border-radius:20px;
+  padding:6px 4px;border-radius:20px;
   background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.15);
   transition:color .2s,background .2s,border-color .2s,transform .2s;
@@ -94,8 +106,11 @@ SC_ZONES_CSS = """
   transform:translateY(-1px);
 }
 @media(max-width:768px){
-  .sc-zones-links{gap:5px 6px;}
-  .sc-zones-links a{font-size:11px;padding:3px 8px;}
+  .sc-zones-links{
+    grid-template-columns:repeat(2,1fr);
+    gap:6px;
+  }
+  .sc-zones-links a{font-size:10.5px;padding:5px 3px;}
 }
 """
 
@@ -127,8 +142,12 @@ def inject_css(html: str) -> str:
         html,
         flags=re.S,
     )
+    block_pat = (
+        r"/\* === SERVICE CARD ZONES \+ centered icons \(home\) === \*/.*?"
+        r"(?=\n\n/\* === PHONE ANIMATE VD === \*/)"
+    )
     if MARKER in html:
-        return html
+        return re.sub(block_pat, SC_ZONES_CSS.strip() + "\n\n", html, count=1, flags=re.S)
     return html.replace("</style>", SC_ZONES_CSS + "\n</style>", 1)
 
 
@@ -148,8 +167,12 @@ def restructure_card(html: str, service_name: str, service_slug: str) -> str:
             count=1,
             flags=re.S,
         )
-    elif f'class="sc-zones"' not in html.split(f'data-service="{service_name}"')[1].split("</div>")[0]:
-        # Insert zones after primary CTA if link already replaced
+    elif not re.search(
+        rf'<div class="sc" data-service="{re.escape(service_name)}">.*?<div class="sc-zones">',
+        html,
+        re.S,
+    ):
+        # Insert zones after primary CTA if missing
         pat = (
             rf'(<div class="sc" data-service="{re.escape(service_name)}">.*?'
             rf'(<a href="#devis" class="btn-primary sc-card-primary"[^>]*>.*?</a>)\s*)'
