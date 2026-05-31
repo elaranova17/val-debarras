@@ -293,7 +293,7 @@ img{max-width:100%;display:block;}
   font-size:11px;font-weight:800;letter-spacing:2px;
   color:rgba(255,255,255,.35);margin-bottom:14px;display:block;
 }
-.sc-icon{position:absolute;top:28px;right:28px;font-size:32px;opacity:.15;}
+
 .sc-title{font-size:22px;font-weight:800;line-height:1.2;margin-bottom:10px;}
 .sc-desc{font-size:13.5px;color:rgba(255,255,255,.72);line-height:1.6;}
 .sc-link{
@@ -1118,7 +1118,33 @@ body{font-size:16px;line-height:1.7;}
 .media-type{display:inline-flex;align-items:center;font-size:.76rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:#64748b;font-style:normal;}
 @media(max-width:768px){.media-section{padding:64px 20px;}.media-grid{grid-template-columns:1fr;gap:22px;}.media-header{margin-bottom:38px;}.media-section .section-title{font-size:1.55rem;}.media-section .section-desc{font-size:.95rem;}.media-info{padding:22px 22px 24px;}}
 
-/* === SISTEMA DE ICONOS VD === */.icon{width:24px;height:24px;flex-shrink:0;color:#009b74;display:inline-block;vertical-align:middle;transition:transform .2s ease,color .2s ease;}.icon-sm{width:16px;height:16px;}.icon-md{width:24px;height:24px;}.icon-lg{width:32px;height:32px;}.icon-xl{width:48px;height:48px;}.icon-green{color:#009b74;}.icon-orange{color:#f59e0b;}.icon-red{color:#ef4444;}.icon-white{color:#fff;}.sc-icon .icon{width:40px;height:40px;color:#009b74;}.sc-icon .icon-orange,.other-card-icon .icon-orange{color:#f59e0b;}.other-card-icon{color:#009b74;}.other-card:hover .other-card-icon .icon{transform:scale(1.08);}.icon-btn{width:1.05em;height:1.05em;color:inherit;flex-shrink:0;vertical-align:-0.16em;margin-right:.45em;display:inline-block;}/* fc-icon en sprite */.fc-icon{background:#fff !important;}.fc-icon .icon{width:22px;height:22px;color:#009b74;}.icon-ft{width:16px;height:16px;color:#22c55e;}</style>
+/* === SISTEMA DE ICONOS VD === */.icon{width:24px;height:24px;flex-shrink:0;color:#009b74;display:inline-block;vertical-align:middle;transition:transform .2s ease,color .2s ease;}.icon-sm{width:16px;height:16px;}.icon-md{width:24px;height:24px;}.icon-lg{width:32px;height:32px;}.icon-xl{width:48px;height:48px;}.icon-green{color:#009b74;}.icon-orange{color:#f59e0b;}.icon-red{color:#ef4444;}.icon-white{color:#fff;}.sc-icon .icon{width:48px;height:48px;color:#6ee7a0;}.sc-icon .icon-orange,.other-card-icon .icon-orange{color:#f59e0b;}.other-card-icon{color:#009b74;}.other-card:hover .other-card-icon .icon{transform:scale(1.08);}.icon-btn{width:1.05em;height:1.05em;color:inherit;flex-shrink:0;vertical-align:-0.16em;margin-right:.45em;display:inline-block;}/* fc-icon en sprite */.fc-icon{background:#fff !important;}.fc-icon .icon{width:22px;height:22px;color:#009b74;}.icon-ft{width:16px;height:16px;color:#22c55e;}
+/* === SERVICE CARD ICONS — visibilité accrue (home) === */
+.sc-icon{
+  position:absolute;top:22px;right:22px;
+  opacity:1 !important;
+  width:56px;height:56px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.12);
+  border:1.5px solid rgba(255,255,255,.22);
+  border-radius:14px;
+  padding:8px;
+  box-shadow:0 4px 14px rgba(0,0,0,.15);
+}
+.sc-icon .icon{
+  width:48px !important;height:48px !important;
+  color:#6ee7a0 !important;
+  stroke-width:2;
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));
+}
+.sc-icon .icon-orange{color:#fbbf24 !important;}
+.sc:hover .sc-icon{
+  background:rgba(255,255,255,.18);
+  border-color:rgba(255,255,255,.35);
+  transform:scale(1.06);
+}
+
+</style>
 </head>
 <body>
 <svg id="vd-icon-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="icon-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></g></symbol><symbol id="icon-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></g></symbol><symbol id="icon-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></g></symbol><symbol id="icon-house" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></g></symbol><symbol id="icon-dove" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1"/><circle cx="12" cy="8" r="2"/><path d="M12 10v12"/><path d="M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z"/><path d="M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z"/></g></symbol><symbol id="icon-hospital" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></g></symbol><symbol id="icon-warning" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></g></symbol><symbol id="icon-broom" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h.01"/><path d="M7 5h.01"/><path d="M11 7h.01"/><path d="M3 7h.01"/><path d="M7 9h.01"/><path d="M3 11h.01"/><rect width="4" height="4" x="15" y="5"/><path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2"/><path d="m13 14 8-2"/><path d="m13 19 8-2"/></g></symbol><symbol id="icon-document" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></g></symbol><symbol id="icon-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></g></symbol><symbol id="icon-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></g></symbol><symbol id="icon-map" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></g></symbol><symbol id="icon-email" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></g></symbol><symbol id="icon-star" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></g></symbol><symbol id="icon-phone-line" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></g></symbol><symbol id="icon-document-line" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></g></symbol></svg>
@@ -1426,6 +1452,7 @@ body{font-size:16px;line-height:1.7;}
         <button class="sc-toggle" aria-expanded="false">
           Voir le service <i class="sc-arrow">→</i>
         </button>
+        <a href="/debarras-appartement/geneve/" class="sc-link">En savoir plus →</a>
         <div class="sc-expanded">
           <ul class="sc-features">
           <li><span><svg class="icon icon-sm"><use href="#icon-check"/></svg></span> Aucun tri demandé de votre part</li>
@@ -1447,6 +1474,7 @@ body{font-size:16px;line-height:1.7;}
         <button class="sc-toggle" aria-expanded="false">
           Voir le service <i class="sc-arrow">→</i>
         </button>
+        <a href="/debarras-maison/geneve/" class="sc-link">En savoir plus →</a>
         <div class="sc-expanded">
           <ul class="sc-features">
           <li><span><svg class="icon icon-sm"><use href="#icon-check"/></svg></span> Garage, grenier, cave inclus</li>
@@ -1468,6 +1496,7 @@ body{font-size:16px;line-height:1.7;}
         <button class="sc-toggle" aria-expanded="false">
           Voir le service <i class="sc-arrow">→</i>
         </button>
+        <a href="/debarras-apres-deces/geneve/" class="sc-link">En savoir plus →</a>
         <div class="sc-expanded">
           <ul class="sc-features">
           <li><span><svg class="icon icon-sm"><use href="#icon-check"/></svg></span> Discrétion et respect garantis</li>
@@ -1489,6 +1518,7 @@ body{font-size:16px;line-height:1.7;}
         <button class="sc-toggle" aria-expanded="false">
           Voir le service <i class="sc-arrow">→</i>
         </button>
+        <a href="/debarras-ems/geneve/" class="sc-link">En savoir plus →</a>
         <div class="sc-expanded">
           <ul class="sc-features">
           <li><span><svg class="icon icon-sm"><use href="#icon-check"/></svg></span> Délais courts respectés</li>
@@ -1510,6 +1540,7 @@ body{font-size:16px;line-height:1.7;}
         <button class="sc-toggle" aria-expanded="false">
           Voir le service <i class="sc-arrow">→</i>
         </button>
+        <a href="/debarras-insalubre-diogene/geneve/" class="sc-link">En savoir plus →</a>
         <div class="sc-expanded">
           <ul class="sc-features">
           <li><span><svg class="icon icon-sm"><use href="#icon-check"/></svg></span> Sans jugement, en toute discrétion</li>
@@ -1531,6 +1562,7 @@ body{font-size:16px;line-height:1.7;}
         <button class="sc-toggle" aria-expanded="false">
           Voir le service <i class="sc-arrow">→</i>
         </button>
+        <a href="/nettoyage-extreme/geneve/" class="sc-link">En savoir plus →</a>
         <div class="sc-expanded">
           <ul class="sc-features">
           <li><span><svg class="icon icon-sm"><use href="#icon-check"/></svg></span> Protocole certifié biologique</li>

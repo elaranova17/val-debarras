@@ -1,22 +1,316 @@
 {
   "rewrites": [
-    { "source": "/brand", "destination": "/brand.html" },
-    { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/blog/", "destination": "/blog.html" },
-    { "source": "/blog/comment-debarrasser-appartement-suisse-romande", "destination": "/blog-article-1.html" },
-    { "source": "/blog/comment-debarrasser-appartement-suisse-romande/", "destination": "/blog-article-1.html" },
-    { "source": "/debarras-appartement/geneve", "destination": "/ge-appartement.html" },
-    { "source": "/debarras-appartement/geneve/", "destination": "/ge-appartement.html" },
-    { "source": "/debarras-maison/geneve", "destination": "/ge-maison.html" },
-    { "source": "/debarras-maison/geneve/", "destination": "/ge-maison.html" },
-    { "source": "/debarras-apres-deces/geneve", "destination": "/ge-succession.html" },
-    { "source": "/debarras-apres-deces/geneve/", "destination": "/ge-succession.html" },
-    { "source": "/debarras-ems/geneve", "destination": "/ge-ems.html" },
-    { "source": "/debarras-ems/geneve/", "destination": "/ge-ems.html" },
-    { "source": "/debarras-insalubre-diogene/geneve", "destination": "/ge-diogene.html" },
-    { "source": "/debarras-insalubre-diogene/geneve/", "destination": "/ge-diogene.html" },
-    { "source": "/nettoyage-extreme/geneve", "destination": "/ge-nettoyage.html" },
-    { "source": "/nettoyage-extreme/geneve/", "destination": "/ge-nettoyage.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/brand",
+      "destination": "/brand.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/blog/comment-debarrasser-appartement-suisse-romande",
+      "destination": "/blog-article-1.html"
+    },
+    {
+      "source": "/blog/comment-debarrasser-appartement-suisse-romande/",
+      "destination": "/blog-article-1.html"
+    },
+    {
+      "source": "/debarras-appartement/geneve",
+      "destination": "/ge-appartement.html"
+    },
+    {
+      "source": "/debarras-appartement/geneve/",
+      "destination": "/ge-appartement.html"
+    },
+    {
+      "source": "/debarras-appartement/vaud",
+      "destination": "/vd-appartement.html"
+    },
+    {
+      "source": "/debarras-appartement/vaud/",
+      "destination": "/vd-appartement.html"
+    },
+    {
+      "source": "/debarras-appartement/valais",
+      "destination": "/vs-appartement.html"
+    },
+    {
+      "source": "/debarras-appartement/valais/",
+      "destination": "/vs-appartement.html"
+    },
+    {
+      "source": "/debarras-appartement/fribourg",
+      "destination": "/fr-appartement.html"
+    },
+    {
+      "source": "/debarras-appartement/fribourg/",
+      "destination": "/fr-appartement.html"
+    },
+    {
+      "source": "/debarras-appartement/neuchatel",
+      "destination": "/ne-appartement.html"
+    },
+    {
+      "source": "/debarras-appartement/neuchatel/",
+      "destination": "/ne-appartement.html"
+    },
+    {
+      "source": "/debarras-appartement/jura",
+      "destination": "/ju-appartement.html"
+    },
+    {
+      "source": "/debarras-appartement/jura/",
+      "destination": "/ju-appartement.html"
+    },
+    {
+      "source": "/debarras-maison/geneve",
+      "destination": "/ge-maison.html"
+    },
+    {
+      "source": "/debarras-maison/geneve/",
+      "destination": "/ge-maison.html"
+    },
+    {
+      "source": "/debarras-maison/vaud",
+      "destination": "/vd-maison.html"
+    },
+    {
+      "source": "/debarras-maison/vaud/",
+      "destination": "/vd-maison.html"
+    },
+    {
+      "source": "/debarras-maison/valais",
+      "destination": "/vs-maison.html"
+    },
+    {
+      "source": "/debarras-maison/valais/",
+      "destination": "/vs-maison.html"
+    },
+    {
+      "source": "/debarras-maison/fribourg",
+      "destination": "/fr-maison.html"
+    },
+    {
+      "source": "/debarras-maison/fribourg/",
+      "destination": "/fr-maison.html"
+    },
+    {
+      "source": "/debarras-maison/neuchatel",
+      "destination": "/ne-maison.html"
+    },
+    {
+      "source": "/debarras-maison/neuchatel/",
+      "destination": "/ne-maison.html"
+    },
+    {
+      "source": "/debarras-maison/jura",
+      "destination": "/ju-maison.html"
+    },
+    {
+      "source": "/debarras-maison/jura/",
+      "destination": "/ju-maison.html"
+    },
+    {
+      "source": "/debarras-apres-deces/geneve",
+      "destination": "/ge-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces/geneve/",
+      "destination": "/ge-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces/vaud",
+      "destination": "/vd-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces/vaud/",
+      "destination": "/vd-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces/valais",
+      "destination": "/vs-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces/valais/",
+      "destination": "/vs-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces/fribourg",
+      "destination": "/fr-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces/fribourg/",
+      "destination": "/fr-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces/neuchatel",
+      "destination": "/ne-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces/neuchatel/",
+      "destination": "/ne-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces/jura",
+      "destination": "/ju-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces/jura/",
+      "destination": "/ju-succession.html"
+    },
+    {
+      "source": "/debarras-ems/geneve",
+      "destination": "/ge-ems.html"
+    },
+    {
+      "source": "/debarras-ems/geneve/",
+      "destination": "/ge-ems.html"
+    },
+    {
+      "source": "/debarras-ems/vaud",
+      "destination": "/vd-ems.html"
+    },
+    {
+      "source": "/debarras-ems/vaud/",
+      "destination": "/vd-ems.html"
+    },
+    {
+      "source": "/debarras-ems/valais",
+      "destination": "/vs-ems.html"
+    },
+    {
+      "source": "/debarras-ems/valais/",
+      "destination": "/vs-ems.html"
+    },
+    {
+      "source": "/debarras-ems/fribourg",
+      "destination": "/fr-ems.html"
+    },
+    {
+      "source": "/debarras-ems/fribourg/",
+      "destination": "/fr-ems.html"
+    },
+    {
+      "source": "/debarras-ems/neuchatel",
+      "destination": "/ne-ems.html"
+    },
+    {
+      "source": "/debarras-ems/neuchatel/",
+      "destination": "/ne-ems.html"
+    },
+    {
+      "source": "/debarras-ems/jura",
+      "destination": "/ju-ems.html"
+    },
+    {
+      "source": "/debarras-ems/jura/",
+      "destination": "/ju-ems.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/geneve",
+      "destination": "/ge-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/geneve/",
+      "destination": "/ge-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/vaud",
+      "destination": "/vd-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/vaud/",
+      "destination": "/vd-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/valais",
+      "destination": "/vs-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/valais/",
+      "destination": "/vs-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/fribourg",
+      "destination": "/fr-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/fribourg/",
+      "destination": "/fr-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/neuchatel",
+      "destination": "/ne-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/neuchatel/",
+      "destination": "/ne-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/jura",
+      "destination": "/ju-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/jura/",
+      "destination": "/ju-diogene.html"
+    },
+    {
+      "source": "/nettoyage-extreme/geneve",
+      "destination": "/ge-nettoyage.html"
+    },
+    {
+      "source": "/nettoyage-extreme/geneve/",
+      "destination": "/ge-nettoyage.html"
+    },
+    {
+      "source": "/nettoyage-extreme/vaud",
+      "destination": "/vd-nettoyage.html"
+    },
+    {
+      "source": "/nettoyage-extreme/vaud/",
+      "destination": "/vd-nettoyage.html"
+    },
+    {
+      "source": "/nettoyage-extreme/valais",
+      "destination": "/vs-nettoyage.html"
+    },
+    {
+      "source": "/nettoyage-extreme/valais/",
+      "destination": "/vs-nettoyage.html"
+    },
+    {
+      "source": "/nettoyage-extreme/fribourg",
+      "destination": "/fr-nettoyage.html"
+    },
+    {
+      "source": "/nettoyage-extreme/fribourg/",
+      "destination": "/fr-nettoyage.html"
+    },
+    {
+      "source": "/nettoyage-extreme/neuchatel",
+      "destination": "/ne-nettoyage.html"
+    },
+    {
+      "source": "/nettoyage-extreme/neuchatel/",
+      "destination": "/ne-nettoyage.html"
+    },
+    {
+      "source": "/nettoyage-extreme/jura",
+      "destination": "/ju-nettoyage.html"
+    },
+    {
+      "source": "/nettoyage-extreme/jura/",
+      "destination": "/ju-nettoyage.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
