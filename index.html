@@ -230,17 +230,14 @@ img{max-width:100%;display:block;}
 .stat:last-child{border-right:none;}
 .stat-n{font-size:40px;font-weight:900;color:var(--vert-clair);line-height:1;}
 .stat-l{font-size:13px;color:rgba(255,255,255,.65);margin-top:5px;}
-.stat-media{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;}
-.media-logos-row{display:flex;align-items:center;gap:14px;}
-.logo-media{
-  filter:brightness(0) invert(1);
-  opacity:.85;
-  transition:opacity .2s;
-  display:block;
-}
-.stat:hover .logo-media{opacity:1;}
-.logo-rts{height:28px;width:auto;}
-.logo-20min{height:20px;width:auto;}
+.stat-media{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.media-logos-vertical{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.media-logo-link{display:flex;align-items:center;justify-content:center;padding:8px 18px;border-radius:6px;text-decoration:none;transition:transform .2s,box-shadow .2s;min-width:110px;}
+.media-logo-link:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.25);}
+.media-rts{background:#e30613;}
+.media-20min{background:#0055ff;}
+.media-logo-text{color:white;font-weight:700;font-size:13px;letter-spacing:.02em;}
+@media(max-width:768px){.media-logo-link{padding:7px 14px;min-width:90px;}.media-logo-text{font-size:12px;}}
 
 /* Shields row — stat cantons */
 .stat-shields{
@@ -1018,7 +1015,7 @@ body{font-size:16px;line-height:1.7;}
 <!-- ============================================================ -->
 <header class="header">
   <div class="header-inner">
-    <a href="/" class="logo"><img src="/images/logo.jpg" alt="Val-Débarras" class="logo-img"></a>
+    <a href="/" class="logo"><img src="/images/logo-cube.jpg" alt="Val-Débarras" class="logo-img"></a>
     <nav class="nav" id="desktopNav">
     <div class="nav-item">
       <button class="nav-btn">Débarras appartement <span class="chev">▾</span></button>
@@ -1096,7 +1093,7 @@ body{font-size:16px;line-height:1.7;}
 <!-- Mobile drawer NOUVEAU -->
 <div class="mobile-drawer" id="drawer">
   <div class="drawer-header">
-    <a href="/" class="logo" style="gap:10px;"><img src="/images/logo.jpg" alt="Val-Débarras" class="logo-img" style="width:40px;height:40px;"></a>
+    <a href="/" class="logo" style="gap:10px;"><img src="/images/logo-cube.jpg" alt="Val-Débarras" class="logo-img" style="width:40px;height:40px;"></a>
     <button class="drawer-close" id="drawerClose">✕</button>
   </div>
   <div class="drawer-body">
@@ -1234,9 +1231,15 @@ body{font-size:16px;line-height:1.7;}
       </div>
     </div>
     <div class="stat">
-      <div class="stat-n stat-media media-logos-row">
-        <img src="/images/logo-rts.svg" alt="RTS" class="logo-media logo-rts">
-        <img src="/images/logo-20min.svg" alt="20 minutes" class="logo-media logo-20min">
+      <div class="stat-n stat-media">
+        <div class="media-logos-vertical">
+          <a href="https://www.rts.ch/info/suisse/diogene-reportage" target="_blank" rel="noopener noreferrer" class="media-logo-link media-rts" aria-label="Reportage RTS - Temps Présent">
+            <span class="media-logo-text">RTS</span>
+          </a>
+          <a href="https://www.20min.ch/story/val-debarras" target="_blank" rel="noopener noreferrer" class="media-logo-link media-20min" aria-label="Article 20 Minutes">
+            <span class="media-logo-text">20 minutes</span>
+          </a>
+        </div>
       </div>
       <div class="stat-l">dans les médias</div>
     </div>
@@ -1483,32 +1486,32 @@ body{font-size:16px;line-height:1.7;}
     <div class="canton-grid">
       <a href="/debarras-appartement/geneve/" class="canton-btn">
         <img src="/images/shield-ge.svg" class="canton-btn__shield" alt="Écusson Genève" loading="lazy">
-        <span class="canton-btn__info"><span class="canton-btn__name">Genève</span><span class="canton-btn__sub">Genève, Carouge, Meyrin, Lancy</span></span>
+        <span class="canton-btn__info"><span class="canton-btn__name">Genève</span></span>
         <span class="canton-btn__arrow">→</span>
       </a>
       <a href="/debarras-appartement/vaud/" class="canton-btn">
         <img src="/images/shield-vd.svg" class="canton-btn__shield" alt="Écusson Vaud" loading="lazy">
-        <span class="canton-btn__info"><span class="canton-btn__name">Vaud</span><span class="canton-btn__sub">Lausanne, Morges, Nyon, Yverdon</span></span>
+        <span class="canton-btn__info"><span class="canton-btn__name">Vaud</span></span>
         <span class="canton-btn__arrow">→</span>
       </a>
       <a href="/debarras-appartement/valais/" class="canton-btn">
         <img src="/images/shield-vs.svg" class="canton-btn__shield" alt="Écusson Valais" loading="lazy">
-        <span class="canton-btn__info"><span class="canton-btn__name">Valais</span><span class="canton-btn__sub">Sion, Martigny, Sierre, Monthey</span></span>
+        <span class="canton-btn__info"><span class="canton-btn__name">Valais</span></span>
         <span class="canton-btn__arrow">→</span>
       </a>
       <a href="/debarras-appartement/fribourg/" class="canton-btn">
         <img src="/images/shield-fr.svg" class="canton-btn__shield" alt="Écusson Fribourg" loading="lazy">
-        <span class="canton-btn__info"><span class="canton-btn__name">Fribourg</span><span class="canton-btn__sub">Fribourg, Bulle, Estavayer</span></span>
+        <span class="canton-btn__info"><span class="canton-btn__name">Fribourg</span></span>
         <span class="canton-btn__arrow">→</span>
       </a>
       <a href="/debarras-appartement/neuchatel/" class="canton-btn">
         <img src="/images/shield-ne.svg" class="canton-btn__shield" alt="Écusson Neuchâtel" loading="lazy">
-        <span class="canton-btn__info"><span class="canton-btn__name">Neuchâtel</span><span class="canton-btn__sub">Neuchâtel, La Chaux-de-Fonds</span></span>
+        <span class="canton-btn__info"><span class="canton-btn__name">Neuchâtel</span></span>
         <span class="canton-btn__arrow">→</span>
       </a>
       <a href="/debarras-appartement/jura/" class="canton-btn">
         <img src="/images/shield-ju.svg" class="canton-btn__shield" alt="Écusson Jura" loading="lazy">
-        <span class="canton-btn__info"><span class="canton-btn__name">Jura</span><span class="canton-btn__sub">Delémont, Porrentruy</span></span>
+        <span class="canton-btn__info"><span class="canton-btn__name">Jura</span></span>
         <span class="canton-btn__arrow">→</span>
       </a>
     </div>
@@ -1706,16 +1709,6 @@ body{font-size:16px;line-height:1.7;}
       </div>
     </div>
 
-    <!-- Mapa -->
-    <div style="width:100%;height:300px;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4);">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2759.2!2d7.3524!3d46.2282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ec04c47de8e2b%3A0x7c01a5b4b4a8b4e0!2sRue%20de%20Mazerette%209%2C%201950%20Sion!5e0!3m2!1sfr!2sch!4v1716900000000!5m2!1sfr!2sch"
-        width="100%" height="100%"
-        style="border:0;filter:grayscale(25%) contrast(1.1);"
-        allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
 
   </div>
 
