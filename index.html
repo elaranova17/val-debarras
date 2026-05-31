@@ -1071,6 +1071,69 @@ body{font-size:16px;line-height:1.7;}
   }
 }
 
+/* ============================================================ */
+/* MODAL MÉDIAS                                                 */
+/* ============================================================ */
+.media-modal{
+  position:fixed;inset:0;z-index:9000;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;visibility:hidden;
+  transition:opacity .3s ease,visibility .3s ease;
+}
+.media-modal.open{opacity:1;visibility:visible;}
+.media-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.88);cursor:pointer;}
+.media-modal-box{
+  position:relative;z-index:1;background:#0a0f1a;
+  border-radius:16px;overflow:hidden;
+  width:100%;max-width:920px;
+  transform:scale(.93);transition:transform .35s cubic-bezier(.4,0,.2,1);
+}
+.media-modal.open .media-modal-box{transform:scale(1);}
+.media-modal-close{
+  position:absolute;top:12px;right:12px;z-index:3;
+  background:rgba(255,255,255,.12);border:none;color:white;
+  width:38px;height:38px;border-radius:50%;font-size:15px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,transform .2s;font-family:inherit;
+}
+.media-modal-close:hover{background:rgba(255,255,255,.24);transform:scale(1.1);}
+.media-modal iframe{width:100%;aspect-ratio:16/9;display:block;border:none;background:#000;}
+.modal-article{padding:36px 40px;color:white;}
+.modal-article-badge{
+  background:#0055ff;color:white;
+  font-size:11px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;
+  padding:4px 12px;border-radius:6px;display:inline-block;margin-bottom:20px;
+}
+.modal-article-title{font-size:22px;font-weight:800;line-height:1.3;margin-bottom:14px;color:white;}
+.modal-article-desc{font-size:14px;color:rgba(255,255,255,.62);line-height:1.78;margin-bottom:28px;}
+.modal-article-link{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#0055ff;color:white;padding:13px 28px;
+  border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;
+  transition:background .2s,transform .2s;
+}
+.modal-article-link:hover{background:#0044cc;transform:translateY(-2px);}
+/* Grille 2 médias dans video-dark */
+.vd-media-grid{display:flex;flex-direction:column;gap:16px;}
+/* Carte article 20min */
+.vd-article-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;padding:20px 22px;cursor:pointer;
+  display:flex;align-items:center;gap:16px;
+  transition:background .25s,border-color .25s,transform .25s;
+}
+.vd-article-card:hover{background:rgba(0,85,255,.12);border-color:rgba(0,85,255,.45);transform:translateY(-2px);}
+.vd-article-badge-20{
+  background:#0055ff;color:white;flex-shrink:0;
+  font-size:11px;font-weight:900;letter-spacing:.3px;
+  padding:4px 10px;border-radius:6px;white-space:nowrap;
+}
+.vd-article-info{flex:1;}
+.vd-article-title{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);line-height:1.4;margin-bottom:4px;}
+.vd-article-meta{font-size:11px;color:rgba(255,255,255,.38);}
+.vd-article-arrow{font-size:18px;color:rgba(255,255,255,.35);flex-shrink:0;transition:transform .2s;}
+.vd-article-card:hover .vd-article-arrow{transform:translateX(4px);color:rgba(255,255,255,.6);}
+
 </style>
 </head>
 <body>
@@ -1089,7 +1152,7 @@ body{font-size:16px;line-height:1.7;}
 <!-- ============================================================ -->
 <header class="header">
   <div class="header-inner">
-    <a href="/" class="logo"><img src="/images/logo-cube.svg" alt="Val-Débarras" class="logo-img"></a>
+    <a href="/" class="logo"><img src="/images/logo-cube.svg" alt="Val-Débarras" class="logo-img"><div class="logo-text"><span class="logo-name">Val-Débarras</span><span class="logo-sub">Débarras &amp; Nettoyage</span></div></a>
     <nav class="nav" id="desktopNav">
     <div class="nav-item">
       <button class="nav-btn">Débarras appartement <span class="chev">▾</span></button>
@@ -1167,7 +1230,7 @@ body{font-size:16px;line-height:1.7;}
 <!-- Mobile drawer NOUVEAU -->
 <div class="mobile-drawer" id="drawer">
   <div class="drawer-header">
-    <a href="/" class="logo" style="gap:10px;"><img src="/images/logo-cube.svg" alt="Val-Débarras" class="logo-img" style="width:40px;height:40px;"></a>
+    <a href="/" class="logo" style="gap:10px;"><img src="/images/logo-cube.svg" alt="Val-Débarras" class="logo-img" style="width:40px;height:40px;"><div class="logo-text"><span class="logo-name" style="font-size:16px;">Val-Débarras</span></div></a>
     <button class="drawer-close" id="drawerClose">✕</button>
   </div>
   <div class="drawer-body">
@@ -1549,13 +1612,23 @@ body{font-size:16px;line-height:1.7;}
         <span class="vd-badge-item">✓ +10 ans d'expérience</span>
       </div>
     </div>
-    <div class="vd-visual">
-      <img src="/images/ge-action.jpg" alt="Val-Débarras — Reportage RTS Temps Présent">
-      <div class="vd-overlay"></div>
-      <div class="vd-play">▶</div>
-      <div class="vd-caption">
-        <span class="vd-badge-rts">RTS</span>
-        <span class="vd-caption-text">Temps Présent — Syndrome de Diogène en Suisse romande</span>
+    <div class="vd-media-grid">
+      <div class="vd-visual" onclick="openMediaModal('rts')" role="button" tabindex="0" aria-label="Voir le reportage RTS Temps Présent">
+        <img src="/images/ge-action.jpg" alt="Val-Débarras — Reportage RTS Temps Présent">
+        <div class="vd-overlay"></div>
+        <div class="vd-play">▶</div>
+        <div class="vd-caption">
+          <span class="vd-badge-rts">RTS</span>
+          <span class="vd-caption-text">Temps Présent — Diogène en Suisse romande · 29:48</span>
+        </div>
+      </div>
+      <div class="vd-article-card" onclick="openMediaModal('20min')" role="button" tabindex="0" aria-label="Lire l'article 20 Minutes">
+        <span class="vd-article-badge-20">20 minutes</span>
+        <div class="vd-article-info">
+          <div class="vd-article-title">Valais : locataire expulsée, elle conservait 35 tonnes de déchets</div>
+          <div class="vd-article-meta">Article de presse · 20min.ch</div>
+        </div>
+        <span class="vd-article-arrow">→</span>
       </div>
     </div>
   </div>
@@ -1796,7 +1869,15 @@ body{font-size:16px;line-height:1.7;}
   </div>
 </footer>
 
-<!-- WhatsApp flottant — identique -->
+<!-- MODAL MÉDIAS -->
+<div class="media-modal" id="mediaModal" role="dialog" aria-modal="true" aria-label="Contenu média">
+  <div class="media-modal-backdrop" onclick="closeMediaModal()"></div>
+  <div class="media-modal-box">
+    <button class="media-modal-close" onclick="closeMediaModal()" aria-label="Fermer">✕</button>
+    <div id="modalMediaContent"></div>
+  </div>
+</div>
+
 <button class="back-to-top" id="backToTop" aria-label="Retour en haut de page" title="Retour en haut">↑</button>
 <script>
 (function(){
@@ -1896,6 +1977,44 @@ function toggleDrawer(el) {
           }
         }
       }
+    });
+  });
+})();
+</script>
+<script>
+/* ── MODAL MÉDIAS JS ── */
+(function(){
+  var RTS_EMBED = 'https://www.rts.ch/play/embed?urn=urn:rts:video:8430900a-7072-3ba2-aacb-9a1268ffceef&subdivision=0';
+  var MIN20_URL = 'https://www.20min.ch/fr/story/valais-locataire-expulsee-elle-conservait-35-tonnes-de-dechets-103216100';
+
+  window.openMediaModal = function(type){
+    var modal = document.getElementById('mediaModal');
+    var content = document.getElementById('modalMediaContent');
+    if(type === 'rts'){
+      content.innerHTML = '<iframe src="'+RTS_EMBED+'" allowfullscreen allow="autoplay; fullscreen" title="RTS — Temps Présent : Diogènes, une montagne de souffrance"></iframe>';
+    } else {
+      content.innerHTML = '<div class="modal-article"><span class="modal-article-badge">20 Minutes</span><h3 class="modal-article-title">Valais : locataire expulsée, elle conservait 35 tonnes de déchets</h3><p class="modal-article-desc">Val-Débarras a été cité dans ce reportage de 20 Minutes sur le syndrome de Diogène en Suisse romande. L\'article revient sur le cas d\'une locataire expulsée après avoir accumulé 35 tonnes de déchets dans son appartement, illustrant l\'importance d\'une intervention professionnelle et humaine.</p><a href="'+MIN20_URL+'" target="_blank" rel="noopener noreferrer" class="modal-article-link">Lire l\'article sur 20min.ch →</a></div>';
+    }
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeMediaModal = function(){
+    var modal = document.getElementById('mediaModal');
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(function(){ document.getElementById('modalMediaContent').innerHTML = ''; }, 350);
+  };
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMediaModal();
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.vd-visual[role="button"],.vd-article-card').forEach(function(el){
+      el.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); el.click(); }
+      });
     });
   });
 })();
