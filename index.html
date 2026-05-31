@@ -996,6 +996,80 @@ body{font-size:16px;line-height:1.7;}
 }
 
 
+/* ── MICRO-INTERACCIONES ── */
+
+/* Botón principal CTA (devis) */
+.btn-devis,.header-cta{
+  position:relative;overflow:hidden;
+  transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),background-color .25s ease;
+}
+.btn-devis:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,155,116,.35);outline:2px solid #4ade80;outline-offset:2px;}
+.btn-devis:active{transform:translateY(2px) scale(.98);box-shadow:0 1px 4px rgba(0,0,0,.2);outline:none;}
+.header-cta:hover{transform:translateY(-3px) !important;box-shadow:0 8px 24px rgba(0,155,116,.35);outline:2px solid #4ade80;outline-offset:2px;}
+.header-cta:active{transform:translateY(2px) scale(.98) !important;}
+
+/* Botón teléfono hero */
+.btn-phone:active{transform:translateY(2px) scale(.98);}
+.btn-phone__icon{display:inline-block;transition:transform .3s ease;}
+.btn-phone:hover .btn-phone__icon{animation:phoneRing .5s ease infinite;}
+@keyframes phoneRing{0%,100%{transform:rotate(0)}25%{transform:rotate(-15deg)}75%{transform:rotate(15deg)}}
+
+/* Botón "Nos services →" */
+.btn-services{transition:transform .25s ease,background .25s ease,border-color .25s ease;}
+.btn-services:hover{transform:translateX(4px);}
+.btn-services:active{transform:translateX(0) scale(.98);}
+
+/* Tarjetas de servicio (.sc) */
+.sc{transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s cubic-bezier(.4,0,.2,1),border-color .3s ease;}
+.sc:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,155,116,.15);}
+.sc:active{transform:translateY(-1px) scale(.98);}
+.sc .sc-icon{display:inline-block;transition:transform .3s ease;}
+.sc:hover .sc-icon{transform:scale(1.15);}
+.sc-cta-devis{transition:all .2s ease;position:relative;overflow:hidden;}
+.sc-cta-devis:hover{transform:translateY(-2px) !important;box-shadow:0 6px 16px rgba(0,155,116,.2);}
+.sc-cta-devis:active{transform:translateY(1px) scale(.98) !important;}
+
+/* Logos media (RTS / 20min) */
+.media-logo-link{transition:transform .25s ease,box-shadow .25s ease;}
+.media-logo-link:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 4px 12px rgba(0,0,0,.2);}
+.media-logo-link:active{transform:translateY(0) scale(.95);}
+
+/* Botón submit formulario */
+.form-btn{transition:transform .25s ease,box-shadow .25s ease,background .2s ease;position:relative;overflow:hidden;}
+.form-btn:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,155,116,.35);}
+.form-btn:active{transform:translateY(2px) scale(.98);}
+.form-btn.sending{opacity:.8;pointer-events:none;}
+.form-btn.sent{background:#16a34a !important;}
+
+/* Inputs del formulario */
+.form-section input,.form-section select,.form-section textarea{
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+.form-section input:focus,.form-section select:focus,.form-section textarea:focus{
+  border-color:var(--vert) !important;
+  box-shadow:0 0 0 4px rgba(46,125,92,.12) !important;
+  outline:none;
+}
+
+/* Sticky mobile */
+.sticky-mobile__call,.sticky-mobile__devis{transition:transform .2s ease,box-shadow .2s ease;}
+.sticky-mobile__call:hover,.sticky-mobile__devis:hover{transform:translateY(-2px);}
+.sticky-mobile__call:active,.sticky-mobile__devis:active{transform:translateY(1px) scale(.98);}
+
+/* other-card-cta en páginas GE (también se aplica aquí para consistencia) */
+.other-card{transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s ease,border-color .3s ease;}
+
+/* Ripple keyframe */
+@keyframes rippleEffect{to{transform:scale(2.5);opacity:0;}}
+
+/* Reduced motion — respeta configuración del sistema */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+}
 
 </style>
 </head>
@@ -1823,6 +1897,41 @@ function toggleDrawer(el) {
           }
         }
       }
+    });
+  });
+})();
+</script>
+<script>
+/* ── MICRO-INTERACCIONES JS ── */
+(function(){
+  // Ripple en botones
+  function addRipple(el){
+    el.addEventListener('click',function(e){
+      const r=document.createElement('span');
+      const rect=this.getBoundingClientRect();
+      const sz=Math.max(rect.width,rect.height);
+      r.style.cssText='position:absolute;width:'+sz+'px;height:'+sz+'px;left:'+(e.clientX-rect.left-sz/2)+'px;top:'+(e.clientY-rect.top-sz/2)+'px;background:rgba(255,255,255,.3);border-radius:50%;transform:scale(0);animation:rippleEffect .6s ease-out;pointer-events:none;';
+      this.appendChild(r);
+      setTimeout(()=>r.remove(),600);
+    });
+  }
+  document.querySelectorAll('.btn-devis,.header-cta,.form-btn,.sc-cta-devis,.other-card-cta').forEach(addRipple);
+
+  // Feedback submit formulario
+  document.querySelectorAll('.form-btn').forEach(function(btn){
+    btn.closest('form') && btn.closest('form').addEventListener('submit',function(e){
+      e.preventDefault();
+      btn.classList.add('sending');
+      btn.textContent='Envoi en cours…';
+      setTimeout(function(){
+        btn.classList.remove('sending');
+        btn.classList.add('sent');
+        btn.textContent='✓ Envoyé !';
+        setTimeout(function(){
+          btn.classList.remove('sent');
+          btn.textContent='Envoyer ma demande';
+        },3000);
+      },1500);
     });
   });
 })();
