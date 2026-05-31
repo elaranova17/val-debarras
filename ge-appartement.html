@@ -1012,10 +1012,10 @@ body{font-size:16px;line-height:1.7;}
     <div class="form-card">
       <form>
         <div class="form-row form-full" style="margin-bottom:16px">
-          <div class="fl"><label>Nom complet *</label><input type="text" placeholder="Prénom et nom" style="font-size:17px;min-height:54px;"></div>
+          <div class="fl"><label>Nom complet *</label><input type="text" placeholder="Prénom et nom" style="font-size:16px;min-height:48px;"></div>
         </div>
         <div class="form-row form-full" style="margin-bottom:16px">
-          <div class="fl"><label>Localité du logement *</label><input type="text" placeholder="Ex: Genève, Carouge, Meyrin..."></div>
+          <div class="fl"><label>Localité du logement *</label><input type="text" placeholder="Ex: Sion, Lausanne, Genève..."></div>
         </div>
         <div class="form-row" style="margin-bottom:16px">
           <div class="fl"><label>Email *</label><input type="email" placeholder="votre@email.ch"></div>
@@ -1023,10 +1023,10 @@ body{font-size:16px;line-height:1.7;}
         </div>
         <div class="form-row" style="margin-bottom:16px">
           <div class="fl">
-            <label>Type de service</label>
+            <label>Type de service <span class="badge-new">NOUVEAU</span></label>
             <select>
               <option value="" disabled>Choisir un service</option>
-              <option  selected>Débarras appartement</option>
+              <option selected>Débarras appartement</option>
               <option>Débarras maison</option>
               <option>Débarras après décès/succession</option>
               <option>Débarras suite entrée EMS</option>
@@ -1039,14 +1039,19 @@ body{font-size:16px;line-height:1.7;}
             <select>
               <option value="" disabled>Choisir un canton</option>
               <option selected>Genève</option>
-              <option>Vaud</option><option>Valais</option><option>Fribourg</option>
-              <option>Neuchâtel</option><option>Jura</option>
+              <option>Vaud</option>
+              <option>Valais</option>
+              <option>Fribourg</option>
+              <option>Neuchâtel</option>
+              <option>Jura</option>
             </select>
           </div>
         </div>
         <div class="form-row form-full" style="margin-bottom:16px">
-          <div class="fl"><label>Description (facultatif)</label>
-            <textarea placeholder="Décrivez brièvement la situation..."></textarea></div>
+          <div class="fl">
+            <label>Description (facultatif)</label>
+            <textarea placeholder="Décrivez brièvement la situation (type de bien, surface, étage, accès, urgence...)"></textarea>
+          </div>
         </div>
         <button type="submit" class="form-btn">Envoyer ma demande</button>
         <p class="form-note">Réponse sous 24h · Devis gratuit et sans engagement</p>
