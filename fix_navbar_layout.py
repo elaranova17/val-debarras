@@ -15,30 +15,49 @@ MARKER = "NAVBAR LAYOUT v1"
 NAVBAR_CSS = """
 /* === NAVBAR LAYOUT v1 — une ligne desktop + chevrons === */
 @media(min-width:1025px){
-  .header-inner{gap:8px;padding:0 14px;}
-  .logo{margin-right:0;gap:8px;}
-  .logo-img{width:50px;}
-  .logo-name{font-size:17px !important;}
+  .header-inner{gap:6px;padding:0 12px;}
+  .logo{margin-right:0;gap:7px;flex-shrink:0;}
+  .logo-img{width:48px;}
+  .logo-name{font-size:16px !important;}
   .logo-sub{font-size:10px !important;}
   .nav{
     flex:1 1 auto;min-width:0;
     flex-wrap:nowrap !important;
     justify-content:flex-start !important;
-    gap:0;
+    gap:2px;
   }
   .nav-btn{
-    font-size:11.5px;
-    padding:7px 5px;
-    gap:4px;
-    letter-spacing:-0.03em;
+    font-size:13px;
+    font-weight:600;
+    color:#374151;
+    padding:7px 6px;
+    gap:5px;
+    letter-spacing:normal;
+    white-space:nowrap;
   }
   .header-cta{
-    font-size:12.5px !important;
-    padding:8px 12px !important;
+    font-size:12px !important;
+    padding:7px 10px !important;
     min-height:auto !important;
-    gap:5px !important;
+    gap:4px !important;
+    flex-shrink:0;
   }
-  .header-cta .icon-btn{width:18px !important;height:18px !important;}
+  .header-cta .icon-btn{width:16px !important;height:16px !important;}
+}
+@media(min-width:1025px) and (max-width:1279px){
+  .header-inner{gap:4px;padding:0 10px;}
+  .logo-img{width:44px;}
+  .logo-name{font-size:15px !important;}
+  .nav{gap:1px;}
+  .nav-btn{
+    font-size:12.5px;
+    padding:7px 5px;
+    gap:4px;
+  }
+  .header-cta{
+    font-size:11.5px !important;
+    padding:6px 9px !important;
+  }
 }
 .nav-btn .chev{
   font-size:inherit;
@@ -47,14 +66,16 @@ NAVBAR_CSS = """
   line-height:1;
   transition:transform .2s;
 }
-.nav-chevron{
-  width:14px;height:14px;
-  opacity:.9;
-  color:#64748b;
+.nav-btn .nav-chevron,
+.nav-btn .nav-chevron.icon-sm{
+  width:16px !important;
+  height:16px !important;
+  opacity:1;
+  color:#009b74;
   flex-shrink:0;
   transition:transform .2s,color .2s;
 }
-.nav-item:hover .nav-chevron{color:#009b74;}
+.nav-item:hover .nav-chevron{color:#007a5a;}
 .nav-item:hover .chev{transform:rotate(180deg);}
 .nav-item.open .nav-chevron{transform:rotate(180deg);}
 """
@@ -100,7 +121,12 @@ def patch_nav_css(html: str) -> str:
     )
     html = re.sub(
         r"  \.nav-btn\{font-size:12px;padding:7px 10px;white-space:nowrap;\}",
-        "  .nav-btn{font-size:12.5px;padding:8px 7px;white-space:nowrap;letter-spacing:-0.02em;}",
+        "  .nav-btn{font-size:13px;padding:7px 6px;white-space:nowrap;letter-spacing:normal;font-weight:600;color:#374151;gap:5px;}",
+        html,
+    )
+    html = re.sub(
+        r"  \.nav-btn\{font-size:12\.5px;padding:8px 7px;white-space:nowrap;letter-spacing:-0\.02em;\}",
+        "  .nav-btn{font-size:13px;padding:7px 6px;white-space:nowrap;letter-spacing:normal;font-weight:600;color:#374151;gap:5px;}",
         html,
     )
     if MARKER in html:
