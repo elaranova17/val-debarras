@@ -10,7 +10,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 
 CANTONS = {
     "ge": {"slug": "geneve", "prep": "à Genève"},
-    "vd": {"slug": "vaud", "prep": "dans le Vaud"},
+    "vd": {"slug": "vaud", "prep": "sur Vaud"},
     "vs": {"slug": "valais", "prep": "en Valais"},
     "fr": {"slug": "fribourg", "prep": "à Fribourg"},
     "ne": {"slug": "neuchatel", "prep": "à Neuchâtel"},

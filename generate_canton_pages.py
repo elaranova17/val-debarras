@@ -25,8 +25,8 @@ CANTONS = {
     },
     "vd": {
         "name": "Vaud",
-        "prep": "dans le Vaud",
-        "prep_in": "dans le canton de Vaud",
+        "prep": "sur Vaud",
+        "prep_in": "sur Vaud",
         "slug": "vaud",
         "pdf": "Vaud",
     },
