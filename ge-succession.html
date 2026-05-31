@@ -517,36 +517,33 @@ body{font-size:16px;line-height:1.7;}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
 
 .btn-phone{
-  display:inline-flex;align-items:center;gap:14px;
+  display:inline-flex;align-items:center;gap:8px;
   background:white;color:var(--vert-fonce);
-  padding:14px 24px;border-radius:14px;
+  padding:14px 22px;border-radius:12px;
+  font-weight:800;font-size:15px;
   text-decoration:none;transition:all .22s;
   box-shadow:0 4px 16px rgba(0,0,0,.18);
-  border:2px solid transparent;
+  border:2px solid transparent;white-space:nowrap;
 }
 .btn-phone:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.22);}
-.btn-phone__icon{font-size:22px;flex-shrink:0;}
-.btn-phone__text{display:flex;flex-direction:column;line-height:1.2;}
-.btn-phone__num{font-size:18px;font-weight:900;letter-spacing:-.3px;}
-.btn-phone__sub{font-size:11px;color:var(--vert);font-weight:600;opacity:.9;}
 
 .btn-devis{
   display:inline-flex;align-items:center;gap:8px;
   background:var(--vert);color:white;
-  padding:14px 22px;border-radius:14px;
+  padding:14px 22px;border-radius:12px;
   font-weight:800;font-size:15px;
   text-decoration:none;transition:all .22s;
-  border:2px solid transparent;
+  border:2px solid transparent;white-space:nowrap;
 }
 .btn-devis:hover{background:var(--vert-fonce);transform:translateY(-2px);}
 
 .btn-services{
   display:inline-flex;align-items:center;gap:6px;
   background:transparent;color:rgba(255,255,255,.85);
-  padding:14px 18px;border-radius:14px;
-  font-weight:700;font-size:14px;
+  padding:14px 18px;border-radius:12px;
+  font-weight:700;font-size:15px;
   text-decoration:none;transition:all .22s;
-  border:2px solid rgba(255,255,255,.25);
+  border:2px solid rgba(255,255,255,.3);white-space:nowrap;
 }
 .btn-services:hover{background:rgba(255,255,255,.1);color:white;border-color:rgba(255,255,255,.5);}
 
@@ -612,6 +609,11 @@ body{font-size:16px;line-height:1.7;}
 .ft-bottom-link{color:#475569;text-decoration:none;transition:color .2s;}
 .ft-bottom-link:hover{color:#94a3b8;}
 @media(max-width:768px){.ft-inner{grid-template-columns:1fr;gap:28px;text-align:center;}.ft-brand{align-items:center;}.ft-contact{align-items:center;}.ft-links,.ft-hours{justify-content:center;}.ft-phone-btn{width:100%;max-width:260px;justify-content:center;}.ft-bottom{flex-direction:column;text-align:center;}}
+
+/* ===== CTA groups unificados (sidebar / pro) ===== */
+.sidebar-cta{margin-top:14px;flex-direction:column;align-items:stretch;}
+.sidebar-cta .btn-phone,.sidebar-cta .btn-devis{justify-content:center;}
+.pro-cta{margin-top:6px;}
 </style>
 </head>
 <body>
@@ -693,7 +695,7 @@ body{font-size:16px;line-height:1.7;}
       </div>
     </div>
   </nav>
-    <a href="tel:0795805857" class="header-cta">📞 079 580 58 57</a>
+    <a href="tel:+41795805857" class="header-cta">📞 079 580 58 57</a>
     <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -770,7 +772,7 @@ body{font-size:16px;line-height:1.7;}
         <a href="/nettoyage-extreme/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">&nbsp;au Jura</span></a>
       </div>
     </div>
-    <a href="tel:0795805857" class="drawer-phone">📞 079 580 58 57</a>
+    <a href="tel:+41795805857" class="drawer-phone">📞 079 580 58 57</a>
   </div>
 </div>
 
@@ -795,8 +797,9 @@ body{font-size:16px;line-height:1.7;}
         <span class="hbadge">✓ Sans déplacement payant</span>
       </div>
       <div class="hero-btns">
-        <a href="tel:0795805857" class="btn btn-white">📞 079 580 58 57</a>
-        <a href="#devis" class="btn btn-outline">Devis sans engagement →</a>
+        <a href="tel:+41795805857" class="btn-phone">📞 079 580 58 57</a>
+        <a href="#devis" class="btn-devis">📋 Devis gratuit</a>
+        <a href="/#services" class="btn-services">Nos services →</a>
       </div>
     </div>
     <div class="hero-img">
@@ -847,12 +850,10 @@ body{font-size:16px;line-height:1.7;}
   </div>
 
   <aside class="lp-sidebar">
-    <a href="tel:0795805857" class="sidebar-phone">
-      <div>📞 Appeler maintenant</div>
-      <div class="phone-num">079 580 58 57</div>
-      <div class="phone-sub">Lun–Sam · 08h–18h · Devis sous 24h</div>
-    </a>
-    <a href="#devis" class="sidebar-btn">✉️ Demander un devis gratuit</a>
+    <div class="hero-btns sidebar-cta">
+      <a href="tel:+41795805857" class="btn-phone">📞 079 580 58 57</a>
+      <a href="#devis" class="btn-devis">📋 Devis gratuit</a>
+    </div>
 
     <div class="sidebar-card" style="margin-top:24px;">
       <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gris);margin-bottom:8px;">Mauvais canton ?</div>
@@ -898,7 +899,7 @@ body{font-size:16px;line-height:1.7;}
   </div>
 </section>
 
-<section class='pro-section'><div><div class="pro-section"><h3>👔 Vous êtes professionnel du droit ou de la tutelle ?</h3><p>Notaires, curateurs et avocats : nous travaillons régulièrement avec les professionnels en charge de successions à Genève. Discrétion, réactivité et devis fixe garanti.</p><a href="#devis" class="btn-pro">Nous contacter →</a></div></section>
+<section class='pro-section'><div><div class="pro-section"><h3>👔 Vous êtes professionnel du droit ou de la tutelle ?</h3><p>Notaires, curateurs et avocats : nous travaillons régulièrement avec les professionnels en charge de successions à Genève. Discrétion, réactivité et devis fixe garanti.</p><div class="hero-btns pro-cta"><a href="tel:+41795805857" class="btn-phone">📞 079 580 58 57</a> <a href="#devis" class="btn-devis">📋 Devis gratuit</a></div></div></section>
 
 <section class="other-section" id="autres-services">
   <div class="other-inner">
