@@ -230,16 +230,14 @@ img{max-width:100%;display:block;}
 .stat:last-child{border-right:none;}
 .stat-n{font-size:40px;font-weight:900;color:var(--vert-clair);line-height:1;}
 .stat-l{font-size:13px;color:rgba(255,255,255,.65);margin-top:5px;}
-.stat-media{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;}
-.media-logos-row{display:flex;align-items:center;gap:14px;}
-.logo-media{
-  opacity:.9;
-  transition:opacity .2s;
-  display:block;
-}
-.stat:hover .logo-media{opacity:1;}
-.logo-rts{height:28px;width:auto;}
-.logo-20min{height:20px;width:auto;}
+.stat-media{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.media-logos-vertical{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.media-logo-link{display:flex;align-items:center;justify-content:center;padding:8px 18px;border-radius:6px;text-decoration:none;transition:transform .2s,box-shadow .2s;min-width:110px;}
+.media-logo-link:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.25);}
+.media-rts{background:#e30613;}
+.media-20min{background:#0055ff;}
+.media-logo-text{color:white;font-weight:700;font-size:13px;letter-spacing:.02em;}
+@media(max-width:768px){.media-logo-link{padding:7px 14px;min-width:90px;}.media-logo-text{font-size:12px;}}
 
 /* Shields row — stat cantons */
 .stat-shields{
@@ -1233,9 +1231,15 @@ body{font-size:16px;line-height:1.7;}
       </div>
     </div>
     <div class="stat">
-      <div class="stat-n stat-media media-logos-row">
-        <img src="/images/logo-rts.svg" alt="RTS" class="logo-media logo-rts">
-        <img src="/images/logo-20min.svg" alt="20 minutes" class="logo-media logo-20min">
+      <div class="stat-n stat-media">
+        <div class="media-logos-vertical">
+          <a href="https://www.rts.ch/info/suisse/diogene-reportage" target="_blank" rel="noopener noreferrer" class="media-logo-link media-rts" aria-label="Reportage RTS - Temps Présent">
+            <span class="media-logo-text">RTS</span>
+          </a>
+          <a href="https://www.20min.ch/story/val-debarras" target="_blank" rel="noopener noreferrer" class="media-logo-link media-20min" aria-label="Article 20 Minutes">
+            <span class="media-logo-text">20 minutes</span>
+          </a>
+        </div>
       </div>
       <div class="stat-l">dans les médias</div>
     </div>
