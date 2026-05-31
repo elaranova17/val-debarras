@@ -135,7 +135,7 @@ img{max-width:100%;display:block;}
 .medias{background:white;padding:36px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;}
 .medias-inner{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:40px;flex-wrap:wrap;}
 .medias-text{font-size:15px;color:var(--gris);font-weight:500;}
-.ml{padding:8px 18px;border-radius:8px;font-size:13px;font-weight:800;display:flex;align-items:center;gap:6px;}
+.ml{padding:10px 22px;border-radius:10px;font-size:14px;font-weight:800;display:inline-flex;align-items:center;gap:8px;letter-spacing:.2px;cursor:pointer;transition:all .2s;}
 .ml-rts{background:#e53e3e;color:white;}
 .ml-20{background:#1a56db;color:white;}
 /* FAQ */
@@ -616,8 +616,8 @@ body{font-size:16px;line-height:1.7;}
 .pro-cta{margin-top:6px;}
 
 /* ===== Communes en pills ===== */
-.communes-cloud{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:10px;}
-.commune-pill{display:inline-block;padding:10px 20px;background:#f0fdf4;border:1.5px solid #009b74;border-radius:50px;font-size:.95rem;font-weight:500;color:#1a3d2e;transition:all .2s ease;}
+.communes-cloud{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:880px;margin:10px auto 0;}
+.commune-pill{display:inline-flex;align-items:center;padding:9px 18px;background:#f0fdf4;border:1.5px solid #009b74;border-radius:50px;font-size:.9rem;font-weight:600;color:#1a3d2e;transition:all .2s ease;white-space:nowrap;}
 .commune-pill:hover{background:#009b74;color:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,155,116,.2);}
 
 /* === SISTEMA DE ICONOS VD === */
@@ -924,8 +924,8 @@ body{font-size:16px;line-height:1.7;}
   <div class="medias-inner">
     <p class="medias-text">Plus de 10 ans d'expérience en Suisse romande. Passés dans les médias :</p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;">
-      <span class="ml ml-rts">▶ RTS — Temps présent</span>
-      <span class="ml ml-20">📰 20 MINUTES</span>
+      <span class="ml ml-rts"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M8 5.14v14l11-7-11-7z"/></svg> RTS — Temps Présent</span>
+      <span class="ml ml-20"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V5h16v14zM6 7h12v2H6V7zm0 4h8v2H6v-2zm0 4h6v2H6v-2z"/></svg> 20 MINUTES</span>
     </div>
   </div>
 </div>
