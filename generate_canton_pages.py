@@ -139,13 +139,48 @@ SERVICES = {
     },
 }
 
-OTHER_SERVICES = [
+ALL_OTHER_SERVICES = [
+    ("appartement", "debarras-appartement", "Débarras appartement", "Studio, loft, immeuble", "icon-building"),
     ("maison", "debarras-maison", "Débarras maison", "Maison, garage, cave", "icon-house"),
     ("succession", "debarras-apres-deces", "Débarras après décès/succession", "Avec respect et discrétion", "icon-dove"),
     ("ems", "debarras-ems", "Débarras suite entrée EMS", "Libération rapide", "icon-hospital"),
     ("diogene", "debarras-insalubre-diogene", "Débarras Insalubre/Diogène", "Sans jugement", "icon-warning", True),
     ("nettoyage", "nettoyage-extreme", "Nettoyages extrême", "Désinfection professionnelle", "icon-broom"),
 ]
+
+HERO_IMAGES = {
+    "ge": "ge-hero.jpg",
+    "vd": "vd-hero.jpg",
+    "vs": "vs-hero.jpg",
+    "fr": "fr-hero.jpg",
+    "ne": "ne-hero.jpg",
+    "ju": "ju-hero.jpg",
+}
+
+CANTON_ADJ_F = {
+    "ge": "genevoises",
+    "vd": "vaudoises",
+    "vs": "valaisannes",
+    "fr": "fribourgeoises",
+    "ne": "neuchâteloises",
+    "ju": "jurassiennes",
+}
+
+CANTON_ADJ_M = {
+    "ge": "genevois",
+    "vd": "vaudois",
+    "vs": "valaisans",
+    "fr": "fribourgeois",
+    "ne": "neuchâtelois",
+    "ju": "jurassiens",
+}
+
+OTHER_GRID_RE = (
+    r'<div class="other-grid">(?:\s*<a\b[^>]*\bclass="other-card"[^>]*>.*?</a>\s*)*\s*</div>'
+)
+COMMUNES_CLOUD_RE = (
+    r'<div class="communes-cloud">(?:\s*<span class="commune-pill">.*?</span>\s*)*\s*</div>'
+)
 
 # Default communes per canton (fallback if PDF parse fails)
 DEFAULT_COMMUNES = {
@@ -287,7 +322,7 @@ def build_communes_html(communes: list[str]) -> str:
 def build_other_services_html(canton_key: str, current_service: str) -> str:
     c = CANTONS[canton_key]
     cards = []
-    for svc_key, url_path, title, desc, icon, *rest in OTHER_SERVICES:
+    for svc_key, url_path, title, desc, icon, *rest in ALL_OTHER_SERVICES:
         if svc_key == current_service:
             continue
         orange = rest[0] if rest else False
@@ -348,7 +383,7 @@ def apply_canton_content(html: str, service: str, canton_key: str, pdf_data: dic
 
     # H1 — use prep with à/en/dans/au
     h1_raw = pdf_data.get("h1", f"{svc['h1_service']} {c['name']}")
-    if c["prep"].startswith("à ") or c["prep"].startswith("au ") or c["prep"].startswith("en ") or c["prep"].startswith("dans "):
+    if c["prep"].startswith(("à ", "au ", "en ", "dans ", "sur ")):
         h1_display = f"{svc['h1_service']} {c['prep']}"
     else:
         h1_display = h1_raw
@@ -416,7 +451,7 @@ def apply_canton_content(html: str, service: str, canton_key: str, pdf_data: dic
         count=1,
     )
     html = re.sub(
-        r'<div class="communes-cloud">.*?</div>',
+        COMMUNES_CLOUD_RE,
         build_communes_html(pdf_data.get("communes", DEFAULT_COMMUNES[canton_key])),
         html,
         count=1,
@@ -431,7 +466,7 @@ def apply_canton_content(html: str, service: str, canton_key: str, pdf_data: dic
         count=1,
     )
     html = re.sub(
-        r'<div class="other-grid">\s*.*?\s*</div>',
+        OTHER_GRID_RE,
         f'<div class="other-grid">\n{build_other_services_html(canton_key, service)}\n    </div>',
         html,
         count=1,
@@ -496,18 +531,37 @@ def apply_canton_content(html: str, service: str, canton_key: str, pdf_data: dic
             html,
         )
 
-    # Hero image alt
+    # Hero image (canton-specific when available)
+    hero_img = HERO_IMAGES.get(canton_key, "ge-hero.jpg")
     html = re.sub(
-        r'alt="Val-Débarras — [^"]*Genève[^"]*"',
-        f'alt="Val-Débarras — {svc["h1_service"]} {c["prep"]}"',
+        r'(<div class="hero-img">\s*<img src="/images/)[^"]+(" alt=")[^"]*(" loading="eager">)',
+        rf'\1{hero_img}\2Val-Débarras — {svc["h1_service"]} {c["prep"]}\3',
         html,
         count=1,
     )
 
+    # Pro-section & content: replace Geneva-specific wording (not nav labels)
+    ge_adj_f, ge_adj_m = CANTON_ADJ_F["ge"], CANTON_ADJ_M["ge"]
+    adj_f, adj_m = CANTON_ADJ_F[canton_key], CANTON_ADJ_M[canton_key]
+    if canton_key != "ge":
+        html = html.replace(f"régies immobilières {ge_adj_f}", f"régies immobilières {adj_f}")
+        html = html.replace(f"régies {ge_adj_f}", f"régies {adj_f}")
+        html = html.replace(f"EMS {ge_adj_m}", f"EMS {adj_m}")
+        html = html.replace("successions à Genève", f"successions {c['prep']}")
+        html = html.replace(
+            "Intervention rapide dans tout le canton de Genève",
+            f"Intervention rapide {c['prep_in']}",
+        )
+        html = html.replace(
+            "à Genève-ville, Carouge, Meyrin, Vernier, Lancy et dans toutes les communes du canton",
+            f"{c['prep_in']} et dans toutes les communes du canton",
+        )
+        html = html.replace("dans le canton de Genève", c["prep_in"])
+
     return html
 
 
-def generate_page(service: str, canton_key: str) -> tuple[str, bool]:
+def generate_page(service: str, canton_key: str, force: bool = False) -> tuple[str, bool]:
     if canton_key == "ge":
         return f"ge-{service}.html", False
 
@@ -533,7 +587,7 @@ def generate_page(service: str, canton_key: str) -> tuple[str, bool]:
         with open(out_path, encoding="utf-8") as f:
             existing = f.read()
 
-    if html == existing:
+    if not force and html == existing:
         return os.path.basename(out_path), False
 
     with open(out_path, "w", encoding="utf-8") as f:
@@ -566,7 +620,12 @@ def generate_vercel_rewrites() -> list[dict]:
 
 
 def main():
+    import sys
+
+    force = "--force" in sys.argv
     print("=== generate_canton_pages.py ===")
+    if force:
+        print("(force mode — rewriting all non-GE pages)")
     created = updated = 0
     missing_pdfs = []
 
@@ -577,7 +636,7 @@ def main():
             print(f"\n→ {canton_key}-{service}")
             if not find_pdf(service, canton_key):
                 missing_pdfs.append(f"{canton_key}-{service}")
-            fname, changed = generate_page(service, canton_key)
+            fname, changed = generate_page(service, canton_key, force=force)
             if changed:
                 updated += 1
                 print(f"  ✓ wrote {fname}")
