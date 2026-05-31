@@ -63,41 +63,36 @@ img{max-width:100%;display:block;}
 .logo-name{font-size:20px;font-weight:800;color:var(--gris-fonce);}
 .logo-sub{font-size:11.5px;color:var(--gris);font-weight:500;}
 
-/* Nav desktop — Opción A groupée */
-.nav{display:flex;align-items:center;gap:4px;flex:1;justify-content:center;}
+/* Nav desktop — 6 dropdowns con cantons */
+.nav{display:flex;align-items:center;gap:2px;flex:1;}
 .nav-item{position:relative;}
 .nav-btn{
   background:none;border:none;
-  font-family:var(--font);font-size:14px;font-weight:600;
+  font-family:var(--font);font-size:13px;font-weight:600;
   color:#374151;cursor:pointer;
-  padding:10px 16px;border-radius:8px;
-  display:flex;align-items:center;gap:6px;
+  padding:9px 11px;border-radius:8px;
+  display:flex;align-items:center;gap:4px;
   transition:all .2s;white-space:nowrap;
 }
 .nav-btn:hover{background:var(--gris-bg);color:var(--vert);}
-.nav-btn[aria-expanded="true"]{background:var(--vert);color:white;}
 .nav-btn .chev{font-size:9px;transition:transform .2s;display:inline-block;}
-.nav-btn[aria-expanded="true"] .chev{transform:rotate(180deg);}
+.nav-item:hover .chev{transform:rotate(180deg);}
 
 /* Dropdown */
 .dd{
-  position:absolute;top:calc(100%+8px);left:0;
-  background:var(--blanc);border-radius:12px;
-  box-shadow:0 8px 28px rgba(0,0,0,0.13);padding:8px;
-  min-width:240px;
-  opacity:0;visibility:hidden;
+  position:absolute;top:calc(100%+6px);left:0;
+  background:var(--blanc);border:1px solid #e5e7eb;border-radius:12px;
+  box-shadow:0 12px 36px rgba(0,0,0,0.13);padding:8px;
+  min-width:210px;opacity:0;visibility:hidden;
   transition:opacity .2s,transform .2s,visibility .2s;
-  z-index:300;transform:translateY(-6px);
+  z-index:300;transform:translateY(6px);
 }
-.dd::before{
-  content:'';position:absolute;top:-5px;left:22px;
-  width:10px;height:10px;background:white;
-  transform:rotate(45deg);border-radius:2px;
-}
-.nav-item:hover .dd,.dd.active{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-item:hover .dd{opacity:1;visibility:visible;transform:translateY(0);}
+.dd-head{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+  color:var(--gris);padding:5px 10px 8px;}
 .dd a{
   display:flex;align-items:center;gap:8px;
-  padding:11px 14px;border-radius:8px;font-size:14px;font-weight:500;
+  padding:9px 10px;border-radius:8px;font-size:13.5px;font-weight:500;
   color:#374151;text-decoration:none;
   transition:all .15s;
 }
@@ -1152,28 +1147,74 @@ body{font-size:16px;line-height:1.7;}
 <!-- ============================================================ -->
 <header class="header">
   <div class="header-inner">
-    <a href="/" class="logo"><img src="/images/logo-cube.svg" alt="Val-Débarras" class="logo-img"><div class="logo-text"><span class="logo-name">Val-Débarras</span><span class="logo-sub">Débarras &amp; Nettoyage</span></div></a>
+    <a href="/" class="logo"><img src="/images/logo-cube.jpg" alt="Val-Débarras" class="logo-img"><div class="logo-text"><span class="logo-name">Val-Débarras</span><span class="logo-sub">Débarras &amp; Nettoyage</span></div></a>
     <nav class="nav" id="desktopNav">
-      <!-- Débarras (appartement, maison, succession) -->
       <div class="nav-item">
-        <button class="nav-btn" aria-expanded="false" aria-controls="dd-debarras">Débarras <span class="chev">▾</span></button>
-        <div class="dd" id="dd-debarras">
-          <a href="/debarras-appartement/geneve/">Débarras appartement</a>
-          <a href="/debarras-maison/geneve/">Débarras maison</a>
-          <a href="/debarras-apres-deces/geneve/">Après décès / Succession</a>
+        <button class="nav-btn">Débarras appartement <span class="chev">▾</span></button>
+        <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
+          <a href="/debarras-appartement/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="GE" loading="lazy"><span class="menu-label">Genève</span></a>
+          <a href="/debarras-appartement/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="VD" loading="lazy"><span class="menu-label">Vaud</span></a>
+          <a href="/debarras-appartement/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="VS" loading="lazy"><span class="menu-label">Valais</span></a>
+          <a href="/debarras-appartement/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="FR" loading="lazy"><span class="menu-label">Fribourg</span></a>
+          <a href="/debarras-appartement/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="NE" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+          <a href="/debarras-appartement/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="JU" loading="lazy"><span class="menu-label">Jura</span></a>
         </div>
       </div>
-      <!-- Services spéciaux -->
       <div class="nav-item">
-        <button class="nav-btn" aria-expanded="false" aria-controls="dd-speciaux">Services spéciaux <span class="chev">▾</span></button>
-        <div class="dd" id="dd-speciaux">
-          <a href="/debarras-ems/geneve/">Suite entrée EMS</a>
-          <a href="/debarras-insalubre-diogene/geneve/">Insalubre / Diogène</a>
-          <a href="/nettoyage-extreme/geneve/">Nettoyages extrême</a>
+        <button class="nav-btn">Débarras maison <span class="chev">▾</span></button>
+        <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
+          <a href="/debarras-maison/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="GE" loading="lazy"><span class="menu-label">Genève</span></a>
+          <a href="/debarras-maison/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="VD" loading="lazy"><span class="menu-label">Vaud</span></a>
+          <a href="/debarras-maison/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="VS" loading="lazy"><span class="menu-label">Valais</span></a>
+          <a href="/debarras-maison/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="FR" loading="lazy"><span class="menu-label">Fribourg</span></a>
+          <a href="/debarras-maison/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="NE" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+          <a href="/debarras-maison/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="JU" loading="lazy"><span class="menu-label">Jura</span></a>
         </div>
       </div>
-      <!-- Blog -->
-      <a href="/blog/" class="nav-btn" style="font-weight:700;color:var(--vert-fonce);">Blog</a>
+      <div class="nav-item">
+        <button class="nav-btn">Après décès/succession <span class="chev">▾</span></button>
+        <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
+          <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="GE" loading="lazy"><span class="menu-label">Genève</span></a>
+          <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="VD" loading="lazy"><span class="menu-label">Vaud</span></a>
+          <a href="/debarras-apres-deces/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="VS" loading="lazy"><span class="menu-label">Valais</span></a>
+          <a href="/debarras-apres-deces/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="FR" loading="lazy"><span class="menu-label">Fribourg</span></a>
+          <a href="/debarras-apres-deces/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="NE" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+          <a href="/debarras-apres-deces/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="JU" loading="lazy"><span class="menu-label">Jura</span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-btn">Suite entrée EMS <span class="chev">▾</span></button>
+        <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
+          <a href="/debarras-ems/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="GE" loading="lazy"><span class="menu-label">Genève</span></a>
+          <a href="/debarras-ems/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="VD" loading="lazy"><span class="menu-label">Vaud</span></a>
+          <a href="/debarras-ems/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="VS" loading="lazy"><span class="menu-label">Valais</span></a>
+          <a href="/debarras-ems/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="FR" loading="lazy"><span class="menu-label">Fribourg</span></a>
+          <a href="/debarras-ems/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="NE" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+          <a href="/debarras-ems/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="JU" loading="lazy"><span class="menu-label">Jura</span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-btn">Insalubre/Diogène <span class="chev">▾</span></button>
+        <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
+          <a href="/debarras-insalubre-diogene/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="GE" loading="lazy"><span class="menu-label">Genève</span></a>
+          <a href="/debarras-insalubre-diogene/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="VD" loading="lazy"><span class="menu-label">Vaud</span></a>
+          <a href="/debarras-insalubre-diogene/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="VS" loading="lazy"><span class="menu-label">Valais</span></a>
+          <a href="/debarras-insalubre-diogene/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="FR" loading="lazy"><span class="menu-label">Fribourg</span></a>
+          <a href="/debarras-insalubre-diogene/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="NE" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+          <a href="/debarras-insalubre-diogene/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="JU" loading="lazy"><span class="menu-label">Jura</span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-btn">Nettoyages extrême <span class="chev">▾</span></button>
+        <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
+          <a href="/nettoyage-extreme/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="GE" loading="lazy"><span class="menu-label">Genève</span></a>
+          <a href="/nettoyage-extreme/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="VD" loading="lazy"><span class="menu-label">Vaud</span></a>
+          <a href="/nettoyage-extreme/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="VS" loading="lazy"><span class="menu-label">Valais</span></a>
+          <a href="/nettoyage-extreme/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="FR" loading="lazy"><span class="menu-label">Fribourg</span></a>
+          <a href="/nettoyage-extreme/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="NE" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+          <a href="/nettoyage-extreme/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="JU" loading="lazy"><span class="menu-label">Jura</span></a>
+        </div>
+      </div>
     </nav>
     <a href="tel:0795805857" class="header-cta">📞 079 580 58 57</a>
     <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -1183,7 +1224,7 @@ body{font-size:16px;line-height:1.7;}
 <!-- Mobile drawer NOUVEAU -->
 <div class="mobile-drawer" id="drawer">
   <div class="drawer-header">
-    <a href="/" class="logo" style="gap:10px;"><img src="/images/logo-cube.svg" alt="Val-Débarras" class="logo-img" style="width:40px;height:40px;"><div class="logo-text"><span class="logo-name" style="font-size:16px;">Val-Débarras</span></div></a>
+    <a href="/" class="logo" style="gap:10px;"><img src="/images/logo-cube.jpg" alt="Val-Débarras" class="logo-img" style="width:40px;height:40px;"><div class="logo-text"><span class="logo-name" style="font-size:16px;">Val-Débarras</span></div></a>
     <button class="drawer-close" id="drawerClose">✕</button>
   </div>
   <div class="drawer-body">
@@ -1790,7 +1831,7 @@ body{font-size:16px;line-height:1.7;}
     <!-- Colonne 1 : Brand + CTA appel -->
     <div class="ft-brand">
       <a href="/" class="ft-logo">
-        <img src="/images/logo-cube.svg" alt="" class="ft-logo-img" aria-hidden="true">
+        <img src="/images/logo-cube.jpg" alt="" class="ft-logo-img" aria-hidden="true">
         <span class="ft-logo-name">Val-Débarras</span>
       </a>
       <p class="ft-tagline">Débarras &amp; nettoyage professionnel.<br>Suisse romande · Depuis 2015</p>
@@ -1857,57 +1898,6 @@ body{font-size:16px;line-height:1.7;}
 })();
 </script>
 
-<script>
-/* ── DROPDOWNS DESKTOP ── */
-(function(){
-  var ddBtns = document.querySelectorAll('.nav-item .nav-btn[aria-controls]');
-  ddBtns.forEach(function(btn){
-    var menu = document.getElementById(btn.getAttribute('aria-controls'));
-    if(!menu) return;
-
-    // Clic : toggle (pour mobile/tablette)
-    btn.addEventListener('click', function(e){
-      var isOpen = btn.getAttribute('aria-expanded') === 'true';
-      // Fermer tous les autres
-      ddBtns.forEach(function(b){
-        if(b !== btn){
-          b.setAttribute('aria-expanded','false');
-          var m = document.getElementById(b.getAttribute('aria-controls'));
-          if(m) m.classList.remove('active');
-        }
-      });
-      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      menu.classList.toggle('active', !isOpen);
-      e.stopPropagation();
-    });
-
-    // Keyboard: Escape ferme
-    btn.addEventListener('keydown', function(e){
-      if(e.key === 'Escape'){
-        btn.setAttribute('aria-expanded','false');
-        menu.classList.remove('active');
-        btn.focus();
-      }
-    });
-    menu.addEventListener('keydown', function(e){
-      if(e.key === 'Escape'){
-        btn.setAttribute('aria-expanded','false');
-        menu.classList.remove('active');
-        btn.focus();
-      }
-    });
-  });
-
-  // Clic en dehors ferme tout
-  document.addEventListener('click', function(){
-    ddBtns.forEach(function(btn){
-      btn.setAttribute('aria-expanded','false');
-      var m = document.getElementById(btn.getAttribute('aria-controls'));
-      if(m) m.classList.remove('active');
-    });
-  });
-})();
-</script>
 <script>
 // Hamburger
 const ham = document.getElementById('ham');
