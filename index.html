@@ -1099,6 +1099,34 @@ body{font-size:16px;line-height:1.7;}
 .vd-article-arrow{font-size:18px;color:rgba(255,255,255,.35);flex-shrink:0;transition:transform .2s;}
 .vd-article-card:hover .vd-article-arrow{transform:translateX(4px);color:rgba(255,255,255,.6);}
 
+
+/* ========== SECCIÓN MEDIOS (rediseñada) ========== */
+.media-section{background:#0f172a;padding:80px 24px;}
+.media-container{max-width:1000px;margin:0 auto;}
+.media-header{margin-bottom:48px;text-align:center;}
+.media-section .section-label{display:block;font-size:.9rem;font-weight:600;color:#009b74;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;}
+.media-section .section-title{font-size:2rem;font-weight:700;color:#fff;margin-bottom:12px;}
+.media-section .section-desc{font-size:1rem;color:#94a3b8;}
+.media-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
+.media-card{background:#1e293b;border-radius:16px;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);border:2px solid transparent;text-decoration:none;display:block;color:inherit;}
+.media-card-video:hover{border-color:#e30613;transform:translateY(-6px);box-shadow:0 20px 40px rgba(227,6,19,.15);}
+.media-card-article:hover{border-color:#0055ff;transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,85,255,.15);}
+.media-preview{position:relative;aspect-ratio:16/9;overflow:hidden;}
+.media-preview-img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.media-card:hover .media-preview-img{transform:scale(1.05);}
+.media-badge{position:absolute;top:16px;left:16px;padding:6px 14px;border-radius:6px;font-size:.8rem;font-weight:700;color:#fff;z-index:2;}
+.media-badge-rts{background:#e30613;}
+.media-badge-20min{background:#0055ff;}
+.media-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(0,155,116,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:2;}
+.media-card:hover .media-play-btn{transform:translate(-50%,-50%) scale(1.1);background:#009b74;}
+.media-duration{position:absolute;bottom:16px;right:16px;background:rgba(0,0,0,.8);color:#fff;padding:6px 10px;border-radius:4px;font-size:.8rem;font-weight:600;z-index:2;}
+.media-article-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(0,85,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:2;opacity:0;}
+.media-card-article:hover .media-article-icon{opacity:1;transform:translate(-50%,-50%) scale(1.1);}
+.media-info{padding:24px;}
+.media-title{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+.media-subtitle{font-size:.95rem;color:#94a3b8;margin-bottom:12px;line-height:1.4;}
+.media-type{font-size:.8rem;color:#64748b;font-style:italic;}
+@media(max-width:768px){.media-grid{grid-template-columns:1fr;}.media-section .section-title{font-size:1.5rem;}}
 </style>
 </head>
 <body>
@@ -1532,84 +1560,71 @@ body{font-size:16px;line-height:1.7;}
 <!-- ============================================================ -->
 <!-- MÉDIAS — identique                                          -->
 <!-- ============================================================ -->
-<div class="medias">
-  <div class="medias-inner">
-    <p class="medias-text">Plus de 10 ans d'expérience en Suisse romande. Passés dans les médias :</p>
-    <div class="medias-logos">
-      <span class="ml ml-rts">
-        <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="40" height="40" rx="5" fill="white" fill-opacity=".25"/>
-          <text x="20" y="27" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="15" fill="white">▶</text>
-        </svg>
-        RTS — Temps Présent
-      </span>
-      <span class="ml ml-20">
-        <svg width="22" height="22" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="44" height="44" rx="5" fill="white" fill-opacity=".25"/>
-          <text x="22" y="29" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="20" fill="white">20</text>
-        </svg>
-        20 Minutes
-      </span>
-    </div>
-  </div>
-</div>
+
 
 <!-- ============================================================ -->
 <!-- VIDEO / MÉDIAS DARK — Phase 4.5                            -->
 <!-- ============================================================ -->
-<section class="video-dark">
-  <div class="video-dark-inner">
-    <div>
-      <span class="vd-label">Ils parlent de nous</span>
-      <h2 class="vd-title">Passés dans les<br>médias suisses</h2>
-      <p class="vd-text">Val-Débarras a été sélectionné par la RTS pour un reportage sur le syndrome de Diogène en Suisse romande. Notre approche humaine et sans jugement, ainsi que notre expertise technique, ont retenu l'attention de la rédaction de <em style="font-style:normal;color:rgba(255,255,255,.9);font-weight:600;">Temps Présent</em>.</p>
-      <div class="vd-badges">
-        <span class="vd-badge-item">📺 RTS — Temps Présent</span>
-        <span class="vd-badge-item">📰 20 Minutes</span>
-        <span class="vd-badge-item">✓ +10 ans d'expérience</span>
-      </div>
+<section class="media-section" id="medias">
+  <div class="media-container">
+
+    <div class="media-header">
+      <span class="section-label">Ils parlent de nous</span>
+      <h2 class="section-title">Passés dans les médias suisses</h2>
+      <p class="section-desc">Cliquez sur chaque média pour voir le reportage ou lire l'article</p>
     </div>
-    <div class="vd-media-col">
-      <!-- Tabs -->
-      <div class="vd-tabs">
-        <button class="vd-tab active" data-panel="rts">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
-          RTS — Temps Présent
-        </button>
-        <button class="vd-tab" data-panel="20min">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-          20 Minutes
-        </button>
-      </div>
 
-      <!-- Panel RTS -->
-      <div class="vd-panel active" id="panel-rts">
-        <a href="https://www.rts.ch/play/tv/temps-present/video/diogenes-une-montagne-de-souffrance?urn=urn:rts:video:8430900a-7072-3ba2-aacb-9a1268ffceef" target="_blank" rel="noopener noreferrer" class="vd-visual" aria-label="Voir le reportage RTS Temps Présent · 29:48">
-          <img src="/images/rts-preview.jpg" alt="Val-Débarras — Reportage RTS Temps Présent" onerror="this.src='/images/ge-action.jpg'">
-          <div class="vd-overlay"></div>
-          <div class="vd-play">▶</div>
-          <div class="vd-caption">
-            <span class="vd-badge-rts">RTS</span>
-            <span class="vd-caption-text">Temps Présent — Diogène en Suisse romande · 29:48</span>
-          </div>
-        </a>
-      </div>
+    <div class="media-grid">
 
-      <!-- Panel 20min -->
-      <div class="vd-panel" id="panel-20min">
-        <a href="https://www.20min.ch/fr/story/valais-locataire-expulsee-elle-conservait-35-tonnes-de-dechets-103216100" target="_blank" rel="noopener noreferrer" class="vd-article-full" aria-label="Lire l'article 20 Minutes">
-          <div class="vd-article-header">
-            <span class="vd-article-logo">20</span>
-            <span class="vd-article-source">minutes · Suisse romande</span>
+      <!-- TARJETA 1: RTS (VIDEO) -->
+      <a class="media-card media-card-video"
+         href="https://www.rts.ch/play/tv/temps-present/video/diogenes-une-montagne-de-souffrance?urn=urn:rts:video:8430900a-7072-3ba2-aacb-9a1268ffceef"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Voir le reportage RTS - Temps Présent: Diogène, une montagne de souffrance. Durée 29 minutes 48.">
+        <div class="media-preview">
+          <img src="/images/rts-preview.jpg" onerror="this.src='/images/ge-action.jpg'"
+               alt="Camion Val-Débarras devant un logement insalubre. Reportage RTS sur le syndrome de Diogène en Suisse romande."
+               class="media-preview-img" loading="lazy">
+          <span class="media-badge media-badge-rts">RTS</span>
+          <div class="media-play-btn" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="12" fill="#009b74"/>
+              <path d="M10 8L16 12L10 16V8Z" fill="white"/>
+            </svg>
           </div>
-          <div class="vd-article-body">
-            <div class="vd-article-date">Reportage · Syndrome de Diogène</div>
-            <div class="vd-article-headline">Valais : locataire expulsée, elle conservait 35 tonnes de déchets</div>
-            <div class="vd-article-excerpt">Val-Débarras est intervenu dans ce cas extrême à Sion. L'article revient sur le syndrome de Diogène en Suisse romande et l'importance d'une intervention humaine et professionnelle.</div>
-            <span class="vd-article-cta">Lire l'article complet →</span>
+          <span class="media-duration">29:48</span>
+        </div>
+        <div class="media-info">
+          <h3 class="media-title">Temps Présent — RTS</h3>
+          <p class="media-subtitle">Diogène : une montagne de souffrance</p>
+          <span class="media-type">Reportage vidéo · 29:48</span>
+        </div>
+      </a>
+
+      <!-- TARJETA 2: 20 MINUTES (ARTICLE) -->
+      <a class="media-card media-card-article"
+         href="https://www.20min.ch/fr/story/valais-locataire-expulsee-elle-conservait-35-tonnes-de-dechets-103216100"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Lire l'article 20 Minutes: Locataire expulsée à Sion, elle conservait 3,5 tonnes de déchets.">
+        <div class="media-preview">
+          <img src="/images/20min-preview.jpg" onerror="this.src='/images/ge-action.jpg'"
+               alt="Appartement encombré avec des piles de déchets. Article 20 Minutes sur une locataire expulsée à Sion."
+               class="media-preview-img" loading="lazy">
+          <span class="media-badge media-badge-20min">20 minutes</span>
+          <div class="media-article-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M4 4h16v16H4z"/>
+              <path d="M8 8h8M8 12h8M8 16h5"/>
+            </svg>
           </div>
-        </a>
-      </div>
+        </div>
+        <div class="media-info">
+          <h3 class="media-title">20 Minutes Suisse</h3>
+          <p class="media-subtitle">Valais : locataire expulsée, 35 tonnes de déchets</p>
+          <span class="media-type">Article · 20 Minutes</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -1921,20 +1936,7 @@ function toggleDrawer(el) {
   });
 })();
 </script>
-<script>
-/* ── TABS MÉDIAS JS ── */
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('.vd-tab').forEach(function(tab){
-    tab.addEventListener('click', function(){
-      document.querySelectorAll('.vd-tab').forEach(function(t){ t.classList.remove('active'); });
-      document.querySelectorAll('.vd-panel').forEach(function(p){ p.classList.remove('active'); });
-      tab.classList.add('active');
-      var panel = document.getElementById('panel-' + tab.dataset.panel);
-      if(panel) panel.classList.add('active');
-    });
-  });
-});
-</script>
+
 <script>
 /* ── MICRO-INTERACCIONES JS ── */
 (function(){
