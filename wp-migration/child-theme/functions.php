@@ -92,6 +92,22 @@ add_action('init', function () {
 // Les champs sont aussi définis dans acf-groups/canton-page-fields.json
 // Importer via ACF → Outils → Importer des groupes de champs
 
+// ── 5b. Exposer les meta fields via REST API (pour import-rest-api.js) ───────
+add_action('init', function () {
+    $meta_fields = [
+        'canton_nom', 'canton_code', 'service_nom', 'service_slug',
+        'hero_text', 'communes_pills', 'meta_description',
+    ];
+    foreach ($meta_fields as $field) {
+        register_post_meta('canton_page', $field, [
+            'show_in_rest'  => true,
+            'single'        => true,
+            'type'          => 'string',
+            'auth_callback' => fn() => current_user_can('edit_posts'),
+        ]);
+    }
+});
+
 // ── 6. SEO — og:image par défaut ──────────────────────────────────────────
 add_action('wp_head', function () {
     if (!is_singular()) return;
