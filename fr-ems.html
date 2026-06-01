@@ -28,7 +28,7 @@ ul{list-style:none;}
 img{max-width:100%;display:block;}
 /* ── PROTO BAR ── *//* ── HEADER ── */
 .header{background:var(--blanc);border-bottom:1px solid #e5e7eb;position:sticky;top:41px;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.07);}
-.header-inner{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px;height:72px;}
+.header-inner{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px;height:80px;}
 .logo{display:flex;align-items:center;gap:10px;flex-shrink:0;margin-right:8px;}
 .logo-img{width:58px !important;height:auto !important;object-fit:contain !important;}
 .logo-text{line-height:1.2;}
@@ -218,7 +218,7 @@ img{max-width:100%;display:block;}
 /* HEADER v3 — logo only + hamburger always visible            */
 /* ============================================================ */
 
-@media(min-width:1025px){.nav{display:flex !important;flex-wrap:nowrap !important;gap:0;flex:1;min-width:0;}.nav-btn{font-size:13px;padding:7px 6px;white-space:nowrap;letter-spacing:normal;font-weight:600;color:#374151;gap:5px;}}
+@media(min-width:1025px){.nav{display:flex !important;flex-wrap:nowrap !important;gap:0;flex:1;min-width:0;}.nav-btn{font-size:13px;padding:7px 6px;white-space:normal;text-align:center;line-height:1.25;letter-spacing:normal;font-weight:600;color:#374151;gap:4px;}}
 /* Services grid — cartes séparées */
 .services-grid{gap:16px !important;border-radius:0 !important;overflow:visible !important;box-shadow:none !important;}
 .sc{border-radius:12px !important;}
@@ -1107,6 +1107,7 @@ body{font-size:16px;line-height:1.7;}
 
 /* Header mobile : logo | téléphone compact | hamburger */
 .header-inner{padding:0 12px !important;gap:8px !important;height:60px !important;}
+@media(min-width:1025px){.header-inner{height:80px !important;padding:0 24px !important;}.logo-img{width:62px !important;}.logo-name{font-size:21px !important;}}
 .logo{margin-right:auto !important;flex-shrink:0;}
 .logo-img{width:48px !important;}
 .header-actions{
@@ -1270,7 +1271,7 @@ body{font-size:16px;line-height:1.7;}
       </div>
     </div>
     <div class="nav-item">
-      <button class="nav-btn">Après décès/succession <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
+      <button class="nav-btn">Débarras après décès/succession <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
       <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
         <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
         <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
@@ -1281,7 +1282,7 @@ body{font-size:16px;line-height:1.7;}
       </div>
     </div>
     <div class="nav-item">
-      <button class="nav-btn">Suite entrée EMS <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
+      <button class="nav-btn">Débarras suite entrée EMS <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
       <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
         <a href="/debarras-ems/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
         <a href="/debarras-ems/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
@@ -1292,7 +1293,7 @@ body{font-size:16px;line-height:1.7;}
       </div>
     </div>
     <div class="nav-item">
-      <button class="nav-btn">Insalubre/Diogène <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
+      <button class="nav-btn">Débarras Insalubre/Diogène <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
       <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
         <a href="/debarras-insalubre-diogene/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
         <a href="/debarras-insalubre-diogene/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
