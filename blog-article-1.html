@@ -99,26 +99,10 @@ img{max-width:100%;display:block;}
 /* HEADER v3 — logo only + hamburger always visible            */
 /* ============================================================ */
 
-/* === NAV DESKTOP v4 — visible sur desktop, caché sur mobile === */
-.hamburger{display:flex !important;}
-.nav{display:none !important;}
-@media(min-width:1025px){
-  .hamburger{display:none !important;}
-  .nav{display:flex !important;flex-wrap:nowrap !important;gap:0;flex:1;min-width:0;}
-  .nav-btn{font-size:13px;padding:7px 6px;white-space:nowrap;letter-spacing:normal;font-weight:600;color:#374151;gap:5px;}
-  .mobile-drawer.open{left:auto;width:420px;box-shadow:-8px 0 32px rgba(0,0,0,.18);}
-}
+@media(min-width:1025px){.nav{display:flex !important;flex-wrap:nowrap !important;gap:0;flex:1;min-width:0;}.nav-btn{font-size:13px;padding:7px 6px;white-space:nowrap;letter-spacing:normal;font-weight:600;color:#374151;gap:5px;}}
 /* Services grid — cartes séparées */
 .services-grid{gap:16px !important;border-radius:0 !important;overflow:visible !important;box-shadow:none !important;}
 .sc{border-radius:12px !important;}
-/* Drawer toujours fonctionnel */
-.mobile-drawer{
-  display:block;position:fixed;top:0;right:0;bottom:0;left:0;
-  background:var(--blanc);z-index:500;overflow-y:auto;
-  transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);
-  visibility:hidden;
-}
-.mobile-drawer.open{transform:translateX(0);visibility:visible;}
 /* Footer v2 */
 
 /* Shields drawer */
@@ -678,16 +662,19 @@ body{font-size:16px;line-height:1.7;}
   opacity:1;visibility:visible;pointer-events:auto;
 }
 .mobile-drawer{
-  display:flex !important;flex-direction:column;
+  display:flex !important;flex-direction:column;align-items:stretch !important;
   position:fixed !important;top:0 !important;right:0 !important;bottom:0 !important;
-  left:auto !important;width:min(85vw,320px) !important;max-width:320px;
-  background:var(--blanc);z-index:500;overflow-y:auto;
+  left:auto !important;
+  width:85vw !important;max-width:320px !important;min-width:280px !important;
+  background:var(--blanc);z-index:500;overflow-x:hidden;overflow-y:auto;
   transform:translateX(100%);visibility:hidden;
   transition:transform .35s cubic-bezier(.16,1,.3,1),visibility .35s;
   box-shadow:-8px 0 32px rgba(0,0,0,.15);
+  box-sizing:border-box;
 }
-.mobile-drawer.is-open{
-  transform:translateX(0);visibility:visible;
+.mobile-drawer.is-open,
+.mobile-drawer.open{
+  transform:translateX(0) !important;visibility:visible !important;
 }
 .drawer-header{
   display:flex;align-items:center;justify-content:space-between;
@@ -699,12 +686,15 @@ body{font-size:16px;line-height:1.7;}
   color:var(--gris-fonce);padding:0;
 }
 .drawer-close .icon{width:22px;height:22px;}
-.drawer-body{padding:8px 16px 24px;flex:1;}
-.drawer-group{border-bottom:1px solid #f3f4f6;}
+.drawer-body{padding:8px 16px 24px;flex:1;width:100%;box-sizing:border-box;}
+.drawer-group{border-bottom:1px solid #f3f4f6;width:100%;box-sizing:border-box;}
 .drawer-title{
   display:flex;justify-content:space-between;align-items:center;
   padding:14px 4px;font-size:15px;font-weight:700;cursor:pointer;
   min-height:48px;gap:8px;
+  border:none;background:none;width:100%;max-width:100%;text-align:left;
+  font-family:var(--font);color:var(--gris-fonce);
+  box-sizing:border-box;-webkit-appearance:none;appearance:none;
 }
 .drawer-title .arr,.drawer-title span{pointer-events:none;}
 .drawer-title .arr{display:inline-flex;color:var(--vert);transition:transform .2s;}
@@ -717,7 +707,7 @@ body{font-size:16px;line-height:1.7;}
 }
 .drawer-cantons a:hover{background:var(--gris-bg);}
 .drawer-cantons .canton-icon{width:22px;height:28px;}
-.drawer-actions{margin-top:16px;display:flex;flex-direction:column;gap:10px;}
+.drawer-actions{margin-top:16px;display:flex;flex-direction:column;gap:10px;width:100%;}
 .drawer-phone{
   display:flex;align-items:center;justify-content:center;gap:10px;
   background:var(--vert);color:white;padding:16px;border-radius:12px;
@@ -768,6 +758,7 @@ body{font-size:16px;line-height:1.7;}
 @media (max-width: 768px) {
   html,body{overflow-x:hidden;max-width:100vw;}
   body.nav-open{overflow:hidden;}
+  body.nav-open .sticky-mobile{visibility:hidden;pointer-events:none;}
   body.has-sticky-mobile{padding-bottom:88px;}
 
   .hero-desktop{display:none !important;}
@@ -805,6 +796,61 @@ body{font-size:16px;line-height:1.7;}
 
 
 
+/* === MOBILE ZONES + FORM VD === */
+@media (max-width: 768px) {
+  /* Formulaire — une colonne (override PATCH form desktop) */
+  .form-inner{
+    grid-template-columns:1fr !important;
+    gap:32px !important;
+  }
+  .form-card{order:-1 !important;}
+  .form-section{padding:56px 0 calc(72px + env(safe-area-inset-bottom,0px));}
+  .form-card{padding:24px 16px !important;}
+  .fl input,.fl select,.fl textarea{
+    min-height:52px !important;
+    font-size:16px !important;
+  }
+  .form-btn{
+    width:100% !important;
+    min-height:52px !important;
+    justify-content:center;
+  }
+
+  /* Zones d'intervention — cartes services (accueil) */
+  .sc-zones{margin-top:16px;padding-top:14px;}
+  .sc-zones-label{font-size:11px;margin-bottom:10px;}
+  .sc-zones-links{
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:8px !important;
+  }
+  .sc-zones-links a{
+    min-height:44px !important;
+    font-size:13px !important;
+    padding:8px 6px !important;
+  }
+
+  /* Communes couvertes — pages service */
+  .communes-cloud{
+    display:flex;flex-wrap:wrap;gap:8px;
+    justify-content:center;padding:0 4px;
+  }
+  .commune-pill{
+    min-height:44px !important;
+    padding:10px 14px !important;
+    font-size:13px !important;
+  }
+
+  /* Grille cantons accueil */
+  .canton-grid,.cpill-row{
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:10px !important;
+  }
+  .canton-btn,.cpill{
+    min-height:48px !important;
+    font-size:13px !important;
+  }
+}
+/* === END MOBILE ZONES + FORM VD === */
 </style>
 </head>
 <body>

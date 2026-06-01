@@ -42,16 +42,19 @@ MOBILE_NAV_CSS = f"""{CSS_MARKER}
   opacity:1;visibility:visible;pointer-events:auto;
 }}
 .mobile-drawer{{
-  display:flex !important;flex-direction:column;
+  display:flex !important;flex-direction:column;align-items:stretch !important;
   position:fixed !important;top:0 !important;right:0 !important;bottom:0 !important;
-  left:auto !important;width:min(85vw,320px) !important;max-width:320px;
-  background:var(--blanc);z-index:500;overflow-y:auto;
+  left:auto !important;
+  width:85vw !important;max-width:320px !important;min-width:280px !important;
+  background:var(--blanc);z-index:500;overflow-x:hidden;overflow-y:auto;
   transform:translateX(100%);visibility:hidden;
   transition:transform .35s cubic-bezier(.16,1,.3,1),visibility .35s;
   box-shadow:-8px 0 32px rgba(0,0,0,.15);
+  box-sizing:border-box;
 }}
-.mobile-drawer.is-open{{
-  transform:translateX(0);visibility:visible;
+.mobile-drawer.is-open,
+.mobile-drawer.open{{
+  transform:translateX(0) !important;visibility:visible !important;
 }}
 .drawer-header{{
   display:flex;align-items:center;justify-content:space-between;
@@ -63,12 +66,15 @@ MOBILE_NAV_CSS = f"""{CSS_MARKER}
   color:var(--gris-fonce);padding:0;
 }}
 .drawer-close .icon{{width:22px;height:22px;}}
-.drawer-body{{padding:8px 16px 24px;flex:1;}}
-.drawer-group{{border-bottom:1px solid #f3f4f6;}}
+.drawer-body{{padding:8px 16px 24px;flex:1;width:100%;box-sizing:border-box;}}
+.drawer-group{{border-bottom:1px solid #f3f4f6;width:100%;box-sizing:border-box;}}
 .drawer-title{{
   display:flex;justify-content:space-between;align-items:center;
   padding:14px 4px;font-size:15px;font-weight:700;cursor:pointer;
   min-height:48px;gap:8px;
+  border:none;background:none;width:100%;max-width:100%;text-align:left;
+  font-family:var(--font);color:var(--gris-fonce);
+  box-sizing:border-box;-webkit-appearance:none;appearance:none;
 }}
 .drawer-title .arr,.drawer-title span{{pointer-events:none;}}
 .drawer-title .arr{{display:inline-flex;color:var(--vert);transition:transform .2s;}}
@@ -81,7 +87,7 @@ MOBILE_NAV_CSS = f"""{CSS_MARKER}
 }}
 .drawer-cantons a:hover{{background:var(--gris-bg);}}
 .drawer-cantons .canton-icon{{width:22px;height:28px;}}
-.drawer-actions{{margin-top:16px;display:flex;flex-direction:column;gap:10px;}}
+.drawer-actions{{margin-top:16px;display:flex;flex-direction:column;gap:10px;width:100%;}}
 .drawer-phone{{
   display:flex;align-items:center;justify-content:center;gap:10px;
   background:var(--vert);color:white;padding:16px;border-radius:12px;
@@ -132,6 +138,7 @@ MOBILE_NAV_CSS = f"""{CSS_MARKER}
 @media (max-width: 768px) {{
   html,body{{overflow-x:hidden;max-width:100vw;}}
   body.nav-open{{overflow:hidden;}}
+  body.nav-open .sticky-mobile{{visibility:hidden;pointer-events:none;}}
   body.has-sticky-mobile{{padding-bottom:88px;}}
 
   .hero-desktop{{display:none !important;}}
@@ -257,6 +264,47 @@ CSS_BLOCK_RE = re.compile(
     re.escape(CSS_MARKER) + r"[\s\S]*?" + re.escape(CSS_END),
     re.IGNORECASE,
 )
+
+# Legacy drawer/hamburger CSS superseded by MOBILE NAV VD — causes broken side panel.
+LEGACY_HAMBURGER_BLOCK_RE = re.compile(
+    r"/\* Hamburger — NOUVEAU \*/[\s\S]*?"
+    r"\.drawer-phone\{[^{}]*\}\s*",
+    re.IGNORECASE,
+)
+LEGACY_NAV_V4_RE = re.compile(
+    r"/\* === NAV DESKTOP v4 — visible sur desktop, caché sur mobile === \*/\s*"
+    r"\.hamburger\{display:flex !important;\}\s*"
+    r"\.nav\{display:none !important;\}\s*"
+    r"@media\(min-width:1025px\)\{\s*"
+    r"\.hamburger\{display:none !important;\}\s*"
+    r"\.nav\{display:flex !important;flex-wrap:nowrap !important;gap:0;flex:1;min-width:0;\}\s*"
+    r"\.nav-btn\{font-size:13px;padding:7px 6px;white-space:nowrap;letter-spacing:normal;font-weight:600;color:#374151;gap:5px;\}\s*"
+    r"\.mobile-drawer\.open\{left:auto;width:420px;box-shadow:-8px 0 32px rgba\(0,0,0,\.18\);\}\s*"
+    r"\}\s*",
+    re.IGNORECASE,
+)
+LEGACY_DRAWER_BLOCK_RE = re.compile(
+    r"/\* Drawer toujours fonctionnel \*/\s*"
+    r"\.mobile-drawer\{[^{}]*\}\s*"
+    r"\.mobile-drawer\.open\{[^{}]*\}\s*",
+    re.IGNORECASE,
+)
+
+
+def remove_legacy_drawer_css(html: str) -> tuple[str, bool]:
+    """Remove pre-vd mobile drawer rules that conflict with MOBILE NAV VD block."""
+    orig = html
+    html = LEGACY_HAMBURGER_BLOCK_RE.sub("", html)
+    html = LEGACY_NAV_V4_RE.sub(
+        "@media(min-width:1025px){"
+        ".nav{display:flex !important;flex-wrap:nowrap !important;gap:0;flex:1;min-width:0;}"
+        ".nav-btn{font-size:13px;padding:7px 6px;white-space:nowrap;"
+        "letter-spacing:normal;font-weight:600;color:#374151;gap:5px;}"
+        "}\n",
+        html,
+    )
+    html = LEGACY_DRAWER_BLOCK_RE.sub("", html)
+    return html, html != orig
 
 
 def canton_links(base_path: str) -> str:
@@ -466,6 +514,10 @@ def process_file(path: Path) -> list[str]:
     orig = html
     changes: list[str] = []
     site = is_site_page(html)
+
+    html, ok = remove_legacy_drawer_css(html)
+    if ok:
+        changes.append("legacy-css")
 
     html, ok = inject_css(html, full=site)
     if ok:

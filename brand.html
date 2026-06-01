@@ -484,6 +484,61 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--creme);color:var(
 
 
 
+/* === MOBILE ZONES + FORM VD === */
+@media (max-width: 768px) {
+  /* Formulaire — une colonne (override PATCH form desktop) */
+  .form-inner{
+    grid-template-columns:1fr !important;
+    gap:32px !important;
+  }
+  .form-card{order:-1 !important;}
+  .form-section{padding:56px 0 calc(72px + env(safe-area-inset-bottom,0px));}
+  .form-card{padding:24px 16px !important;}
+  .fl input,.fl select,.fl textarea{
+    min-height:52px !important;
+    font-size:16px !important;
+  }
+  .form-btn{
+    width:100% !important;
+    min-height:52px !important;
+    justify-content:center;
+  }
+
+  /* Zones d'intervention — cartes services (accueil) */
+  .sc-zones{margin-top:16px;padding-top:14px;}
+  .sc-zones-label{font-size:11px;margin-bottom:10px;}
+  .sc-zones-links{
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:8px !important;
+  }
+  .sc-zones-links a{
+    min-height:44px !important;
+    font-size:13px !important;
+    padding:8px 6px !important;
+  }
+
+  /* Communes couvertes — pages service */
+  .communes-cloud{
+    display:flex;flex-wrap:wrap;gap:8px;
+    justify-content:center;padding:0 4px;
+  }
+  .commune-pill{
+    min-height:44px !important;
+    padding:10px 14px !important;
+    font-size:13px !important;
+  }
+
+  /* Grille cantons accueil */
+  .canton-grid,.cpill-row{
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:10px !important;
+  }
+  .canton-btn,.cpill{
+    min-height:48px !important;
+    font-size:13px !important;
+  }
+}
+/* === END MOBILE ZONES + FORM VD === */
 </style>
 </head>
 <body>
