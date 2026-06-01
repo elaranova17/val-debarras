@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Navbar desktop — menu sur une ligne (≥1025px) + chevrons dropdown visibles.
+Navbar desktop — menu centré logo/CTA (≥1025px) + chevrons dropdown visibles.
 
 Idempotent : relançable sans effet de bord.
 Cible tous les *.html du dossier prototype.
@@ -15,15 +15,22 @@ MARKER = "NAVBAR LAYOUT v1"
 NAVBAR_CSS = """
 /* === NAVBAR LAYOUT v1 — une ligne desktop + chevrons === */
 @media(min-width:1025px){
-  .header-inner{gap:6px;padding:0 12px;}
-  .logo{margin-right:0;gap:7px;flex-shrink:0;}
+  .header-inner{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:6px;
+    padding:0 12px;
+  }
+  .logo{margin-right:0;gap:7px;flex-shrink:0;grid-column:1;}
   .logo-img{width:48px;}
   .logo-name{font-size:16px !important;}
   .logo-sub{font-size:10px !important;}
   .nav{
+    grid-column:2;
     flex:1 1 auto;min-width:0;
     flex-wrap:nowrap !important;
-    justify-content:flex-start !important;
+    justify-content:center !important;
     gap:2px;
   }
   .nav-btn{
@@ -31,11 +38,12 @@ NAVBAR_CSS = """
     font-weight:600;
     color:#374151;
     padding:7px 6px;
-    gap:5px;
+    gap:6px;
     letter-spacing:normal;
     white-space:nowrap;
   }
   .header-cta{
+    grid-column:3;
     font-size:12px !important;
     padding:7px 10px !important;
     min-height:auto !important;
@@ -50,9 +58,9 @@ NAVBAR_CSS = """
   .logo-name{font-size:15px !important;}
   .nav{gap:1px;}
   .nav-btn{
-    font-size:12.5px;
+    font-size:13px;
     padding:7px 5px;
-    gap:4px;
+    gap:6px;
   }
   .header-cta{
     font-size:11.5px !important;
@@ -63,19 +71,24 @@ NAVBAR_CSS = """
   font-size:inherit;
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   line-height:1;
-  transition:transform .2s;
+  padding:2px;
+  border-radius:4px;
+  background:rgba(0,155,116,.12);
+  transition:transform .2s,background .2s;
 }
 .nav-btn .nav-chevron,
 .nav-btn .nav-chevron.icon-sm{
-  width:16px !important;
-  height:16px !important;
-  opacity:1;
-  color:#009b74;
+  width:18px !important;
+  height:18px !important;
+  opacity:1 !important;
+  color:#047857 !important;
   flex-shrink:0;
   transition:transform .2s,color .2s;
 }
-.nav-item:hover .nav-chevron{color:#007a5a;}
+.nav-item:hover .nav-chevron{color:#065f46 !important;}
+.nav-item:hover .chev{background:rgba(0,155,116,.2);}
 .nav-item:hover .chev{transform:rotate(180deg);}
 .nav-item.open .nav-chevron{transform:rotate(180deg);}
 """
@@ -121,12 +134,12 @@ def patch_nav_css(html: str) -> str:
     )
     html = re.sub(
         r"  \.nav-btn\{font-size:12px;padding:7px 10px;white-space:nowrap;\}",
-        "  .nav-btn{font-size:13px;padding:7px 6px;white-space:nowrap;letter-spacing:normal;font-weight:600;color:#374151;gap:5px;}",
+        "  .nav-btn{font-size:13px;padding:7px 6px;white-space:nowrap;letter-spacing:normal;font-weight:600;color:#374151;gap:6px;}",
         html,
     )
     html = re.sub(
         r"  \.nav-btn\{font-size:12\.5px;padding:8px 7px;white-space:nowrap;letter-spacing:-0\.02em;\}",
-        "  .nav-btn{font-size:13px;padding:7px 6px;white-space:nowrap;letter-spacing:normal;font-weight:600;color:#374151;gap:5px;}",
+        "  .nav-btn{font-size:13px;padding:7px 6px;white-space:nowrap;letter-spacing:normal;font-weight:600;color:#374151;gap:6px;}",
         html,
     )
     if MARKER in html:
