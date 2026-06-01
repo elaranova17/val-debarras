@@ -1,0 +1,15 @@
+{
+  "name": "val-debarras-wp-import",
+  "version": "1.0.0",
+  "description": "Import automatisé des 36 pages canton Val-Débarras vers WordPress",
+  "main": "import-rest-api.js",
+  "scripts": {
+    "import": "node import-rest-api.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
