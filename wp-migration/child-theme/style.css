@@ -1,0 +1,25 @@
+/*
+Theme Name:   Val-Débarras Child
+Theme URI:    https://www.val-debarras.ch
+Description:  Thème enfant Val-Débarras — migration depuis prototype statique
+Author:       Val-Débarras
+Author URI:   https://www.val-debarras.ch
+Template:     (mettre ici le slug du thème parent installé sur le WP)
+Version:      1.0.0
+License:      Proprietary
+Text Domain:  val-debarras
+*/
+
+/* Les styles du thème parent sont chargés automatiquement.
+   Ajouter ici uniquement les overrides spécifiques Val-Débarras. */
+
+:root {
+  --vert:       #2e7d5c;
+  --vert-fonce: #1c5440;
+  --vert-dark:  #0e2e1e;
+  --vert-clair: #e4f2ea;
+  --gris-fonce: #1f2937;
+  --gris-bg:    #f9fafb;
+  --blanc:      #ffffff;
+  --font:       'Inter', system-ui, -apple-system, sans-serif;
+}

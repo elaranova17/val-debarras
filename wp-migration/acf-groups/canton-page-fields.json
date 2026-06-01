@@ -1,0 +1,132 @@
+[
+  {
+    "_comment": "Importer via : WP Admin → ACF → Outils → Importer des groupes de champs",
+    "key": "group_val_debarras_canton",
+    "title": "Champs Page Canton — Val-Débarras",
+    "fields": [
+      {
+        "key": "field_canton_nom",
+        "label": "Nom du canton",
+        "name": "canton_nom",
+        "type": "text",
+        "instructions": "Ex: Genève, Vaud, Valais...",
+        "required": 1,
+        "placeholder": "Genève"
+      },
+      {
+        "key": "field_canton_code",
+        "label": "Code canton (2 lettres)",
+        "name": "canton_code",
+        "type": "select",
+        "instructions": "Code ISO du canton suisse",
+        "required": 1,
+        "choices": {
+          "ge": "GE — Genève",
+          "vd": "VD — Vaud",
+          "vs": "VS — Valais",
+          "fr": "FR — Fribourg",
+          "ne": "NE — Neuchâtel",
+          "ju": "JU — Jura"
+        }
+      },
+      {
+        "key": "field_service_nom",
+        "label": "Nom du service",
+        "name": "service_nom",
+        "type": "select",
+        "required": 1,
+        "choices": {
+          "Débarras appartement": "Débarras appartement",
+          "Débarras maison": "Débarras maison",
+          "Après décès / succession": "Après décès / succession",
+          "Débarras EMS": "Débarras EMS",
+          "Diogène & insalubre": "Diogène & insalubre",
+          "Nettoyage extrême": "Nettoyage extrême"
+        }
+      },
+      {
+        "key": "field_service_slug",
+        "label": "Slug service (URL)",
+        "name": "service_slug",
+        "type": "select",
+        "required": 1,
+        "instructions": "Correspond à l'URL : /SLUG/canton/",
+        "choices": {
+          "debarras-appartement": "debarras-appartement",
+          "debarras-maison": "debarras-maison",
+          "debarras-apres-deces": "debarras-apres-deces",
+          "debarras-ems": "debarras-ems",
+          "debarras-insalubre-diogene": "debarras-insalubre-diogene",
+          "nettoyage-extreme": "nettoyage-extreme"
+        }
+      },
+      {
+        "key": "field_hero_text",
+        "label": "Texte hero (accroche)",
+        "name": "hero_text",
+        "type": "textarea",
+        "required": 1,
+        "rows": 4,
+        "instructions": "Phrase d'accroche de la page. 2-3 lignes max."
+      },
+      {
+        "key": "field_communes_pills",
+        "label": "Communes / villes (pills)",
+        "name": "communes_pills",
+        "type": "textarea",
+        "instructions": "Liste des communes séparées par des virgules. Ex: Genève, Carouge, Lancy, Vernier...",
+        "rows": 3
+      },
+      {
+        "key": "field_meta_description",
+        "label": "Meta description SEO",
+        "name": "meta_description",
+        "type": "textarea",
+        "instructions": "150-160 caractères max. Inclure le service et le canton.",
+        "rows": 2,
+        "maxlength": 160
+      },
+      {
+        "key": "field_schema_faq",
+        "label": "FAQ — Questions/Réponses",
+        "name": "faq_items",
+        "type": "repeater",
+        "instructions": "Ajouter les FAQ spécifiques à cette page canton",
+        "min": 0,
+        "max": 8,
+        "sub_fields": [
+          {
+            "key": "field_faq_question",
+            "label": "Question",
+            "name": "question",
+            "type": "text",
+            "required": 1
+          },
+          {
+            "key": "field_faq_reponse",
+            "label": "Réponse",
+            "name": "reponse",
+            "type": "textarea",
+            "required": 1,
+            "rows": 3
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "canton_page"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

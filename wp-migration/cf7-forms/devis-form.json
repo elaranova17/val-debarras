@@ -1,0 +1,38 @@
+{
+  "_comment": "Contact Form 7 — Formulaire Devis Val-Débarras",
+  "_instruction": "Importer via : WP Admin → Contact → Importer (plugin CF7 Import/Export)",
+  "title": "Formulaire Devis Val-Débarras",
+  "locale": "fr_FR",
+  "form": "<div class=\"form-inner\">\n  <div class=\"form-group\">\n    [text* prenom placeholder \"Prénom *\" class:form-control]\n    [text* nom placeholder \"Nom *\" class:form-control]\n  </div>\n  <div class=\"form-group\">\n    [tel* telephone placeholder \"Téléphone *\" class:form-control]\n    [email* email placeholder \"Email *\" class:form-control]\n  </div>\n  <div class=\"form-group\">\n    [select* service class:form-control\n      \"Débarras appartement\"\n      \"Débarras maison\"\n      \"Débarras après décès / succession\"\n      \"Entrée en EMS\"\n      \"Diogène & insalubre\"\n      \"Nettoyage extrême\"\n    ]\n    [select* canton class:form-control\n      \"Genève\"\n      \"Vaud\"\n      \"Valais\"\n      \"Fribourg\"\n      \"Neuchâtel\"\n      \"Jura\"\n    ]\n  </div>\n  <div class=\"form-group full\">\n    [textarea message placeholder \"Décrivez brièvement la situation (taille du logement, accès, urgence...)\" rows:4 class:form-control]\n  </div>\n  [submit class:btn-submit \"Demander un devis gratuit — Réponse sous 24h\"]\n</div>",
+  "mail": {
+    "subject": "[Val-Débarras] Nouvelle demande de devis — [canton] — [service]",
+    "sender": "Val-Débarras <noreply@val-debarras.ch>",
+    "recipient": "info@val-debarras.ch",
+    "body": "Nouvelle demande de devis reçue :\n\nNom : [prenom] [nom]\nTéléphone : [telephone]\nEmail : [email]\nService : [service]\nCanton : [canton]\n\nMessage :\n[message]\n\n---\nEnvoyé depuis val-debarras.ch",
+    "additional_headers": "Reply-To: [email]",
+    "attachments": "",
+    "use_html": false
+  },
+  "mail_2": {
+    "_comment": "Email de confirmation automatique au client",
+    "active": true,
+    "subject": "Votre demande de devis Val-Débarras — Réponse sous 24h",
+    "sender": "Val-Débarras <noreply@val-debarras.ch>",
+    "recipient": "[email]",
+    "body": "Bonjour [prenom],\n\nNous avons bien reçu votre demande de devis pour un [service] dans le canton de [canton].\n\nNotre équipe vous contactera dans les 24 heures ouvrables.\n\nPour toute urgence, appelez-nous directement : 079 580 58 57\n\nCordialement,\nL'équipe Val-Débarras\nhttps://www.val-debarras.ch",
+    "additional_headers": "",
+    "attachments": ""
+  },
+  "messages": {
+    "mail_sent_ok": "Merci ! Votre demande a été envoyée. Nous vous répondons sous 24h.",
+    "mail_sent_ng": "Une erreur est survenue. Veuillez nous appeler au 079 580 58 57.",
+    "validation_error": "Veuillez corriger les erreurs dans le formulaire.",
+    "invalid_required": "Ce champ est obligatoire.",
+    "invalid_email": "Adresse email invalide.",
+    "invalid_tel": "Numéro de téléphone invalide.",
+    "accept_terms": "Vous devez accepter les conditions.",
+    "invalid_too_long": "Ce texte est trop long.",
+    "invalid_too_short": "Ce texte est trop court."
+  },
+  "additional_settings": "demo_mode: off\nskip_mail: off"
+}
