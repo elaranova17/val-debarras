@@ -55,13 +55,14 @@ img{max-width:100%;display:block;}
 
 /* Nav desktop — 6 dropdowns con cantons */
 .nav{display:flex;align-items:center;gap:1px;flex:1;flex-wrap:nowrap;min-width:0;}
-.nav-item{position:relative;}
+.nav-item{position:relative;flex:1;min-width:0;}
 .nav-btn{
   background:none;border:none;
   font-family:var(--font);font-size:13px;font-weight:600;
   color:#374151;cursor:pointer;
-  padding:9px 11px;border-radius:8px;
-  display:flex;align-items:center;gap:4px;
+  padding:8px 6px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;gap:4px;
+  width:100%;box-sizing:border-box;
   transition:all .2s;white-space:nowrap;
 }
 .nav-btn:hover{background:var(--gris-bg);color:var(--vert);}
@@ -704,10 +705,8 @@ body{font-size:16px;line-height:1.7;}
 .pm-cell img{
   width:100%;height:100%;
   object-fit:cover;
-  transition:transform .5s cubic-bezier(.4,0,.2,1);
   display:block;
 }
-.pm-cell:hover img{transform:scale(1.08);}
 .pm-overlay{
   position:absolute;inset:0;
   background:rgba(46,125,92,.85);
@@ -1687,8 +1686,8 @@ body{font-size:16px;line-height:1.7;}
   .hamburger{display:none !important;}
   .nav{display:flex !important;}
   .header-inner{height:80px !important;padding:0 24px !important;}
-  .logo-img{width:54px !important;}
-  .logo-name{font-size:18px !important;}
+  .logo-img{width:62px !important;}
+  .logo-name{font-size:21px !important;}
 }
 
 @media (max-width: 768px) {
@@ -1730,9 +1729,9 @@ body{font-size:16px;line-height:1.7;}
   .fc-photo-grid,
   .media-tabs { display:none !important; }
   /* About photos: single column, one photo */
-  .about-photos { display:grid !important; grid-template-columns:1fr !important; gap:0 !important; }
+  .about-photos { display:grid !important; grid-template-columns:1fr !important; gap:8px !important; }
   .about-photos img:last-child { display:none !important; }
-  .about-photos img { height:180px !important; margin-top:0 !important; }
+  .about-photos img { height:200px !important; margin-top:0 !important; }
   /* About section: single column */
   .about-grid { grid-template-columns:1fr !important; gap:20px !important; }
   /* Canton grid: 2 columns, compact */
@@ -2229,9 +2228,9 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
     </div>
-    <div class="about-photos" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-      <img src="/images/van-flotte-simple.png" alt="Furgon Val-Débarras" style="width:100%;border-radius:12px;height:200px;object-fit:cover;" loading="lazy">
-      <img src="/images/van-flotte-duo.png" alt="Flotte Val-Débarras — deux véhicules" style="width:100%;border-radius:12px;height:200px;object-fit:cover;margin-top:24px;" loading="lazy">
+    <div class="about-photos" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <img src="/images/van-ge-jetdeau-2.jpg" alt="Furgon Val-Débarras à Genève" style="width:100%;border-radius:12px;height:260px;object-fit:cover;" loading="lazy">
+      <img src="/images/van-vs-chargement.jpg" alt="Chargement Val-Débarras en Valais" style="width:100%;border-radius:12px;height:260px;object-fit:cover;margin-top:28px;" loading="lazy">
     </div>
   </div>
 </section>
