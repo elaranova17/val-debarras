@@ -309,6 +309,14 @@
       "destination": "/ju-nettoyage.html"
     },
     {
+      "source": "/merci",
+      "destination": "/merci.html"
+    },
+    {
+      "source": "/merci/",
+      "destination": "/merci.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

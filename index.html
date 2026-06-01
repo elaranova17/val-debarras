@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Val-Débarras — Débarras et nettoyage professionnel en Suisse romande</title>
+<meta name="description" content="Val-Débarras : spécialistes du débarras et nettoyage professionnel en Suisse romande. Appartement, maison, succession, EMS, logement insalubre. Intervention rapide, devis gratuit sous 24h.">
+<link rel="canonical" href="https://www.val-debarras.ch/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -36,20 +38,20 @@ img{max-width:100%;display:block;}
 /* ============================================================ */
 .header{
   background:var(--blanc);border-bottom:1px solid #e5e7eb;
-  position:sticky;top:41px;z-index:100;
+  position:sticky;top:0;z-index:100;
   box-shadow:0 2px 10px rgba(0,0,0,0.07);
 }
 .header-inner{
   max-width:1400px;margin:0 auto;padding:0 24px;
-  display:flex;align-items:center;gap:16px;height:72px;
+  display:flex;align-items:center;gap:16px;height:80px;
 }
 
 /* Logo — image réelle Val-Débarras */
 .logo{display:flex;align-items:center;gap:10px;flex-shrink:0;margin-right:8px;}
-.logo-img{width:58px;height:auto;object-fit:contain;}
+.logo-img{width:62px;height:auto;object-fit:contain;}
 .logo-text{line-height:1.2;}
-.logo-name{font-size:20px;font-weight:800;color:var(--gris-fonce);}
-.logo-sub{font-size:11.5px;color:var(--gris);font-weight:500;}
+.logo-name{font-size:21px;font-weight:800;color:var(--gris-fonce);}
+.logo-sub{font-size:12px;color:var(--gris);font-weight:500;}
 
 /* Nav desktop — 6 dropdowns con cantons */
 .nav{display:flex;align-items:center;gap:1px;flex:1;flex-wrap:nowrap;min-width:0;}
@@ -483,7 +485,7 @@ img{max-width:100%;display:block;}
 /* HEADER v3 — logo only + hamburger always visible            */
 /* ============================================================ */
 
-@media(min-width:1025px){.nav{display:flex !important;flex-wrap:nowrap !important;gap:0;flex:1;min-width:0;}.nav-btn{font-size:13px;padding:7px 6px;white-space:nowrap;letter-spacing:normal;font-weight:600;color:#374151;gap:5px;}}
+@media(min-width:1025px){.nav{display:flex !important;flex-wrap:nowrap !important;gap:0;flex:1;min-width:0;}.nav-btn{font-size:13px;padding:6px 7px;white-space:normal;text-align:center;line-height:1.25;letter-spacing:normal;font-weight:600;color:#374151;gap:4px;}}
 /* Services grid — cartes séparées */
 .services-grid{gap:16px !important;border-radius:0 !important;overflow:visible !important;box-shadow:none !important;}
 .sc{border-radius:12px !important;}
@@ -506,7 +508,7 @@ body{font-size:16px;line-height:1.7;}
 /* ── PATCH v3 — correctifs réunion client ── */
 
 /* 1. Logo: afficher uniquement le cube, masquer le texte du bas */
-.logo-img{width:58px !important;height:auto !important;object-fit:contain !important;}
+.logo-img{width:62px !important;height:auto !important;object-fit:contain !important;}
 
 /* 2. Nav desktop: noms complets des services */
 /* (géré via HTML — voir ci-dessous) */
@@ -734,8 +736,8 @@ body{font-size:16px;line-height:1.7;}
 
 /* Logo: mostrar texto */
 .logo-text{display:flex !important;flex-direction:column;}
-.logo-name{font-size:20px !important;font-weight:800 !important;color:var(--gris-fonce) !important;}
-.logo-sub{font-size:11.5px !important;color:var(--gris) !important;font-weight:500 !important;}
+.logo-name{font-size:21px !important;font-weight:800 !important;color:var(--gris-fonce) !important;}
+.logo-sub{font-size:12px !important;color:var(--gris) !important;font-weight:500 !important;}
 
 
 /* ══════════════════════════════════════════════════
@@ -1333,10 +1335,10 @@ body{font-size:16px;line-height:1.7;}
     gap:6px;
     padding:0 12px;
   }
-  .logo{margin-right:0;gap:7px;flex-shrink:0;grid-column:1;}
-  .logo-img{width:48px;}
-  .logo-name{font-size:16px !important;}
-  .logo-sub{font-size:10px !important;}
+  .logo{margin-right:0;gap:8px;flex-shrink:0;grid-column:1;}
+  .logo-img{width:54px;}
+  .logo-name{font-size:18px !important;}
+  .logo-sub{font-size:11px !important;}
   .nav{
     grid-column:2;
     flex:1 1 auto;min-width:0;
@@ -1348,10 +1350,12 @@ body{font-size:16px;line-height:1.7;}
     font-size:13px;
     font-weight:600;
     color:#374151;
-    padding:7px 6px;
-    gap:6px;
+    padding:6px 7px;
+    gap:4px;
     letter-spacing:normal;
-    white-space:nowrap;
+    white-space:normal;
+    text-align:center;
+    line-height:1.25;
   }
   .header-cta{
     grid-column:3;
@@ -1365,13 +1369,13 @@ body{font-size:16px;line-height:1.7;}
 }
 @media(min-width:1025px) and (max-width:1279px){
   .header-inner{gap:4px;padding:0 10px;}
-  .logo-img{width:44px;}
-  .logo-name{font-size:15px !important;}
-  .nav{gap:1px;}
+  .logo-img{width:48px;}
+  .logo-name{font-size:16px !important;}
+  .nav{gap:0;}
   .nav-btn{
-    font-size:13px;
-    padding:7px 5px;
-    gap:6px;
+    font-size:12px;
+    padding:5px 5px;
+    gap:3px;
   }
   .header-cta{
     font-size:11.5px !important;
@@ -1682,6 +1686,9 @@ body{font-size:16px;line-height:1.7;}
   .header-cta{display:flex !important;}
   .hamburger{display:none !important;}
   .nav{display:flex !important;}
+  .header-inner{height:80px !important;padding:0 24px !important;}
+  .logo-img{width:54px !important;}
+  .logo-name{font-size:18px !important;}
 }
 
 @media (max-width: 768px) {
@@ -1812,6 +1819,56 @@ body{font-size:16px;line-height:1.7;}
   }
 }
 /* === END MOBILE ZONES + FORM VD === */
+
+/* === MOBILE NAV STRIP === */
+.mobile-nav-strip{
+  display:none;
+  align-items:center;
+  background:var(--blanc);
+  border-bottom:1px solid #e5e7eb;
+  position:sticky;
+  top:60px;
+  z-index:98;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
+}
+.mobile-nav-scroll{
+  display:flex;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  flex:1;
+  padding:8px 12px;
+  gap:8px;
+}
+.mobile-nav-scroll::-webkit-scrollbar{display:none;}
+.mobile-nav-pill{
+  white-space:nowrap;
+  background:none;
+  border:1.5px solid #e5e7eb;
+  border-radius:20px;
+  padding:5px 13px;
+  font-size:12.5px;
+  font-weight:600;
+  color:#374151;
+  cursor:pointer;
+  flex-shrink:0;
+  font-family:var(--font);
+  transition:background .15s,border-color .15s,color .15s;
+}
+.mobile-nav-pill:active{background:var(--vert-clair);border-color:var(--vert);color:var(--vert-fonce);}
+.mobile-nav-top{
+  flex-shrink:0;
+  width:36px;height:36px;
+  background:var(--vert-clair);
+  border:none;border-radius:8px;
+  margin:0 10px 0 4px;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--vert-fonce);
+}
+.mobile-nav-top svg{width:18px;height:18px;}
+@media(max-width:1024px){.mobile-nav-strip{display:flex;}}
+@media(min-width:1025px){.mobile-nav-strip{display:none !important;}}
 </style>
   <meta property="og:image" content="https://www.val-debarras.ch/images/van-vd-chillon.jpg">
   <meta property="og:image:width" content="1200">
@@ -1852,7 +1909,7 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
       <div class="nav-item">
-        <button class="nav-btn">Après décès/succession <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
+        <button class="nav-btn">Débarras après décès/succession <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
         <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
           <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="GE" loading="lazy"><span class="menu-label">Genève</span></a>
           <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="VD" loading="lazy"><span class="menu-label">Vaud</span></a>
@@ -1863,7 +1920,7 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
       <div class="nav-item">
-        <button class="nav-btn">Suite entrée EMS <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
+        <button class="nav-btn">Débarras suite entrée EMS <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
         <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
           <a href="/debarras-ems/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="GE" loading="lazy"><span class="menu-label">Genève</span></a>
           <a href="/debarras-ems/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="VD" loading="lazy"><span class="menu-label">Vaud</span></a>
@@ -1874,7 +1931,7 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
       <div class="nav-item">
-        <button class="nav-btn">Insalubre/Diogène <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
+        <button class="nav-btn">Débarras Insalubre/Diogène <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
         <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
           <a href="/debarras-insalubre-diogene/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="GE" loading="lazy"><span class="menu-label">Genève</span></a>
           <a href="/debarras-insalubre-diogene/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="VD" loading="lazy"><span class="menu-label">Vaud</span></a>
@@ -1904,6 +1961,21 @@ body{font-size:16px;line-height:1.7;}
   </div>
 </header>
 
+<!-- Mobile nav strip — service pills + scroll to top -->
+<div class="mobile-nav-strip" id="mobileNavStrip" aria-label="Navigation services">
+  <div class="mobile-nav-scroll">
+    <button class="mobile-nav-pill" data-svc="0">Débarras appartement</button>
+    <button class="mobile-nav-pill" data-svc="1">Débarras maison</button>
+    <button class="mobile-nav-pill" data-svc="2">Débarras après décès/succession</button>
+    <button class="mobile-nav-pill" data-svc="3">Débarras suite entrée EMS</button>
+    <button class="mobile-nav-pill" data-svc="4">Débarras Insalubre/Diogène</button>
+    <button class="mobile-nav-pill" data-svc="5">Nettoyages extrême</button>
+  </div>
+  <button class="mobile-nav-top" id="mobileScrollTop" aria-label="Haut de page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 15l7-7 7 7"/></svg>
+  </button>
+</div>
+
 <!-- Mobile drawer NOUVEAU -->
 <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
 <div class="mobile-drawer" id="drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Menu de navigation">
@@ -1920,7 +1992,7 @@ body{font-size:16px;line-height:1.7;}
       </button>
       <div class="drawer-cantons">
         <a href="/debarras-appartement/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">à Genève</a>
-        <a href="/debarras-appartement/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">dans le Vaud</a>
+        <a href="/debarras-appartement/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">sur le Vaud</a>
         <a href="/debarras-appartement/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">en Valais</a>
         <a href="/debarras-appartement/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">à Fribourg</a>
         <a href="/debarras-appartement/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">à Neuchâtel</a>
@@ -1934,7 +2006,7 @@ body{font-size:16px;line-height:1.7;}
       </button>
       <div class="drawer-cantons">
         <a href="/debarras-maison/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">à Genève</a>
-        <a href="/debarras-maison/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">dans le Vaud</a>
+        <a href="/debarras-maison/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">sur le Vaud</a>
         <a href="/debarras-maison/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">en Valais</a>
         <a href="/debarras-maison/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">à Fribourg</a>
         <a href="/debarras-maison/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">à Neuchâtel</a>
@@ -1943,12 +2015,12 @@ body{font-size:16px;line-height:1.7;}
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <span>Après décès / succession</span>
+        <span>Débarras après décès/succession</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
         <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">à Genève</a>
-        <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">dans le Vaud</a>
+        <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">sur le Vaud</a>
         <a href="/debarras-apres-deces/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">en Valais</a>
         <a href="/debarras-apres-deces/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">à Fribourg</a>
         <a href="/debarras-apres-deces/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">à Neuchâtel</a>
@@ -1957,12 +2029,12 @@ body{font-size:16px;line-height:1.7;}
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <span>Débarras EMS</span>
+        <span>Débarras suite entrée EMS</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
         <a href="/debarras-ems/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">à Genève</a>
-        <a href="/debarras-ems/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">dans le Vaud</a>
+        <a href="/debarras-ems/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">sur le Vaud</a>
         <a href="/debarras-ems/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">en Valais</a>
         <a href="/debarras-ems/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">à Fribourg</a>
         <a href="/debarras-ems/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">à Neuchâtel</a>
@@ -1971,12 +2043,12 @@ body{font-size:16px;line-height:1.7;}
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <span>Diogène &amp; insalubre</span>
+        <span>Débarras Insalubre/Diogène</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
         <a href="/debarras-insalubre-diogene/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">à Genève</a>
-        <a href="/debarras-insalubre-diogene/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">dans le Vaud</a>
+        <a href="/debarras-insalubre-diogene/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">sur le Vaud</a>
         <a href="/debarras-insalubre-diogene/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">en Valais</a>
         <a href="/debarras-insalubre-diogene/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">à Fribourg</a>
         <a href="/debarras-insalubre-diogene/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">à Neuchâtel</a>
@@ -1985,12 +2057,12 @@ body{font-size:16px;line-height:1.7;}
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <span>Nettoyage extrême</span>
+        <span>Nettoyages extrême</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
         <a href="/nettoyage-extreme/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">à Genève</a>
-        <a href="/nettoyage-extreme/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">dans le Vaud</a>
+        <a href="/nettoyage-extreme/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">sur le Vaud</a>
         <a href="/nettoyage-extreme/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">en Valais</a>
         <a href="/nettoyage-extreme/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">à Fribourg</a>
         <a href="/nettoyage-extreme/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">à Neuchâtel</a>
@@ -2158,8 +2230,8 @@ body{font-size:16px;line-height:1.7;}
       </div>
     </div>
     <div class="about-photos" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-      <img src="/images/ge-action.jpg" alt="Intervention Val-Débarras" style="width:100%;border-radius:12px;height:200px;object-fit:cover;" loading="lazy">
-      <img src="/images/fr-hero.jpg" alt="Val-Débarras Fribourg" style="width:100%;border-radius:12px;height:200px;object-fit:cover;margin-top:24px;" loading="lazy">
+      <img src="/images/van-flotte-simple.png" alt="Furgon Val-Débarras" style="width:100%;border-radius:12px;height:200px;object-fit:cover;" loading="lazy">
+      <img src="/images/van-flotte-duo.png" alt="Flotte Val-Débarras — deux véhicules" style="width:100%;border-radius:12px;height:200px;object-fit:cover;margin-top:24px;" loading="lazy">
     </div>
   </div>
 </section>
@@ -2447,7 +2519,7 @@ body{font-size:16px;line-height:1.7;}
         </div>
         <div class="media-info">
           <h3 class="media-title">20 Minutes Suisse</h3>
-          <p class="media-subtitle">Valais : locataire expulsée, 35 tonnes de déchets</p>
+          <p class="media-subtitle">Valais : locataire expulsée, 3,5 tonnes de déchets</p>
           <p class="media-blurb">20 Minutes a relayé ce cas marquant en Valais, où un logement contenait 3,5 tonnes de déchets. Un exemple concret du savoir-faire de Val-Débarras face aux situations les plus difficiles.</p>
           <span class="media-type">Article · 20 Minutes</span>
         </div>
@@ -2525,25 +2597,21 @@ body{font-size:16px;line-height:1.7;}
         </div>
         <div class="fc-row">
           <div class="fc-icon"><svg class="icon"><use href="#icon-map"/></svg></div>
-          <div class="fc-text"><strong>Rue de Mazerette 9, 1950 Sion</strong>Val-Débarras Sàrl</div>
+          <div class="fc-text"><strong>6 cantons couverts</strong>GE · VD · VS · FR · NE · JU</div>
         </div>
       </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;">
         <div class="pm-cell">
-          <img src="/images/van-vd-chillon.jpg" alt="Van Val-Débarras — Château de Chillon" loading="lazy">
-          <div class="pm-overlay"><span class="pm-icon"><svg class="icon" aria-hidden="true"><use href="#icon-truck"/></svg></span><span class="pm-label">Notre flotte</span></div>
+          <img src="/images/van-ge-jetdeau.jpg" alt="Van Val-Débarras — Jet d'Eau, Genève" loading="lazy">
         </div>
         <div class="pm-cell">
-          <img src="/images/van-vd-lavaux.jpg" alt="Van Val-Débarras — Vignobles de Lavaux" loading="lazy">
-          <div class="pm-overlay"><span class="pm-icon"><svg class="icon" aria-hidden="true"><use href="#icon-mountain"/></svg></span><span class="pm-label">Suisse romande</span></div>
+          <img src="/images/van-vs-alpes.jpg" alt="Van Val-Débarras — Alpes valaisannes" loading="lazy">
         </div>
         <div class="pm-cell">
-          <img src="/images/van-vd-vevey.jpg" alt="Van Val-Débarras — Vevey, Chaplin's World" loading="lazy">
-          <div class="pm-overlay"><span class="pm-icon"><svg class="icon" aria-hidden="true"><use href="#icon-building"/></svg></span><span class="pm-label">Région lémanique</span></div>
+          <img src="/images/van-flotte-duo.png" alt="Flotte Val-Débarras — deux véhicules" loading="lazy">
         </div>
         <div class="pm-cell">
-          <img src="/images/van-fr-murten.jpg" alt="Van Val-Débarras — Morat, Fribourg" loading="lazy">
-          <div class="pm-overlay"><span class="pm-icon"><svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg></span><span class="pm-label">Fribourg & Suisse romande</span></div>
+          <img src="/images/van-flotte-simple.png" alt="Véhicule Val-Débarras — marquage professionnel" loading="lazy">
         </div>
       </div>
     </div>
@@ -2552,13 +2620,6 @@ body{font-size:16px;line-height:1.7;}
       <form>
         <div class="form-row form-full" style="margin-bottom:16px">
           <div class="fl"><label>Nom complet *</label><input type="text" placeholder="Prénom et nom" style="font-size:16px;min-height:48px;"></div>
-        </div>
-        <div class="form-row form-full" style="margin-bottom:16px">
-          <div class="fl"><label>Localité du logement *</label><input type="text" placeholder="Ex: Sion, Lausanne, Genève..."></div>
-        </div>
-        <div class="form-row" style="margin-bottom:16px">
-          <div class="fl"><label>Email *</label><input type="email" placeholder="votre@email.ch"></div>
-          <div class="fl"><label>Téléphone *</label><input type="tel" placeholder="07X XXX XX XX"></div>
         </div>
         <div class="form-row" style="margin-bottom:16px">
           <div class="fl">
@@ -2585,6 +2646,13 @@ body{font-size:16px;line-height:1.7;}
               <option>Jura</option>
             </select>
           </div>
+        </div>
+        <div class="form-row form-full" style="margin-bottom:16px">
+          <div class="fl"><label>Localité du logement *</label><input type="text" placeholder="Ex: Sion, Lausanne, Genève..."></div>
+        </div>
+        <div class="form-row" style="margin-bottom:16px">
+          <div class="fl"><label>Email *</label><input type="email" placeholder="votre@email.ch"></div>
+          <div class="fl"><label>Téléphone *</label><input type="tel" placeholder="07X XXX XX XX"></div>
         </div>
         <div class="form-row form-full" style="margin-bottom:16px">
           <div class="fl">
@@ -2786,6 +2854,26 @@ button.media-logo-link{border:none;cursor:pointer;font-family:inherit;}
 
   document.body.classList.add('has-sticky-mobile');
 })();
+
+/* Mobile nav strip pills — open drawer + expand service */
+(function(){
+  var ham=document.getElementById('ham');
+  var drawer=document.getElementById('drawer');
+  document.querySelectorAll('.mobile-nav-pill').forEach(function(pill){
+    pill.addEventListener('click',function(){
+      var idx=parseInt(pill.getAttribute('data-svc'),10);
+      if(ham&&drawer&&!drawer.classList.contains('is-open')) ham.click();
+      setTimeout(function(){
+        var titles=document.querySelectorAll('#drawer .drawer-title');
+        if(titles[idx]&&!titles[idx].classList.contains('open')) titles[idx].click();
+        var cantons=document.querySelectorAll('#drawer .drawer-cantons');
+        if(cantons[idx]) cantons[idx].scrollIntoView({behavior:'smooth',block:'nearest'});
+      },80);
+    });
+  });
+  var topBtn=document.getElementById('mobileScrollTop');
+  if(topBtn) topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
 /* === END VD MOBILE NAV JS === */
 </script>
 
@@ -2865,21 +2953,15 @@ button.media-logo-link{border:none;cursor:pointer;font-family:inherit;}
   }
   document.querySelectorAll('.btn-devis,.header-cta,.form-btn,.sc-cta-devis,.other-card-cta').forEach(addRipple);
 
-  // Feedback submit formulario
+  // Submit formulario → redirection /merci (conversion Google Ads)
   document.querySelectorAll('.form-btn').forEach(function(btn){
     btn.closest('form') && btn.closest('form').addEventListener('submit',function(e){
       e.preventDefault();
       btn.classList.add('sending');
       btn.textContent='Envoi en cours…';
       setTimeout(function(){
-        btn.classList.remove('sending');
-        btn.classList.add('sent');
-        btn.textContent=' Envoyé !';
-        setTimeout(function(){
-          btn.classList.remove('sent');
-          btn.textContent='Envoyer ma demande';
-        },3000);
-      },1500);
+        window.location.href='/merci';
+      },800);
     });
   });
 })();
