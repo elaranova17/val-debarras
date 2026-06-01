@@ -124,11 +124,11 @@ img{max-width:100%;display:block;}
   position:relative;z-index:1;
   display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
 }
-.hero h1{
+.hero h1,.hero-desktop-h1{
   font-size:48px;font-weight:900;line-height:1.12;
-  margin-bottom:20px;letter-spacing:-1px;
+  margin-bottom:20px;letter-spacing:-1px;color:white;
 }
-.hero h1 .rien{color:#4ade80;}
+.hero h1 .rien,.hero-desktop-h1 .rien{color:#4ade80;}
 .hero-sub{font-size:18px;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:28px;}
 .hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;}
 .hbadge{
@@ -2020,7 +2020,7 @@ body{font-size:16px;line-height:1.7;}
 <section class="hero">
   <div class="hero-inner">
     <div>
-    <div class="hero-desktop"><h1>Débarras et nettoyage<br>professionnel en Suisse romande</h1>
+    <div class="hero-desktop"><p class="hero-desktop-h1" aria-hidden="true">Débarras et nettoyage<br>professionnel en Suisse romande</p>
       <p class="hero-sub">Appartement, maison, succession, entrée en EMS, logement insalubre ou nettoyage extrême : <strong>Val-Débarras intervient rapidement dans toute la Suisse romande.</strong></p>
       <p class="hero-sub" style="margin-top:-12px;">Nous nous occupons de tout : tri, débarras, évacuation, nettoyage et remise en état.</p>
       <div class="hero-btns">
