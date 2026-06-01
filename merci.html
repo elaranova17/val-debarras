@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merci pour votre demande | Val-Débarras</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Google Ads Global Site Tag — remplacer AW-XXXXXXXXXX par votre Conversion ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-XXXXXXXXXX');
+</script>
+
+<style>
+:root{
+  --vert:#2e7d5c;
+  --vert-fonce:#1c5440;
+  --vert-dark:#0e2e1e;
+  --vert-clair:#e8f5e9;
+  --gris-fonce:#1a2332;
+  --font:'Inter',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:#f8fafc;color:var(--gris-fonce);min-height:100vh;display:flex;flex-direction:column;}
+
+/* Header */
+.header{background:var(--vert-dark);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+.header-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.header-logo img{width:36px;height:auto;}
+.header-logo-name{font-size:18px;font-weight:800;color:white;}
+.header-phone{display:flex;align-items:center;gap:8px;color:white;text-decoration:none;font-weight:700;font-size:15px;}
+.header-phone svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;}
+
+/* Main */
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 24px;}
+.merci-card{background:white;border-radius:20px;box-shadow:0 4px 24px rgba(0,0,0,.08);max-width:560px;width:100%;padding:48px 40px;text-align:center;}
+
+.merci-icon{width:72px;height:72px;background:var(--vert-clair);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;}
+.merci-icon svg{width:36px;height:36px;stroke:var(--vert);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+
+.merci-title{font-size:30px;font-weight:900;color:var(--gris-fonce);margin-bottom:12px;line-height:1.2;}
+.merci-sub{font-size:16px;color:#4a5568;line-height:1.65;margin-bottom:32px;}
+
+.steps{display:flex;flex-direction:column;gap:14px;margin-bottom:36px;text-align:left;}
+.step{display:flex;align-items:flex-start;gap:14px;background:#f8fafc;border-radius:12px;padding:14px 16px;}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--vert);color:white;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-text{font-size:14px;color:#4a5568;line-height:1.5;}
+.step-text strong{color:var(--gris-fonce);display:block;margin-bottom:2px;}
+
+.merci-cta{display:inline-flex;align-items:center;gap:10px;background:var(--vert);color:white;text-decoration:none;padding:14px 28px;border-radius:12px;font-weight:800;font-size:16px;transition:background .2s,transform .2s;}
+.merci-cta:hover{background:var(--vert-fonce);transform:translateY(-2px);}
+.merci-cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.5;}
+
+.merci-phone{margin-top:20px;font-size:14px;color:#718096;}
+.merci-phone a{color:var(--vert);font-weight:700;text-decoration:none;}
+
+/* Footer */
+.footer{background:var(--vert-dark);padding:20px 24px;text-align:center;}
+.footer-text{font-size:12px;color:#64748b;}
+
+@media(max-width:480px){
+  .merci-card{padding:32px 20px;}
+  .merci-title{font-size:24px;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="header-logo">
+    <img src="/images/logo-icon.png" alt="Val-Débarras" width="36">
+    <span class="header-logo-name">Val-Débarras</span>
+  </a>
+  <a href="tel:+41795805857" class="header-phone">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.7a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+    079 580 58 57
+  </a>
+</header>
+
+<main>
+  <div class="merci-card">
+
+    <div class="merci-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+
+    <h1 class="merci-title">Merci pour votre demande !</h1>
+    <p class="merci-sub">Votre demande de devis a bien été reçue. Notre équipe va l'étudier et vous contactera dans les plus brefs délais.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Confirmation reçue</strong>
+          Votre demande est enregistrée dans notre système.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Étude de votre dossier</strong>
+          Nous analysons votre demande et préparons votre devis gratuit.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Réponse sous 24h</strong>
+          Vous recevrez un appel ou un email avec votre devis personnalisé.
+        </div>
+      </div>
+    </div>
+
+    <a href="/" class="merci-cta">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Retour à l'accueil
+    </a>
+
+    <p class="merci-phone">Besoin d'une réponse immédiate ? Appelez-nous au <a href="tel:+41795805857">079 580 58 57</a></p>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <p class="footer-text">© 2026 Val-Débarras Sàrl — Tous droits réservés</p>
+</footer>
+
+<!-- Google Ads Conversion Event — remplacer AW-XXXXXXXXXX/YYYYYYYYYYYYYYYY -->
+<script>
+  gtag('event', 'conversion', {
+    'send_to': 'AW-XXXXXXXXXX/YYYYYYYYYYYYYYYY'
+  });
+</script>
+
+</body>
+</html>

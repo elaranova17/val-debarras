@@ -2867,21 +2867,15 @@ button.media-logo-link{border:none;cursor:pointer;font-family:inherit;}
   }
   document.querySelectorAll('.btn-devis,.header-cta,.form-btn,.sc-cta-devis,.other-card-cta').forEach(addRipple);
 
-  // Feedback submit formulario
+  // Submit formulario → redirection /merci (conversion Google Ads)
   document.querySelectorAll('.form-btn').forEach(function(btn){
     btn.closest('form') && btn.closest('form').addEventListener('submit',function(e){
       e.preventDefault();
       btn.classList.add('sending');
       btn.textContent='Envoi en cours…';
       setTimeout(function(){
-        btn.classList.remove('sending');
-        btn.classList.add('sent');
-        btn.textContent=' Envoyé !';
-        setTimeout(function(){
-          btn.classList.remove('sent');
-          btn.textContent='Envoyer ma demande';
-        },3000);
-      },1500);
+        window.location.href='/merci';
+      },800);
     });
   });
 })();
