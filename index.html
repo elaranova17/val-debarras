@@ -1631,11 +1631,11 @@ body{font-size:16px;line-height:1.7;}
 .drawer-cantons{display:none;padding:0 0 10px 4px;}
 .drawer-cantons.open{display:block;}
 .drawer-cantons a{
-  display:flex;align-items:center;gap:10px;
-  padding:12px 8px;font-size:15px;border-radius:8px;min-height:44px;
+  display:block;
+  padding:10px 8px 10px 16px;font-size:14px;border-radius:8px;
+  color:#374151;font-weight:500;text-decoration:none;transition:background .15s;
 }
-.drawer-cantons a:hover{background:var(--gris-bg);}
-.drawer-cantons .canton-icon{width:22px;height:28px;}
+.drawer-cantons a:hover{background:var(--vert-clair);color:var(--vert);}
 .drawer-actions{margin-top:16px;display:flex;flex-direction:column;gap:10px;width:100%;}
 .drawer-phone{
   display:flex;align-items:center;justify-content:center;gap:10px;
@@ -1691,7 +1691,6 @@ body{font-size:16px;line-height:1.7;}
   body.has-sticky-mobile{padding-bottom:88px;}
 
   .hero-desktop{display:none !important;}
-  .hero-img{display:none !important;}
 
   .stats-inner{grid-template-columns:repeat(2,1fr) !important;}
   .stat{padding:18px 12px !important;}
@@ -1715,18 +1714,11 @@ body{font-size:16px;line-height:1.7;}
     transition:none !important;
   }
 }
-/* === Drawer canton-first service list === */
 .drawer-title{display:flex;align-items:center;gap:10px;}
-.drawer-svc-list a{
-  display:block;padding:9px 12px 9px 32px;font-size:14px;color:#374151;font-weight:500;
-  text-decoration:none;border-radius:6px;transition:background .15s;
-}
-.drawer-svc-list a:hover{background:#f0fdf4;color:var(--vert);}
 
-/* Hide all raster photos on mobile */
+/* Hide heavy photo grids on mobile, keep hero image visible */
 @media (max-width:768px){
-  /* Hero, about, contact photo grids */
-  .hero-img,
+  /* Hide multi-photo grids but keep hero image */
   .about-photos,
   .pm-cell,
   .fc-photo-grid,
@@ -1900,95 +1892,89 @@ body{font-size:16px;line-height:1.7;}
     <button type="button" class="drawer-close" id="drawerClose" aria-label="Fermer le menu"><svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg></button>
   </div>
   <div class="drawer-body">
-    <!-- Grouped by CANTON — each shield appears once -->
+    <!-- Grouped by SERVICE — cantons as text links, no shield images -->
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <img src="/images/shield-ge.svg" class="canton-icon" alt="Genève" loading="lazy" style="width:20px;height:26px;flex-shrink:0;">
-        <span>Genève</span>
+        <span>Débarras appartement</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
-      <div class="drawer-cantons drawer-svc-list">
-        <a href="/debarras-appartement/geneve/">Débarras appartement</a>
-        <a href="/debarras-maison/geneve/">Débarras maison</a>
-        <a href="/debarras-apres-deces/geneve/">Après décès / succession</a>
-        <a href="/debarras-ems/geneve/">Entrée en EMS</a>
-        <a href="/debarras-insalubre-diogene/geneve/">Diogène &amp; insalubre</a>
-        <a href="/nettoyage-extreme/geneve/">Nettoyage extrême</a>
+      <div class="drawer-cantons">
+        <a href="/debarras-appartement/geneve/">à Genève</a>
+        <a href="/debarras-appartement/vaud/">dans le Vaud</a>
+        <a href="/debarras-appartement/valais/">en Valais</a>
+        <a href="/debarras-appartement/fribourg/">à Fribourg</a>
+        <a href="/debarras-appartement/neuchatel/">à Neuchâtel</a>
+        <a href="/debarras-appartement/jura/">au Jura</a>
       </div>
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <img src="/images/shield-vd.svg" class="canton-icon" alt="Vaud" loading="lazy" style="width:20px;height:26px;flex-shrink:0;">
-        <span>Vaud</span>
+        <span>Débarras maison</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
-      <div class="drawer-cantons drawer-svc-list">
-        <a href="/debarras-appartement/vaud/">Débarras appartement</a>
-        <a href="/debarras-maison/vaud/">Débarras maison</a>
-        <a href="/debarras-apres-deces/vaud/">Après décès / succession</a>
-        <a href="/debarras-ems/vaud/">Entrée en EMS</a>
-        <a href="/debarras-insalubre-diogene/vaud/">Diogène &amp; insalubre</a>
-        <a href="/nettoyage-extreme/vaud/">Nettoyage extrême</a>
+      <div class="drawer-cantons">
+        <a href="/debarras-maison/geneve/">à Genève</a>
+        <a href="/debarras-maison/vaud/">dans le Vaud</a>
+        <a href="/debarras-maison/valais/">en Valais</a>
+        <a href="/debarras-maison/fribourg/">à Fribourg</a>
+        <a href="/debarras-maison/neuchatel/">à Neuchâtel</a>
+        <a href="/debarras-maison/jura/">au Jura</a>
       </div>
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <img src="/images/shield-vs.svg" class="canton-icon" alt="Valais" loading="lazy" style="width:20px;height:26px;flex-shrink:0;">
-        <span>Valais</span>
+        <span>Après décès / succession</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
-      <div class="drawer-cantons drawer-svc-list">
-        <a href="/debarras-appartement/valais/">Débarras appartement</a>
-        <a href="/debarras-maison/valais/">Débarras maison</a>
-        <a href="/debarras-apres-deces/valais/">Après décès / succession</a>
-        <a href="/debarras-ems/valais/">Entrée en EMS</a>
-        <a href="/debarras-insalubre-diogene/valais/">Diogène &amp; insalubre</a>
-        <a href="/nettoyage-extreme/valais/">Nettoyage extrême</a>
+      <div class="drawer-cantons">
+        <a href="/debarras-apres-deces/geneve/">à Genève</a>
+        <a href="/debarras-apres-deces/vaud/">dans le Vaud</a>
+        <a href="/debarras-apres-deces/valais/">en Valais</a>
+        <a href="/debarras-apres-deces/fribourg/">à Fribourg</a>
+        <a href="/debarras-apres-deces/neuchatel/">à Neuchâtel</a>
+        <a href="/debarras-apres-deces/jura/">au Jura</a>
       </div>
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <img src="/images/shield-fr.svg" class="canton-icon" alt="Fribourg" loading="lazy" style="width:20px;height:26px;flex-shrink:0;">
-        <span>Fribourg</span>
+        <span>Débarras EMS</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
-      <div class="drawer-cantons drawer-svc-list">
-        <a href="/debarras-appartement/fribourg/">Débarras appartement</a>
-        <a href="/debarras-maison/fribourg/">Débarras maison</a>
-        <a href="/debarras-apres-deces/fribourg/">Après décès / succession</a>
-        <a href="/debarras-ems/fribourg/">Entrée en EMS</a>
-        <a href="/debarras-insalubre-diogene/fribourg/">Diogène &amp; insalubre</a>
-        <a href="/nettoyage-extreme/fribourg/">Nettoyage extrême</a>
+      <div class="drawer-cantons">
+        <a href="/debarras-ems/geneve/">à Genève</a>
+        <a href="/debarras-ems/vaud/">dans le Vaud</a>
+        <a href="/debarras-ems/valais/">en Valais</a>
+        <a href="/debarras-ems/fribourg/">à Fribourg</a>
+        <a href="/debarras-ems/neuchatel/">à Neuchâtel</a>
+        <a href="/debarras-ems/jura/">au Jura</a>
       </div>
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <img src="/images/shield-ne.svg" class="canton-icon" alt="Neuchâtel" loading="lazy" style="width:20px;height:26px;flex-shrink:0;">
-        <span>Neuchâtel</span>
+        <span>Diogène &amp; insalubre</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
-      <div class="drawer-cantons drawer-svc-list">
-        <a href="/debarras-appartement/neuchatel/">Débarras appartement</a>
-        <a href="/debarras-maison/neuchatel/">Débarras maison</a>
-        <a href="/debarras-apres-deces/neuchatel/">Après décès / succession</a>
-        <a href="/debarras-ems/neuchatel/">Entrée en EMS</a>
-        <a href="/debarras-insalubre-diogene/neuchatel/">Diogène &amp; insalubre</a>
-        <a href="/nettoyage-extreme/neuchatel/">Nettoyage extrême</a>
+      <div class="drawer-cantons">
+        <a href="/debarras-insalubre-diogene/geneve/">à Genève</a>
+        <a href="/debarras-insalubre-diogene/vaud/">dans le Vaud</a>
+        <a href="/debarras-insalubre-diogene/valais/">en Valais</a>
+        <a href="/debarras-insalubre-diogene/fribourg/">à Fribourg</a>
+        <a href="/debarras-insalubre-diogene/neuchatel/">à Neuchâtel</a>
+        <a href="/debarras-insalubre-diogene/jura/">au Jura</a>
       </div>
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <img src="/images/shield-ju.svg" class="canton-icon" alt="Jura" loading="lazy" style="width:20px;height:26px;flex-shrink:0;">
-        <span>Jura</span>
+        <span>Nettoyage extrême</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
-      <div class="drawer-cantons drawer-svc-list">
-        <a href="/debarras-appartement/jura/">Débarras appartement</a>
-        <a href="/debarras-maison/jura/">Débarras maison</a>
-        <a href="/debarras-apres-deces/jura/">Après décès / succession</a>
-        <a href="/debarras-ems/jura/">Entrée en EMS</a>
-        <a href="/debarras-insalubre-diogene/jura/">Diogène &amp; insalubre</a>
-        <a href="/nettoyage-extreme/jura/">Nettoyage extrême</a>
+      <div class="drawer-cantons">
+        <a href="/nettoyage-extreme/geneve/">à Genève</a>
+        <a href="/nettoyage-extreme/vaud/">dans le Vaud</a>
+        <a href="/nettoyage-extreme/valais/">en Valais</a>
+        <a href="/nettoyage-extreme/fribourg/">à Fribourg</a>
+        <a href="/nettoyage-extreme/neuchatel/">à Neuchâtel</a>
+        <a href="/nettoyage-extreme/jura/">au Jura</a>
       </div>
     </div>
     <div class="drawer-actions">
