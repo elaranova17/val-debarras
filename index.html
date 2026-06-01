@@ -485,7 +485,7 @@ img{max-width:100%;display:block;}
 /* HEADER v3 — logo only + hamburger always visible            */
 /* ============================================================ */
 
-@media(min-width:1025px){.nav{display:flex !important;flex-wrap:nowrap !important;gap:0;flex:1;min-width:0;}.nav-btn{font-size:14px;padding:7px 8px;white-space:nowrap;letter-spacing:normal;font-weight:600;color:#374151;gap:5px;}}
+@media(min-width:1025px){.nav{display:flex !important;flex-wrap:nowrap !important;gap:0;flex:1;min-width:0;}.nav-btn{font-size:13px;padding:6px 7px;white-space:normal;text-align:center;line-height:1.25;letter-spacing:normal;font-weight:600;color:#374151;gap:4px;}}
 /* Services grid — cartes séparées */
 .services-grid{gap:16px !important;border-radius:0 !important;overflow:visible !important;box-shadow:none !important;}
 .sc{border-radius:12px !important;}
@@ -1347,13 +1347,15 @@ body{font-size:16px;line-height:1.7;}
     gap:2px;
   }
   .nav-btn{
-    font-size:14px;
+    font-size:13px;
     font-weight:600;
     color:#374151;
-    padding:8px 8px;
-    gap:6px;
+    padding:6px 7px;
+    gap:4px;
     letter-spacing:normal;
-    white-space:nowrap;
+    white-space:normal;
+    text-align:center;
+    line-height:1.25;
   }
   .header-cta{
     grid-column:3;
@@ -1369,11 +1371,11 @@ body{font-size:16px;line-height:1.7;}
   .header-inner{gap:4px;padding:0 10px;}
   .logo-img{width:48px;}
   .logo-name{font-size:16px !important;}
-  .nav{gap:1px;}
+  .nav{gap:0;}
   .nav-btn{
-    font-size:13.5px;
-    padding:7px 6px;
-    gap:6px;
+    font-size:12px;
+    padding:5px 5px;
+    gap:3px;
   }
   .header-cta{
     font-size:11.5px !important;
@@ -1907,7 +1909,7 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
       <div class="nav-item">
-        <button class="nav-btn">Débarras après décès <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
+        <button class="nav-btn">Débarras après décès/succession <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
         <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
           <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="GE" loading="lazy"><span class="menu-label">Genève</span></a>
           <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="VD" loading="lazy"><span class="menu-label">Vaud</span></a>
@@ -1918,7 +1920,7 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
       <div class="nav-item">
-        <button class="nav-btn">Débarras suite EMS <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
+        <button class="nav-btn">Débarras suite entrée EMS <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
         <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
           <a href="/debarras-ems/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="GE" loading="lazy"><span class="menu-label">Genève</span></a>
           <a href="/debarras-ems/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="VD" loading="lazy"><span class="menu-label">Vaud</span></a>
@@ -1929,7 +1931,7 @@ body{font-size:16px;line-height:1.7;}
         </div>
       </div>
       <div class="nav-item">
-        <button class="nav-btn">Débarras insalubre <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
+        <button class="nav-btn">Débarras Insalubre/Diogène <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
         <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
           <a href="/debarras-insalubre-diogene/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="GE" loading="lazy"><span class="menu-label">Genève</span></a>
           <a href="/debarras-insalubre-diogene/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="VD" loading="lazy"><span class="menu-label">Vaud</span></a>
@@ -1964,9 +1966,9 @@ body{font-size:16px;line-height:1.7;}
   <div class="mobile-nav-scroll">
     <button class="mobile-nav-pill" data-svc="0">Débarras appartement</button>
     <button class="mobile-nav-pill" data-svc="1">Débarras maison</button>
-    <button class="mobile-nav-pill" data-svc="2">Débarras après décès</button>
-    <button class="mobile-nav-pill" data-svc="3">Débarras suite EMS</button>
-    <button class="mobile-nav-pill" data-svc="4">Débarras insalubre</button>
+    <button class="mobile-nav-pill" data-svc="2">Débarras après décès/succession</button>
+    <button class="mobile-nav-pill" data-svc="3">Débarras suite entrée EMS</button>
+    <button class="mobile-nav-pill" data-svc="4">Débarras Insalubre/Diogène</button>
     <button class="mobile-nav-pill" data-svc="5">Nettoyages extrême</button>
   </div>
   <button class="mobile-nav-top" id="mobileScrollTop" aria-label="Haut de page">
@@ -2013,7 +2015,7 @@ body{font-size:16px;line-height:1.7;}
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <span>Débarras après décès</span>
+        <span>Débarras après décès/succession</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
@@ -2027,7 +2029,7 @@ body{font-size:16px;line-height:1.7;}
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <span>Débarras suite EMS</span>
+        <span>Débarras suite entrée EMS</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
@@ -2041,7 +2043,7 @@ body{font-size:16px;line-height:1.7;}
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">
-        <span>Débarras insalubre</span>
+        <span>Débarras Insalubre/Diogène</span>
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
@@ -2228,8 +2230,8 @@ body{font-size:16px;line-height:1.7;}
       </div>
     </div>
     <div class="about-photos" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-      <img src="/images/ge-action.jpg" alt="Intervention Val-Débarras" style="width:100%;border-radius:12px;height:200px;object-fit:cover;" loading="lazy">
-      <img src="/images/fr-hero.jpg" alt="Val-Débarras Fribourg" style="width:100%;border-radius:12px;height:200px;object-fit:cover;margin-top:24px;" loading="lazy">
+      <img src="/images/van-flotte-simple.png" alt="Furgon Val-Débarras" style="width:100%;border-radius:12px;height:200px;object-fit:cover;" loading="lazy">
+      <img src="/images/van-flotte-duo.png" alt="Flotte Val-Débarras — deux véhicules" style="width:100%;border-radius:12px;height:200px;object-fit:cover;margin-top:24px;" loading="lazy">
     </div>
   </div>
 </section>
@@ -2601,19 +2603,15 @@ body{font-size:16px;line-height:1.7;}
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;">
         <div class="pm-cell">
           <img src="/images/van-ge-jetdeau.jpg" alt="Van Val-Débarras — Jet d'Eau, Genève" loading="lazy">
-          <div class="pm-overlay"><span class="pm-icon"><svg class="icon" aria-hidden="true"><use href="#icon-truck"/></svg></span><span class="pm-label">Genève</span></div>
         </div>
         <div class="pm-cell">
           <img src="/images/van-vs-alpes.jpg" alt="Van Val-Débarras — Alpes valaisannes" loading="lazy">
-          <div class="pm-overlay"><span class="pm-icon"><svg class="icon" aria-hidden="true"><use href="#icon-mountain"/></svg></span><span class="pm-label">Valais</span></div>
         </div>
         <div class="pm-cell">
           <img src="/images/van-flotte-duo.png" alt="Flotte Val-Débarras — deux véhicules" loading="lazy">
-          <div class="pm-overlay"><span class="pm-icon"><svg class="icon" aria-hidden="true"><use href="#icon-truck"/></svg></span><span class="pm-label">Notre flotte</span></div>
         </div>
         <div class="pm-cell">
           <img src="/images/van-flotte-simple.png" alt="Véhicule Val-Débarras — marquage professionnel" loading="lazy">
-          <div class="pm-overlay"><span class="pm-icon"><svg class="icon" aria-hidden="true"><use href="#icon-shield-check"/></svg></span><span class="pm-label">Professionnel</span></div>
         </div>
       </div>
     </div>
