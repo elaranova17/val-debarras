@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /merci
+Disallow: /merci/
+
+Sitemap: https://www.val-debarras.ch/sitemap.xml
