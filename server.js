@@ -30,19 +30,33 @@ function matchRewrite(url) {
 
 const server = http.createServer((req, res) => {
   let urlPath = req.url.split('?')[0];
-  const destination = matchRewrite(urlPath);
-  const filePath = path.join(__dirname, destination || urlPath);
 
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      res.writeHead(404);
-      res.end('404 Not Found');
+  // Static files always take priority over rewrites (mirrors Vercel behavior)
+  const staticPath = path.join(__dirname, urlPath);
+  const tryPaths = [staticPath, path.join(__dirname, urlPath, 'index.html')];
+
+  function tryNext(paths, i) {
+    if (i >= paths.length) {
+      // No static file — apply rewrite rules
+      const destination = matchRewrite(urlPath);
+      if (!destination) { res.writeHead(404); res.end('404 Not Found'); return; }
+      fs.readFile(path.join(__dirname, destination), (err, data) => {
+        if (err) { res.writeHead(404); res.end('404 Not Found'); return; }
+        const ext = path.extname(destination);
+        res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
+        res.end(data);
+      });
       return;
     }
-    const ext = path.extname(filePath);
-    res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
-    res.end(data);
-  });
+    fs.readFile(paths[i], (err, data) => {
+      if (err) { tryNext(paths, i + 1); return; }
+      const ext = path.extname(paths[i]);
+      res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
+      res.end(data);
+    });
+  }
+
+  tryNext(tryPaths, 0);
 });
 
 const PORT = process.env.PORT || 8766;
