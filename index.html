@@ -48,14 +48,14 @@ img{max-width:100%;display:block;}
 }
 
 /* Logo — image réelle Val-Débarras */
-.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;margin-right:8px;}
+.logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px;flex-shrink:0;margin-right:8px;}.logo-top{display:flex;align-items:center;gap:10px;}
 .logo-img{width:62px;height:auto;object-fit:contain;}
 .logo-text{line-height:1.2;display:flex;flex-direction:column;}
 .logo-name{font-size:21px;font-weight:800;color:var(--gris-fonce);}
 .logo-sub{font-size:13px;color:var(--vert);font-weight:700;white-space:nowrap;}
 
 /* Nav desktop — 6 dropdowns con cantons */
-.nav{display:flex;align-items:center;gap:1px;flex:1;flex-wrap:nowrap;min-width:0;}
+.nav{display:flex;align-items:center;gap:5px;flex:1;flex-wrap:nowrap;min-width:0;}
 .nav-item{position:relative;flex:1;min-width:0;}
 .nav-btn{
   background:none;border:none;
@@ -319,7 +319,7 @@ img{max-width:100%;display:block;}
   background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:18px;
 }
 .fc-text{color:rgba(255,255,255,.8);font-size:14.5px;line-height:1.5;}
-.fc-text strong{color:white;display:block;font-size:15.5px;}
+.fc-text strong{color:white;display:block;font-size:15.5px;}.fc-phone-cta{color:white;font-size:20px;font-weight:800;display:block;text-decoration:none;line-height:1.2;}.fc-phone-cta:hover{text-decoration:underline;opacity:.9;}.fc-sub{font-size:13.5px;color:rgba(255,255,255,.65);}
 
 /* Form card */
 .form-card{
@@ -1837,7 +1837,7 @@ body{font-size:16px;line-height:1.7;}
 <!-- ============================================================ -->
 <header class="header">
   <div class="header-inner">
-    <a href="/" class="logo"><img src="/images/logo-icon.png" alt="Val-Débarras" class="logo-img"><div class="logo-text"><span class="logo-name">Val-Débarras</span><span class="logo-sub">Spécialiste du débarras en Suisse romande</span></div></a>
+    <a href="/" class="logo"><div class="logo-top"><img src="/images/logo-icon.png" alt="Val-Débarras" class="logo-img"><span class="logo-name">Val-Débarras</span></div><span class="logo-sub">Spécialiste du débarras en Suisse romande</span></a>
     <nav class="nav" id="desktopNav">
       <div class="nav-item">
         <button class="nav-btn">Débarras appartement <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
@@ -2524,7 +2524,7 @@ body{font-size:16px;line-height:1.7;}
       <div class="form-contacts">
         <div class="fc-row">
           <div class="fc-icon"><svg class="icon"><use href="#icon-phone"/></svg></div>
-          <div class="fc-text"><strong>079 580 58 57</strong>Lun–Sam · 08h00–18h00</div>
+          <div class="fc-text"><a href="tel:+41795805857" class="fc-phone-cta">079 580 58 57</a><span class="fc-sub">Lun–Sam · 08h00–18h00</span></div>
         </div>
         <div class="fc-row">
           <div class="fc-icon"><svg class="icon"><use href="#icon-email"/></svg></div>
