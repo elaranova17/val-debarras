@@ -22,7 +22,9 @@ NAVBAR_CSS = """
     gap:6px;
     padding:0 12px;
   }
-  .logo{margin-right:0;gap:7px;flex-shrink:0;grid-column:1;}
+  .logo{margin-right:0;gap:0;flex-shrink:0;grid-column:1;}
+  .logo-top{align-items:flex-end;}
+  .logo-sub{margin-top:-4px;}
   .logo-img{width:48px;}
   .logo-name{font-size:16px !important;}
   .logo-sub{font-size:10px !important;}

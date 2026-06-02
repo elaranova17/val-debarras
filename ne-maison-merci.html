@@ -61,6 +61,197 @@ main{flex:1;display:flex;align-items:center;justify-content:center;padding:72px 
   main{padding:48px 20px;}
   .merci-line2{font-size:15px;}
 }
+
+/* === LOGO SPACING VD === */
+/* Header — structure logo-top + logo-sub (actuelle) */
+.logo{gap:1px !important;}
+.logo-top{align-items:flex-end;}
+.logo-text{
+  display:flex !important;
+  flex-direction:column;
+  gap:0 !important;
+  line-height:1.1 !important;
+}
+.logo-name,
+.footer__logo-brand,
+.ft-logo-name{
+  margin-bottom:2px !important;
+  padding-bottom:0 !important;
+  line-height:1.1 !important;
+}
+.logo-sub,
+.footer__logo-suffix,
+.ft-tagline{
+  margin-top:0 !important;
+  padding-top:0 !important;
+  line-height:1.2 !important;
+}
+.logo-sub{margin-top:-2px !important;}
+@media(max-width:768px){
+  .header .logo-name{
+    margin-bottom:1px !important;
+    line-height:1.05 !important;
+  }
+  .header .logo-sub{
+    margin-top:-3px !important;
+    line-height:1.15 !important;
+  }
+}
+.ft-brand .ft-logo-name{margin-bottom:2px !important;}
+.ft-brand .ft-tagline{
+  margin-top:-2px !important;
+  line-height:1.2 !important;
+}
+@media(min-width:1025px){
+  .logo{gap:0 !important;}
+  .logo-top{align-items:flex-end;}
+  .logo-sub{margin-top:-4px !important;}
+}
+/* === END LOGO SPACING VD === */
+
+
+/* === NAVBAR LAYOUT v1 — une ligne desktop + chevrons === */
+@media(min-width:1025px){
+  .header-inner{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:6px;
+    padding:0 12px;
+  }
+  .logo{margin-right:0;gap:0;flex-shrink:0;grid-column:1;}
+  .logo-top{align-items:flex-end;}
+  .logo-sub{margin-top:-4px;}
+  .logo-img{width:48px;}
+  .logo-name{font-size:16px !important;}
+  .logo-sub{font-size:10px !important;}
+  .nav{
+    grid-column:2;
+    flex:1 1 auto;min-width:0;
+    flex-wrap:nowrap !important;
+    justify-content:center !important;
+    gap:2px;
+  }
+  .nav-btn{
+    font-size:13px;
+    font-weight:600;
+    color:#374151;
+    padding:7px 6px;
+    gap:6px;
+    letter-spacing:normal;
+    white-space:nowrap;
+  }
+  .header-cta{
+    grid-column:3;
+    font-size:12px !important;
+    padding:7px 10px !important;
+    min-height:auto !important;
+    gap:4px !important;
+    flex-shrink:0;
+  }
+  .header-cta .icon-btn{width:16px !important;height:16px !important;}
+}
+@media(min-width:1025px) and (max-width:1279px){
+  .header-inner{gap:4px;padding:0 10px;}
+  .logo-img{width:44px;}
+  .logo-name{font-size:15px !important;}
+  .nav{gap:1px;}
+  .nav-btn{
+    font-size:13px;
+    padding:7px 5px;
+    gap:6px;
+  }
+  .header-cta{
+    font-size:11.5px !important;
+    padding:6px 9px !important;
+  }
+}
+.nav-btn .chev{
+  font-size:inherit;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+  padding:2px;
+  border-radius:4px;
+  background:rgba(0,155,116,.12);
+  transition:transform .2s,background .2s;
+}
+.nav-btn .nav-chevron,
+.nav-btn .nav-chevron.icon-sm{
+  width:18px !important;
+  height:18px !important;
+  opacity:1 !important;
+  color:#047857 !important;
+  flex-shrink:0;
+  transition:transform .2s,color .2s;
+}
+.nav-item:hover .nav-chevron{color:#065f46 !important;}
+.nav-item:hover .chev{background:rgba(0,155,116,.2);}
+.nav-item:hover .chev{transform:rotate(180deg);}
+.nav-item.open .nav-chevron{transform:rotate(180deg);}
+
+/* === MOBILE NAV VD === */
+@media (max-width: 768px) {
+  html,body{overflow-x:hidden;max-width:100vw;}
+  .bnav{padding:0 1rem;}
+}
+/* === END MOBILE NAV VD === */
+/* === MOBILE ZONES + FORM VD === */
+@media (max-width: 768px) {
+  /* Formulaire — une colonne (override PATCH form desktop) */
+  .form-inner{
+    grid-template-columns:1fr !important;
+    gap:32px !important;
+  }
+  .form-card{order:-1 !important;}
+  .form-section{padding:56px 0 calc(72px + env(safe-area-inset-bottom,0px));}
+  .form-card{padding:24px 16px !important;}
+  .fl input,.fl select,.fl textarea{
+    min-height:52px !important;
+    font-size:16px !important;
+  }
+  .form-btn{
+    width:100% !important;
+    min-height:52px !important;
+    justify-content:center;
+  }
+
+  /* Zones d'intervention — cartes services (accueil) */
+  .sc-zones{margin-top:16px;padding-top:14px;}
+  .sc-zones-label{font-size:11px;margin-bottom:10px;}
+  .sc-zones-links{
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:8px !important;
+  }
+  .sc-zones-links a{
+    min-height:44px !important;
+    font-size:13px !important;
+    padding:8px 6px !important;
+  }
+
+  /* Communes couvertes — pages service */
+  .communes-cloud{
+    display:flex;flex-wrap:wrap;gap:8px;
+    justify-content:center;padding:0 4px;
+  }
+  .commune-pill{
+    min-height:44px !important;
+    padding:10px 14px !important;
+    font-size:13px !important;
+  }
+
+  /* Grille cantons accueil */
+  .canton-grid,.cpill-row{
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:10px !important;
+  }
+  .canton-btn,.cpill{
+    min-height:48px !important;
+    font-size:13px !important;
+  }
+}
+/* === END MOBILE ZONES + FORM VD === */
 </style>
 </head>
 <body>
