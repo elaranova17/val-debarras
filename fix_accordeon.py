@@ -244,6 +244,107 @@ def patch(path):
     else:
         print(f'  ~ {fname}: no change')
 
+# ── FAQ accordion + pro-section spacing (all service pages) ─────────
+FAQ_JS_MARKER = '/* FAQ accordion — Val-Débarras */'
+FAQ_JS = """
+<script>
+/* FAQ accordion — Val-Débarras */
+(function(){
+  if(window.__vdFaqInit) return;
+  window.__vdFaqInit = true;
+
+  function toggleFaq(btn){
+    if(!btn) return;
+    var answer = btn.nextElementSibling;
+    if(!answer || !answer.classList.contains('faq-a')) return;
+    var section = btn.closest('.faq-section');
+    var isOpen = answer.classList.contains('open');
+
+    if(section){
+      section.querySelectorAll('.faq-a.open').forEach(function(a){
+        if(a !== answer){
+          a.classList.remove('open');
+          var q = a.previousElementSibling;
+          if(q && q.classList.contains('faq-q')) q.setAttribute('aria-expanded','false');
+        }
+      });
+    }
+
+    if(isOpen){
+      answer.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    } else {
+      answer.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+    }
+  }
+  window.toggleFaq = toggleFaq;
+
+  document.querySelectorAll('.faq-section .faq-q').forEach(function(btn){
+    if(btn.dataset.faqBound) return;
+    btn.dataset.faqBound = '1';
+    if(!btn.hasAttribute('aria-expanded')) btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click', function(e){ e.preventDefault(); toggleFaq(btn); });
+    btn.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggleFaq(btn); }
+    });
+  });
+})();
+</script>"""
+
+OLD_FAQ_ARR = '.faq-arr{font-size:12px;color:var(--vert);transition:transform .2s;flex-shrink:0;}'
+NEW_FAQ_ARR = OLD_FAQ_ARR + '\n.faq-q[aria-expanded="true"] .faq-arr{transform:rotate(180deg);}'
+
+OLD_PRO_SECTION = '.pro-section{max-width:860px;margin:0 auto 64px;padding:0 24px;}'
+NEW_PRO_SECTION = '.pro-section{max-width:860px;margin:56px auto 64px;padding:0 24px;}'
+
+
+def patch_faq_pages():
+    html_files = [
+        f for f in os.listdir(BASE)
+        if f.endswith('.html') and os.path.isfile(os.path.join(BASE, f))
+    ]
+    for fname in sorted(html_files):
+        path = os.path.join(BASE, fname)
+        with open(path, 'r', encoding='utf-8') as f:
+            html = f.read()
+        if '.faq-section' not in html and '<section class="pro-section">' not in html:
+            continue
+        original = html
+        changes = []
+
+        if OLD_FAQ_ARR in html and NEW_FAQ_ARR not in html:
+            html = html.replace(OLD_FAQ_ARR, NEW_FAQ_ARR, 1)
+            changes.append('faq chevron CSS')
+
+        if '<section class="pro-section">' in html:
+            if OLD_PRO_SECTION in html:
+                html = html.replace(OLD_PRO_SECTION, NEW_PRO_SECTION, 1)
+                changes.append('pro-section spacing')
+            elif 'margin:56px auto 64px' not in html and '.pro-section{' in html:
+                html = re.sub(
+                    r'\.pro-section\{([^}]*?)margin:0 auto 64px',
+                    r'.pro-section{\1margin:56px auto 64px',
+                    html,
+                    count=1,
+                )
+                if html != original:
+                    changes.append('pro-section spacing (regex)')
+
+        if '.faq-section' in html and FAQ_JS_MARKER not in html:
+            html = html.replace('</body>', FAQ_JS + '\n</body>', 1)
+            changes.append('FAQ JS')
+
+        if html != original:
+            with open(path, 'w', encoding='utf-8') as f:
+                f.write(html)
+            print(f'  ✓ {fname}: {", ".join(changes)}')
+        else:
+            print(f'  ~ {fname}: no change')
+
+
 print('=== fix_accordeon.py ===')
 patch(os.path.join(BASE, 'index.html'))
+print('--- FAQ + pro-section ---')
+patch_faq_pages()
 print('Done.')
