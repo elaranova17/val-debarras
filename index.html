@@ -1819,55 +1819,6 @@ body{font-size:16px;line-height:1.7;}
 }
 /* === END MOBILE ZONES + FORM VD === */
 
-/* === MOBILE NAV STRIP === */
-.mobile-nav-strip{
-  display:none;
-  align-items:center;
-  background:var(--blanc);
-  border-bottom:1px solid #e5e7eb;
-  position:sticky;
-  top:60px;
-  z-index:98;
-  box-shadow:0 2px 6px rgba(0,0,0,.05);
-}
-.mobile-nav-scroll{
-  display:flex;
-  overflow-x:auto;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
-  flex:1;
-  padding:8px 12px;
-  gap:8px;
-}
-.mobile-nav-scroll::-webkit-scrollbar{display:none;}
-.mobile-nav-pill{
-  white-space:nowrap;
-  background:none;
-  border:1.5px solid #e5e7eb;
-  border-radius:20px;
-  padding:5px 13px;
-  font-size:12.5px;
-  font-weight:600;
-  color:#374151;
-  cursor:pointer;
-  flex-shrink:0;
-  font-family:var(--font);
-  transition:background .15s,border-color .15s,color .15s;
-}
-.mobile-nav-pill:active{background:var(--vert-clair);border-color:var(--vert);color:var(--vert-fonce);}
-.mobile-nav-top{
-  flex-shrink:0;
-  width:36px;height:36px;
-  background:var(--vert-clair);
-  border:none;border-radius:8px;
-  margin:0 10px 0 4px;
-  cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--vert-fonce);
-}
-.mobile-nav-top svg{width:18px;height:18px;}
-@media(max-width:1024px){.mobile-nav-strip{display:flex;}}
-@media(min-width:1025px){.mobile-nav-strip{display:none !important;}}
 </style>
   <meta property="og:image" content="https://www.val-debarras.ch/images/van-vd-chillon.jpg">
   <meta property="og:image:width" content="1200">
@@ -1960,20 +1911,6 @@ body{font-size:16px;line-height:1.7;}
   </div>
 </header>
 
-<!-- Mobile nav strip — service pills + scroll to top -->
-<div class="mobile-nav-strip" id="mobileNavStrip" aria-label="Navigation services">
-  <div class="mobile-nav-scroll">
-    <button class="mobile-nav-pill" data-svc="0">Débarras appartement</button>
-    <button class="mobile-nav-pill" data-svc="1">Débarras maison</button>
-    <button class="mobile-nav-pill" data-svc="2">Débarras après décès/succession</button>
-    <button class="mobile-nav-pill" data-svc="3">Débarras suite entrée EMS</button>
-    <button class="mobile-nav-pill" data-svc="4">Débarras Insalubre/Diogène</button>
-    <button class="mobile-nav-pill" data-svc="5">Nettoyages extrême</button>
-  </div>
-  <button class="mobile-nav-top" id="mobileScrollTop" aria-label="Haut de page">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 15l7-7 7 7"/></svg>
-  </button>
-</div>
 
 <!-- Mobile drawer NOUVEAU -->
 <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
@@ -2858,20 +2795,6 @@ button.media-logo-link{border:none;cursor:pointer;font-family:inherit;}
 (function(){
   var ham=document.getElementById('ham');
   var drawer=document.getElementById('drawer');
-  document.querySelectorAll('.mobile-nav-pill').forEach(function(pill){
-    pill.addEventListener('click',function(){
-      var idx=parseInt(pill.getAttribute('data-svc'),10);
-      if(ham&&drawer&&!drawer.classList.contains('is-open')) ham.click();
-      setTimeout(function(){
-        var titles=document.querySelectorAll('#drawer .drawer-title');
-        if(titles[idx]&&!titles[idx].classList.contains('open')) titles[idx].click();
-        var cantons=document.querySelectorAll('#drawer .drawer-cantons');
-        if(cantons[idx]) cantons[idx].scrollIntoView({behavior:'smooth',block:'nearest'});
-      },80);
-    });
-  });
-  var topBtn=document.getElementById('mobileScrollTop');
-  if(topBtn) topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 })();
 /* === END VD MOBILE NAV JS === */
 </script>
