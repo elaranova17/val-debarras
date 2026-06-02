@@ -43,16 +43,16 @@ img{max-width:100%;display:block;}
   will-change:transform;
 }
 .header-inner{
-  max-width:1400px;margin:0 auto;padding:0 40px;
-  display:flex;align-items:center;gap:16px;height:96px;
+  max-width:1400px;margin:0 auto;padding:0 56px;
+  display:flex;align-items:center;gap:20px;height:96px;
 }
 
 /* Logo — image réelle Val-Débarras */
-.logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px;flex-shrink:0;margin-right:8px;}.logo-top{display:flex;align-items:center;gap:10px;}
+.logo{display:flex;flex-direction:column;align-items:center;gap:3px;flex-shrink:0;margin-right:16px;}.logo-top{display:flex;align-items:center;gap:10px;}
 .logo-img{width:62px;height:auto;object-fit:contain;}
 .logo-text{line-height:1.2;display:flex;flex-direction:column;}
-.logo-name{font-size:21px;font-weight:800;color:var(--gris-fonce);}
-.logo-sub{font-size:13px;color:var(--vert);font-weight:700;white-space:nowrap;}
+.logo-name{font-size:21px;font-weight:800;color:var(--gris-fonce);text-align:center;}
+.logo-sub{font-size:12px;color:var(--vert);font-weight:700;white-space:nowrap;text-align:center;}
 
 /* Nav desktop — 6 dropdowns con cantons */
 .nav{display:flex;align-items:center;gap:5px;flex:1;flex-wrap:nowrap;min-width:0;}
@@ -487,7 +487,7 @@ img{max-width:100%;display:block;}
 /* HEADER v3 — logo only + hamburger always visible            */
 /* ============================================================ */
 
-@media(min-width:1025px){.nav{display:flex !important;flex-wrap:nowrap !important;gap:0;flex:1;min-width:0;}.nav-btn{font-size:13px;padding:6px 7px;white-space:normal;text-align:center;line-height:1.25;letter-spacing:normal;font-weight:600;color:#374151;gap:4px;}}
+@media(min-width:1025px){.nav{display:flex !important;flex-wrap:nowrap !important;gap:5px;flex:1;min-width:0;}.nav-btn{font-size:13px;padding:6px 7px;white-space:normal;text-align:center;line-height:1.25;letter-spacing:normal;font-weight:600;color:#374151;gap:4px;}}
 /* Services grid — cartes séparées */
 .services-grid{gap:16px !important;border-radius:0 !important;overflow:visible !important;box-shadow:none !important;}
 .sc{border-radius:12px !important;}
@@ -2521,6 +2521,20 @@ body{font-size:16px;line-height:1.7;}
     <div class="form-info">
       <span class="form-info-label">Contact</span>
       <h2>Demander un devis gratuit</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;">
+        <div class="pm-cell">
+          <img src="/images/van-ge-jetdeau.jpg" alt="Van Val-Débarras — Jet d'Eau, Genève" loading="lazy">
+        </div>
+        <div class="pm-cell">
+          <img src="/images/van-vs-alpes.jpg" alt="Van Val-Débarras — Alpes valaisannes" loading="lazy">
+        </div>
+        <div class="pm-cell">
+          <img src="/images/van-flotte-duo.png" alt="Flotte Val-Débarras — deux véhicules" loading="lazy">
+        </div>
+        <div class="pm-cell">
+          <img src="/images/van-flotte-simple.png" alt="Véhicule Val-Débarras — marquage professionnel" loading="lazy">
+        </div>
+      </div>
       <div class="form-contacts">
         <div class="fc-row">
           <div class="fc-icon"><svg class="icon"><use href="#icon-phone"/></svg></div>
@@ -2537,20 +2551,6 @@ body{font-size:16px;line-height:1.7;}
         <div class="fc-row">
           <div class="fc-icon"><svg class="icon"><use href="#icon-map"/></svg></div>
           <div class="fc-text"><strong>6 cantons couverts</strong>GE · VD · VS · FR · NE · JU</div>
-        </div>
-      </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;">
-        <div class="pm-cell">
-          <img src="/images/van-ge-jetdeau.jpg" alt="Van Val-Débarras — Jet d'Eau, Genève" loading="lazy">
-        </div>
-        <div class="pm-cell">
-          <img src="/images/van-vs-alpes.jpg" alt="Van Val-Débarras — Alpes valaisannes" loading="lazy">
-        </div>
-        <div class="pm-cell">
-          <img src="/images/van-flotte-duo.png" alt="Flotte Val-Débarras — deux véhicules" loading="lazy">
-        </div>
-        <div class="pm-cell">
-          <img src="/images/van-flotte-simple.png" alt="Véhicule Val-Débarras — marquage professionnel" loading="lazy">
         </div>
       </div>
     </div>
