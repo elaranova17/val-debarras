@@ -1414,6 +1414,159 @@ body{font-size:16px;line-height:1.75;}
 .nav-item:hover .chev{transform:rotate(180deg);}
 .nav-item.open .nav-chevron{transform:rotate(180deg);}
 
+
+/* === MOBILE CTA OPTIMIZATION VD === */
+@media (max-width: 768px) {
+  /* 1 — Header : logo + hamburger uniquement */
+  .header-inner {
+    padding: 12px 16px !important;
+    height: auto !important;
+    min-height: 56px;
+  }
+  .header-cta,
+  .header-phone,
+  .header-phone-compact,
+  .desktop-only-phone {
+    display: none !important;
+  }
+
+  /* 2 — Hero mobile : 1 bouton devis + lien téléphone texte */
+  .mobile-hero .hero-ctas {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  .mobile-hero .hero-btn--primary {
+    width: 100%;
+    flex-direction: row;
+    gap: 10px;
+    padding: 16px 20px;
+    background: var(--vert, #2e7d5c);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 14px rgba(46, 125, 92, 0.35);
+    font-size: 16px;
+    font-weight: 800;
+    text-align: center;
+    justify-content: center;
+  }
+  .mobile-hero .hero-btn--primary svg {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+  }
+  .mobile-hero .hero-btn--secondary,
+  .mobile-hero .hero-btn.phone-animate:not(.hero-btn--primary) {
+    display: none !important;
+  }
+  .hero-phone-link-wrap {
+    margin: 0;
+    text-align: center;
+  }
+  .hero-phone-link {
+    font-size: 14px;
+    color: var(--gris-fonce, #1f2937);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 500;
+  }
+  .hero-phone-link strong {
+    font-weight: 700;
+    color: var(--vert, #2e7d5c);
+  }
+
+  /* 3 — Étapes : pas de boutons */
+  .steps-section a[class*="btn"],
+  .steps-section button,
+  .step a[class*="btn"],
+  .step button {
+    display: none !important;
+  }
+
+  /* 4 — Cartes services (accueil + autres services) */
+  .sc .sc-card-primary,
+  .sc .sc-cta-devis,
+  .sc .btn-devis,
+  .sc .btn-phone,
+  .other-card .other-card-cta,
+  .other-card .btn-devis,
+  .other-card .btn-phone {
+    display: none !important;
+  }
+  .sc-toggle,
+  .sc-link,
+  .link-details {
+    display: inline-flex !important;
+  }
+  .other-card .link-details {
+    display: block !important;
+    margin-top: auto;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--vert, #2e7d5c);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* Sidebar LP — pas de doublons avec sticky */
+  .sidebar-cta .btn-phone,
+  .sidebar-cta .btn-devis,
+  .lp-sidebar .btn-phone,
+  .lp-sidebar .btn-devis {
+    display: none !important;
+  }
+
+  /* 5 — Footer : liens texte seulement */
+  .footer .btn-phone,
+  .footer-cta,
+  .ft-phone-btn {
+    display: none !important;
+  }
+  .ft-inner {
+    text-align: center;
+  }
+  .ft-brand,
+  .ft-contact {
+    align-items: center;
+  }
+  .ft-links,
+  .ft-hours {
+    justify-content: center;
+  }
+
+  /* 6 — Sticky : un seul bouton devis pleine largeur */
+  .sticky-mobile {
+    display: flex !important;
+    padding: 10px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    gap: 0;
+  }
+  .sticky-mobile__call,
+  .sticky-mobile__devis:not(.sticky-mobile__single) {
+    display: none !important;
+  }
+  .sticky-mobile__single {
+    display: flex !important;
+    width: 100%;
+    flex: 1 1 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 52px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: var(--vert, #2e7d5c);
+    color: #fff;
+    font-weight: 800;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(46, 125, 92, 0.35);
+  }
+  body.has-sticky-mobile {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+}
+/* === END MOBILE CTA OPTIMIZATION VD === */
+
 </style>
   <meta property="og:image" content="https://val-debarras-prototype.vercel.app/images/van-ju-saintursanne.jpg">
   <meta property="og:image:width" content="1200">
@@ -1626,19 +1779,16 @@ body{font-size:16px;line-height:1.75;}
       <p class="hero-location">au Jura</p>
       <h1 class="hero-title">Débarras maison<span class="hero-accent">au Jura</span></h1>
       <p class="hero-desc">Villas, maisons familiales et propriétés · Tout le canton Maison à vider dans le Jura ? Val-Débarras intervient rapidement pour les maisons familiales, fermes, greniers et dépendances dans tout le canton. Intervention rapide à Delémont, Porrentruy, Saignelégier et dans toutes les localités jurassiennes.</p>
-      <div class="hero-ctas">
-        <a href="tel:+41795805857" class="hero-btn hero-btn--primary phone-animate">
-          <svg class="icon icon-btn" aria-hidden="true"><use href="#icon-phone"/></svg>
-          <span>079 580 58 57</span>
-          <span class="btn-sub">Appel immédiat</span>
-        </a>
-        <a href="#devis" class="hero-btn hero-btn--secondary">
+            <div class="hero-ctas">
+        <a href="#devis" class="hero-btn hero-btn--primary">
           <svg class="icon icon-btn" aria-hidden="true"><use href="#icon-document"/></svg>
-          <span>Devis gratuit</span>
-          <span class="btn-sub">Réponse sous 2h</span>
+          <span>Devis gratuit — Réponse 24h</span>
         </a>
+        <p class="hero-phone-link-wrap">
+          <a href="tel:+41795805857" class="hero-phone-link">Ou appelez-nous&nbsp;: <strong>079 580 58 57</strong></a>
+        </p>
       </div>
-      <ul class="hero-trust">
+<ul class="hero-trust">
         <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> Devis gratuit</li>
         <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> Intervention rapide</li>
         <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> Sans déplacement payant</li>
@@ -2002,8 +2152,7 @@ body{font-size:16px;line-height:1.75;}
 </script>
 
 <div class="sticky-mobile" id="stickyBar">
-  <a href="tel:+41795805857" class="sticky-mobile__call phone-animate"><svg class="icon icon-btn"><use href="#icon-phone-line"/></svg>Appeler</a>
-  <a href="#devis" class="sticky-mobile__devis"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit — 24h</a>
+  <a href="#devis" class="sticky-mobile__single"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit — Réponse 24h</a>
 </div>
 
 <script>
