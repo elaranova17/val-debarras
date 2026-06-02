@@ -48,7 +48,7 @@ img{max-width:100%;display:block;}
 }
 
 /* Logo — image réelle Val-Débarras */
-.logo{display:flex;flex-direction:row;align-items:center;gap:12px;flex-shrink:0;margin-right:16px;}.logo-text{display:flex;flex-direction:column;gap:1px;}
+.logo{display:flex;flex-direction:column;align-items:center;gap:3px;flex-shrink:0;margin-right:16px;}.logo-top{display:flex;align-items:center;gap:10px;}
 .logo-img{width:62px;height:auto;object-fit:contain;}
 .logo-text{line-height:1.2;display:flex;flex-direction:column;}
 .logo-name{font-size:21px;font-weight:800;color:var(--gris-fonce);text-align:center;}
@@ -1336,6 +1336,8 @@ body{font-size:16px;line-height:1.7;}
     padding:0 12px;
   }
   .logo{margin-right:0;flex-shrink:0;grid-column:1;}
+  .logo-top{align-items:flex-end;}
+  .logo-sub{margin-top:-2px;}
   .logo-img{width:54px;}
   .logo-name{font-size:18px !important;}
   .logo-sub{font-size:13px !important;color:var(--vert) !important;font-weight:700 !important;}
@@ -1856,7 +1858,7 @@ body{font-size:16px;line-height:1.75;}
 <!-- ============================================================ -->
 <header class="header">
   <div class="header-inner">
-    <a href="/" class="logo"><img src="/images/logo-icon.png" alt="Val-Débarras" class="logo-img"><div class="logo-text"><span class="logo-name">Val-Débarras</span><span class="logo-sub">Spécialiste du débarras en Suisse romande</span></div></a>
+    <a href="/" class="logo"><div class="logo-top"><img src="/images/logo-icon.png" alt="Val-Débarras" class="logo-img"><span class="logo-name">Val-Débarras</span></div><span class="logo-sub">Spécialiste du débarras en Suisse romande</span></a>
     <nav class="nav" id="desktopNav">
       <div class="nav-item">
         <button class="nav-btn">Débarras appartement <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
