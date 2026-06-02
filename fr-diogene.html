@@ -29,7 +29,7 @@ img{max-width:100%;display:block;}
 /* ── PROTO BAR ── *//* ── HEADER ── */
 .header{background:#ffffff;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.07);will-change:transform;}
 .header-inner{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:96px;}
-.logo{display:flex;flex-direction:column;align-items:center;gap:3px;flex-shrink:0;margin-right:16px;}.logo-top{display:flex;align-items:center;gap:10px;}
+.logo{display:flex;flex-direction:row;align-items:center;gap:12px;flex-shrink:0;margin-right:16px;}.logo-text{display:flex;flex-direction:column;gap:1px;}
 .logo-img{width:58px !important;height:auto !important;object-fit:contain !important;}
 .logo-text{line-height:1.2;display:flex;flex-direction:column;}
 .logo-name{font-size:20px;font-weight:800;color:var(--gris-fonce);}
@@ -667,25 +667,28 @@ body{font-size:16px;line-height:1.7;}
 }
 
 .commune-pill{
-  animation:vd-pill-in .45s ease both;
-  transition:transform .25s ease,box-shadow .25s ease;
+  animation:vd-pill-in .45s ease both, pill-wave 4s ease-in-out infinite;
 }
-.commune-pill:nth-child(1){animation-delay:.03s;}
-.commune-pill:nth-child(2){animation-delay:.06s;}
-.commune-pill:nth-child(3){animation-delay:.09s;}
-.commune-pill:nth-child(4){animation-delay:.12s;}
-.commune-pill:nth-child(5){animation-delay:.15s;}
-.commune-pill:nth-child(6){animation-delay:.18s;}
-.commune-pill:nth-child(7){animation-delay:.21s;}
-.commune-pill:nth-child(8){animation-delay:.24s;}
-.commune-pill:nth-child(9){animation-delay:.27s;}
-.commune-pill:nth-child(10){animation-delay:.30s;}
-.commune-pill:nth-child(n+11){animation-delay:.33s;}
-.commune-pill:hover{transform:scale(1.05);}
+.commune-pill:nth-child(1) {animation-delay:.03s, .6s;}
+.commune-pill:nth-child(2) {animation-delay:.06s, 1.0s;}
+.commune-pill:nth-child(3) {animation-delay:.09s, 1.4s;}
+.commune-pill:nth-child(4) {animation-delay:.12s, 1.8s;}
+.commune-pill:nth-child(5) {animation-delay:.15s, 2.2s;}
+.commune-pill:nth-child(6) {animation-delay:.18s, 2.6s;}
+.commune-pill:nth-child(7) {animation-delay:.21s, 3.0s;}
+.commune-pill:nth-child(8) {animation-delay:.24s, 3.4s;}
+.commune-pill:nth-child(9) {animation-delay:.27s, 3.8s;}
+.commune-pill:nth-child(10){animation-delay:.30s, 4.2s;}
+.commune-pill:nth-child(n+11){animation-delay:.33s, 4.6s;}
+.commune-pill:hover{transform:scale(1.06);box-shadow:0 6px 18px rgba(0,155,116,.3);}
 
 @keyframes vd-pill-in{
   from{opacity:0;transform:scale(.88);}
   to{opacity:1;transform:scale(1);}
+}
+@keyframes pill-wave{
+  0%,100%{transform:translateY(0) scale(1);box-shadow:none;}
+  50%{transform:translateY(-5px) scale(1.05);box-shadow:0 8px 20px rgba(0,155,116,.25);}
 }
 
 .av-item,.enc-card,.av-list li{
@@ -777,7 +780,7 @@ body{font-size:16px;line-height:1.7;}
     gap:6px;
     padding:0 12px;
   }
-  .logo{margin-right:0;gap:2px;flex-shrink:0;grid-column:1;}
+  .logo{margin-right:0;flex-shrink:0;grid-column:1;}
   .logo-img{width:54px;}
   .logo-name{font-size:18px !important;}
   .logo-sub{font-size:13px !important;color:var(--vert) !important;font-weight:700 !important;}
@@ -1283,7 +1286,7 @@ body{font-size:16px;line-height:1.75;}
 
 <header class="header">
   <div class="header-inner">
-    <a href="/" class="logo"><div class="logo-top"><img src="/images/logo-icon.png" alt="Val-Débarras" class="logo-img"><span class="logo-name">Val-Débarras</span></div><span class="logo-sub">Spécialiste du débarras en Suisse romande</span></a>
+    <a href="/" class="logo"><img src="/images/logo-icon.png" alt="Val-Débarras" class="logo-img"><div class="logo-text"><span class="logo-name">Val-Débarras</span><span class="logo-sub">Spécialiste du débarras en Suisse romande</span></div></a>
     <nav class="nav" id="desktopNav">
     <div class="nav-item">
       <button class="nav-btn">Débarras appartement <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
@@ -1686,9 +1689,6 @@ body{font-size:16px;line-height:1.75;}
         <div class="form-row form-full" style="margin-bottom:16px">
           <div class="fl"><label>Nom complet *</label><input type="text" placeholder="Prénom et nom" style="font-size:16px;min-height:48px;"></div>
         </div>
-        <div class="form-row form-full" style="margin-bottom:16px">
-          <div class="fl"><label>Localité du logement *</label><input type="text" placeholder="Ex: Sion, Lausanne, Genève..."></div>
-        </div>
         <div class="form-row" style="margin-bottom:16px">
           <div class="fl">
             <label>Canton *</label>
@@ -1702,6 +1702,9 @@ body{font-size:16px;line-height:1.75;}
               <option>Jura</option>
             </select>
           </div>
+          <div class="fl"><label>Localité du logement *</label><input type="text" placeholder="Ex: Sion, Lausanne, Genève..."></div>
+        </div>
+        <div class="form-row form-full" style="margin-bottom:16px">
           <div class="fl">
             <label>Type de service </label>
             <select>
@@ -1747,7 +1750,6 @@ body{font-size:16px;line-height:1.75;}
     </div>
     <div class="ft-contact">
       <p class="ft-title">Contact</p>
-      <p class="ft-addr-text">Val-Débarras Sàrl · Rue de Mazerette 9, 1950 Sion</p>
       <div class="ft-links">
         <a href="mailto:info@val-debarras.ch" class="ft-link">
           <svg class="icon icon-ft"><use href="#icon-email"/></svg>
@@ -1766,7 +1768,6 @@ body{font-size:16px;line-height:1.75;}
     <div class="ft-coverage">
       <p class="ft-addr-text">Entreprise active dans toute la Suisse romande, avec des équipes intervenant dans les cantons suivants :</p>
       <p class="ft-cantons">Valais · Vaud · Genève · Fribourg · Neuchâtel · Jura</p>
-      <p class="ft-title" style="margin-top:10px;">Siège administratif</p>
     </div>
   </div>
   <div class="ft-bottom">
