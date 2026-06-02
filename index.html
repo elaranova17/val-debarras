@@ -44,18 +44,18 @@ img{max-width:100%;display:block;}
 }
 .header-inner{
   max-width:1400px;margin:0 auto;padding:0 40px;
-  display:flex;align-items:center;gap:16px;height:80px;
+  display:flex;align-items:center;gap:16px;height:96px;
 }
 
 /* Logo — image réelle Val-Débarras */
-.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;margin-right:8px;}
+.logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px;flex-shrink:0;margin-right:8px;}.logo-top{display:flex;align-items:center;gap:10px;}
 .logo-img{width:62px;height:auto;object-fit:contain;}
-.logo-text{line-height:1.2;}
+.logo-text{line-height:1.2;display:flex;flex-direction:column;}
 .logo-name{font-size:21px;font-weight:800;color:var(--gris-fonce);}
-.logo-sub{font-size:11px;color:var(--gris);font-weight:500;white-space:nowrap;}
+.logo-sub{font-size:13px;color:var(--vert);font-weight:700;white-space:nowrap;}
 
 /* Nav desktop — 6 dropdowns con cantons */
-.nav{display:flex;align-items:center;gap:1px;flex:1;flex-wrap:nowrap;min-width:0;}
+.nav{display:flex;align-items:center;gap:5px;flex:1;flex-wrap:nowrap;min-width:0;}
 .nav-item{position:relative;flex:1;min-width:0;}
 .nav-btn{
   background:none;border:none;
@@ -103,8 +103,8 @@ img{max-width:100%;display:block;}
 .header-cta{
   flex-shrink:0;margin-left:auto;
   background:var(--vert);color:white;
-  padding:10px 20px;border-radius:24px;
-  font-weight:800;font-size:14px;
+  padding:13px 28px;border-radius:24px;
+  font-weight:800;font-size:16px;
   display:flex;align-items:center;gap:7px;
   transition:all .2s;box-shadow:0 4px 12px rgba(22,163,74,.3);
 }
@@ -319,7 +319,7 @@ img{max-width:100%;display:block;}
   background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:18px;
 }
 .fc-text{color:rgba(255,255,255,.8);font-size:14.5px;line-height:1.5;}
-.fc-text strong{color:white;display:block;font-size:15.5px;}
+.fc-text strong{color:white;display:block;font-size:15.5px;}.fc-phone-cta{color:white;font-size:20px;font-weight:800;display:block;text-decoration:none;line-height:1.2;}.fc-phone-cta:hover{text-decoration:underline;opacity:.9;}.fc-sub{font-size:13.5px;color:rgba(255,255,255,.65);}
 
 /* Form card */
 .form-card{
@@ -737,7 +737,7 @@ body{font-size:16px;line-height:1.7;}
 /* Logo: mostrar texto */
 .logo-text{display:flex !important;flex-direction:column;}
 .logo-name{font-size:21px !important;font-weight:800 !important;color:var(--gris-fonce) !important;}
-.logo-sub{font-size:12px !important;color:var(--gris) !important;font-weight:500 !important;}
+.logo-sub{font-size:13px !important;color:var(--vert) !important;font-weight:700 !important;}
 
 
 /* ══════════════════════════════════════════════════
@@ -858,10 +858,11 @@ body{font-size:16px;line-height:1.7;}
 .sc-cta-devis:hover{background:var(--vert-clair);transform:translateY(-1px);}
 
 /* ══════════════════════════════════════════════════
-   STATS — tooltips au hover
+   STATS — tooltips au hover / tap
    ══════════════════════════════════════════════════ */
-.stat{position:relative;}
-.stat[data-tip]:hover::after{
+.stat{position:relative;cursor:pointer;}
+.stat[data-tip]:hover::after,
+.stat[data-tip].tip-open::after{
   content:attr(data-tip);
   position:absolute;bottom:calc(100% + 10px);left:50%;
   transform:translateX(-50%);
@@ -871,7 +872,8 @@ body{font-size:16px;line-height:1.7;}
   white-space:nowrap;pointer-events:none;z-index:200;
   box-shadow:0 4px 16px rgba(0,0,0,.35);
 }
-.stat[data-tip]:hover::before{
+.stat[data-tip]:hover::before,
+.stat[data-tip].tip-open::before{
   content:'';
   position:absolute;bottom:calc(100% + 4px);left:50%;
   transform:translateX(-50%);
@@ -1338,7 +1340,7 @@ body{font-size:16px;line-height:1.7;}
   .logo{margin-right:0;gap:8px;flex-shrink:0;grid-column:1;}
   .logo-img{width:54px;}
   .logo-name{font-size:18px !important;}
-  .logo-sub{font-size:11px !important;}
+  .logo-sub{font-size:13px !important;color:var(--vert) !important;font-weight:700 !important;}
   .nav{
     grid-column:2;
     flex:1 1 auto;min-width:0;
@@ -1359,8 +1361,8 @@ body{font-size:16px;line-height:1.7;}
   }
   .header-cta{
     grid-column:3;
-    font-size:12px !important;
-    padding:7px 10px !important;
+    font-size:15px !important;
+    padding:10px 18px !important;
     min-height:auto !important;
     gap:4px !important;
     flex-shrink:0;
@@ -1686,7 +1688,7 @@ body{font-size:16px;line-height:1.7;}
   .header-cta{display:flex !important;}
   .hamburger{display:none !important;}
   .nav{display:flex !important;}
-  .header-inner{height:80px !important;padding:0 24px !important;}
+  .header-inner{height:96px !important;padding:0 24px !important;}
   .logo-img{width:62px !important;}
   .logo-name{font-size:21px !important;}
 }
@@ -1835,7 +1837,7 @@ body{font-size:16px;line-height:1.7;}
 <!-- ============================================================ -->
 <header class="header">
   <div class="header-inner">
-    <a href="/" class="logo"><img src="/images/logo-icon.png" alt="Val-Débarras" class="logo-img"><div class="logo-text"><span class="logo-name">Val-Débarras</span><span class="logo-sub">Spécialiste du débarras en Suisse romande</span></div></a>
+    <a href="/" class="logo"><div class="logo-top"><img src="/images/logo-icon.png" alt="Val-Débarras" class="logo-img"><span class="logo-name">Val-Débarras</span></div><span class="logo-sub">Spécialiste du débarras en Suisse romande</span></a>
     <nav class="nav" id="desktopNav">
       <div class="nav-item">
         <button class="nav-btn">Débarras appartement <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
@@ -1928,12 +1930,12 @@ body{font-size:16px;line-height:1.7;}
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
-        <a href="/debarras-appartement/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">à Genève</a>
-        <a href="/debarras-appartement/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">sur le Vaud</a>
-        <a href="/debarras-appartement/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">en Valais</a>
-        <a href="/debarras-appartement/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">à Fribourg</a>
-        <a href="/debarras-appartement/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">à Neuchâtel</a>
-        <a href="/debarras-appartement/jura/"><img src="/images/shield-ju.svg" class="drawer-flag" alt="" loading="lazy">au Jura</a>
+        <a href="/debarras-appartement/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">Genève</a>
+        <a href="/debarras-appartement/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">Vaud</a>
+        <a href="/debarras-appartement/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">Valais</a>
+        <a href="/debarras-appartement/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">Fribourg</a>
+        <a href="/debarras-appartement/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">Neuchâtel</a>
+        <a href="/debarras-appartement/jura/"><img src="/images/shield-ju.svg" class="drawer-flag" alt="" loading="lazy">Jura</a>
       </div>
     </div>
     <div class="drawer-group">
@@ -1942,12 +1944,12 @@ body{font-size:16px;line-height:1.7;}
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
-        <a href="/debarras-maison/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">à Genève</a>
-        <a href="/debarras-maison/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">sur le Vaud</a>
-        <a href="/debarras-maison/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">en Valais</a>
-        <a href="/debarras-maison/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">à Fribourg</a>
-        <a href="/debarras-maison/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">à Neuchâtel</a>
-        <a href="/debarras-maison/jura/"><img src="/images/shield-ju.svg" class="drawer-flag" alt="" loading="lazy">au Jura</a>
+        <a href="/debarras-maison/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">Genève</a>
+        <a href="/debarras-maison/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">Vaud</a>
+        <a href="/debarras-maison/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">Valais</a>
+        <a href="/debarras-maison/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">Fribourg</a>
+        <a href="/debarras-maison/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">Neuchâtel</a>
+        <a href="/debarras-maison/jura/"><img src="/images/shield-ju.svg" class="drawer-flag" alt="" loading="lazy">Jura</a>
       </div>
     </div>
     <div class="drawer-group">
@@ -1956,12 +1958,12 @@ body{font-size:16px;line-height:1.7;}
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
-        <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">à Genève</a>
-        <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">sur le Vaud</a>
-        <a href="/debarras-apres-deces/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">en Valais</a>
-        <a href="/debarras-apres-deces/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">à Fribourg</a>
-        <a href="/debarras-apres-deces/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">à Neuchâtel</a>
-        <a href="/debarras-apres-deces/jura/"><img src="/images/shield-ju.svg" class="drawer-flag" alt="" loading="lazy">au Jura</a>
+        <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">Genève</a>
+        <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">Vaud</a>
+        <a href="/debarras-apres-deces/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">Valais</a>
+        <a href="/debarras-apres-deces/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">Fribourg</a>
+        <a href="/debarras-apres-deces/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">Neuchâtel</a>
+        <a href="/debarras-apres-deces/jura/"><img src="/images/shield-ju.svg" class="drawer-flag" alt="" loading="lazy">Jura</a>
       </div>
     </div>
     <div class="drawer-group">
@@ -1970,12 +1972,12 @@ body{font-size:16px;line-height:1.7;}
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
-        <a href="/debarras-ems/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">à Genève</a>
-        <a href="/debarras-ems/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">sur le Vaud</a>
-        <a href="/debarras-ems/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">en Valais</a>
-        <a href="/debarras-ems/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">à Fribourg</a>
-        <a href="/debarras-ems/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">à Neuchâtel</a>
-        <a href="/debarras-ems/jura/"><img src="/images/shield-ju.svg" class="drawer-flag" alt="" loading="lazy">au Jura</a>
+        <a href="/debarras-ems/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">Genève</a>
+        <a href="/debarras-ems/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">Vaud</a>
+        <a href="/debarras-ems/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">Valais</a>
+        <a href="/debarras-ems/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">Fribourg</a>
+        <a href="/debarras-ems/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">Neuchâtel</a>
+        <a href="/debarras-ems/jura/"><img src="/images/shield-ju.svg" class="drawer-flag" alt="" loading="lazy">Jura</a>
       </div>
     </div>
     <div class="drawer-group">
@@ -1984,12 +1986,12 @@ body{font-size:16px;line-height:1.7;}
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
-        <a href="/debarras-insalubre-diogene/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">à Genève</a>
-        <a href="/debarras-insalubre-diogene/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">sur le Vaud</a>
-        <a href="/debarras-insalubre-diogene/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">en Valais</a>
-        <a href="/debarras-insalubre-diogene/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">à Fribourg</a>
-        <a href="/debarras-insalubre-diogene/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">à Neuchâtel</a>
-        <a href="/debarras-insalubre-diogene/jura/"><img src="/images/shield-ju.svg" class="drawer-flag" alt="" loading="lazy">au Jura</a>
+        <a href="/debarras-insalubre-diogene/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">Genève</a>
+        <a href="/debarras-insalubre-diogene/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">Vaud</a>
+        <a href="/debarras-insalubre-diogene/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">Valais</a>
+        <a href="/debarras-insalubre-diogene/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">Fribourg</a>
+        <a href="/debarras-insalubre-diogene/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">Neuchâtel</a>
+        <a href="/debarras-insalubre-diogene/jura/"><img src="/images/shield-ju.svg" class="drawer-flag" alt="" loading="lazy">Jura</a>
       </div>
     </div>
     <div class="drawer-group">
@@ -1998,12 +2000,12 @@ body{font-size:16px;line-height:1.7;}
         <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span>
       </button>
       <div class="drawer-cantons">
-        <a href="/nettoyage-extreme/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">à Genève</a>
-        <a href="/nettoyage-extreme/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">sur le Vaud</a>
-        <a href="/nettoyage-extreme/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">en Valais</a>
-        <a href="/nettoyage-extreme/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">à Fribourg</a>
-        <a href="/nettoyage-extreme/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">à Neuchâtel</a>
-        <a href="/nettoyage-extreme/jura/"><img src="/images/shield-ju.svg" class="drawer-flag" alt="" loading="lazy">au Jura</a>
+        <a href="/nettoyage-extreme/geneve/"><img src="/images/shield-ge.svg" class="drawer-flag" alt="" loading="lazy">Genève</a>
+        <a href="/nettoyage-extreme/vaud/"><img src="/images/shield-vd.svg" class="drawer-flag" alt="" loading="lazy">Vaud</a>
+        <a href="/nettoyage-extreme/valais/"><img src="/images/shield-vs.svg" class="drawer-flag" alt="" loading="lazy">Valais</a>
+        <a href="/nettoyage-extreme/fribourg/"><img src="/images/shield-fr.svg" class="drawer-flag" alt="" loading="lazy">Fribourg</a>
+        <a href="/nettoyage-extreme/neuchatel/"><img src="/images/shield-ne.svg" class="drawer-flag" alt="" loading="lazy">Neuchâtel</a>
+        <a href="/nettoyage-extreme/jura/"><img src="/images/shield-ju.svg" class="drawer-flag" alt="" loading="lazy">Jura</a>
       </div>
     </div>
     <div class="drawer-actions">
@@ -2036,7 +2038,7 @@ body{font-size:16px;line-height:1.7;}
         <a href="#devis" class="btn-devis"><svg class="icon icon-btn"><use href="#icon-document-line"/></svg>Devis gratuit</a>
         <a href="#services" class="btn-services">Nos services →</a>
       </div>
-      <p class="hero-micro">Réponse sous 2h — Intervention dès demain</p>
+      <p class="hero-micro">Réponse sous 2h — Intervention rapide</p>
     </div>
     <div class="mobile-hero">
       <div class="hero-badge">
@@ -2078,7 +2080,7 @@ body{font-size:16px;line-height:1.7;}
 <!-- ============================================================ -->
 <div class="stats">
   <div class="stats-inner">
-    <div class="stat" data-tip="Depuis 2015, plus de 3 500 interventions en Suisse romande">
+    <div class="stat" data-tip="Depuis 2015, plus de 5 000 interventions en Suisse romande">
       <div class="stat-n">+10</div>
       <div class="stat-l">ans d'expérience</div>
     </div>
@@ -2113,7 +2115,7 @@ body{font-size:16px;line-height:1.7;}
           </button>
         </div>
       </div>
-      <div class="stat-l">dans les médias</div>
+      <div class="stat-l">Vu dans les médias</div>
     </div>
   </div>
 </div>
@@ -2198,12 +2200,12 @@ body{font-size:16px;line-height:1.7;}
         <div class="sc-zones">
           <span class="sc-zones-label">Zones d'intervention :</span>
           <div class="sc-zones-links">
-          <a href="/debarras-appartement/geneve/">à Genève</a>
-          <a href="/debarras-appartement/vaud/">sur Vaud</a>
-          <a href="/debarras-appartement/valais/">en Valais</a>
-          <a href="/debarras-appartement/fribourg/">à Fribourg</a>
-          <a href="/debarras-appartement/neuchatel/">à Neuchâtel</a>
-          <a href="/debarras-appartement/jura/">au Jura</a>
+          <a href="/debarras-appartement/geneve/">Genève</a>
+          <a href="/debarras-appartement/vaud/">Vaud</a>
+          <a href="/debarras-appartement/valais/">Valais</a>
+          <a href="/debarras-appartement/fribourg/">Fribourg</a>
+          <a href="/debarras-appartement/neuchatel/">Neuchâtel</a>
+          <a href="/debarras-appartement/jura/">Jura</a>
           </div>
         </div>
         
@@ -2232,12 +2234,12 @@ body{font-size:16px;line-height:1.7;}
         <div class="sc-zones">
           <span class="sc-zones-label">Zones d'intervention :</span>
           <div class="sc-zones-links">
-          <a href="/debarras-maison/geneve/">à Genève</a>
-          <a href="/debarras-maison/vaud/">sur Vaud</a>
-          <a href="/debarras-maison/valais/">en Valais</a>
-          <a href="/debarras-maison/fribourg/">à Fribourg</a>
-          <a href="/debarras-maison/neuchatel/">à Neuchâtel</a>
-          <a href="/debarras-maison/jura/">au Jura</a>
+          <a href="/debarras-maison/geneve/">Genève</a>
+          <a href="/debarras-maison/vaud/">Vaud</a>
+          <a href="/debarras-maison/valais/">Valais</a>
+          <a href="/debarras-maison/fribourg/">Fribourg</a>
+          <a href="/debarras-maison/neuchatel/">Neuchâtel</a>
+          <a href="/debarras-maison/jura/">Jura</a>
           </div>
         </div>
         
@@ -2266,12 +2268,12 @@ body{font-size:16px;line-height:1.7;}
         <div class="sc-zones">
           <span class="sc-zones-label">Zones d'intervention :</span>
           <div class="sc-zones-links">
-          <a href="/debarras-apres-deces/geneve/">à Genève</a>
-          <a href="/debarras-apres-deces/vaud/">sur Vaud</a>
-          <a href="/debarras-apres-deces/valais/">en Valais</a>
-          <a href="/debarras-apres-deces/fribourg/">à Fribourg</a>
-          <a href="/debarras-apres-deces/neuchatel/">à Neuchâtel</a>
-          <a href="/debarras-apres-deces/jura/">au Jura</a>
+          <a href="/debarras-apres-deces/geneve/">Genève</a>
+          <a href="/debarras-apres-deces/vaud/">Vaud</a>
+          <a href="/debarras-apres-deces/valais/">Valais</a>
+          <a href="/debarras-apres-deces/fribourg/">Fribourg</a>
+          <a href="/debarras-apres-deces/neuchatel/">Neuchâtel</a>
+          <a href="/debarras-apres-deces/jura/">Jura</a>
           </div>
         </div>
         
@@ -2300,12 +2302,12 @@ body{font-size:16px;line-height:1.7;}
         <div class="sc-zones">
           <span class="sc-zones-label">Zones d'intervention :</span>
           <div class="sc-zones-links">
-          <a href="/debarras-ems/geneve/">à Genève</a>
-          <a href="/debarras-ems/vaud/">sur Vaud</a>
-          <a href="/debarras-ems/valais/">en Valais</a>
-          <a href="/debarras-ems/fribourg/">à Fribourg</a>
-          <a href="/debarras-ems/neuchatel/">à Neuchâtel</a>
-          <a href="/debarras-ems/jura/">au Jura</a>
+          <a href="/debarras-ems/geneve/">Genève</a>
+          <a href="/debarras-ems/vaud/">Vaud</a>
+          <a href="/debarras-ems/valais/">Valais</a>
+          <a href="/debarras-ems/fribourg/">Fribourg</a>
+          <a href="/debarras-ems/neuchatel/">Neuchâtel</a>
+          <a href="/debarras-ems/jura/">Jura</a>
           </div>
         </div>
         
@@ -2334,12 +2336,12 @@ body{font-size:16px;line-height:1.7;}
         <div class="sc-zones">
           <span class="sc-zones-label">Zones d'intervention :</span>
           <div class="sc-zones-links">
-          <a href="/debarras-insalubre-diogene/geneve/">à Genève</a>
-          <a href="/debarras-insalubre-diogene/vaud/">sur Vaud</a>
-          <a href="/debarras-insalubre-diogene/valais/">en Valais</a>
-          <a href="/debarras-insalubre-diogene/fribourg/">à Fribourg</a>
-          <a href="/debarras-insalubre-diogene/neuchatel/">à Neuchâtel</a>
-          <a href="/debarras-insalubre-diogene/jura/">au Jura</a>
+          <a href="/debarras-insalubre-diogene/geneve/">Genève</a>
+          <a href="/debarras-insalubre-diogene/vaud/">Vaud</a>
+          <a href="/debarras-insalubre-diogene/valais/">Valais</a>
+          <a href="/debarras-insalubre-diogene/fribourg/">Fribourg</a>
+          <a href="/debarras-insalubre-diogene/neuchatel/">Neuchâtel</a>
+          <a href="/debarras-insalubre-diogene/jura/">Jura</a>
           </div>
         </div>
         
@@ -2368,12 +2370,12 @@ body{font-size:16px;line-height:1.7;}
         <div class="sc-zones">
           <span class="sc-zones-label">Zones d'intervention :</span>
           <div class="sc-zones-links">
-          <a href="/nettoyage-extreme/geneve/">à Genève</a>
-          <a href="/nettoyage-extreme/vaud/">sur Vaud</a>
-          <a href="/nettoyage-extreme/valais/">en Valais</a>
-          <a href="/nettoyage-extreme/fribourg/">à Fribourg</a>
-          <a href="/nettoyage-extreme/neuchatel/">à Neuchâtel</a>
-          <a href="/nettoyage-extreme/jura/">au Jura</a>
+          <a href="/nettoyage-extreme/geneve/">Genève</a>
+          <a href="/nettoyage-extreme/vaud/">Vaud</a>
+          <a href="/nettoyage-extreme/valais/">Valais</a>
+          <a href="/nettoyage-extreme/fribourg/">Fribourg</a>
+          <a href="/nettoyage-extreme/neuchatel/">Neuchâtel</a>
+          <a href="/nettoyage-extreme/jura/">Jura</a>
           </div>
         </div>
         
@@ -2522,7 +2524,7 @@ body{font-size:16px;line-height:1.7;}
       <div class="form-contacts">
         <div class="fc-row">
           <div class="fc-icon"><svg class="icon"><use href="#icon-phone"/></svg></div>
-          <div class="fc-text"><strong>079 580 58 57</strong>Lun–Sam · 08h00–18h00</div>
+          <div class="fc-text"><a href="tel:+41795805857" class="fc-phone-cta">079 580 58 57</a><span class="fc-sub">Lun–Sam · 08h00–18h00</span></div>
         </div>
         <div class="fc-row">
           <div class="fc-icon"><svg class="icon"><use href="#icon-email"/></svg></div>
@@ -2902,6 +2904,25 @@ button.media-logo-link{border:none;cursor:pointer;font-family:inherit;}
     });
   },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   els.forEach(function(el){io.observe(el);});
+})();
+</script>
+<script>
+/* Stats tooltips — touch support for mobile */
+(function(){
+  var stats = document.querySelectorAll('.stat[data-tip]');
+  stats.forEach(function(el){
+    el.addEventListener('touchstart', function(e){
+      e.preventDefault();
+      var isOpen = el.classList.contains('tip-open');
+      stats.forEach(function(s){ s.classList.remove('tip-open'); });
+      if(!isOpen) el.classList.add('tip-open');
+    }, {passive:false});
+  });
+  document.addEventListener('touchstart', function(e){
+    if(!e.target.closest('.stat[data-tip]')){
+      stats.forEach(function(s){ s.classList.remove('tip-open'); });
+    }
+  });
 })();
 </script>
 </body>

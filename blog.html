@@ -27,12 +27,12 @@ ul{list-style:none;}
 img{max-width:100%;display:block;}.proto span{color:#94a3b8;}
 .header{background:var(--blanc);border-bottom:1px solid #e5e7eb;position:sticky;top:41px;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.07);}
 .header-inner{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px;height:72px;}
-.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;margin-right:8px;}
+.logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px;flex-shrink:0;margin-right:8px;}.logo-top{display:flex;align-items:center;gap:10px;}
 .logo-img{width:58px;height:58px;object-fit:contain;border-radius:8px;background:white;}
-.logo-text{line-height:1.2;}
+.logo-text{line-height:1.2;display:flex;flex-direction:column;}
 .logo-name{font-size:20px;font-weight:800;color:var(--gris-fonce);}
-.logo-sub{font-size:11.5px;color:var(--gris);font-weight:500;}
-.nav{display:flex;align-items:center;gap:1px;flex:1;flex-wrap:nowrap;min-width:0;}
+.logo-sub{font-size:13px;color:var(--vert);font-weight:700;}
+.nav{display:flex;align-items:center;gap:5px;flex:1;flex-wrap:nowrap;min-width:0;}
 .nav-item{position:relative;}
 .nav-btn{background:none;border:none;font-family:var(--font);font-size:13px;font-weight:600;color:var(--gris-fonce);cursor:pointer;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:4px;transition:all .2s;white-space:nowrap;}
 .nav-btn:hover{background:var(--gris-bg);color:var(--vert-fonce);}
@@ -351,7 +351,7 @@ body{font-size:16px;line-height:1.7;}
 /* Logo: mostrar texto */
 .logo-text{display:flex !important;flex-direction:column;}
 .logo-name{font-size:20px !important;font-weight:800 !important;color:var(--gris-fonce) !important;}
-.logo-sub{font-size:11.5px !important;color:var(--gris) !important;font-weight:500 !important;}
+.logo-sub{font-size:13px !important;color:var(--vert) !important;font-weight:700 !important;}
 
 
 /* ===== Botones del hero unificados ===== */
@@ -593,7 +593,7 @@ body{font-size:16px;line-height:1.7;}
   .logo{margin-right:0;gap:7px;flex-shrink:0;grid-column:1;}
   .logo-img{width:48px;}
   .logo-name{font-size:16px !important;}
-  .logo-sub{font-size:10px !important;}
+  .logo-sub{font-size:13px !important;color:var(--vert) !important;font-weight:700 !important;}
   .nav{
     grid-column:2;
     flex:1 1 auto;min-width:0;
@@ -612,8 +612,8 @@ body{font-size:16px;line-height:1.7;}
   }
   .header-cta{
     grid-column:3;
-    font-size:12px !important;
-    padding:7px 10px !important;
+    font-size:15px !important;
+    padding:10px 18px !important;
     min-height:auto !important;
     gap:4px !important;
     flex-shrink:0;
@@ -958,67 +958,67 @@ body{font-size:16px;line-height:1.7;}
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">Débarras appartement <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
       <div class="drawer-cantons">
-        <a href="/debarras-appartement/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson à Genève" loading="lazy"><span class="menu-label">à Genève</span></a>
-        <a href="/debarras-appartement/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson sur Vaud" loading="lazy"><span class="menu-label">sur Vaud</span></a>
-        <a href="/debarras-appartement/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson en Valais" loading="lazy"><span class="menu-label">en Valais</span></a>
-        <a href="/debarras-appartement/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson à Fribourg" loading="lazy"><span class="menu-label">à Fribourg</span></a>
-        <a href="/debarras-appartement/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson à Neuchâtel" loading="lazy"><span class="menu-label">à Neuchâtel</span></a>
-        <a href="/debarras-appartement/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson au Jura" loading="lazy"><span class="menu-label">au Jura</span></a>
+        <a href="/debarras-appartement/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/debarras-appartement/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/debarras-appartement/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/debarras-appartement/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/debarras-appartement/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/debarras-appartement/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
       </div>
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">Débarras maison <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
       <div class="drawer-cantons">
-        <a href="/debarras-maison/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson à Genève" loading="lazy"><span class="menu-label">à Genève</span></a>
-        <a href="/debarras-maison/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson sur Vaud" loading="lazy"><span class="menu-label">sur Vaud</span></a>
-        <a href="/debarras-maison/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson en Valais" loading="lazy"><span class="menu-label">en Valais</span></a>
-        <a href="/debarras-maison/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson à Fribourg" loading="lazy"><span class="menu-label">à Fribourg</span></a>
-        <a href="/debarras-maison/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson à Neuchâtel" loading="lazy"><span class="menu-label">à Neuchâtel</span></a>
-        <a href="/debarras-maison/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson au Jura" loading="lazy"><span class="menu-label">au Jura</span></a>
+        <a href="/debarras-maison/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/debarras-maison/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/debarras-maison/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/debarras-maison/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/debarras-maison/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/debarras-maison/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
       </div>
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">Après décès &amp; succession <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
       <div class="drawer-cantons">
-        <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson à Genève" loading="lazy"><span class="menu-label">à Genève</span></a>
-        <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson sur Vaud" loading="lazy"><span class="menu-label">sur Vaud</span></a>
-        <a href="/debarras-apres-deces/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson en Valais" loading="lazy"><span class="menu-label">en Valais</span></a>
-        <a href="/debarras-apres-deces/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson à Fribourg" loading="lazy"><span class="menu-label">à Fribourg</span></a>
-        <a href="/debarras-apres-deces/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson à Neuchâtel" loading="lazy"><span class="menu-label">à Neuchâtel</span></a>
-        <a href="/debarras-apres-deces/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson au Jura" loading="lazy"><span class="menu-label">au Jura</span></a>
+        <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/debarras-apres-deces/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/debarras-apres-deces/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/debarras-apres-deces/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/debarras-apres-deces/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
       </div>
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">Entrée en EMS <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
       <div class="drawer-cantons">
-        <a href="/debarras-ems/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson à Genève" loading="lazy"><span class="menu-label">à Genève</span></a>
-        <a href="/debarras-ems/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson sur Vaud" loading="lazy"><span class="menu-label">sur Vaud</span></a>
-        <a href="/debarras-ems/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson en Valais" loading="lazy"><span class="menu-label">en Valais</span></a>
-        <a href="/debarras-ems/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson à Fribourg" loading="lazy"><span class="menu-label">à Fribourg</span></a>
-        <a href="/debarras-ems/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson à Neuchâtel" loading="lazy"><span class="menu-label">à Neuchâtel</span></a>
-        <a href="/debarras-ems/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson au Jura" loading="lazy"><span class="menu-label">au Jura</span></a>
+        <a href="/debarras-ems/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/debarras-ems/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/debarras-ems/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/debarras-ems/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/debarras-ems/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/debarras-ems/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
       </div>
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">Diogène &amp; insalubre <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
       <div class="drawer-cantons">
-        <a href="/debarras-insalubre-diogene/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson à Genève" loading="lazy"><span class="menu-label">à Genève</span></a>
-        <a href="/debarras-insalubre-diogene/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson sur Vaud" loading="lazy"><span class="menu-label">sur Vaud</span></a>
-        <a href="/debarras-insalubre-diogene/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson en Valais" loading="lazy"><span class="menu-label">en Valais</span></a>
-        <a href="/debarras-insalubre-diogene/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson à Fribourg" loading="lazy"><span class="menu-label">à Fribourg</span></a>
-        <a href="/debarras-insalubre-diogene/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson à Neuchâtel" loading="lazy"><span class="menu-label">à Neuchâtel</span></a>
-        <a href="/debarras-insalubre-diogene/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson au Jura" loading="lazy"><span class="menu-label">au Jura</span></a>
+        <a href="/debarras-insalubre-diogene/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/debarras-insalubre-diogene/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/debarras-insalubre-diogene/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/debarras-insalubre-diogene/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/debarras-insalubre-diogene/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/debarras-insalubre-diogene/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
       </div>
     </div>
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">Nettoyage extrême <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
       <div class="drawer-cantons">
-        <a href="/nettoyage-extreme/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson à Genève" loading="lazy"><span class="menu-label">à Genève</span></a>
-        <a href="/nettoyage-extreme/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson sur Vaud" loading="lazy"><span class="menu-label">sur Vaud</span></a>
-        <a href="/nettoyage-extreme/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson en Valais" loading="lazy"><span class="menu-label">en Valais</span></a>
-        <a href="/nettoyage-extreme/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson à Fribourg" loading="lazy"><span class="menu-label">à Fribourg</span></a>
-        <a href="/nettoyage-extreme/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson à Neuchâtel" loading="lazy"><span class="menu-label">à Neuchâtel</span></a>
-        <a href="/nettoyage-extreme/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson au Jura" loading="lazy"><span class="menu-label">au Jura</span></a>
+        <a href="/nettoyage-extreme/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/nettoyage-extreme/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/nettoyage-extreme/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/nettoyage-extreme/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/nettoyage-extreme/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/nettoyage-extreme/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
       </div>
     </div>
     <div class="drawer-actions">
