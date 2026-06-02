@@ -542,7 +542,7 @@ body{font-size:16px;line-height:1.7;}
 
 /* ── FOOTER compact ft-* ── */
 .ft{background:#0f172a;color:#94a3b8;font-family:var(--font,system-ui,sans-serif);padding:40px 24px 0;}
-.ft-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.ft-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px;align-items:start;}
 .ft-brand{display:flex;flex-direction:column;gap:14px;}
 .ft-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
 .ft-logo-img{width:44px;height:auto;}
@@ -558,7 +558,7 @@ body{font-size:16px;line-height:1.7;}
 .ft-link:hover{color:#22c55e;}
 .ft-link svg,.ft-hours svg{flex-shrink:0;}
 .ft-hours{display:flex;align-items:center;gap:9px;font-size:13px;color:#64748b;}
-.ft-bottom{max-width:900px;margin:28px auto 0;padding:16px 0;border-top:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:#475569;}
+.ft-bottom{max-width:1100px;margin:28px auto 0;padding:16px 0;border-top:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:#475569;}
 .ft-bottom-links{display:flex;gap:18px;}
 .ft-bottom-link{color:#475569;text-decoration:none;transition:color .2s;}
 .ft-bottom-link:hover{color:#94a3b8;}
@@ -1267,6 +1267,11 @@ body{font-size:16px;line-height:1.75;}
 .hero-text{font-size:18px !important;}
 .hero-sub-title{font-size:17px !important;}
 .medias-text{font-size:16px !important;}
+
+/* ── Footer 3-col avec zones ── */
+.ft-coverage{display:flex;flex-direction:column;gap:10px;}
+.ft-cantons{font-size:13px;font-weight:700;color:#22c55e;line-height:1.7;margin:0;}
+
 </style>
   <meta property="og:image" content="https://www.val-debarras.ch/images/van-vs-alpes.jpg">
   <meta property="og:image:width" content="1200">
@@ -1757,6 +1762,13 @@ body{font-size:16px;line-height:1.75;}
           Lun–Sam · 08h–18h
         </span>
       </div>
+    </div>
+    <div class="ft-coverage">
+      <p class="ft-title">Zones d'intervention</p>
+      <p class="ft-addr-text">Entreprise active dans toute la Suisse romande, avec des équipes intervenant dans les cantons suivants :</p>
+      <p class="ft-cantons">Valais · Vaud · Genève · Fribourg · Neuchâtel · Jura</p>
+      <p class="ft-title" style="margin-top:10px;">Siège administratif</p>
+      <p class="ft-addr-text">Val-Débarras Sàrl · CP 2386<br>1950 Sion 2</p>
     </div>
   </div>
   <div class="ft-bottom">
