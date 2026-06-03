@@ -535,7 +535,6 @@ body{font-size:16px;line-height:1.7;}
 @media(max-width:768px){
   .sticky-mobile{display:flex;}
   /* Dar espacio al footer para que no tape contenido */
-  body{padding-bottom:80px;}
 }
 
 
@@ -564,7 +563,7 @@ body{font-size:16px;line-height:1.7;}
 .ft-bottom-links{display:flex;gap:18px;}
 .ft-bottom-link{color:#475569;text-decoration:none;transition:color .2s;}
 .ft-bottom-link:hover{color:#94a3b8;}
-@media(max-width:768px){.ft-inner{grid-template-columns:1fr;gap:28px;text-align:center;}.ft-brand{align-items:center;}.ft-contact{align-items:center;}.ft-links,.ft-hours{justify-content:center;}.ft-phone-btn{width:100%;max-width:260px;justify-content:center;}.ft-bottom{flex-direction:column;text-align:center;}}
+@media(max-width:768px){.ft{padding-bottom:calc(80px + env(safe-area-inset-bottom,0px));}.ft-inner{grid-template-columns:1fr;gap:28px;text-align:center;}.ft-brand{align-items:center;}.ft-contact{align-items:center;}.ft-links,.ft-hours{justify-content:center;}.ft-phone-btn{width:100%;max-width:260px;justify-content:center;}.ft-bottom{flex-direction:column;text-align:center;}}
 
 /* ===== CTA groups unificados (sidebar / pro) ===== */
 .sidebar-cta{margin-top:14px;flex-direction:column;align-items:stretch;}
@@ -1144,7 +1143,7 @@ body{font-size:16px;line-height:1.7;}
   html,body{overflow-x:hidden;max-width:100vw;}
   body.nav-open{overflow:hidden;}
   body.nav-open .sticky-mobile{visibility:hidden;pointer-events:none;}
-  body.has-sticky-mobile{padding-bottom:88px;}
+  body.has-sticky-mobile{padding-bottom:0;}
 
   .hero-desktop{display:none !important;}
   .hero-img{display:none !important;}
@@ -1733,7 +1732,6 @@ body{font-size:16px;line-height:1.75;}
         
         <span class="badge-text">Devis gratuit sous 24h</span>
       </div>
-      <p class="hero-location">en Valais</p>
       <h1 class="hero-title">Débarras EMS<span class="hero-accent">en Valais</span></h1>
       <p class="hero-desc">Libération rapide du logement · Respect du rythme familial Entrée en EMS en Valais ? Entre chalet, cave et maison familiale, la charge peut devenir énorme pour les proches. Val-Débarras intervient à Sion, Martigny, Sierre et dans toutes les vallées avec efficacité et discrétion.</p>
             <div class="hero-ctas">
@@ -1754,7 +1752,6 @@ body{font-size:16px;line-height:1.75;}
     </div></div>
     <div class="hero-img">
       <img src="/images/van-vs-chargement.jpg" alt="Val-Débarras — Débarras EMS en Valais" loading="eager">
-      <div class="hero-img-caption"><span class="hero-loc-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-map-pin"/></svg></span> Suisse romande</div>
     </div>
   </div>
 </section>
