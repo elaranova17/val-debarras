@@ -1,5 +1,18 @@
 {
   "rewrites": [
+    { "source": "/debarras-appartement",  "destination": "/service-appartement.html" },
+    { "source": "/debarras-appartement/", "destination": "/service-appartement.html" },
+    { "source": "/debarras-maison",  "destination": "/service-maison.html" },
+    { "source": "/debarras-maison/", "destination": "/service-maison.html" },
+    { "source": "/debarras-apres-deces-succession",  "destination": "/service-succession.html" },
+    { "source": "/debarras-apres-deces-succession/", "destination": "/service-succession.html" },
+    { "source": "/debarras-ems",  "destination": "/service-ems.html" },
+    { "source": "/debarras-ems/", "destination": "/service-ems.html" },
+    { "source": "/debarras-insalubre-diogene",  "destination": "/service-diogene.html" },
+    { "source": "/debarras-insalubre-diogene/", "destination": "/service-diogene.html" },
+    { "source": "/nettoyage-extreme",  "destination": "/service-nettoyage.html" },
+    { "source": "/nettoyage-extreme/", "destination": "/service-nettoyage.html" },
+
     { "source": "/brand",  "destination": "/brand.html" },
     { "source": "/blog",   "destination": "/blog.html" },
     { "source": "/blog/",  "destination": "/blog.html" },
