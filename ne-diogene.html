@@ -43,6 +43,7 @@ img{max-width:100%;display:block;}
 .nav-item:hover .chev{transform:rotate(180deg);}
 .dd{position:absolute;top:calc(100% + 6px);left:0;background:var(--blanc);border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,.13);padding:8px;min-width:210px;opacity:0;visibility:hidden;transition:all .2s;z-index:300;transform:translateY(6px);}
 .nav-item:hover .dd{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-item.open .dd{opacity:1;visibility:visible;transform:translateY(0);}
 .dd-head{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gris);padding:5px 10px 8px;}
 .dd a{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;font-size:13.5px;font-weight:500;transition:all .15s;}
 .dd a:hover{background:var(--gris-bg);color:var(--vert-fonce);padding-left:14px;}
@@ -534,7 +535,7 @@ body{font-size:16px;line-height:1.7;}
 @media(max-width:768px){
   .sticky-mobile{display:flex;}
   /* Dar espacio al footer para que no tape contenido */
-  body{padding-bottom:80px;}
+  body{padding-bottom:64px;}
 }
 
 
@@ -1386,11 +1387,9 @@ body{font-size:16px;line-height:1.75;}
     display: none !important;
   }
 
-  /* 2 — Hero mobile : 1 bouton devis + lien téléphone texte */
+  /* 2 — Hero mobile : bouton masqué (sticky bar le remplace) */
   .mobile-hero .hero-ctas {
-    flex-direction: column;
-    gap: 12px;
-    align-items: stretch;
+    display: none !important;
   }
   .mobile-hero .hero-btn--primary {
     width: 100%;
@@ -1752,7 +1751,7 @@ body{font-size:16px;line-height:1.75;}
       </ul>
     </div></div>
     <div class="hero-img">
-      <img src="/images/van-ne-village.jpg" alt="Val-Débarras — Nettoyage Diogène à Neuchâtel" loading="eager">
+      <img src="/images/van-vs-vignes.jpg" alt="Val-Débarras — Nettoyage Diogène à Neuchâtel" loading="eager">
       <div class="hero-img-caption"><span class="hero-loc-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-map-pin"/></svg></span> Suisse romande</div>
     </div>
   </div>
@@ -1894,16 +1893,16 @@ body{font-size:16px;line-height:1.75;}
     <div class="form-info">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;">
         <div class="pm-cell">
-          <img src="/images/van-ge-jetdeau.jpg" alt="Van Val-Débarras — Jet d'Eau, Genève" loading="lazy">
+          <img src="/images/van-ge-jetdeau-pro.jpg" alt="Van Val-Débarras — Jet d'Eau, Genève" loading="lazy">
         </div>
         <div class="pm-cell">
-          <img src="/images/van-vs-alpes.jpg" alt="Van Val-Débarras — Alpes valaisannes" loading="lazy">
+          <img src="/images/van-vs-sion-panorama.jpg" alt="Van Val-Débarras — Alpes valaisannes" loading="lazy">
         </div>
         <div class="pm-cell">
-          <img src="/images/van-flotte-duo.png" alt="Flotte Val-Débarras — deux véhicules" loading="lazy">
+          <img src="/images/van-vs-team.jpg" alt="Flotte Val-Débarras — deux véhicules" loading="lazy">
         </div>
         <div class="pm-cell">
-          <img src="/images/van-flotte-simple.png" alt="Véhicule Val-Débarras — marquage professionnel" loading="lazy">
+          <img src="/images/van-ju-delemont.jpg" alt="Véhicule Val-Débarras — marquage professionnel" loading="lazy">
         </div>
       </div>
       <div class="form-contacts">
@@ -1931,7 +1930,7 @@ body{font-size:16px;line-height:1.75;}
         <span class="form-info-label">Contact</span>
         <h2 style="font-size:28px;font-weight:900;color:white;line-height:1.15;margin-bottom:0;letter-spacing:-.5px;">Demander un devis gratuit</h2>
       </div>
-      <form onsubmit="event.preventDefault();window.location.href='/ne-diogene-merci.html'">
+      <form onsubmit="event.preventDefault();window.location.href='/debarras-insalubre-diogene/neuchatel/merci/'">
         <div class="form-row form-full" style="margin-bottom:16px">
           <div class="fl"><label>Nom complet *</label><input type="text" placeholder="Prénom et nom" style="font-size:16px;min-height:48px;"></div>
         </div>
@@ -2023,7 +2022,6 @@ body{font-size:16px;line-height:1.75;}
     <div class="ft-bottom-links">
       <a href="#" class="ft-bottom-link">Données</a>
       <a href="#" class="ft-bottom-link">CGV</a>
-      <a href="/brand" class="ft-bottom-link" style="color:#2e7d5c;"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-palette"/></svg> Charte</a>
     </div>
   </div>
 </footer>
@@ -2183,7 +2181,6 @@ body{font-size:16px;line-height:1.75;}
     if(btn.dataset.faqBound) return;
     btn.dataset.faqBound = '1';
     if(!btn.hasAttribute('aria-expanded')) btn.setAttribute('aria-expanded','false');
-    btn.addEventListener('click', function(e){ e.preventDefault(); toggleFaq(btn); });
     btn.addEventListener('keydown', function(e){
       if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggleFaq(btn); }
     });

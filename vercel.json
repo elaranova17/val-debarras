@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    { "source": "/accueil",                    "destination": "/",                    "permanent": true },
+    { "source": "/accueil/",                   "destination": "/",                    "permanent": true },
+    { "source": "/fin-de-bail",                "destination": "/debarras-appartement","permanent": true },
+    { "source": "/fin-de-bail/",               "destination": "/debarras-appartement","permanent": true },
+    { "source": "/diogene-extreme-insalubre",  "destination": "/nettoyage-diogene",   "permanent": true },
+    { "source": "/diogene-extreme-insalubre/", "destination": "/nettoyage-diogene",   "permanent": true },
+    { "source": "/formulaire-devis",           "destination": "/",                    "permanent": true },
+    { "source": "/formulaire-devis/",          "destination": "/",                    "permanent": true },
+    { "source": "/rgpd",                       "destination": "/",                    "permanent": true },
+    { "source": "/rgpd/",                      "destination": "/",                    "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/brand",
@@ -316,6 +328,176 @@
       "source": "/merci/",
       "destination": "/merci.html"
     },
+    {
+      "source": "/debarras-appartement",
+      "destination": "/debarras-appartement.html"
+    },
+    {
+      "source": "/debarras-appartement/",
+      "destination": "/debarras-appartement.html"
+    },
+    {
+      "source": "/debarras-maison",
+      "destination": "/debarras-maison.html"
+    },
+    {
+      "source": "/debarras-maison/",
+      "destination": "/debarras-maison.html"
+    },
+    {
+      "source": "/succession-hoirie",
+      "destination": "/debarras-succession.html"
+    },
+    {
+      "source": "/succession-hoirie/",
+      "destination": "/debarras-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces",
+      "destination": "/debarras-succession.html"
+    },
+    {
+      "source": "/debarras-apres-deces/",
+      "destination": "/debarras-succession.html"
+    },
+    {
+      "source": "/debarras-ems",
+      "destination": "/debarras-ems.html"
+    },
+    {
+      "source": "/debarras-ems/",
+      "destination": "/debarras-ems.html"
+    },
+    {
+      "source": "/nettoyage-diogene",
+      "destination": "/debarras-diogene.html"
+    },
+    {
+      "source": "/nettoyage-diogene/",
+      "destination": "/debarras-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene",
+      "destination": "/debarras-diogene.html"
+    },
+    {
+      "source": "/debarras-insalubre-diogene/",
+      "destination": "/debarras-diogene.html"
+    },
+    {
+      "source": "/nettoyage-extreme",
+      "destination": "/nettoyage-extreme.html"
+    },
+    {
+      "source": "/nettoyage-extreme/",
+      "destination": "/nettoyage-extreme.html"
+    },
+    { "source": "/debarras-apres-deces-succession",                          "destination": "/debarras-succession.html" },
+    { "source": "/debarras-apres-deces-succession/",                         "destination": "/debarras-succession.html" },
+
+    { "source": "/debarras-apres-deces-succession/valais",                   "destination": "/vs-succession.html" },
+    { "source": "/debarras-apres-deces-succession/valais/",                  "destination": "/vs-succession.html" },
+    { "source": "/debarras-apres-deces-succession/valais/merci",             "destination": "/vs-succession-merci.html" },
+    { "source": "/debarras-apres-deces-succession/valais/merci/",            "destination": "/vs-succession-merci.html" },
+    { "source": "/debarras-apres-deces-succession/vaud",                     "destination": "/vd-succession.html" },
+    { "source": "/debarras-apres-deces-succession/vaud/",                    "destination": "/vd-succession.html" },
+    { "source": "/debarras-apres-deces-succession/vaud/merci",               "destination": "/vd-succession-merci.html" },
+    { "source": "/debarras-apres-deces-succession/vaud/merci/",              "destination": "/vd-succession-merci.html" },
+    { "source": "/debarras-apres-deces-succession/geneve",                   "destination": "/ge-succession.html" },
+    { "source": "/debarras-apres-deces-succession/geneve/",                  "destination": "/ge-succession.html" },
+    { "source": "/debarras-apres-deces-succession/geneve/merci",             "destination": "/ge-succession-merci.html" },
+    { "source": "/debarras-apres-deces-succession/geneve/merci/",            "destination": "/ge-succession-merci.html" },
+    { "source": "/debarras-apres-deces-succession/fribourg",                 "destination": "/fr-succession.html" },
+    { "source": "/debarras-apres-deces-succession/fribourg/",                "destination": "/fr-succession.html" },
+    { "source": "/debarras-apres-deces-succession/fribourg/merci",           "destination": "/fr-succession-merci.html" },
+    { "source": "/debarras-apres-deces-succession/fribourg/merci/",          "destination": "/fr-succession-merci.html" },
+    { "source": "/debarras-apres-deces-succession/neuchatel",                "destination": "/ne-succession.html" },
+    { "source": "/debarras-apres-deces-succession/neuchatel/",               "destination": "/ne-succession.html" },
+    { "source": "/debarras-apres-deces-succession/neuchatel/merci",          "destination": "/ne-succession-merci.html" },
+    { "source": "/debarras-apres-deces-succession/neuchatel/merci/",         "destination": "/ne-succession-merci.html" },
+    { "source": "/debarras-apres-deces-succession/jura",                     "destination": "/ju-succession.html" },
+    { "source": "/debarras-apres-deces-succession/jura/",                    "destination": "/ju-succession.html" },
+    { "source": "/debarras-apres-deces-succession/jura/merci",               "destination": "/ju-succession-merci.html" },
+    { "source": "/debarras-apres-deces-succession/jura/merci/",              "destination": "/ju-succession-merci.html" },
+
+    { "source": "/debarras-appartement/valais/merci",                        "destination": "/vs-appartement-merci.html" },
+    { "source": "/debarras-appartement/valais/merci/",                       "destination": "/vs-appartement-merci.html" },
+    { "source": "/debarras-appartement/vaud/merci",                          "destination": "/vd-appartement-merci.html" },
+    { "source": "/debarras-appartement/vaud/merci/",                         "destination": "/vd-appartement-merci.html" },
+    { "source": "/debarras-appartement/geneve/merci",                        "destination": "/ge-appartement-merci.html" },
+    { "source": "/debarras-appartement/geneve/merci/",                       "destination": "/ge-appartement-merci.html" },
+    { "source": "/debarras-appartement/fribourg/merci",                      "destination": "/fr-appartement-merci.html" },
+    { "source": "/debarras-appartement/fribourg/merci/",                     "destination": "/fr-appartement-merci.html" },
+    { "source": "/debarras-appartement/neuchatel/merci",                     "destination": "/ne-appartement-merci.html" },
+    { "source": "/debarras-appartement/neuchatel/merci/",                    "destination": "/ne-appartement-merci.html" },
+    { "source": "/debarras-appartement/jura/merci",                          "destination": "/ju-appartement-merci.html" },
+    { "source": "/debarras-appartement/jura/merci/",                         "destination": "/ju-appartement-merci.html" },
+
+    { "source": "/debarras-maison/valais/merci",                             "destination": "/vs-maison-merci.html" },
+    { "source": "/debarras-maison/valais/merci/",                            "destination": "/vs-maison-merci.html" },
+    { "source": "/debarras-maison/vaud/merci",                               "destination": "/vd-maison-merci.html" },
+    { "source": "/debarras-maison/vaud/merci/",                              "destination": "/vd-maison-merci.html" },
+    { "source": "/debarras-maison/geneve/merci",                             "destination": "/ge-maison-merci.html" },
+    { "source": "/debarras-maison/geneve/merci/",                            "destination": "/ge-maison-merci.html" },
+    { "source": "/debarras-maison/fribourg/merci",                           "destination": "/fr-maison-merci.html" },
+    { "source": "/debarras-maison/fribourg/merci/",                          "destination": "/fr-maison-merci.html" },
+    { "source": "/debarras-maison/neuchatel/merci",                          "destination": "/ne-maison-merci.html" },
+    { "source": "/debarras-maison/neuchatel/merci/",                         "destination": "/ne-maison-merci.html" },
+    { "source": "/debarras-maison/jura/merci",                               "destination": "/ju-maison-merci.html" },
+    { "source": "/debarras-maison/jura/merci/",                              "destination": "/ju-maison-merci.html" },
+
+    { "source": "/debarras-apres-deces/valais/merci",                        "destination": "/vs-succession-merci.html" },
+    { "source": "/debarras-apres-deces/valais/merci/",                       "destination": "/vs-succession-merci.html" },
+    { "source": "/debarras-apres-deces/vaud/merci",                          "destination": "/vd-succession-merci.html" },
+    { "source": "/debarras-apres-deces/vaud/merci/",                         "destination": "/vd-succession-merci.html" },
+    { "source": "/debarras-apres-deces/geneve/merci",                        "destination": "/ge-succession-merci.html" },
+    { "source": "/debarras-apres-deces/geneve/merci/",                       "destination": "/ge-succession-merci.html" },
+    { "source": "/debarras-apres-deces/fribourg/merci",                      "destination": "/fr-succession-merci.html" },
+    { "source": "/debarras-apres-deces/fribourg/merci/",                     "destination": "/fr-succession-merci.html" },
+    { "source": "/debarras-apres-deces/neuchatel/merci",                     "destination": "/ne-succession-merci.html" },
+    { "source": "/debarras-apres-deces/neuchatel/merci/",                    "destination": "/ne-succession-merci.html" },
+    { "source": "/debarras-apres-deces/jura/merci",                          "destination": "/ju-succession-merci.html" },
+    { "source": "/debarras-apres-deces/jura/merci/",                         "destination": "/ju-succession-merci.html" },
+
+    { "source": "/debarras-ems/valais/merci",                                "destination": "/vs-ems-merci.html" },
+    { "source": "/debarras-ems/valais/merci/",                               "destination": "/vs-ems-merci.html" },
+    { "source": "/debarras-ems/vaud/merci",                                  "destination": "/vd-ems-merci.html" },
+    { "source": "/debarras-ems/vaud/merci/",                                 "destination": "/vd-ems-merci.html" },
+    { "source": "/debarras-ems/geneve/merci",                                "destination": "/ge-ems-merci.html" },
+    { "source": "/debarras-ems/geneve/merci/",                               "destination": "/ge-ems-merci.html" },
+    { "source": "/debarras-ems/fribourg/merci",                              "destination": "/fr-ems-merci.html" },
+    { "source": "/debarras-ems/fribourg/merci/",                             "destination": "/fr-ems-merci.html" },
+    { "source": "/debarras-ems/neuchatel/merci",                             "destination": "/ne-ems-merci.html" },
+    { "source": "/debarras-ems/neuchatel/merci/",                            "destination": "/ne-ems-merci.html" },
+    { "source": "/debarras-ems/jura/merci",                                  "destination": "/ju-ems-merci.html" },
+    { "source": "/debarras-ems/jura/merci/",                                 "destination": "/ju-ems-merci.html" },
+
+    { "source": "/debarras-insalubre-diogene/valais/merci",                  "destination": "/vs-diogene-merci.html" },
+    { "source": "/debarras-insalubre-diogene/valais/merci/",                 "destination": "/vs-diogene-merci.html" },
+    { "source": "/debarras-insalubre-diogene/vaud/merci",                    "destination": "/vd-diogene-merci.html" },
+    { "source": "/debarras-insalubre-diogene/vaud/merci/",                   "destination": "/vd-diogene-merci.html" },
+    { "source": "/debarras-insalubre-diogene/geneve/merci",                  "destination": "/ge-diogene-merci.html" },
+    { "source": "/debarras-insalubre-diogene/geneve/merci/",                 "destination": "/ge-diogene-merci.html" },
+    { "source": "/debarras-insalubre-diogene/fribourg/merci",                "destination": "/fr-diogene-merci.html" },
+    { "source": "/debarras-insalubre-diogene/fribourg/merci/",               "destination": "/fr-diogene-merci.html" },
+    { "source": "/debarras-insalubre-diogene/neuchatel/merci",               "destination": "/ne-diogene-merci.html" },
+    { "source": "/debarras-insalubre-diogene/neuchatel/merci/",              "destination": "/ne-diogene-merci.html" },
+    { "source": "/debarras-insalubre-diogene/jura/merci",                    "destination": "/ju-diogene-merci.html" },
+    { "source": "/debarras-insalubre-diogene/jura/merci/",                   "destination": "/ju-diogene-merci.html" },
+
+    { "source": "/nettoyage-extreme/valais/merci",                           "destination": "/vs-nettoyage-merci.html" },
+    { "source": "/nettoyage-extreme/valais/merci/",                          "destination": "/vs-nettoyage-merci.html" },
+    { "source": "/nettoyage-extreme/vaud/merci",                             "destination": "/vd-nettoyage-merci.html" },
+    { "source": "/nettoyage-extreme/vaud/merci/",                            "destination": "/vd-nettoyage-merci.html" },
+    { "source": "/nettoyage-extreme/geneve/merci",                           "destination": "/ge-nettoyage-merci.html" },
+    { "source": "/nettoyage-extreme/geneve/merci/",                          "destination": "/ge-nettoyage-merci.html" },
+    { "source": "/nettoyage-extreme/fribourg/merci",                         "destination": "/fr-nettoyage-merci.html" },
+    { "source": "/nettoyage-extreme/fribourg/merci/",                        "destination": "/fr-nettoyage-merci.html" },
+    { "source": "/nettoyage-extreme/neuchatel/merci",                        "destination": "/ne-nettoyage-merci.html" },
+    { "source": "/nettoyage-extreme/neuchatel/merci/",                       "destination": "/ne-nettoyage-merci.html" },
+    { "source": "/nettoyage-extreme/jura/merci",                             "destination": "/ju-nettoyage-merci.html" },
+    { "source": "/nettoyage-extreme/jura/merci/",                            "destination": "/ju-nettoyage-merci.html" },
+
     {
       "source": "/(.*)",
       "destination": "/index.html"

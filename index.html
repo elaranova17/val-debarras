@@ -80,6 +80,7 @@ img{max-width:100%;display:block;}
   z-index:300;transform:translateY(6px);
 }
 .nav-item:hover .dd{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-item.open .dd{opacity:1;visibility:visible;transform:translateY(0);}
 .dd-head{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
   color:var(--gris);padding:5px 10px 8px;}
 .dd a{
@@ -806,7 +807,7 @@ body{font-size:16px;line-height:1.7;}
 @media(max-width:768px){
   .sticky-mobile{display:flex;}
   /* Dar espacio al footer para que no tape contenido */
-  body{padding-bottom:80px;}
+  body{padding-bottom:64px;}
 }
 
 
@@ -1844,7 +1845,7 @@ body{font-size:16px;line-height:1.75;}
 .ft-cantons{font-size:13px;font-weight:700;color:#22c55e;line-height:1.7;margin:0;}
 
 </style>
-  <meta property="og:image" content="https://www.val-debarras.ch/images/van-vd-chillon.jpg">
+  <meta property="og:image" content="https://www.val-debarras.ch/images/van-ge-jetdeau-pro.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 </head>
@@ -2088,7 +2089,7 @@ body{font-size:16px;line-height:1.75;}
       </ul>
     </div></div>
     <div class="hero-img">
-      <img src="/images/van-vd-chillon.jpg" alt="Val-Débarras — Château de Chillon, Veytaux (Vaud)" loading="eager">
+      <img src="/images/van-ge-jetdeau-pro.jpg" alt="Val-Débarras — Château de Chillon, Veytaux (Vaud)" loading="eager">
       <div class="hero-img-caption">
         <span class="hero-loc-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-map-pin"/></svg></span> Château de Chillon · Vaud — Suisse romande
       </div>
@@ -2144,9 +2145,9 @@ body{font-size:16px;line-height:1.75;}
 
 <!-- Mobile-only photo strip — visible on mobile only -->
 <div class="mobile-photo-strip">
-  <img src="/images/van-vd-chillon.jpg" alt="Van Val-Débarras — Château de Chillon, Vaud" loading="lazy">
-  <img src="/images/van-vd-lavaux.jpg" alt="Van Val-Débarras — Vignobles de Lavaux" loading="lazy">
-  <img src="/images/van-fr-murten.jpg" alt="Van Val-Débarras — Morat, Fribourg" loading="lazy">
+  <img src="/images/van-ge-jetdeau-pro.jpg" alt="Van Val-Débarras — Château de Chillon, Vaud" loading="lazy">
+  <img src="/images/van-vs-sion-panorama.jpg" alt="Van Val-Débarras — Vignobles de Lavaux" loading="lazy">
+  <img src="/images/van-vs-village.jpg" alt="Van Val-Débarras — Morat, Fribourg" loading="lazy">
 </div>
 
 <!-- ============================================================ -->
@@ -2190,8 +2191,8 @@ body{font-size:16px;line-height:1.75;}
       </div>
     </div>
     <div class="about-photos" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <img src="/images/van-ge-jetdeau-2.jpg" alt="Furgon Val-Débarras à Genève" style="width:100%;border-radius:12px;height:260px;object-fit:cover;" loading="lazy">
-      <img src="/images/van-vs-chargement.jpg" alt="Chargement Val-Débarras en Valais" style="width:100%;border-radius:12px;height:260px;object-fit:cover;margin-top:28px;" loading="lazy">
+      <img src="/images/van-ge-jetdeau-pro.jpg" alt="Furgon Val-Débarras à Genève" style="width:100%;border-radius:12px;height:260px;object-fit:cover;" loading="lazy">
+      <img src="/images/van-vs-montagne.jpg" alt="Chargement Val-Débarras en Valais" style="width:100%;border-radius:12px;height:260px;object-fit:cover;margin-top:28px;" loading="lazy">
     </div>
   </div>
 </section>
@@ -2542,16 +2543,16 @@ body{font-size:16px;line-height:1.75;}
     <div class="form-info">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;">
         <div class="pm-cell">
-          <img src="/images/van-ge-jetdeau.jpg" alt="Van Val-Débarras — Jet d'Eau, Genève" loading="lazy">
+          <img src="/images/van-ge-jetdeau-pro.jpg" alt="Van Val-Débarras — Jet d'Eau, Genève" loading="lazy">
         </div>
         <div class="pm-cell">
-          <img src="/images/van-vs-alpes.jpg" alt="Van Val-Débarras — Alpes valaisannes" loading="lazy">
+          <img src="/images/van-vs-sion-panorama.jpg" alt="Van Val-Débarras — Alpes valaisannes" loading="lazy">
         </div>
         <div class="pm-cell">
-          <img src="/images/van-flotte-duo.png" alt="Flotte Val-Débarras — deux véhicules" loading="lazy">
+          <img src="/images/van-vs-team.jpg" alt="Flotte Val-Débarras — deux véhicules" loading="lazy">
         </div>
         <div class="pm-cell">
-          <img src="/images/van-flotte-simple.png" alt="Véhicule Val-Débarras — marquage professionnel" loading="lazy">
+          <img src="/images/van-ju-delemont.jpg" alt="Véhicule Val-Débarras — marquage professionnel" loading="lazy">
         </div>
       </div>
       <div class="form-contacts">
@@ -2579,7 +2580,7 @@ body{font-size:16px;line-height:1.75;}
         <span class="form-info-label">Contact</span>
         <h2 style="font-size:28px;font-weight:900;color:white;line-height:1.15;margin-bottom:0;letter-spacing:-.5px;">Demander un devis gratuit</h2>
       </div>
-      <form onsubmit="event.preventDefault();window.location.href='/merci.html'">
+      <form onsubmit="event.preventDefault();window.location.href='/merci/'">
         <div class="form-row form-full" style="margin-bottom:16px">
           <div class="fl"><label>Nom complet *</label><input type="text" placeholder="Prénom et nom" style="font-size:16px;min-height:48px;"></div>
         </div>
@@ -2675,7 +2676,6 @@ body{font-size:16px;line-height:1.75;}
     <div class="ft-bottom-links">
       <a href="#" class="ft-bottom-link">Données</a>
       <a href="#" class="ft-bottom-link">CGV</a>
-      <a href="/brand" class="ft-bottom-link" style="color:#2e7d5c;"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-palette"/></svg> Charte</a>
     </div>
   </div>
 </footer>
