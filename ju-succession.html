@@ -84,7 +84,7 @@ img{max-width:100%;display:block;}
 .btn-outline:hover{background:rgba(255,255,255,.1);border-color:white;}
 .hero-img{border-radius:16px;height:320px;overflow:hidden;box-shadow:0 24px 48px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08);position:relative;}
 .hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
-.hero-img-caption{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);font-size:11px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:6px;}
+.hero-img-caption{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(to top,rgba(0,0,0,.18),transparent);font-size:11px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:6px;}
 /* ── TRUST BAR ── */
 .trust{background:var(--vert-dark);}
 .trust-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
@@ -449,7 +449,8 @@ body{font-size:16px;line-height:1.7;}
   display:block;
 }
 
-.pm-cell:hover /* ══════════════════════════════════════════════════
+.pm-cell:hover img{transform:scale(1.04);}
+/* ══════════════════════════════════════════════════
    NAV FIX — centrar + logo + sin desc cantons
    ══════════════════════════════════════════════════ */
 
@@ -1561,12 +1562,12 @@ body{font-size:16px;line-height:1.75;}
     <div class="nav-item">
       <button class="nav-btn">Débarras après décès/succession <span class="chev"><svg class="icon icon-sm nav-chevron" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
       <div class="dd"><div class="dd-head">Sélectionnez un canton</div>
-        <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
-        <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
-        <a href="/debarras-apres-deces/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
-        <a href="/debarras-apres-deces/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
-        <a href="/debarras-apres-deces/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
-        <a href="/debarras-apres-deces/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
+        <a href="/debarras-apres-deces-succession/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span class="menu-label">Genève</span></a>
+        <a href="/debarras-apres-deces-succession/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span class="menu-label">Vaud</span></a>
+        <a href="/debarras-apres-deces-succession/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span class="menu-label">Valais</span></a>
+        <a href="/debarras-apres-deces-succession/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span class="menu-label">Fribourg</span></a>
+        <a href="/debarras-apres-deces-succession/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span class="menu-label">Neuchâtel</span></a>
+        <a href="/debarras-apres-deces-succession/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy"><span class="menu-label">Jura</span></a>
       </div>
     </div>
     <div class="nav-item">
@@ -1643,12 +1644,12 @@ body{font-size:16px;line-height:1.75;}
     <div class="drawer-group">
       <button type="button" class="drawer-title" aria-expanded="false">Après décès &amp; succession <span class="arr"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg></span></button>
       <div class="drawer-cantons">
-        <a href="/debarras-apres-deces/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson à Genève" loading="lazy"><span class="menu-label">à Genève</span></a>
-        <a href="/debarras-apres-deces/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson sur Vaud" loading="lazy"><span class="menu-label">sur Vaud</span></a>
-        <a href="/debarras-apres-deces/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson en Valais" loading="lazy"><span class="menu-label">en Valais</span></a>
-        <a href="/debarras-apres-deces/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson à Fribourg" loading="lazy"><span class="menu-label">à Fribourg</span></a>
-        <a href="/debarras-apres-deces/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson à Neuchâtel" loading="lazy"><span class="menu-label">à Neuchâtel</span></a>
-        <a href="/debarras-apres-deces/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson au Jura" loading="lazy"><span class="menu-label">au Jura</span></a>
+        <a href="/debarras-apres-deces-succession/geneve/"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson à Genève" loading="lazy"><span class="menu-label">à Genève</span></a>
+        <a href="/debarras-apres-deces-succession/vaud/"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson sur Vaud" loading="lazy"><span class="menu-label">sur Vaud</span></a>
+        <a href="/debarras-apres-deces-succession/valais/"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson en Valais" loading="lazy"><span class="menu-label">en Valais</span></a>
+        <a href="/debarras-apres-deces-succession/fribourg/"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson à Fribourg" loading="lazy"><span class="menu-label">à Fribourg</span></a>
+        <a href="/debarras-apres-deces-succession/neuchatel/"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson à Neuchâtel" loading="lazy"><span class="menu-label">à Neuchâtel</span></a>
+        <a href="/debarras-apres-deces-succession/jura/"><img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson au Jura" loading="lazy"><span class="menu-label">au Jura</span></a>
       </div>
     </div>
     <div class="drawer-group">
@@ -1704,7 +1705,7 @@ body{font-size:16px;line-height:1.75;}
 <nav class="breadcrumb">
   <div class="breadcrumb-inner">
     <a href="/">Accueil</a> ›
-    <a href="/debarras-apres-deces/">Après décès &amp; succession</a> ›
+    <a href="/debarras-apres-deces-succession/">Après décès &amp; succession</a> ›
     <img src="/images/shield-ju.svg" class="canton-icon" alt="Écusson Jura" loading="lazy">
     <strong>Jura</strong>
   </div>
@@ -1809,11 +1810,11 @@ body{font-size:16px;line-height:1.75;}
       <h3 style="font-size:15px;font-weight:700;color:var(--gris-fonce);margin-bottom:12px;">Sélectionnez votre canton :</h3>
       <ul style="list-style:none;">
 
-        <li><a href="/debarras-apres-deces/geneve/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span>à Genève</span></a></li>
-        <li><a href="/debarras-apres-deces/vaud/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span>Vaud</span></a></li>
-        <li><a href="/debarras-apres-deces/valais/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span>Valais</span></a></li>
-        <li><a href="/debarras-apres-deces/fribourg/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span>Fribourg</span></a></li>
-        <li><a href="/debarras-apres-deces/neuchatel/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span>Neuchâtel</span></a></li>
+        <li><a href="/debarras-apres-deces-succession/geneve/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-ge.svg" class="canton-icon" alt="Écusson Genève" loading="lazy"><span>à Genève</span></a></li>
+        <li><a href="/debarras-apres-deces-succession/vaud/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-vd.svg" class="canton-icon" alt="Écusson Vaud" loading="lazy"><span>Vaud</span></a></li>
+        <li><a href="/debarras-apres-deces-succession/valais/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-vs.svg" class="canton-icon" alt="Écusson Valais" loading="lazy"><span>Valais</span></a></li>
+        <li><a href="/debarras-apres-deces-succession/fribourg/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-fr.svg" class="canton-icon" alt="Écusson Fribourg" loading="lazy"><span>Fribourg</span></a></li>
+        <li><a href="/debarras-apres-deces-succession/neuchatel/" style="display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px;font-size:14px;font-weight:600;color:var(--gris-fonce);transition:background .15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'"><img src="/images/shield-ne.svg" class="canton-icon" alt="Écusson Neuchâtel" loading="lazy"><span>Neuchâtel</span></a></li>
       </ul>
     </div>
   </aside>
@@ -1862,7 +1863,7 @@ body{font-size:16px;line-height:1.75;}
       </a>
       <a href="https://www.20min.ch/fr/story/valais-locataire-expulsee-elle-conservait-35-tonnes-de-dechets-103216100" target="_blank" rel="noopener" class="media-card media-card-article" aria-label="Lire l'article 20 Minutes">
         <div class="media-preview">
-          <img src="/images/20min-preview.jpg" onerror="this.src='/images/ge-action.jpg'" alt="Article 20 Minutes — Val-Débarras" class="media-preview-img" loading="lazy">
+          <img src="/images/20min-preview.jpg" onerror="this.src='/images/van-flotte-simple.png'" alt="Article 20 Minutes — Val-Débarras" class="media-preview-img" loading="lazy">
           <span class="media-badge media-badge-20min">20 minutes</span>
         </div>
         <div class="media-info">
