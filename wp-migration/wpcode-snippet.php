@@ -55,6 +55,29 @@ add_action('template_redirect', function () {
     $html = get_post_meta( $page_id, '_vd_html', true );
     if ( ! $html ) return;
 
+    // Inyectar fixes mobile/landscape antes de </head>
+    $mobile_css = '<style>
+/* ── Mobile landscape fixes v2 (WPCode) ── */
+html,body{overflow-x:clip;max-width:100vw;}
+@media(max-width:1024px){
+  .header-inner{padding:0 12px !important;gap:8px !important;height:60px !important;}
+  .header-cta,.header-phone,.desktop-only-phone{display:none !important;}
+  .header-actions{display:flex !important;}
+  .hamburger{display:flex !important;}
+  .form-inner{grid-template-columns:1fr !important;gap:32px !important;}
+  .form-section{padding:48px 0 !important;}
+  .form-card{padding:24px 16px !important;}
+}
+@media(min-width:1025px){
+  .header-actions{display:none !important;}
+  .header-cta{display:flex !important;}
+  .hamburger{display:none !important;}
+  .nav{display:flex !important;}
+  .header-inner{height:96px !important;padding:0 24px !important;}
+}
+</style>';
+    $html = str_replace( '</head>', $mobile_css . '</head>', $html );
+
     status_header(200);
     header('Content-Type: text/html; charset=UTF-8');
     header('X-Robots-Tag: index, follow');
