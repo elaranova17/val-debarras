@@ -204,7 +204,7 @@ img{max-width:100%;display:block;}
 .drawer-phone{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--vert);color:white;padding:15px;border-radius:12px;font-weight:800;font-size:16px;margin-top:20px;}
 @media(max-width:1024px){
   .nav{display:none;} .hamburger{display:flex;}
-  .form-inner{grid-template-columns:1fr;gap:40px;}
+  .form-inner{grid-template-columns:1fr !important;gap:40px;}
   .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
   .hero-inner{grid-template-columns:1fr;}
   .lp-content{grid-template-columns:1fr;}
@@ -301,6 +301,12 @@ body{font-size:16px;line-height:1.7;}
 .fc-text{font-size:15.5px !important;}
 .fc-text strong{font-size:16.5px !important;}
 .fc-icon{width:44px !important;height:44px !important;font-size:20px !important;}
+/* ── PATCH form — responsive landscape/mobile override ── */
+@media(max-width:1024px){
+  .form-inner{grid-template-columns:1fr !important;gap:32px !important;}
+  .form-section{padding:48px 0 !important;}
+  .form-card{padding:24px 16px !important;}
+}
 
 
 /* ── PATCH shields SVG — official Wikipedia vectors ── */
@@ -1141,7 +1147,7 @@ body{font-size:16px;line-height:1.7;}
 }
 
 @media (max-width: 768px) {
-  html,body{overflow-x:hidden;max-width:100vw;}
+  html,body{overflow-x:clip;max-width:100vw;}
   body.nav-open{overflow:hidden;}
   body.nav-open .sticky-mobile{visibility:hidden;pointer-events:none;}
   body.has-sticky-mobile{padding-bottom:88px;}
@@ -1376,13 +1382,11 @@ body{font-size:16px;line-height:1.75;}
 @media (max-width: 768px) {
   /* 1 — Header : logo + hamburger uniquement */
   .header-inner {
-    padding: 12px 16px !important;
-    height: auto !important;
-    min-height: 56px;
+    padding: 0 12px !important;
+    height: 60px !important;
   }
   .header-cta,
   .header-phone,
-  .header-phone-compact,
   .desktop-only-phone {
     display: none !important;
   }
