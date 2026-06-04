@@ -441,7 +441,7 @@ img{max-width:100%;display:block;}
   .nav{display:none;}
   .hamburger{display:flex;}
   .services-grid{grid-template-columns:repeat(2,1fr);}
-  .form-inner{grid-template-columns:1fr;gap:40px;}
+  .form-inner{grid-template-columns:1fr !important;gap:40px;}
   .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
   .hero-inner{grid-template-columns:1fr;}
   .hero-img{display:none;}
@@ -568,6 +568,12 @@ body{font-size:16px;line-height:1.7;}
 .fc-text{font-size:15.5px !important;}
 .fc-text strong{font-size:16.5px !important;}
 .fc-icon{width:44px !important;height:44px !important;font-size:20px !important;}
+/* ── PATCH form — responsive landscape/mobile override ── */
+@media(max-width:1024px){
+  .form-inner{grid-template-columns:1fr !important;gap:32px !important;}
+  .form-section{padding:48px 0 !important;}
+  .form-card{padding:24px 16px !important;}
+}
 
 
 /* ── PATCH shields SVG — official Wikipedia vectors ── */
